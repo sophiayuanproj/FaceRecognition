@@ -1,71 +1,125 @@
-# Power-aware wearable face sensing
+# Scene-gated face detection on a wearable microcontroller
 
-An Arduino Nicla Vision body camera with a local dashboard, encounter photos, and fixed-versus-adaptive power experiments. Omri Steinberg-Tatman and Sophia Yuan, UCLA embedded systems course project.
+**A paired power and latency study on the Arduino Nicla Vision**
 
-The current **R19** configuration runs face detection and identity-model inference on the Nicla. Its automatic known-person acceptance is disabled because the tested identity models did not achieve reliable recognition on camera images. The dashboard groups saved encounters under **Person 1–5** and **Other**, with explicit manual assignments. The measured power study compares fixed and scene-gated operation using the same model.
+Omri Steinberg-Tatman and Sophia Yuan · UCLA Embedded Systems · Fall 2026
 
-## Get the code
+[Paper](https://drive.google.com/file/d/1eikXZGxlXDb9nLYPIZaUHmPwaW2ffYkS/view) · [Presentation](https://docs.google.com/presentation/d/1TM9RoEXqlNgcfl5lDlVyWf49Zhnpr5LPnCpedgkzBws/edit) · [Quick start](#quick-start) · [Training](TRAINING.md) · [Reproduce the measurements](evidence/README.md)
+
+Wearable cameras spend energy processing many nearly identical frames. We built a camera pipeline that uses scene changes to decide when to run face detection and downstream inference. The Nicla performs inference on the board, while a local dashboard displays the camera stream, frame-linked results, and saved encounters.
+
+Across ten paired runs on the same board and video workload, scene gating reduced mean input power by **7.28%**, with the same **30/40 matched face episodes**. The tradeoff was a longer delay before the first matched face.
+
+## Results
+
+The experiment compared four workloads on a repeated 29-second clip. Each accepted block began with a separate Nicla power cycle.
+
+| Workload | Mean input power | Matched face episodes | Median time to first match¹ |
+| --- | ---: | ---: | ---: |
+| Camera capture only | 608.72 mW | — | — |
+| Detector only | 670.17 mW | — | — |
+| Fixed full pipeline | 680.29 mW | 30/40 | 0.65 s |
+| Scene-gated full pipeline | 630.75 mW | 30/40 | 1.38 s |
+
+¹ Among matched episodes. Both full pipelines missed the far-outdoor segment in every block.
+
+The paired mean saving was **49.54 mW**, with a 95% t interval of **46.97–52.12 mW**. Both modes used the same awake camera, configured 250 ms capture interval, Haar face detector, and small INT8 identity model. Scene gating skipped detector and downstream work during quiet periods, with periodic checks. The dashboard's fast live policy is a separate configuration.
+
+<details>
+<summary>View the ten paired measurements</summary>
+
+![Scene-gated minus fixed input power across ten paired starts. All differences favor scene gating.](work/project-research-v5/final-readiness-2026-11-12/r19-paired-power.svg)
+
+[Paired CSV](work/project-research-v5/final-readiness-2026-11-12/r19-paired-power.csv) · [Methods and limitations](work/project-research-v5/final-readiness-2026-11-12/FINAL_READINESS.md) · [Raw-data replay](evidence/README.md)
+
+</details>
+
+## Pipeline
+
+```mermaid
+flowchart LR
+    A[Capture frame] --> B{Policy requests inference?}
+    B -->|Yes| C[Detect face]
+    B -->|No| A
+    C -->|Face found| D[Crop and run identity model]
+    C -->|No face| A
+    D --> E[Record result and encounter]
+    E --> F[Local dashboard or on-board photo queue]
+    E --> A
+```
+
+The dashboard shows the live image, detector box, crop, identity-stage output, timing, and errors for the same device frame. It supports video with inference and one saved photo per confirmed encounter. Saved photos can be browsed by **Person 1–5** and **Other**, with explicit manual assignments. On-board photos can be imported after reconnecting over USB.
+
+The current **R19** release executes the identity model with automatic known-person acceptance disabled. Reliable recognition across camera conditions remains an open result. Manual gallery assignments organize photos and have their own labels. The measured power result evaluates the adaptive face-detection fallback in the [original proposal](proposal-final.md).
+
+## Quick start
+
+Use Python **3.12** for the camera application. Training has a separate environment described in [TRAINING.md](TRAINING.md).
 
 ```sh
 git clone https://github.com/sophiayuanproj/FaceRecognition.git
 cd FaceRecognition
 ```
 
-If you already cloned this repository, commit or stash your own changes, then run `git pull --ff-only`. The application lives in the inner `FaceRecognition/` directory. Keep that directory and the adjacent `work/`, `workflow/`, and `bench/` folders together.
+The cloned repository contains an inner `FaceRecognition/` application folder. Run the following commands from the repository root.
 
-## Start the dashboard
-
-**Mac, Intel or Apple Silicon.** Install Python 3.12, then run these commands from the repository root.
+### macOS · Intel and Apple Silicon
 
 ```sh
 sh SETUP_MAC.command
-sh FaceRecognition/bin/nicla-control-center --doctor --port 0
 sh FaceRecognition/bin/nicla-control-center --open-browser
 ```
 
-**Windows.** Install 64-bit Python 3.12 with the Python Launcher, then run `SETUP_WINDOWS.cmd`. Start the application with `FaceRecognition\tools\windows_v5\Start-NiclaControlCenter.cmd`. The camera works on both platforms. FNIRSI meter support runs on Windows.
+### Windows · 64-bit Python 3.12 with the Python Launcher
 
-Use the exact localhost URL printed at startup. Plug in the Nicla using a USB data cable and select **Connect / claim control**. Close OpenMV IDE or any other application that owns the same serial port. A working R19 board can connect immediately. For a replacement board or a deliberate firmware update, follow [deployment](DEPLOYMENT.md).
+```powershell
+.\SETUP_WINDOWS.cmd
+.\FaceRecognition\tools\windows_v5\Start-NiclaControlCenter.cmd
+```
 
-## Capture and review encounters
+Open the exact localhost URL printed by the launcher. Connect the Nicla with a USB data cable, select **Connect / claim control**, and choose **Start processing**. Close other serial clients before connecting. FNIRSI meter support is available on Windows. [Operator guide](FaceRecognition/control_center/README.md)
 
-Select **Start processing**, then **Start saving**. A confirmed face produces one saved photo per encounter. After the face leaves for a few seconds, a new encounter can be saved. Open **Sightings** to filter by person and source. Open a photo to review it or assign it manually. Assignments persist on this computer and are marked separately from device decisions.
+An existing R19 board can connect directly. For a replacement board or firmware recovery, follow [DEPLOYMENT.md](DEPLOYMENT.md). To update an existing clone, save your local changes and run `git pull --ff-only`.
 
-For untethered capture, stop processing, select **Arm offline capture**, and wait for **Armed** before moving the USB cable to a power bank. Reconnect to the computer, stop processing, and select **Import photos**. **View imported photos** filters the gallery to on-board captures. Repeating an import skips duplicates. The board keeps up to 24 photos or 96 KiB. The computer keeps up to 100 photos or 8 MiB, with cumulative encounter counts.
+## Encounters and offline capture
 
-## Code and experiments
+Select **Start saving** to keep encounter photos on the computer. A new encounter can be saved after the face leaves the frame for a few seconds. Open a saved photo to review it or assign a person. The gallery retains up to **100 photos or 8 MiB**, with persistent encounter counts.
 
-| Location | Contents |
+For offline capture, stop processing and select **Arm offline capture** before moving the cable to a power bank. After reconnecting to the computer, stop processing and select **Import photos**. **View imported photos** filters the gallery to the on-board captures. Repeating an import skips duplicates. The board retains up to **24 photos or 96 KiB**.
+
+A screen rehearsal saved four photos across four separated encounters, with each JPEG verified against its device-frame hash. A continuous face hold and blank intervals added no duplicates. On-board recording and re-import passed with USB power and a closed host serial connection. A physical power-bank boot still needs a rehearsal.
+
+## Repository guide
+
+| Location | Purpose |
 | --- | --- |
-| [FaceRecognition/control_center](FaceRecognition/control_center) | Local dashboard, camera controls, sightings and Windows meter panel |
-| [FaceRecognition/host](FaceRecognition/host) | Serial broker, bounded recording, storage and validated import |
-| [FaceRecognition/firmware](FaceRecognition/firmware) | Nicla MicroPython source and checked compiled modules |
-| [FaceRecognition/models/deployment-v1](FaceRecognition/models/deployment-v1) | Complete deployed TFLite models, labels and gallery |
-| [detector/scripts](detector/scripts) | Sophia's detector labeling and FOMO training scripts |
-| [workflow](workflow) | Data preparation, model training, evaluation and artifact verification |
-| [TRAINING.md](TRAINING.md) | Training instructions and environment requirements |
-| [DATA.md](DATA.md) | Dataset restoration and provenance |
-| [WINDOWS_VIDEO_POWER_BENCH.md](WINDOWS_VIDEO_POWER_BENCH.md) | Windows power experiment procedure |
-| [bench](bench) | Measured R19 release fingerprints and install receipt |
+| [FaceRecognition/control_center](FaceRecognition/control_center) | Local camera dashboard and Windows meter panel |
+| [FaceRecognition/host](FaceRecognition/host) | Serial protocol, recordings, encounter storage, and import |
+| [FaceRecognition/firmware](FaceRecognition/firmware) | Nicla source, compiled modules, and configuration |
+| [FaceRecognition/models/deployment-v1](FaceRecognition/models/deployment-v1) | Complete deployed models, labels, and gallery |
+| [detector](detector/README.md) | FOMO training, annotation, export, and evaluation |
+| [workflow](workflow) | Data restoration and ten-seed model campaigns |
+| [work/model-training](work/model-training/README.md) | Earlier embedding and compression experiments |
+| [work/project-finish-v4](work/project-finish-v4/README.md) | Frozen splits, experiment definitions, and model comparisons |
+| [bench](bench) | Measured release fingerprints and installation records |
+| [evidence](evidence/README.md) | Download and replay the raw power measurements |
 
-Use [AGENT_HANDOFF.md](AGENT_HANDOFF.md) when another coding agent takes over. The existing [project website](https://sophiayuanproj.github.io/FaceRecognition/) is maintained in `docs/`.
+[Training instructions](TRAINING.md) · [Dataset provenance](DATA.md) · [Windows power procedure](WINDOWS_VIDEO_POWER_BENCH.md) · [Development notes](docs/development/README.md)
 
-## Saved results
+Saved fitted checkpoints and the raw power study are attached to the [research assets release](https://github.com/sophiayuanproj/FaceRecognition/releases/tag/research-assets-2026-11-22). The normal checkout includes the complete deployed models and compiled firmware. Source images, camera recordings, local databases, and environments stay in ignored local directories.
 
-Across ten paired Nicla power cycles on a 29-second test clip, scene gating reduced mean power by **49.54 mW (7.28%)**. Both modes matched **30/40 face episodes**. Median time to first match increased from **0.65 s to 1.38 s**. Both modes missed the far-outdoor segment in every run. See the [results and limitations](work/project-research-v5/final-readiness-2026-11-12/FINAL_READINESS.md) and [paired measurements](work/project-research-v5/final-readiness-2026-11-12/r19-paired-power.csv).
+## Verify the checkout
 
-The November 16 screen rehearsal saved four photos across four separated encounters, with checksums linking each saved photo to its device frame. A continuous face hold and blank intervals added no duplicate sightings. On-board storage and re-import also passed while the Mac supplied USB power and its serial connection was closed. A physical power-bank boot still needs a rehearsal.
-
-The 14/15 host result reported earlier came from a reused-data crop comparison. It does not establish device identity accuracy. The current recognition limitation is recorded in the model and project evidence.
-
-## Verification
-
-Run the portable checks from the repository root. They verify full model sizes and hashes before exercising firmware contracts, the host, and dashboard controls.
+The portable checks verify model sizes and hashes, compiled-firmware consistency, host behavior, and dashboard controls. JavaScript tests require Node.js 18 or newer.
 
 ```sh
+# macOS
 FaceRecognition/.venv-nicla/bin/python -B tools/check_repository.py
 ```
 
-The optional host reference tests need the separate pinned model-training environment and research assets described in [TRAINING.md](TRAINING.md). Core dashboard use requires no training environment. The source checkout includes full deployed models and compiled firmware, so connecting an existing board does not require downloading a Drive handoff.
+```powershell
+# Windows
+.\FaceRecognition\.venv-nicla-windows\Scripts\python.exe -B tools\check_repository.py
+```
 
-Saved fitted training artifacts and the raw power study are available in the [research assets release](https://github.com/sophiayuanproj/FaceRecognition/releases/tag/research-assets-2026-11-22). See [power reproduction](evidence/README.md) for the exact replay command.
+Mac launcher checks run on POSIX systems. Optional host-reference tests use the separate research environment and its recorded assets. See [TRAINING.md](TRAINING.md) for those dependencies.

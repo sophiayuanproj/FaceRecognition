@@ -36,13 +36,16 @@ Use the root [deployment guide](../DEPLOYMENT.md) for installation and recovery.
 
 ## Software checks
 
-After Mac setup, run these from the repository root. They use synthetic or mocked devices.
+After setup, run the repository check from the root. It verifies full model sizes and hashes, runs the portable host and dashboard tests, and checks the JavaScript controls. The tests use synthetic or mocked devices.
 
 ```sh
-sh SETUP_MAC.command --check
-PYTHONPATH=FaceRecognition FaceRecognition/.venv-nicla/bin/python -m unittest discover -s FaceRecognition/host/tests
-PYTHONPATH=FaceRecognition FaceRecognition/.venv-nicla/bin/python -m unittest discover -s FaceRecognition/control_center/tests
-node --test FaceRecognition/control_center/tests/test_device_timeline.cjs
+FaceRecognition/.venv-nicla/bin/python -B tools/check_repository.py
 ```
 
-The JavaScript checks require Node.js 18 or newer. On Windows, use `FaceRecognition\.venv-nicla-windows\Scripts\python.exe` and set `PYTHONPATH` to the `FaceRecognition` directory before running the Python tests.
+On Windows, use the setup environment's interpreter.
+
+```powershell
+.\FaceRecognition\.venv-nicla-windows\Scripts\python.exe -B tools\check_repository.py
+```
+
+The JavaScript checks require Node.js 18 or newer. Add `--assets-only` to verify model and firmware files alone. The optional historical host-reference tests need the separate training environment and research assets described in [TRAINING.md](../TRAINING.md).

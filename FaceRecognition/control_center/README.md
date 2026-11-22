@@ -4,23 +4,26 @@ This local loopback application has a frame-linked Nicla operator interface and 
 
 ## Launch and doctor
 
-From Finder, double-click `FaceRecognition/bin/nicla-control-center.command`. The service prints the exact URL; default is `http://127.0.0.1:8780/`. If the port is busy, launch `FaceRecognition/bin/nicla-control-center --port 0` and use the URL it prints. To open a separate local fixture UI, launch with `--port 0` and visit `/?fixture=1`; the fixture sends no broker/device commands.
-
-Run `FaceRecognition/bin/nicla-control-center --doctor` for local files, loopback binding, broker and optional `pyserial` guidance. Live device connection requires the Nicla Vision USB serial descriptor and `pyserial==3.5`; install the host requirements with:
+Run the following from the repository root on Mac with Python 3.12 installed.
 
 ```sh
-python3 -m pip install -r FaceRecognition/requirements-host.txt
+sh SETUP_MAC.command
+sh FaceRecognition/bin/nicla-control-center --doctor --port 0
+sh FaceRecognition/bin/nicla-control-center --open-browser
 ```
 
-Replay data is optional. Missing private replay frames disable that research panel but do not prevent live operator mode from starting. The server stays bound to loopback.
+After setup, Finder can launch `FaceRecognition/bin/nicla-control-center.command` directly. The service prints its localhost URL, normally `http://127.0.0.1:8780/`. Use `--port 0` to choose an available port. The doctor checks local files and configuration. The operator's **Connect** action opens the Nicla serial connection.
 
-On Windows, run the workspace's `SETUP_WINDOWS.cmd` and launch from the same workspace.
+On Windows, install 64-bit Python 3.12 and run these commands from the same repository root.
 
 ```powershell
+.\SETUP_WINDOWS.cmd
 .\FaceRecognition\tools\windows_v5\Start-NiclaControlCenter.cmd
 ```
 
-If `py.exe -3.12` is unavailable, set `NICLA_PYTHON_312` to the full path of a 64-bit CPython 3.12 executable before running setup. Setup installs the bundled, hash-pinned wheels offline.
+If `py.exe -3.12` is unavailable, set `NICLA_PYTHON_312` to the full path of a 64-bit CPython 3.12 executable before running setup. Setup installs hash-pinned dependencies online, or uses bundled wheels when supplied. The camera-only setup is `FaceRecognition\tools\windows_v5\Setup-NiclaControlCenter.cmd`.
+
+Replay requires optional private research frames. The live operator interface starts independently of those files. For a synthetic UI fixture, launch with `--port 0` and visit `/?fixture=1`. Use the [repository checks](../README.md#software-checks) to verify assets and software behavior.
 
 ## Operator modes and controls
 
@@ -51,8 +54,10 @@ Power endpoints are under `/api/v2/power/`. `GET status` returns support, interf
 
 The JSON POST actions require a loopback request and an `X-Control-Center-Client` identifier. The routes are `scan`, `connect` with `interface_id`, `disconnect`, `start-recording` with `topology_confirmed`, and `stop-recording`. Browser actions use the dashboard origin. Status and samples never acquire hardware. The server closes the meter on shutdown.
 
-## Current verification boundary
+## Current configuration and evidence
 
-The GUI, HTTP command contract and broker-backed routes are implemented. The concise current board status is in `work/project-research-v5/DEVICE_INTEGRATION.md`, with detailed deployment and recovery evidence in `work/project-research-v5/reports/device_integration_v2/DEVICE_INTEGRATION.md`. USB enumeration and a fresh identity-stage event must be verified before claiming current Nicla inference. No power or population-level recognition claim is made by this UI. The legacy 8766 HTTP preview adapter remains read-only and does not supply device inference or command ACKs.
+The current R19 application runs Haar face detection and compact identity inference on the board. Its automatic known-person acceptance is disabled. Manual gallery labels describe the operator's assignments. The [release fingerprints](../../bench/RELEASE_HASHES.json) identify the measured board configuration, and the [deployment guide](../../DEPLOYMENT.md) covers installation and recovery.
+
+The [results and rehearsal checklist](../../work/project-research-v5/final-readiness-2026-11-12/FINAL_READINESS.md) record the ten-pair power study and capture checks. The [power reproduction guide](../../evidence/README.md) provides the raw-evidence replay. The physical power-bank boot rehearsal remains pending. The legacy port 8766 adapter supplies preview frames for optional host diagnostics.
 
 Local session export includes the selected bounded event JSONL and, when still retained, exact same-frame JPEGs and detector/identity input payload bytes with SHA-256 and shape/type metadata. It is capped at 10 MB; omitted payloads are listed in its manifest. Synthetic fixture payloads are labeled and hashed separately. Export stays in the browser download folder on this Mac. Do not use the legacy replay panel's preview-derived host result as device evidence.

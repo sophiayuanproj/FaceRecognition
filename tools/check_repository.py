@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -59,10 +60,12 @@ def main() -> int:
         return 1
     if args.assets_only:
         return 0
+    dashboard_tests = ["control_center.tests.test_control_center", "control_center.tests.test_power_routes"]
+    if os.name == "posix":
+        dashboard_tests.append("control_center.tests.test_launcher_acceptance")
     commands = [
         [sys.executable, "-B", "-m", "unittest", "discover", "-s", "host/tests"],
-        [sys.executable, "-B", "-m", "unittest", "control_center.tests.test_control_center",
-         "control_center.tests.test_launcher_acceptance", "control_center.tests.test_power_routes"],
+        [sys.executable, "-B", "-m", "unittest", *dashboard_tests],
         [sys.executable, "-B", "-m", "control_center.server", "--doctor", "--port", "0"],
     ]
     for command in commands:
