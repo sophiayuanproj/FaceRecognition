@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "power-boundary-v1",
+  "title": "Measured power boundary v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "target_board",
+    "supply_source",
+    "boundary_description",
+    "meter_identity",
+    "physical_evidence",
+    "qualified"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "power-boundary-1"
+    },
+    "target_board": {
+      "type": "string"
+    },
+    "supply_source": {
+      "type": "string"
+    },
+    "boundary_description": {
+      "type": "string"
+    },
+    "meter_identity": {
+      "type": "object",
+      "required": [
+        "model",
+        "firmware",
+        "vid_pid"
+      ]
+    },
+    "physical_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "raw_packet_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "qualified": {
+      "type": "boolean"
+    },
+    "sample_timing_basis": {
+      "type": "string"
+    },
+    "energy_integration_allowed": {
+      "type": "boolean"
+    }
+  }
+}

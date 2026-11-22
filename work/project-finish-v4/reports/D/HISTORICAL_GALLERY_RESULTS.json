@@ -1,0 +1,4963 @@
+{
+  "audit_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/D/D_HISTORICAL_CONTROL_AUDIT.json",
+  "audit_sha256": "80e2fcb9b195c82f5a636e3b533b29f103f5e64a417617424426d431a7339f99",
+  "created_utc": "2026-10-29T22:07:01+00:00",
+  "final_role_opened": false,
+  "methods": {
+    "custom_base_float_quality": {
+      "development_macro_utility_mean": 0.5396666666666666,
+      "development_macro_utility_sd": 0.025016044234366916,
+      "known_identification_mean": 0.5439999999999999,
+      "root_count": 10,
+      "roots": [
+        {
+          "development": {
+            "development_macro_utility": 0.5383333333333333,
+            "known_macro_correct_acceptance": 0.16,
+            "known_macro_coverage": 0.16,
+            "known_macro_identification": 0.5,
+            "known_macro_rejection": 0.8400000000000001,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.6,
+                "coverage": 0.6,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.4,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8726798892021179,
+            "unknown_false_identification_rate": 0.08333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.08333333333333331,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9166666666666666
+          },
+          "root_seed": 20261022,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5183333333333333,
+            "known_macro_correct_acceptance": 0.06000000000000001,
+            "known_macro_coverage": 0.08,
+            "known_macro_identification": 0.6799999999999999,
+            "known_macro_rejection": 0.9199999999999999,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9279786348342896,
+            "unknown_false_identification_rate": 0.023333333333333334,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.02333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9766666666666667
+          },
+          "root_seed": 20261023,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5066666666666667,
+            "known_macro_correct_acceptance": 0.06000000000000001,
+            "known_macro_coverage": 0.1,
+            "known_macro_identification": 0.5800000000000001,
+            "known_macro_rejection": 0.9,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9103416800498962,
+            "unknown_false_identification_rate": 0.04666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9533333333333334
+          },
+          "root_seed": 20261024,
+          "selected_template_count": 10
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5533333333333333,
+            "known_macro_correct_acceptance": 0.16,
+            "known_macro_coverage": 0.18,
+            "known_macro_identification": 0.45999999999999996,
+            "known_macro_rejection": 0.82,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9033172726631165,
+            "unknown_false_identification_rate": 0.05333333333333334,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9466666666666667
+          },
+          "root_seed": 20261025,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5366666666666666,
+            "known_macro_correct_acceptance": 0.13999999999999999,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.64,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8855940103530884,
+            "unknown_false_identification_rate": 0.06666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06666666666666667,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9333333333333333
+          },
+          "root_seed": 20261026,
+          "selected_template_count": 10
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5616666666666666,
+            "known_macro_correct_acceptance": 0.2,
+            "known_macro_coverage": 0.2,
+            "known_macro_identification": 0.5599999999999999,
+            "known_macro_rejection": 0.8,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8641379475593567,
+            "unknown_false_identification_rate": 0.07666666666666666,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.07666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9233333333333333
+          },
+          "root_seed": 20261032,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.525,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.36,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.06,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.3,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.3
+              }
+            },
+            "threshold": 0.863175630569458,
+            "unknown_false_identification_rate": 0.03,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.029999999999999995,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.97
+          },
+          "root_seed": 20261033,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5866666666666667,
+            "known_macro_correct_acceptance": 0.22000000000000003,
+            "known_macro_coverage": 0.22000000000000003,
+            "known_macro_identification": 0.6,
+            "known_macro_rejection": 0.78,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9217900037765503,
+            "unknown_false_identification_rate": 0.04666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9533333333333334
+          },
+          "root_seed": 20261034,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5133333333333333,
+            "known_macro_correct_acceptance": 0.06000000000000001,
+            "known_macro_coverage": 0.1,
+            "known_macro_identification": 0.33999999999999997,
+            "known_macro_rejection": 0.9,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              }
+            },
+            "threshold": 0.9252257943153381,
+            "unknown_false_identification_rate": 0.03333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.03333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9666666666666667
+          },
+          "root_seed": 20261035,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5566666666666666,
+            "known_macro_correct_acceptance": 0.2,
+            "known_macro_coverage": 0.22000000000000003,
+            "known_macro_identification": 0.72,
+            "known_macro_rejection": 0.78,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8813169598579407,
+            "unknown_false_identification_rate": 0.08666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.08666666666666668,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9133333333333333
+          },
+          "root_seed": 20261036,
+          "selected_template_count": 60
+        }
+      ],
+      "unknown_fpir_mean": 0.05466666666666666
+    },
+    "custom_base_float_uniform": {
+      "development_macro_utility_mean": 0.5413333333333333,
+      "development_macro_utility_sd": 0.01940153996687943,
+      "known_identification_mean": 0.49800000000000005,
+      "root_count": 10,
+      "roots": [
+        {
+          "development": {
+            "development_macro_utility": 0.5366666666666666,
+            "known_macro_correct_acceptance": 0.12,
+            "known_macro_coverage": 0.12,
+            "known_macro_identification": 0.36,
+            "known_macro_rejection": 0.8800000000000001,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9031988978385925,
+            "unknown_false_identification_rate": 0.04666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9533333333333334
+          },
+          "root_seed": 20261022,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5266666666666666,
+            "known_macro_correct_acceptance": 0.12,
+            "known_macro_coverage": 0.18,
+            "known_macro_identification": 0.6,
+            "known_macro_rejection": 0.82,
+            "known_macro_wrong_known_identity": 0.06000000000000001,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9113719463348389,
+            "unknown_false_identification_rate": 0.06666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06666666666666665,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9333333333333333
+          },
+          "root_seed": 20261023,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5283333333333333,
+            "known_macro_correct_acceptance": 0.06000000000000001,
+            "known_macro_coverage": 0.06000000000000001,
+            "known_macro_identification": 0.28,
+            "known_macro_rejection": 0.9400000000000001,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.923582136631012,
+            "unknown_false_identification_rate": 0.0033333333333333335,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.003333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9966666666666667
+          },
+          "root_seed": 20261024,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5316666666666667,
+            "known_macro_correct_acceptance": 0.12,
+            "known_macro_coverage": 0.16,
+            "known_macro_identification": 0.4800000000000001,
+            "known_macro_rejection": 0.8400000000000001,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              }
+            },
+            "threshold": 0.9201363325119019,
+            "unknown_false_identification_rate": 0.056666666666666664,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.056666666666666664,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9433333333333334
+          },
+          "root_seed": 20261025,
+          "selected_template_count": 5
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5533333333333333,
+            "known_macro_correct_acceptance": 0.18,
+            "known_macro_coverage": 0.22000000000000003,
+            "known_macro_identification": 0.6,
+            "known_macro_rejection": 0.78,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.4,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.8870823383331299,
+            "unknown_false_identification_rate": 0.07333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.07333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9266666666666666
+          },
+          "root_seed": 20261026,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.54,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.12,
+            "known_macro_identification": 0.54,
+            "known_macro_rejection": 0.8800000000000001,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9040632843971252,
+            "unknown_false_identification_rate": 0.02,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.02,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.98
+          },
+          "root_seed": 20261032,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.53,
+            "known_macro_correct_acceptance": 0.12000000000000002,
+            "known_macro_coverage": 0.12000000000000002,
+            "known_macro_identification": 0.5800000000000001,
+            "known_macro_rejection": 0.8799999999999999,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9037750959396362,
+            "unknown_false_identification_rate": 0.06,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.94
+          },
+          "root_seed": 20261033,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5866666666666667,
+            "known_macro_correct_acceptance": 0.22000000000000003,
+            "known_macro_coverage": 0.22000000000000003,
+            "known_macro_identification": 0.6,
+            "known_macro_rejection": 0.78,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9217900037765503,
+            "unknown_false_identification_rate": 0.04666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9533333333333334
+          },
+          "root_seed": 20261034,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5233333333333333,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.16,
+            "known_macro_identification": 0.21999999999999997,
+            "known_macro_rejection": 0.8400000000000001,
+            "known_macro_wrong_known_identity": 0.08,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.4,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9398013353347778,
+            "unknown_false_identification_rate": 0.03333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.03333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9666666666666667
+          },
+          "root_seed": 20261035,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5566666666666666,
+            "known_macro_correct_acceptance": 0.2,
+            "known_macro_coverage": 0.22000000000000003,
+            "known_macro_identification": 0.72,
+            "known_macro_rejection": 0.78,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8813169598579407,
+            "unknown_false_identification_rate": 0.08666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.08666666666666668,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9133333333333333
+          },
+          "root_seed": 20261036,
+          "selected_template_count": 60
+        }
+      ],
+      "unknown_fpir_mean": 0.04933333333333333
+    },
+    "custom_base_int8_quality": {
+      "development_macro_utility_mean": 0.5421666666666665,
+      "development_macro_utility_sd": 0.02688624872254159,
+      "known_identification_mean": 0.602,
+      "root_count": 10,
+      "roots": [
+        {
+          "development": {
+            "development_macro_utility": 0.5366666666666666,
+            "known_macro_correct_acceptance": 0.16,
+            "known_macro_coverage": 0.16,
+            "known_macro_identification": 0.66,
+            "known_macro_rejection": 0.8400000000000001,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8955746293067932,
+            "unknown_false_identification_rate": 0.08666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.08666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9133333333333333
+          },
+          "root_seed": 20261022,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5166666666666667,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.12000000000000002,
+            "known_macro_identification": 0.7,
+            "known_macro_rejection": 0.8799999999999999,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9154265522956848,
+            "unknown_false_identification_rate": 0.04666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9533333333333334
+          },
+          "root_seed": 20261023,
+          "selected_template_count": 10
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5066666666666667,
+            "known_macro_correct_acceptance": 0.06000000000000001,
+            "known_macro_coverage": 0.1,
+            "known_macro_identification": 0.6000000000000001,
+            "known_macro_rejection": 0.9,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9107915163040161,
+            "unknown_false_identification_rate": 0.04666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9533333333333334
+          },
+          "root_seed": 20261024,
+          "selected_template_count": 10
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5549999999999999,
+            "known_macro_correct_acceptance": 0.16,
+            "known_macro_coverage": 0.18,
+            "known_macro_identification": 0.45999999999999996,
+            "known_macro_rejection": 0.82,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9037957191467285,
+            "unknown_false_identification_rate": 0.05,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.95
+          },
+          "root_seed": 20261025,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.57,
+            "known_macro_correct_acceptance": 0.2,
+            "known_macro_coverage": 0.2,
+            "known_macro_identification": 0.68,
+            "known_macro_rejection": 0.8,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8894370198249817,
+            "unknown_false_identification_rate": 0.06,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.94
+          },
+          "root_seed": 20261026,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5633333333333334,
+            "known_macro_correct_acceptance": 0.2,
+            "known_macro_coverage": 0.2,
+            "known_macro_identification": 0.5799999999999998,
+            "known_macro_rejection": 0.8,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8677989840507507,
+            "unknown_false_identification_rate": 0.07333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.07333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9266666666666666
+          },
+          "root_seed": 20261032,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5233333333333333,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.36,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.06,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.3,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.3
+              }
+            },
+            "threshold": 0.8610021471977234,
+            "unknown_false_identification_rate": 0.03333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.03333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9666666666666667
+          },
+          "root_seed": 20261033,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.575,
+            "known_macro_correct_acceptance": 0.2,
+            "known_macro_coverage": 0.24000000000000005,
+            "known_macro_identification": 0.5799999999999998,
+            "known_macro_rejection": 0.76,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9211435914039612,
+            "unknown_false_identification_rate": 0.05,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.95
+          },
+          "root_seed": 20261034,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5083333333333333,
+            "known_macro_correct_acceptance": 0.06000000000000001,
+            "known_macro_coverage": 0.06000000000000001,
+            "known_macro_identification": 0.7,
+            "known_macro_rejection": 0.9400000000000001,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9431048631668091,
+            "unknown_false_identification_rate": 0.043333333333333335,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04333333333333334,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9566666666666667
+          },
+          "root_seed": 20261035,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5666666666666667,
+            "known_macro_correct_acceptance": 0.2,
+            "known_macro_coverage": 0.22000000000000003,
+            "known_macro_identification": 0.7,
+            "known_macro_rejection": 0.78,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8758866190910339,
+            "unknown_false_identification_rate": 0.06666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06666666666666667,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9333333333333333
+          },
+          "root_seed": 20261036,
+          "selected_template_count": 10
+        }
+      ],
+      "unknown_fpir_mean": 0.05566666666666666
+    },
+    "custom_base_int8_uniform": {
+      "development_macro_utility_mean": 0.5428333333333335,
+      "development_macro_utility_sd": 0.019389605208034948,
+      "known_identification_mean": 0.526,
+      "root_count": 10,
+      "roots": [
+        {
+          "development": {
+            "development_macro_utility": 0.5383333333333333,
+            "known_macro_correct_acceptance": 0.12,
+            "known_macro_coverage": 0.12,
+            "known_macro_identification": 0.36,
+            "known_macro_rejection": 0.8800000000000001,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9036195278167725,
+            "unknown_false_identification_rate": 0.043333333333333335,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9566666666666667
+          },
+          "root_seed": 20261022,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.525,
+            "known_macro_correct_acceptance": 0.12,
+            "known_macro_coverage": 0.18,
+            "known_macro_identification": 0.6,
+            "known_macro_rejection": 0.82,
+            "known_macro_wrong_known_identity": 0.06000000000000001,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9134321808815002,
+            "unknown_false_identification_rate": 0.07,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.93
+          },
+          "root_seed": 20261023,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.53,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.12000000000000002,
+            "known_macro_identification": 0.5199999999999999,
+            "known_macro_rejection": 0.8799999999999999,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9199916124343872,
+            "unknown_false_identification_rate": 0.04,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.96
+          },
+          "root_seed": 20261024,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5283333333333333,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.16,
+            "known_macro_identification": 0.45999999999999996,
+            "known_macro_rejection": 0.8400000000000001,
+            "known_macro_wrong_known_identity": 0.06000000000000001,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.3,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9258174896240234,
+            "unknown_false_identification_rate": 0.043333333333333335,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9566666666666667
+          },
+          "root_seed": 20261025,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.57,
+            "known_macro_correct_acceptance": 0.2,
+            "known_macro_coverage": 0.2,
+            "known_macro_identification": 0.68,
+            "known_macro_rejection": 0.8,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8894370198249817,
+            "unknown_false_identification_rate": 0.06,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.94
+          },
+          "root_seed": 20261026,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5616666666666666,
+            "known_macro_correct_acceptance": 0.13999999999999999,
+            "known_macro_coverage": 0.18,
+            "known_macro_identification": 0.54,
+            "known_macro_rejection": 0.82,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.6,
+                "coverage": 0.6,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.4,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9016650915145874,
+            "unknown_false_identification_rate": 0.016666666666666666,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.016666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9833333333333333
+          },
+          "root_seed": 20261032,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5283333333333333,
+            "known_macro_correct_acceptance": 0.12000000000000002,
+            "known_macro_coverage": 0.12000000000000002,
+            "known_macro_identification": 0.5800000000000001,
+            "known_macro_rejection": 0.8799999999999999,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9021927118301392,
+            "unknown_false_identification_rate": 0.06333333333333334,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06333333333333332,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9366666666666666
+          },
+          "root_seed": 20261033,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.575,
+            "known_macro_correct_acceptance": 0.2,
+            "known_macro_coverage": 0.24000000000000005,
+            "known_macro_identification": 0.5799999999999998,
+            "known_macro_rejection": 0.76,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9211435914039612,
+            "unknown_false_identification_rate": 0.05,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.95
+          },
+          "root_seed": 20261034,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.525,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.16,
+            "known_macro_identification": 0.21999999999999997,
+            "known_macro_rejection": 0.8400000000000001,
+            "known_macro_wrong_known_identity": 0.08,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.4,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9366611242294312,
+            "unknown_false_identification_rate": 0.03,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.03,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.97
+          },
+          "root_seed": 20261035,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5466666666666666,
+            "known_macro_correct_acceptance": 0.18,
+            "known_macro_coverage": 0.2,
+            "known_macro_identification": 0.72,
+            "known_macro_rejection": 0.8,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8834605813026428,
+            "unknown_false_identification_rate": 0.08666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.08666666666666668,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9133333333333333
+          },
+          "root_seed": 20261036,
+          "selected_template_count": 60
+        }
+      ],
+      "unknown_fpir_mean": 0.05033333333333334
+    },
+    "custom_tiny_float_quality": {
+      "development_macro_utility_mean": 0.5216666666666667,
+      "development_macro_utility_sd": 0.011811273125260733,
+      "known_identification_mean": 0.488,
+      "root_count": 10,
+      "roots": [
+        {
+          "development": {
+            "development_macro_utility": 0.5266666666666667,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.12,
+            "known_macro_identification": 0.4,
+            "known_macro_rejection": 0.8800000000000001,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9417319297790527,
+            "unknown_false_identification_rate": 0.02666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.026666666666666665,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9733333333333334
+          },
+          "root_seed": 20261022,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5216666666666667,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.12000000000000002,
+            "known_macro_identification": 0.62,
+            "known_macro_rejection": 0.8799999999999999,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9135399460792542,
+            "unknown_false_identification_rate": 0.056666666666666664,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05666666666666667,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9433333333333334
+          },
+          "root_seed": 20261023,
+          "selected_template_count": 10
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.515,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.48,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.5,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9208158254623413,
+            "unknown_false_identification_rate": 0.07,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.93
+          },
+          "root_seed": 20261024,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.4983333333333333,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.22000000000000003,
+            "known_macro_identification": 0.4,
+            "known_macro_rejection": 0.78,
+            "known_macro_wrong_known_identity": 0.13999999999999999,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.5,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.5
+              }
+            },
+            "threshold": 0.9152395129203796,
+            "unknown_false_identification_rate": 0.08333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.08333333333333334,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9166666666666666
+          },
+          "root_seed": 20261025,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5233333333333333,
+            "known_macro_correct_acceptance": 0.12000000000000002,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.62,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9254229068756104,
+            "unknown_false_identification_rate": 0.07333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.07333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9266666666666666
+          },
+          "root_seed": 20261026,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5283333333333333,
+            "known_macro_correct_acceptance": 0.12000000000000002,
+            "known_macro_coverage": 0.12000000000000002,
+            "known_macro_identification": 0.43999999999999995,
+            "known_macro_rejection": 0.8799999999999999,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8924960494041443,
+            "unknown_false_identification_rate": 0.06333333333333334,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06333333333333332,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9366666666666666
+          },
+          "root_seed": 20261032,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5383333333333333,
+            "known_macro_correct_acceptance": 0.13999999999999999,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.54,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9195563793182373,
+            "unknown_false_identification_rate": 0.06333333333333334,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06333333333333332,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9366666666666666
+          },
+          "root_seed": 20261033,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.52,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.4600000000000001,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.936901330947876,
+            "unknown_false_identification_rate": 0.06,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.94
+          },
+          "root_seed": 20261034,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.51,
+            "known_macro_correct_acceptance": 0.06000000000000001,
+            "known_macro_coverage": 0.1,
+            "known_macro_identification": 0.27999999999999997,
+            "known_macro_rejection": 0.9,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              }
+            },
+            "threshold": 0.8943811058998108,
+            "unknown_false_identification_rate": 0.04,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.96
+          },
+          "root_seed": 20261035,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.535,
+            "known_macro_correct_acceptance": 0.13999999999999999,
+            "known_macro_coverage": 0.18000000000000002,
+            "known_macro_identification": 0.6399999999999999,
+            "known_macro_rejection": 0.82,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.3,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9071747660636902,
+            "unknown_false_identification_rate": 0.07,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.93
+          },
+          "root_seed": 20261036,
+          "selected_template_count": 60
+        }
+      ],
+      "unknown_fpir_mean": 0.06066666666666667
+    },
+    "custom_tiny_float_uniform": {
+      "development_macro_utility_mean": 0.5215,
+      "development_macro_utility_sd": 0.012157657750377296,
+      "known_identification_mean": 0.572,
+      "root_count": 10,
+      "roots": [
+        {
+          "development": {
+            "development_macro_utility": 0.505,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.6199999999999999,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.06000000000000001,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.3,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9356042742729187,
+            "unknown_false_identification_rate": 0.07,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.93
+          },
+          "root_seed": 20261022,
+          "selected_template_count": 5
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5316666666666667,
+            "known_macro_correct_acceptance": 0.12000000000000002,
+            "known_macro_coverage": 0.16,
+            "known_macro_identification": 0.6599999999999999,
+            "known_macro_rejection": 0.8400000000000001,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.5,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.923134446144104,
+            "unknown_false_identification_rate": 0.056666666666666664,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.056666666666666664,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9433333333333334
+          },
+          "root_seed": 20261023,
+          "selected_template_count": 10
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5266666666666667,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.08,
+            "known_macro_identification": 0.38,
+            "known_macro_rejection": 0.9200000000000002,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9336948990821838,
+            "unknown_false_identification_rate": 0.02666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.026666666666666665,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9733333333333334
+          },
+          "root_seed": 20261024,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.505,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.08,
+            "known_macro_identification": 0.4,
+            "known_macro_rejection": 0.9199999999999999,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9191962480545044,
+            "unknown_false_identification_rate": 0.07,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.93
+          },
+          "root_seed": 20261025,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5233333333333333,
+            "known_macro_correct_acceptance": 0.12000000000000002,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.62,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9254229068756104,
+            "unknown_false_identification_rate": 0.07333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.07333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9266666666666666
+          },
+          "root_seed": 20261026,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.515,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.1,
+            "known_macro_identification": 0.5599999999999999,
+            "known_macro_rejection": 0.9,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9054543972015381,
+            "unknown_false_identification_rate": 0.05,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.95
+          },
+          "root_seed": 20261032,
+          "selected_template_count": 10
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.53,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.14,
+            "known_macro_identification": 0.54,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.4,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9324628114700317,
+            "unknown_false_identification_rate": 0.04,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.039999999999999994,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.96
+          },
+          "root_seed": 20261033,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.535,
+            "known_macro_correct_acceptance": 0.12000000000000002,
+            "known_macro_coverage": 0.16,
+            "known_macro_identification": 0.72,
+            "known_macro_rejection": 0.8400000000000001,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.5,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9566327929496765,
+            "unknown_false_identification_rate": 0.05,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.95
+          },
+          "root_seed": 20261034,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5083333333333333,
+            "known_macro_correct_acceptance": 0.02,
+            "known_macro_coverage": 0.02,
+            "known_macro_identification": 0.58,
+            "known_macro_rejection": 0.9800000000000001,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9385989308357239,
+            "unknown_false_identification_rate": 0.0033333333333333335,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.003333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9966666666666667
+          },
+          "root_seed": 20261035,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.535,
+            "known_macro_correct_acceptance": 0.13999999999999999,
+            "known_macro_coverage": 0.18000000000000002,
+            "known_macro_identification": 0.6399999999999999,
+            "known_macro_rejection": 0.82,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.3,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9071747660636902,
+            "unknown_false_identification_rate": 0.07,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.93
+          },
+          "root_seed": 20261036,
+          "selected_template_count": 60
+        }
+      ],
+      "unknown_fpir_mean": 0.051000000000000004
+    },
+    "custom_tiny_int8_quality": {
+      "development_macro_utility_mean": 0.5185000000000001,
+      "development_macro_utility_sd": 0.011123604087760157,
+      "known_identification_mean": 0.518,
+      "root_count": 10,
+      "roots": [
+        {
+          "development": {
+            "development_macro_utility": 0.52,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.12,
+            "known_macro_identification": 0.4,
+            "known_macro_rejection": 0.8800000000000001,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9381841421127319,
+            "unknown_false_identification_rate": 0.04,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.96
+          },
+          "root_seed": 20261022,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5183333333333333,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.1,
+            "known_macro_identification": 0.62,
+            "known_macro_rejection": 0.9,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9155534505844116,
+            "unknown_false_identification_rate": 0.043333333333333335,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9566666666666667
+          },
+          "root_seed": 20261023,
+          "selected_template_count": 10
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5166666666666667,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.48,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.5,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9205824732780457,
+            "unknown_false_identification_rate": 0.06666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06666666666666667,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9333333333333333
+          },
+          "root_seed": 20261024,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.1,
+            "known_macro_identification": 0.4800000000000001,
+            "known_macro_rejection": 0.9,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9099420309066772,
+            "unknown_false_identification_rate": 0.1,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.09999999999999998,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9
+          },
+          "root_seed": 20261025,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.52,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.12000000000000002,
+            "known_macro_identification": 0.6,
+            "known_macro_rejection": 0.8799999999999999,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.927654504776001,
+            "unknown_false_identification_rate": 0.06,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.94
+          },
+          "root_seed": 20261026,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.52,
+            "known_macro_correct_acceptance": 0.12000000000000002,
+            "known_macro_coverage": 0.12000000000000002,
+            "known_macro_identification": 0.43999999999999995,
+            "known_macro_rejection": 0.8799999999999999,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.4,
+                "coverage": 0.4,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.8850464820861816,
+            "unknown_false_identification_rate": 0.08,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.08,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.92
+          },
+          "root_seed": 20261032,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5399999999999999,
+            "known_macro_correct_acceptance": 0.13999999999999999,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.52,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.920090913772583,
+            "unknown_false_identification_rate": 0.06,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.94
+          },
+          "root_seed": 20261033,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5133333333333333,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.4600000000000001,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.5,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.5,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9308930039405823,
+            "unknown_false_identification_rate": 0.07333333333333333,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.07333333333333332,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9266666666666666
+          },
+          "root_seed": 20261034,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5066666666666666,
+            "known_macro_correct_acceptance": 0.02,
+            "known_macro_coverage": 0.02,
+            "known_macro_identification": 0.56,
+            "known_macro_rejection": 0.9800000000000001,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9375206232070923,
+            "unknown_false_identification_rate": 0.006666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.006666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9933333333333333
+          },
+          "root_seed": 20261035,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.53,
+            "known_macro_correct_acceptance": 0.12,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.62,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9096688628196716,
+            "unknown_false_identification_rate": 0.06,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.94
+          },
+          "root_seed": 20261036,
+          "selected_template_count": 60
+        }
+      ],
+      "unknown_fpir_mean": 0.05900000000000001
+    },
+    "custom_tiny_int8_uniform": {
+      "development_macro_utility_mean": 0.5225000000000001,
+      "development_macro_utility_sd": 0.01429948630692639,
+      "known_identification_mean": 0.54,
+      "root_count": 10,
+      "roots": [
+        {
+          "development": {
+            "development_macro_utility": 0.505,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.6,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.06000000000000001,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.2,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.2
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.3,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.937797486782074,
+            "unknown_false_identification_rate": 0.07,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.06999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.93
+          },
+          "root_seed": 20261022,
+          "selected_template_count": 5
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5366666666666667,
+            "known_macro_correct_acceptance": 0.12000000000000002,
+            "known_macro_coverage": 0.12000000000000002,
+            "known_macro_identification": 0.5800000000000001,
+            "known_macro_rejection": 0.8800000000000001,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9319003224372864,
+            "unknown_false_identification_rate": 0.04666666666666667,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.04666666666666666,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9533333333333334
+          },
+          "root_seed": 20261023,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.525,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.08,
+            "known_macro_identification": 0.5199999999999999,
+            "known_macro_rejection": 0.9199999999999999,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9454503655433655,
+            "unknown_false_identification_rate": 0.03,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.03,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.97
+          },
+          "root_seed": 20261024,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5,
+            "known_macro_correct_acceptance": 0.08,
+            "known_macro_coverage": 0.1,
+            "known_macro_identification": 0.4600000000000001,
+            "known_macro_rejection": 0.9,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9176464080810547,
+            "unknown_false_identification_rate": 0.08,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.08,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.92
+          },
+          "root_seed": 20261025,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5216666666666667,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.1,
+            "known_macro_identification": 0.6399999999999999,
+            "known_macro_rejection": 0.9,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9366282224655151,
+            "unknown_false_identification_rate": 0.056666666666666664,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.056666666666666664,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9433333333333334
+          },
+          "root_seed": 20261026,
+          "selected_template_count": 10
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5233333333333333,
+            "known_macro_correct_acceptance": 0.06000000000000001,
+            "known_macro_coverage": 0.08,
+            "known_macro_identification": 0.24,
+            "known_macro_rejection": 0.9199999999999999,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.6,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.0,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9151750206947327,
+            "unknown_false_identification_rate": 0.013333333333333334,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.013333333333333332,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9866666666666667
+          },
+          "root_seed": 20261032,
+          "selected_template_count": 1
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.53,
+            "known_macro_correct_acceptance": 0.1,
+            "known_macro_coverage": 0.14,
+            "known_macro_identification": 0.58,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.4,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.6,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9318024516105652,
+            "unknown_false_identification_rate": 0.04,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.039999999999999994,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.96
+          },
+          "root_seed": 20261033,
+          "selected_template_count": 60
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5449999999999999,
+            "known_macro_correct_acceptance": 0.13999999999999999,
+            "known_macro_coverage": 0.18,
+            "known_macro_identification": 0.7,
+            "known_macro_rejection": 0.8200000000000001,
+            "known_macro_wrong_known_identity": 0.04,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.4,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.1,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.1
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.2,
+                "coverage": 0.2,
+                "identification_rate": 1.0,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.5,
+                "coverage": 0.6,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.4,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9531436562538147,
+            "unknown_false_identification_rate": 0.05,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.95
+          },
+          "root_seed": 20261034,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.5083333333333333,
+            "known_macro_correct_acceptance": 0.04,
+            "known_macro_coverage": 0.04,
+            "known_macro_identification": 0.45999999999999996,
+            "known_macro_rejection": 0.96,
+            "known_macro_wrong_known_identity": 0.0,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.1,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.3,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              }
+            },
+            "threshold": 0.9328511357307434,
+            "unknown_false_identification_rate": 0.023333333333333334,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.02333333333333333,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.9766666666666667
+          },
+          "root_seed": 20261035,
+          "selected_template_count": 3
+        },
+        {
+          "development": {
+            "development_macro_utility": 0.53,
+            "known_macro_correct_acceptance": 0.12,
+            "known_macro_coverage": 0.13999999999999999,
+            "known_macro_identification": 0.62,
+            "known_macro_rejection": 0.86,
+            "known_macro_wrong_known_identity": 0.02,
+            "known_n": 50,
+            "per_person": {
+              "K01": {
+                "correct_known_acceptance_rate": 0.0,
+                "coverage": 0.0,
+                "identification_rate": 0.5,
+                "n": 10,
+                "rejection_rate": 1.0,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K02": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.2,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K03": {
+                "correct_known_acceptance_rate": 0.3,
+                "coverage": 0.3,
+                "identification_rate": 0.7,
+                "n": 10,
+                "rejection_rate": 0.7,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K04": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.1,
+                "identification_rate": 0.8,
+                "n": 10,
+                "rejection_rate": 0.9,
+                "wrong_known_identity_rate": 0.0
+              },
+              "K05": {
+                "correct_known_acceptance_rate": 0.1,
+                "coverage": 0.2,
+                "identification_rate": 0.9,
+                "n": 10,
+                "rejection_rate": 0.8,
+                "wrong_known_identity_rate": 0.1
+              }
+            },
+            "threshold": 0.9096688628196716,
+            "unknown_false_identification_rate": 0.06,
+            "unknown_identity_count": 50,
+            "unknown_identity_macro_fpir": 0.05999999999999999,
+            "unknown_n": 300,
+            "unknown_rejection_rate": 0.94
+          },
+          "root_seed": 20261036,
+          "selected_template_count": 60
+        }
+      ],
+      "unknown_fpir_mean": 0.047
+    }
+  },
+  "result_count": 80,
+  "schema": "job-d-historical-gallery-development-1",
+  "status": "complete_verified"
+}

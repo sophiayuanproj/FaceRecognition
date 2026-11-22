@@ -1,0 +1,158 @@
+--- a/scripts/fnirsi_windows/nano_serial_capture_windows.py
++++ b/scripts/fnirsi_windows/nano_serial_capture_windows.py
+@@ -27,13 +27,15 @@
+ 
+ class NanoSerialCapture:
+     def __init__(self, run_dir, port_name, run_id, root_seed, *,
+-                 port_info=None, serial_module=None):
++                 dtr=False, rts=False, port_info=None, serial_module=None):
+         if root_seed is None or not 0 <= int(root_seed) <= 0xFFFFFFFF:
+             raise ValueError("simultaneous Nano logging requires a recorded 32-bit --root-seed")
+         self.run_dir = Path(run_dir)
+         self.run_id = str(run_id)
+         self.root_seed = int(root_seed)
+         self.port_name = str(port_name).upper()
++        self.dtr_requested = bool(dtr)
++        self.rts_requested = bool(rts)
+         if serial_module is None:
+             import serial as serial_module
+             import serial.tools.list_ports as list_ports
+@@ -64,13 +66,13 @@
+         self.serial.baudrate = 115200
+         self.serial.timeout = 0
+         self.serial.write_timeout = 1
+-        self.serial.dtr = False
+-        self.serial.rts = False
++        self.serial.dtr = self.dtr_requested
++        self.serial.rts = self.rts_requested
+         self._write_record("event", {"event": "serial_open_attempt",
+                                      "port": self.descriptor,
+                                      "baudrate": 115200,
+-                                     "dtr_requested_before_open": False,
+-                                     "rts_requested_before_open": False,
++                                     "dtr_requested_before_open": self.dtr_requested,
++                                     "rts_requested_before_open": self.rts_requested,
+                                      "dtr_may_reset_board": True,
+                                      "settling_rule": "record all lines; no sample time inferred"})
+         try:
+--- a/scripts/fnirsi_windows/log_fnirsi_windows.py
++++ b/scripts/fnirsi_windows/log_fnirsi_windows.py
+@@ -53,6 +53,8 @@
+     p.add_argument("--topology", default="not verified; record physical source and port path")
+     p.add_argument("--load-description", default="Nano inline; exact board/port and measured source path pending")
+     p.add_argument("--serial-port", help="freshly identified Nano COM port; meter's own COM interface is rejected")
++    p.add_argument("--serial-dtr", action="store_true", help="assert CDC DTR on the Nano COM port; may reset the board")
++    p.add_argument("--serial-rts", action="store_true", help="assert CDC RTS on the Nano COM port; may reset the board")
+     p.add_argument("--lock-timeout", type=float, default=0.0)
+     return p
+ 
+@@ -65,6 +67,8 @@
+         build_parser().error("reads need --interface-number and --duration in (0, 600]")
+     if args.serial_port and args.root_seed is None:
+         build_parser().error("--serial-port requires --root-seed for the recorded Nano workload")
++    if not args.serial_port and (args.serial_dtr or args.serial_rts):
++        build_parser().error("--serial-dtr/--serial-rts require --serial-port")
+     if args.root_seed is not None and not 0 <= args.root_seed <= 0xFFFFFFFF:
+         build_parser().error("--root-seed must be an unsigned 32-bit integer")
+     if args.lock_timeout < 0:
+@@ -151,14 +155,20 @@
+                     writer.event("nano_serial_open_attempt", {"port_requested": args.serial_port,
+                                                                "baudrate": 115200,
+                                                                "root_seed": args.root_seed})
+-                    nano_serial = NanoSerialCapture(out_dir, args.serial_port, run_id, args.root_seed)
++                    nano_serial = NanoSerialCapture(out_dir, args.serial_port, run_id, args.root_seed,
++                                                    dtr=args.serial_dtr, rts=args.serial_rts)
+                     writer.metadata["nano_serial_descriptor"] = nano_serial.descriptor
+                     writer.metadata["nano_serial_log_file"] = "nano_serial.jsonl"
+                     writer.metadata["nano_serial_baudrate"] = 115200
++                    writer.metadata["nano_serial_dtr_requested"] = bool(args.serial_dtr)
++                    writer.metadata["nano_serial_rts_requested"] = bool(args.serial_rts)
+                     writer.metadata["nano_serial_dtr_may_reset_board"] = True
+                     writer.write_metadata()
+                     writer.event("nano_serial_open", {"port": nano_serial.descriptor,
+-                                                       "log_file": "nano_serial.jsonl"})
++                                                       "log_file": "nano_serial.jsonl",
++                                                       "dtr_requested": bool(args.serial_dtr),
++                                                       "rts_requested": bool(args.serial_rts),
++                                                       "dtr_rts_may_reset_board": True})
+                 init_packet = bytes(make_command(0x81))
+                 init_written = device.write([0] + list(init_packet))
+                 writer.event("hid_command", {"command": "0x81", "payload_len": len(init_packet),
+--- a/scripts/fnirsi_windows/test_windows_integration.py
++++ b/scripts/fnirsi_windows/test_windows_integration.py
+@@ -18,7 +18,8 @@
+ import hid as fake_hid
+ 
+ 
+-def run_logger(project_root, logger, output_dir, run_id, generation, failure=None, with_serial=False, seed=None):
++def run_logger(project_root, logger, output_dir, run_id, generation, failure=None, with_serial=False, seed=None,
++               serial_dtr=False, serial_rts=False):
+     env = os.environ.copy()
+     env["PYTHONPATH"] = str(Path(__file__).resolve().parent / "fake_hid")
+     env["FAKE_HID_GENERATION"] = generation
+@@ -34,6 +35,10 @@
+                "--load-description", "deterministic fake HID report"]
+     if with_serial:
+         command += ["--serial-port", "COM7", "--root-seed", str(seed)]
++        if serial_dtr:
++            command.append("--serial-dtr")
++        if serial_rts:
++            command.append("--serial-rts")
+     proc = subprocess.run(
+         command, text=True, capture_output=True, env=env, timeout=15,
+         creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+@@ -103,6 +108,8 @@
+     capture = NanoSerialCapture(out, "COM7", "fake-%04d" % seed, seed,
+                                 port_info=port_info, serial_module=FakeSerialModule)
+     fake = FakeSerial.latest
++    if fake.dtr or fake.rts:
++        raise AssertionError("default DTR/RTS state was not low")
+     fake.feed("EV,10,4294967290,ready,auto-start enabled\n")
+     capture.poll()
+     fake.feed("EV,11,4294967295,seed_set,%d\n" % seed)
+@@ -125,8 +132,8 @@
+     fallback = NanoSerialCapture(fallback_dir, "COM7", "fallback-%04d" % seed, seed,
+                                  port_info=port_info, serial_module=FakeSerialModule)
+     fallback_fake = FakeSerial.latest
+-    if fallback_fake.dtr:
+-        raise AssertionError("DTR low was not requested before serial open")
++    if fallback_fake.dtr or fallback_fake.rts:
++        raise AssertionError("default DTR/RTS low state was not requested before serial open")
+     fallback.opened_monotonic_ns = time.monotonic_ns() - 2_000_000_000
+     fallback.poll()
+     fallback_fake.feed("EV,50,200,seed_set,%d\n" % seed)
+@@ -135,6 +142,24 @@
+     fallback_tx = b"".join(fallback_fake.tx).decode("ascii")
+     if "SEED %d\n" % seed not in fallback_tx or "START\n" not in fallback_tx:
+         raise AssertionError("banner-missed serial fallback did not set seed and start")
++
++    asserted_dir = root / "fake-serial-dtr-rts-asserted"
++    asserted_dir.mkdir()
++    asserted = NanoSerialCapture(asserted_dir, "COM7", "asserted-%04d" % seed, seed,
++                                 dtr=True, rts=True, port_info=port_info,
++                                 serial_module=FakeSerialModule)
++    asserted_fake = FakeSerial.latest
++    if not asserted_fake.dtr or not asserted_fake.rts:
++        raise AssertionError("requested CDC DTR/RTS high state was not applied")
++    asserted_fake.feed("EV,70,300,ready,auto-start enabled\n")
++    asserted.poll()
++    asserted_fake.feed("EV,71,301,seed_set,%d\n" % seed)
++    asserted.poll()
++    asserted.close("complete")
++    asserted_rows=[json.loads(line) for line in (asserted_dir/"nano_serial.jsonl").read_text(encoding="utf-8").splitlines()]
++    open_attempt=next(row for row in asserted_rows if row.get("event")=="serial_open_attempt")
++    if not open_attempt["dtr_requested_before_open"] or not open_attempt["rts_requested_before_open"]:
++        raise AssertionError("asserted CDC line state was not recorded")
+ 
+     meter_port = SimpleNamespace(device="COM3", description="USB Serial Device (COM3)",
+                                  hwid="USB VID:PID=2E3C:5558", vid=0x2E3C, pid=0x5558,
+@@ -176,7 +201,8 @@
+         second = root / "output with spaces λ" / "cycle-b"
+         first.parent.mkdir()
+         _, first_meta, _ = run_logger(project_root, logger, first, "fake-%04d-a" % seed,
+-                                      "a", with_serial=True, seed=seed)
++                                      "a", with_serial=True, seed=seed,
++                                      serial_dtr=True, serial_rts=True)
+         _, second_meta, _ = run_logger(project_root, logger, second, "fake-%04d-b" % seed, "b")
+         if first_meta.get("nano_serial_log_file") != "nano_serial.jsonl":
+             raise AssertionError("actual logger did not capture Nano serial in the same run")

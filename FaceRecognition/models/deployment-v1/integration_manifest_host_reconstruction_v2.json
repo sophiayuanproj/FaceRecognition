@@ -1,0 +1,72 @@
+{
+  "D_gallery_calibration": {
+    "final_role_accessed": false,
+    "historical_D_prototype_reproduced": false,
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/FaceRecognition/models/deployment-v1/embedding_gallery_calibration.json",
+    "sha256": "c949cc0fa02740dfd21afde4b5755be789e9d34e02526f904defd290d823a137",
+    "threshold": 0.9913240075111389
+  },
+  "created_utc": "2026-11-03",
+  "files": {
+    "detector_gray_fomo_int8.tflite": {
+      "bytes": 10160,
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/FaceRecognition/models/deployment-v1/detector_gray_fomo_int8.tflite",
+      "sha256": "4a484c9b56f806b4d13b603e66c3f7df60012ac74149e7a28655ddd497e5195c",
+      "source": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/models/trained/cheap_sepconv_16/seed-20261102/detector_full_int8.tflite"
+    },
+    "embedding_gallery_calibration.json": {
+      "bytes": 13253,
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/FaceRecognition/models/deployment-v1/embedding_gallery_calibration.json",
+      "sha256": "c949cc0fa02740dfd21afde4b5755be789e9d34e02526f904defd290d823a137"
+    },
+    "identity_classifier_a025_int8.tflite": {
+      "bytes": 327072,
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/FaceRecognition/models/deployment-v1/identity_classifier_a025_int8.tflite",
+      "sha256": "8be1d461ae1606fd7d6be4295049e7e47f0c7516323cb9f5889e7346b9b9ca55",
+      "source": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/E/roots/capacity_a025/seed-20261101/exports/full_int8_ptq_train_only_rep.tflite"
+    },
+    "identity_embedding_a010_int8.tflite": {
+      "bytes": 101576,
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/FaceRecognition/models/deployment-v1/identity_embedding_a010_int8.tflite",
+      "sha256": "0bf2bc5fb05b0c02d5d09217fe01834182578ebd92f9c001cd088c8ce5a9b0cd",
+      "source": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_int8.tflite"
+    }
+  },
+  "gallery": {
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/FaceRecognition/models/deployment-v1/fixed_roster_gallery.json",
+    "prototype_sha256": "3321865cbe2a949aa683b58cbf8050a011af45e7288ee7276fbd595d94a71b85",
+    "sha256": "be32c3bea2d5911990f6cfa886318bb9ee808df6303485e89997c80a7c229cae",
+    "status": "ready"
+  },
+  "labels": {
+    "class_order": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "OTHER"
+    ],
+    "classifier_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/FaceRecognition/models/deployment-v1/identity_classifier_a025_int8.txt",
+    "classifier_sha256": "ffe5362e8fe16d53526aa5f1342d1f0f7b3b4115f21022e3d5ca52b39ac562b7",
+    "detector_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/FaceRecognition/models/deployment-v1/detector_gray_fomo_int8.txt",
+    "detector_sha256": "4906796f240d09d35ca93217806fa4ecbb150f976f58dc1cde1bca45986bc18a"
+  },
+  "purpose": "Opt-in experimental host reconstruction from lossy preview JPEG; not a device release manifest. V2 binds the current workspace runtime config after verifying model input, crop, quality, and decision contracts; v1 remains unchanged.",
+  "runtime_config": {
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/FaceRecognition/firmware/runtime_config.json",
+    "sha256": "0f78b780c8af94a3ad9d74b80548bcbd559f2afe952c044da7248acfae9b58e2"
+  },
+  "schema": "host-reconstruction-artifacts-v2",
+  "scope": "host-only local diagnostic; no embedded deployment or qualified identity claim",
+  "source_receipts": {
+    "C": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/RESULT.json",
+    "D": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/D/RESULT.json",
+    "E": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/E/RESULT.json"
+  },
+  "supersedes_manifest": {
+    "path": "FaceRecognition/models/deployment-v1/integration_manifest_host_reconstruction_v1.json",
+    "reason": "v1 pinned an earlier runtime_config hash and failed closed after the current workspace config evolved; preserve v1 unchanged.",
+    "sha256": "a5ca149876943a58bafc7465ca726f3d42e995f5a4c2980752119f74506ccc05"
+  }
+}

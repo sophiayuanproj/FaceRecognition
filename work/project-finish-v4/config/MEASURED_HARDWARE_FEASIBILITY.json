@@ -1,0 +1,25 @@
+{
+  "schema": "measured-hardware-feasibility-policy-1",
+  "policy_id": "nicla-measured-feasibility-1",
+  "status": "prospective",
+  "device_specific_values": null,
+  "source": "Exact board readback and measured memory map from H; never infer from old caps or a Nano.",
+  "rules": [
+    "Record flash partitions, occupied bytes, model/ROMFS bytes and verified free bytes for exact firmware.",
+    "Measure runtime heap, tensor arena, frame buffers, stack and switching peaks separately.",
+    "Feasible only when artifact fits measured storage and peak RAM retains a 15% reserve of measured usable RAM.",
+    "Measure cold/warm load, end-to-end latency, camera behavior and failures on the real Nicla; MAC count is not a speed/energy result.",
+    "Use >=10 independently started paired blocks for energy contrasts after G/H."
+  ],
+  "reserve_fraction": 0.15,
+  "reserve_fraction_rationale": "Team-selected engineering headroom, not a device-capacity fact; freeze before model comparison.",
+  "historical_budget_analysis": {
+    "status": "retained_separately",
+    "inherited_caps": {
+      "model_bytes": 32768,
+      "working_memory_bytes": 65536,
+      "response_ms": 15
+    },
+    "interpretation": "Historical constrained-budget sensitivity only; not asserted as Nicla hardware limits."
+  }
+}

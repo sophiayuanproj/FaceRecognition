@@ -1,0 +1,485 @@
+#!/usr/bin/env python3
+"""Robust report-level steady-average diagnostic for FNIRSI HID captures.
+
+This computes steady-window averages from immutable 64-byte HID reports. It
+never assigns device sample times and does not integrate energy. The voltage
+range and MAD rule are explicit diagnostic filters, not calibration limits.
+"""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import hashlib
+import json
+import math
+import random
+import statistics
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+VOLTAGE_MIN_V = 4.75
+VOLTAGE_MAX_V = 5.25
+MAD_MULTIPLIER = 6.0
+MAD_NORMAL_SCALE = 1.4826
+LARGE_GAP_NS = 200_000_000
+BOOTSTRAP_SEEDS = tuple(range(7101, 7111))
+BOOTSTRAP_RESAMPLES_PER_SEED = 1000
+
+
+def parse_utc(value: str) -> datetime:
+    parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+    if parsed.tzinfo is None:
+        raise ValueError("timestamps must include a UTC offset")
+    return parsed.astimezone(timezone.utc)
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def report_center(samples: list[dict[str, Any]]) -> dict[str, float]:
+    """Return medians over the four co-received records; timestamps stay unknown."""
+    voltages = [float(sample["voltage_v"]) for sample in samples]
+    currents = [float(sample["current_a"]) for sample in samples]
+    powers = [v * i for v, i in zip(voltages, currents)]
+    return {
+        "voltage_center_v": statistics.median(voltages),
+        "current_center_a": statistics.median(currents),
+        "power_center_w": statistics.median(powers),
+        "voltage_sample_min_v": min(voltages),
+        "voltage_sample_max_v": max(voltages),
+        "current_sample_min_a": min(currents),
+        "current_sample_max_a": max(currents),
+    }
+
+
+def classify_report_centers(
+    rows: list[dict[str, Any]],
+    voltage_min_v: float = VOLTAGE_MIN_V,
+    voltage_max_v: float = VOLTAGE_MAX_V,
+    mad_multiplier: float = MAD_MULTIPLIER,
+) -> dict[str, Any]:
+    """Apply the documented per-report voltage guard and robust power screen."""
+    voltage_eligible = [
+        row for row in rows
+        if math.isfinite(row["voltage_center_v"])
+        and voltage_min_v <= row["voltage_center_v"] <= voltage_max_v
+        and math.isfinite(row["current_center_a"])
+        and math.isfinite(row["power_center_w"])
+    ]
+    if not voltage_eligible:
+        raise ValueError("no finite report centers remain inside the voltage guard")
+    power_values = [row["power_center_w"] for row in voltage_eligible]
+    power_median = statistics.median(power_values)
+    mad = statistics.median(abs(value - power_median) for value in power_values)
+    robust_sigma = MAD_NORMAL_SCALE * mad
+    threshold = mad_multiplier * robust_sigma
+    if mad == 0.0:
+        accepted_power = [value == power_median for value in power_values]
+    else:
+        accepted_power = [abs(value - power_median) <= threshold for value in power_values]
+
+    accepted_rows: list[dict[str, Any]] = []
+    power_rejected = 0
+    for row, keep_power in zip(voltage_eligible, accepted_power):
+        if keep_power:
+            row["accepted_for_average"] = True
+            row["rejection_reason"] = ""
+            accepted_rows.append(row)
+        else:
+            row["accepted_for_average"] = False
+            row["rejection_reason"] = "outside_6_scaled_MAD_power_screen"
+            power_rejected += 1
+
+    eligible_ids = {id(row) for row in voltage_eligible}
+    for row in rows:
+        if id(row) not in eligible_ids:
+            row["accepted_for_average"] = False
+            row["rejection_reason"] = "outside_provisional_report_median_voltage_guard"
+
+    return {
+        "voltage_eligible_rows": voltage_eligible,
+        "accepted_rows": accepted_rows,
+        "voltage_rejected_count": len(rows) - len(voltage_eligible),
+        "power_rejected_count": power_rejected,
+        "power_median_w_before_mad_screen": power_median,
+        "power_mad_w_before_mad_screen": mad,
+        "power_scaled_mad_sigma_w": robust_sigma,
+        "power_outlier_threshold_w": threshold,
+    }
+
+
+def circular_block_bootstrap_means(
+    values: list[float],
+    block_length: int,
+    seed: int,
+    resamples: int = BOOTSTRAP_RESAMPLES_PER_SEED,
+) -> list[float]:
+    """Circular moving-block bootstrap; blocks are in report-arrival order."""
+    if not values:
+        raise ValueError("cannot bootstrap an empty sequence")
+    if block_length < 1 or resamples < 1:
+        raise ValueError("block length and resample count must be positive")
+    rng = random.Random(seed)
+    count = len(values)
+    block_length = min(block_length, count)
+    output: list[float] = []
+    for _ in range(resamples):
+        draw: list[float] = []
+        while len(draw) < count:
+            start = rng.randrange(count)
+            take = min(block_length, count - len(draw))
+            draw.extend(values[(start + offset) % count] for offset in range(take))
+        output.append(statistics.fmean(draw))
+    return output
+
+
+def quantile(values: list[float], probability: float) -> float:
+    ordered = sorted(values)
+    if not ordered:
+        raise ValueError("quantile of empty sequence")
+    position = (len(ordered) - 1) * probability
+    lower = math.floor(position)
+    upper = math.ceil(position)
+    if lower == upper:
+        return ordered[lower]
+    fraction = position - lower
+    return ordered[lower] * (1.0 - fraction) + ordered[upper] * fraction
+
+
+def bootstrap_summary(values: list[float], block_length: int, approximate_duration_s: float | None) -> dict[str, Any]:
+    all_means: list[float] = []
+    per_seed = []
+    for seed in BOOTSTRAP_SEEDS:
+        means = circular_block_bootstrap_means(
+            values, block_length, seed, BOOTSTRAP_RESAMPLES_PER_SEED
+        )
+        all_means.extend(means)
+        per_seed.append({
+            "seed": seed,
+            "resamples": BOOTSTRAP_RESAMPLES_PER_SEED,
+            "mean_of_bootstrap_means": statistics.fmean(means),
+        })
+    return {
+        "method": "circular_moving_block_bootstrap_of_accepted_report_centers",
+        "block_length_reports": block_length,
+        "approximate_block_duration_s": approximate_duration_s,
+        "seeds": list(BOOTSTRAP_SEEDS),
+        "resamples_per_seed": BOOTSTRAP_RESAMPLES_PER_SEED,
+        "total_resamples": len(all_means),
+        "percentile_95_ci_w": [quantile(all_means, 0.025), quantile(all_means, 0.975)],
+        "interpretation": (
+            "Within-this-window conditional uncertainty only. It does not include "
+            "between-run variation, calibration uncertainty, unknown internal "
+            "sample timing, or uncertainty introduced by the diagnostic filters."
+        ),
+        "per_seed": per_seed,
+    }
+
+
+def read_capture(run_dir: Path, start: datetime, end: datetime, decoder: Any):
+    raw_path = run_dir / "raw_packets.jsonl"
+    metadata_path = run_dir / "run_metadata.json"
+    serial_path = run_dir / "nano_serial.jsonl"
+    if not raw_path.is_file() or not metadata_path.is_file():
+        raise FileNotFoundError("run directory must contain raw_packets.jsonl and run_metadata.json")
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8-sig"))
+    rows: list[dict[str, Any]] = []
+    counters = {
+        "raw_lines": 0,
+        "malformed_json_lines": 0,
+        "measurement_reports_in_window": 0,
+        "invalid_measurement_reports_in_window": 0,
+        "timeout_events_in_window": 0,
+        "duplicate_payload_reports_in_window": 0,
+    }
+    recent_payloads: set[str] = set()
+    with raw_path.open("r", encoding="utf-8-sig") as handle:
+        for line_number, line in enumerate(handle, start=1):
+            counters["raw_lines"] += 1
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                counters["malformed_json_lines"] += 1
+                continue
+            timestamp = record.get("host_receive_utc") or record.get("host_utc")
+            try:
+                received = parse_utc(timestamp) if timestamp else None
+            except (ValueError, TypeError):
+                received = None
+            in_window = received is not None and start <= received <= end
+            kind = record.get("record_type")
+            if in_window and kind in ("measurement_report", "invalid_measurement_report", "hid_invalid_report"):
+                counters["measurement_reports_in_window"] += 1
+                if kind != "measurement_report":
+                    counters["invalid_measurement_reports_in_window"] += 1
+            if in_window and (kind == "hid_read_timeout" or record.get("event") == "hid_read_timeout"):
+                counters["timeout_events_in_window"] += 1
+            if not in_window or kind != "measurement_report":
+                continue
+
+            payload_hex = record.get("raw_report_hex")
+            if not isinstance(payload_hex, str):
+                counters["invalid_measurement_reports_in_window"] += 1
+                continue
+            try:
+                payload = bytes.fromhex(payload_hex)
+                samples = decoder(payload)
+            except (ValueError, TypeError):
+                counters["invalid_measurement_reports_in_window"] += 1
+                continue
+            if record.get("crc_status") != "pass":
+                counters["invalid_measurement_reports_in_window"] += 1
+                continue
+            monotonic_ns = record.get("host_receive_monotonic_ns", record.get("host_monotonic_ns"))
+            if not isinstance(monotonic_ns, int):
+                monotonic_ns = None
+            center = report_center(samples)
+            duplicate = payload_hex in recent_payloads
+            recent_payloads.add(payload_hex)
+            counters["duplicate_payload_reports_in_window"] += int(duplicate)
+            rows.append({
+                "report_arrival_index": int(record.get("report_arrival_index", -1)),
+                "host_receive_utc": received.isoformat().replace("+00:00", "Z"),
+                "host_receive_monotonic_ns": monotonic_ns,
+                "raw_crc_status": record.get("crc_status"),
+                "report_center_duplicate_payload": duplicate,
+                **center,
+                "accepted_for_average": None,
+                "rejection_reason": "",
+            })
+
+    rows.sort(key=lambda row: (
+        row["host_receive_monotonic_ns"] is None,
+        row["host_receive_monotonic_ns"] if row["host_receive_monotonic_ns"] is not None else row["report_arrival_index"],
+    ))
+    serial_events = []
+    if serial_path.is_file():
+        with serial_path.open("r", encoding="utf-8-sig") as handle:
+            for line in handle:
+                try:
+                    event = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                timestamp = event.get("host_utc")
+                if event.get("record_type") == "event" and event.get("event") in (
+                    "serial_disconnect", "serial_reconnect_attempt", "nano_serial_close"
+                ):
+                    if timestamp:
+                        serial_events.append({"event": event.get("event"), "host_utc": timestamp})
+    return raw_path, metadata_path, metadata, serial_events, rows, counters
+
+
+def write_svg(path: Path, rows: list[dict[str, Any]], accepted_rows: list[dict[str, Any]]) -> None:
+    """Write a dependency-free diagnostic plot; x values are host report arrivals."""
+    width, height = 1100, 480
+    left, right, top, bottom = 80, 30, 35, 65
+    values = [row["power_center_w"] for row in rows]
+    lo = min(values)
+    hi = max(values)
+    pad = (hi - lo) * 0.05 if hi > lo else 0.01
+    lo -= pad
+    hi += pad
+    accepted_ids = {id(row) for row in accepted_rows}
+    xspan = max(1, len(rows) - 1)
+    yspan = max(1e-12, hi - lo)
+    plot_w = width - left - right
+    plot_h = height - top - bottom
+    points = []
+    for index, row in enumerate(rows):
+        x = left + plot_w * index / xspan
+        y = top + plot_h * (hi - row["power_center_w"]) / yspan
+        color = "#1b7f3a" if id(row) in accepted_ids else "#c0392b"
+        points.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="2.0" fill="{color}"/>')
+    accepted_values = [row["power_center_w"] for row in accepted_rows]
+    avg = statistics.fmean(accepted_values)
+    avg_y = top + plot_h * (hi - avg) / yspan
+    accepted_line = f'<line x1="{left}" y1="{avg_y:.2f}" x2="{width-right}" y2="{avg_y:.2f}" stroke="#155724" stroke-dasharray="7 5"/>'
+    svg = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+        '<rect width="100%" height="100%" fill="white"/>',
+        '<style>text{font-family:Segoe UI,Arial,sans-serif;fill:#222}.small{font-size:13px}.axis{stroke:#555;stroke-width:1}</style>',
+        '<text x="80" y="24" font-size="18">FNIRSI report-center power, diagnostic only</text>',
+        f'<line class="axis" x1="{left}" y1="{top}" x2="{left}" y2="{height-bottom}"/>',
+        f'<line class="axis" x1="{left}" y1="{height-bottom}" x2="{width-right}" y2="{height-bottom}"/>',
+        f'<text class="small" x="8" y="{top+6}">{hi:.4f} W</text>',
+        f'<text class="small" x="8" y="{height-bottom}">{lo:.4f} W</text>',
+        f'<text class="small" x="{left}" y="{height-25}">report arrival order (host receipt only)</text>',
+        f'<text class="small" x="{left+260}" y="{height-25}" fill="#1b7f3a">green: accepted report center</text>',
+        f'<text class="small" x="{left+500}" y="{height-25}" fill="#c0392b">red: excluded by stated filter</text>',
+        accepted_line,
+        *points,
+        f'<text class="small" x="{width-330}" y="{top+20}">accepted mean = {avg:.6f} W</text>',
+        '</svg>',
+    ]
+    path.write_text("\n".join(svg) + "\n", encoding="utf-8")
+
+
+def build_report(project_root: Path, run_dir: Path, start: datetime, end: datetime, bootstrap: bool) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    script_dir = project_root / "work" / "research-next" / "power" / "scripts"
+    if str(script_dir) not in sys.path:
+        sys.path.insert(0, str(script_dir))
+    try:
+        from fnirsi_protocol import decode_report
+    except ImportError as exc:
+        raise RuntimeError(f"cannot import inherited protocol decoder from {script_dir}: {exc}") from exc
+
+    raw_path, metadata_path, metadata, serial_events, rows, counters = read_capture(run_dir, start, end, decode_report)
+    if not rows:
+        raise ValueError("no CRC-valid reports fall inside the requested UTC window")
+    gate = classify_report_centers(rows)
+    accepted = gate["accepted_rows"]
+    if not accepted:
+        raise ValueError("no reports remain after the documented diagnostic filters")
+    arrivals = [row["host_receive_monotonic_ns"] for row in rows if row["host_receive_monotonic_ns"] is not None]
+    gaps_ns = [b - a for a, b in zip(arrivals, arrivals[1:]) if b >= a]
+    median_interval_ns = statistics.median(gaps_ns) if gaps_ns else None
+    large_gaps = [gap for gap in gaps_ns if gap > LARGE_GAP_NS]
+    bootstrap_block = max(1, round(1_000_000_000 / median_interval_ns)) if median_interval_ns else 1
+    accepted_values = [row["power_center_w"] for row in accepted]
+    accepted_means = {
+        "voltage_v": statistics.fmean(row["voltage_center_v"] for row in accepted),
+        "current_a": statistics.fmean(row["current_center_a"] for row in accepted),
+        "power_w": statistics.fmean(accepted_values),
+    }
+    accepted_medians = {
+        "voltage_v": statistics.median(row["voltage_center_v"] for row in accepted),
+        "current_a": statistics.median(row["current_center_a"] for row in accepted),
+        "power_w": statistics.median(accepted_values),
+    }
+    bootstrap_result = bootstrap_summary(accepted_values, bootstrap_block, (bootstrap_block * median_interval_ns / 1_000_000_000) if median_interval_ns is not None else None) if bootstrap else None
+
+    report = {
+        "schema_version": "fnirsi_steady_average_diagnostic_1",
+        "status": "diagnostic_steady_average_only",
+        "energy_claim_valid": False,
+        "run_id": metadata.get("run_id"),
+        "input": {
+            "run_directory": str(run_dir),
+            "raw_packet_file": str(raw_path.relative_to(project_root)),
+            "metadata_file": str(metadata_path.relative_to(project_root)),
+            "raw_packets_sha256": sha256_file(raw_path),
+            "run_metadata_sha256": sha256_file(metadata_path),
+            "protocol_source": str((project_root / "work/research-next/power/scripts/fnirsi_protocol.py").relative_to(project_root)),
+            "protocol_source_sha256": sha256_file(project_root / "work/research-next/power/scripts/fnirsi_protocol.py"),
+            "estimator_source_sha256": sha256_file(Path(__file__).resolve()),
+        },
+        "window": {
+            "start_utc_inclusive": start.isoformat().replace("+00:00", "Z"),
+            "end_utc_inclusive": end.isoformat().replace("+00:00", "Z"),
+            "duration_s": (end - start).total_seconds(),
+            "selection_basis": "explicit host UTC receipt-time interval; no Nano event alignment is inferred",
+            "nano_serial_events_near_capture": serial_events,
+        },
+        "method": {
+            "per_report_center": "median of the four values in each CRC-valid HID report; four co-received values are not treated as separately timed samples",
+            "power_per_record": "voltage_v multiplied by current_a for each decoded record, then median within the report",
+            "voltage_guard_v": [VOLTAGE_MIN_V, VOLTAGE_MAX_V],
+            "power_outlier_rule": "after voltage guard, reject report centers farther than 6 * 1.4826 * MAD from the median report-center power",
+            "power_outlier_rule_status": "exploratory retrospective diagnostic filter; freeze before confirmatory hardware roots",
+            "averaging": "unweighted arithmetic mean across accepted report centers; report-arrival cadence only, no interpolation or energy integration",
+            "large_gap_threshold_ms": LARGE_GAP_NS / 1_000_000,
+        },
+        "counts": {
+            **counters,
+            "crc_valid_reports_used_as_input": len(rows),
+            "voltage_guard_rejected_reports": gate["voltage_rejected_count"],
+            "mad_power_rejected_reports": gate["power_rejected_count"],
+            "accepted_reports": len(accepted),
+            "raw_decoded_sample_records_in_valid_input_reports": len(rows) * 4,
+            "invalid_crc_total_capture_from_metadata": metadata.get("invalid_packet_count"),
+            "timeout_total_capture_from_metadata": metadata.get("read_timeout_count"),
+        },
+        "quality": {
+            "median_host_report_interval_ms": median_interval_ns / 1_000_000 if median_interval_ns is not None else None,
+            "max_host_report_gap_ms": max(gaps_ns) / 1_000_000 if gaps_ns else None,
+            "host_gaps_over_200ms": len(large_gaps),
+            "host_gaps_over_200ms_values": [gap / 1_000_000 for gap in large_gaps],
+            "meaning": "host arrival intervals describe the capture host only; they do not validate meter acquisition timing",
+        },
+        "robust_screen": {
+            "median_power_before_mad_w": gate["power_median_w_before_mad_screen"],
+            "mad_power_w": gate["power_mad_w_before_mad_screen"],
+            "scaled_mad_sigma_power_w": gate["power_scaled_mad_sigma_w"],
+            "6_scaled_mad_cutoff_w": gate["power_outlier_threshold_w"],
+        },
+        "accepted_report_center_mean": accepted_means,
+        "accepted_report_center_median": accepted_medians,
+        "bootstrap": bootstrap_result,
+        "limitations": [
+            "The input is a single diagnostic capture of a Nano ESP32 load, not a Nicla Vision experiment.",
+            "Physical meter label, firmware, marked input/output direction and exact regulated source boundary were not independently read.",
+            "The app comparison was near-time rather than simultaneous; no independent reference instrument establishes absolute accuracy.",
+            "Meter internal acquisition times are unknown. The report-level average is suitable only as a steady-window diagnostic estimator, not per-inference energy or calibrated energy.",
+            "Outlier thresholds are exploratory and retrospectively applied to this window; confirmatory use requires freezing the rule prospectively.",
+            "Bootstrap intervals quantify conditional within-window variation only, not between-run reproducibility or calibration uncertainty.",
+        ],
+    }
+    return report, rows
+
+
+def write_outputs(prefix: Path, report: dict[str, Any], rows: list[dict[str, Any]]) -> list[Path]:
+    outputs = [prefix.with_suffix(".json"), prefix.with_suffix(".csv"), prefix.with_suffix(".svg")]
+    prefix.parent.mkdir(parents=True, exist_ok=True)
+    existing = [path for path in outputs if path.exists()]
+    if existing:
+        raise FileExistsError("refusing to overwrite: " + ", ".join(str(path) for path in existing))
+    with outputs[0].open("x", encoding="utf-8", newline="\n") as handle:
+        json.dump(report, handle, indent=2, sort_keys=True, allow_nan=False)
+        handle.write("\n")
+    fields = [
+        "report_arrival_index", "host_receive_utc", "host_receive_monotonic_ns", "raw_crc_status",
+        "report_center_duplicate_payload", "voltage_center_v", "current_center_a", "power_center_w",
+        "voltage_sample_min_v", "voltage_sample_max_v", "current_sample_min_a", "current_sample_max_a",
+        "accepted_for_average", "rejection_reason",
+    ]
+    with outputs[1].open("x", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
+    write_svg(outputs[2], rows, [row for row in rows if row["accepted_for_average"]])
+    return outputs
+
+
+def main(argv: list[str] | None = None) -> int:
+    project_root_default = Path(__file__).resolve().parents[2]
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--project-root", type=Path, default=project_root_default)
+    parser.add_argument("--run-directory", type=Path, required=True, help="raw run directory, absolute or project-relative")
+    parser.add_argument("--start-utc", required=True, help="inclusive ISO-8601 timestamp with UTC offset")
+    parser.add_argument("--end-utc", required=True, help="inclusive ISO-8601 timestamp with UTC offset")
+    parser.add_argument("--output-prefix", type=Path, required=True, help="new output prefix; JSON, CSV and SVG are created")
+    parser.add_argument("--no-bootstrap", action="store_true", help="omit the optional within-window block bootstrap")
+    args = parser.parse_args(argv)
+    root = args.project_root.resolve()
+    run_dir = args.run_directory if args.run_directory.is_absolute() else root / args.run_directory
+    prefix = args.output_prefix if args.output_prefix.is_absolute() else root / args.output_prefix
+    start, end = parse_utc(args.start_utc), parse_utc(args.end_utc)
+    if end <= start:
+        parser.error("--end-utc must be after --start-utc")
+    try:
+        report, rows = build_report(root, run_dir.resolve(), start, end, not args.no_bootstrap)
+        outputs = write_outputs(prefix.resolve(), report, rows)
+    except Exception as exc:
+        print(f"steady average failed: {type(exc).__name__}: {exc}", file=sys.stderr)
+        return 1
+    print(json.dumps({
+        "status": report["status"],
+        "accepted_report_center_mean": report["accepted_report_center_mean"],
+        "counts": report["counts"],
+        "outputs": [str(path) for path in outputs],
+    }, indent=2))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
+

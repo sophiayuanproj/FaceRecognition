@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Nicla Vision Control Center</title>
+  <link rel="stylesheet" href="/app.css">
+  <script defer src="/app.js"></script>
+  <script defer src="/device_ui.js"></script>
+  <script defer src="/power_ui.js"></script>
+</head>
+<body>
+  <main id="deviceWorkspace" class="device-workspace">
+    <header class="device-header">
+      <div class="device-brand">
+        <span class="device-brand-mark" aria-hidden="true"></span>
+        <div>
+          <h1>Body camera</h1>
+          <p>Nicla Vision</p>
+        </div>
+      </div>
+      <nav class="device-nav" aria-label="Dashboard sections">
+        <a href="#liveCamera">Live view</a>
+        <a id="powerMeterLink" href="#powerMeter" hidden>Power meter</a>
+        <a href="#savedSightingsHeading">Sightings</a>
+        <a href="#diagnostics">Diagnostics</a>
+      </nav>
+      <div class="device-status">
+        <div class="device-connection" role="status">
+          <span id="deviceMode" class="badge offline">CONNECTING</span>
+          <strong id="deviceConnection">Looking for the device broker…</strong>
+        </div>
+        <span id="deviceFreshness" class="muted">No matched inference yet</span>
+      </div>
+    </header>
+
+    <div id="liveCamera" class="camera-workspace">
+    <section class="device-toolbar" aria-label="Device operation">
+      <div class="device-actions primary-device-actions">
+        <div class="device-actions acquisition-actions">
+          <button id="deviceConnect" class="button accent" type="button">Connect / claim control</button>
+          <button id="deviceLoop" class="button primary" type="button" disabled title="Device capability has not been reported">Start processing</button>
+          <button id="deviceOneShot" class="button" type="button" disabled title="Device capability has not been reported">Run one shot</button>
+        </div>
+        <div class="device-video">
+          <select id="deviceVideoMode" aria-label="Video recording mode" disabled>
+            <option value="inference">Video with inference</option>
+            <option value="capture_only">Camera only</option>
+          </select>
+          <button id="deviceVideo" class="button" type="button" disabled aria-describedby="deviceVideoStatus">Record video</button>
+          <details id="deviceClipActions" class="clip-actions" hidden>
+            <summary>Last clip</summary>
+            <div class="clip-menu">
+              <button id="deviceVideoReview" class="button" type="button" hidden>Review clip</button>
+              <a id="deviceVideoDownload" class="button" download hidden>Download AVI</a>
+              <a id="deviceVideoManifest" class="button" download="nicla-video-manifest.json" hidden>Download results</a>
+            </div>
+          </details>
+        </div>
+      </div>
+      <section id="deviceClipReview" class="clip-review" aria-label="Recorded clip review" hidden>
+        <canvas id="deviceClipCanvas" width="240" height="240" aria-label="Saved Nicla frame with detection and crop"></canvas>
+        <div class="clip-review-controls">
+          <strong>Recorded clip</strong>
+          <input id="deviceClipPosition" type="range" min="1" max="1" value="1" aria-label="Saved video frame">
+          <div class="device-video">
+            <button id="deviceClipPlay" class="button" type="button">Play clip</button>
+            <button id="deviceClipClose" class="button" type="button">Close review</button>
+          </div>
+          <span id="deviceClipSummary" class="muted" role="status"></span>
+        </div>
+      </section>
+      <div class="device-runtime">
+        <p id="deviceRuntimeState" class="runtime-state" role="status" aria-live="polite">Waiting for the camera state.</p>
+        <p id="deviceVideoStatus" class="muted tiny" role="status">Checking video availability…</p>
+        <p id="deviceActionStatus" class="status-line" role="status" aria-live="polite"></p>
+        <p id="deviceOwnership" class="ownership-note" role="status"></p>
+      </div>
+      <details class="operator-settings">
+        <summary>Device settings</summary>
+        <div class="device-actions secondary-device-actions">
+          <button id="deviceDisconnect" class="button" type="button" disabled title="Closes the broker connection without stopping device processing">Disconnect</button>
+          <button id="deviceRelease" class="button" type="button" disabled>Release control</button>
+          <button id="deviceSleep" class="button" type="button" disabled>Sleep camera</button>
+          <button id="devicePause" class="button" type="button" aria-pressed="false">Pause view</button>
+          <button id="deviceProbeNoFace" class="button" type="button" disabled title="Tests identity inference on a center crop when no face is detected">Probe identity</button>
+          <button id="deviceCancel" class="button" type="button" disabled title="Cancellation requires firmware support">Cancel operation</button>
+        </div>
+        <div class="device-settings">
+        <label for="deviceModel">Identity model</label>
+        <select id="deviceModel" disabled aria-describedby="deviceCapabilityNote"><option>Waiting for device capabilities…</option></select>
+        <label for="devicePolicy">Sensing policy</label>
+        <select id="devicePolicy" disabled aria-describedby="deviceCapabilityNote"><option>Waiting for device capabilities…</option></select>
+        <button id="deviceApplySettings" class="button" type="button" disabled>Apply settings</button>
+        <button id="deviceRecord" class="button" type="button" aria-pressed="false">Log session events</button>
+        <button id="deviceExport" class="button" type="button" disabled>Export session JSON</button>
+        <label id="fixtureScenarioLabel" for="fixtureScenario" hidden>Fixture fault</label>
+        <select id="fixtureScenario" hidden aria-label="Test fixture scenario">
+          <option value="normal">Normal experimental event</option>
+          <option value="no_face">No face</option>
+          <option value="legacy_skipped_model">Legacy skipped event with model ID</option>
+          <option value="multiple">Multiple faces</option>
+          <option value="rejected">Rejected identity</option>
+          <option value="error">Inference error</option>
+          <option value="slow">Slow inference</option>
+          <option value="malformed">Malformed event</option>
+          <option value="timeout">Command timeout</option>
+          <option value="stale">Stale completed event</option>
+        </select>
+        </div>
+        <details id="measurementControls" class="measurement-controls">
+        <summary>Measurement stage · bounded trial</summary>
+        <div class="trial-settings">
+          <label for="deviceMeasurementStage">Stage</label>
+          <select id="deviceMeasurementStage" disabled aria-describedby="measurementHelp"><option value="">Waiting for device capabilities…</option></select>
+          <label for="deviceTrialFrames">Max frames</label>
+          <input id="deviceTrialFrames" type="number" min="1" max="50" step="1" value="5" disabled>
+          <label for="deviceTrialDuration">Timeout ms</label>
+          <input id="deviceTrialDuration" type="number" min="1" max="30000" step="100" value="10000" disabled>
+          <label for="deviceTrialId">Trial ID</label>
+          <input id="deviceTrialId" type="text" maxlength="48" autocomplete="off" placeholder="generated if blank" disabled>
+          <button id="deviceTrial" class="button primary" type="button" disabled>Run bounded trial</button>
+        </div>
+        <p id="measurementHelp" class="operator-note">Runs the selected device stage for at most the chosen frame count or time. It logs workload stages; energy stays Not measured until a meter is connected.</p>
+        </details>
+        <p id="deviceCapabilityNote" class="operator-note" role="status" aria-live="polite">Waiting for device capabilities.</p>
+      </details>
+    </section>
+
+    <section class="panel session-performance" aria-labelledby="sessionPerformanceHeading">
+      <div class="panel-heading">
+        <h2 id="sessionPerformanceHeading">Session performance</h2>
+        <span id="sessionPerformanceStatus" class="muted tiny">Waiting for live events</span>
+      </div>
+      <div class="session-metrics">
+        <article class="session-metric">
+          <h3>Capture cadence</h3>
+          <strong id="sessionCaptureRate">—</strong>
+          <div id="sessionCaptureChart" class="session-chart capture-chart" aria-hidden="true" hidden></div>
+          <p id="sessionCaptureNote">Start processing to measure time between captures on the Nicla.</p>
+        </article>
+        <article class="session-metric">
+          <h3>Time to decision</h3>
+          <strong id="sessionDecisionTime">—</strong>
+          <div id="sessionDecisionChart" class="session-chart decision-chart" aria-hidden="true" hidden></div>
+          <p id="sessionDecisionNote">Waiting for a frame with a reported response time.</p>
+        </article>
+        <article class="session-metric">
+          <h3>Face detections</h3>
+          <strong id="sessionFaceCount">—</strong>
+          <div id="sessionFaceChart" class="session-chart face-chart" aria-hidden="true" hidden></div>
+          <p id="sessionFaceNote">Waiting for the detector to run.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel live-workspace" aria-label="Live camera and matched inference">
+      <article class="operator-camera">
+        <div class="panel-heading">
+          <h2 id="latestTitle">Live camera</h2>
+          <span id="latestState" class="small-status">WAITING</span>
+        </div>
+        <div class="operator-image-stage" id="latestStage">
+          <div class="image-viewport" id="latestViewport">
+            <img id="latestImage" alt="Newest camera frame from the Nicla" hidden>
+            <svg id="latestOverlay" class="frame-svg" aria-hidden="true" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid meet"></svg>
+          </div>
+          <div class="empty-frame" id="latestEmpty"><strong>Waiting for a frame</strong><span>Connect the Nicla and start processing to preview its camera.</span></div>
+        </div>
+        <div class="image-tools">
+          <span id="latestMeta" class="muted tiny">Frame identity and age not available</span>
+          <div><button id="latestZoomOut" type="button" aria-label="Zoom out on newest frame">−</button><button id="latestZoomReset" type="button">Fit</button><button id="latestZoomIn" type="button" aria-label="Zoom in on newest frame">+</button></div>
+        </div>
+        <p class="image-caption" id="latestCaption">Waiting for the Nicla camera.</p>
+      </article>
+
+      <article class="operator-result">
+        <div class="panel-heading">
+          <h2>Matched inference</h2>
+          <span id="resultBadge" class="badge experimental">EXPERIMENTAL</span>
+        </div>
+        <div class="result-heading">
+          <h3 id="resultStatus">Waiting for inference</h3>
+          <span id="matchedFreshness" class="muted tiny">No event selected</span>
+        </div>
+        <p id="resultReason" class="result-reason">The decision appears when inference completes on the Nicla.</p>
+        <div class="operator-image-stage matched-stage" id="matchedStage">
+          <div class="image-viewport" id="matchedViewport">
+            <img id="matchedImage" alt="Frozen camera frame linked to the selected inference" hidden>
+            <svg id="matchedOverlay" class="frame-svg" aria-hidden="true" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid meet"></svg>
+          </div>
+          <div class="empty-frame" id="matchedEmpty"><strong>Waiting for a matched frame</strong></div>
+        </div>
+        <div class="image-tools">
+          <span id="matchedMeta" class="muted tiny">No boot/frame ID pair</span>
+          <div><button id="matchedZoomOut" type="button" aria-label="Zoom out on matched frame">−</button><button id="matchedZoomReset" type="button">Fit</button><button id="matchedZoomIn" type="button" aria-label="Zoom in on matched frame">+</button></div>
+        </div>
+        <div class="result-summary">
+          <div><span>Identity candidate</span><strong id="resultCandidate">No result</strong></div>
+          <div><span>Score and rule</span><strong id="resultScore">Not measured</strong></div>
+        </div>
+        <details class="frame-details"><summary>Frame details and host comparison</summary>
+        <dl class="detail-list"><div><dt>Linked frame</dt><dd id="resultFrameId">—</dd></div></dl>
+        <p id="linkageProof" class="linkage-proof partial">Frame linkage is available after inference.</p>
+        <button id="deviceHostReference" type="button" class="button" disabled>Compare this frame on Mac</button>
+        <p id="deviceHostReferenceStatus" class="image-caption" role="status">YuNet and SFace run on the Mac using the linked camera frame.</p>
+        <figure id="deviceHostCropFigure" class="host-crop-figure" hidden>
+          <img id="deviceHostCrop" width="112" height="112" alt="Face aligned by the Mac from this Nicla frame">
+          <figcaption id="deviceHostCropCaption">Mac aligned crop</figcaption>
+        </figure>
+        </details>
+      </article>
+
+    </section>
+    </div>
+
+    <section id="powerMeter" class="panel power-meter" aria-labelledby="powerMeterHeading" hidden>
+      <div class="panel-heading power-heading">
+        <div>
+          <h2 id="powerMeterHeading">Power meter</h2>
+          <p class="muted tiny">Inline USB supply feeding the Nicla</p>
+        </div>
+        <span id="powerMeterState" class="small-status" role="status">Checking support</span>
+      </div>
+      <p id="powerMeterStatus" class="power-status muted tiny" role="status"></p>
+      <div id="powerMeterControls" class="power-controls">
+        <button id="powerScan" class="button" type="button" disabled>Scan for meter</button>
+        <label id="powerInterfaceField" class="power-interface" hidden>HID interface
+          <select id="powerInterface" disabled></select>
+        </label>
+        <button id="powerConnect" class="button primary" type="button" disabled hidden>Connect meter</button>
+        <button id="powerDisconnect" class="button" type="button" disabled hidden>Disconnect meter</button>
+      </div>
+      <p id="powerMeterAction" class="power-action tiny" role="status"></p>
+      <div id="powerMeterReadout" class="power-readout" hidden>
+        <div class="power-metrics" aria-label="Live meter values and recent trends">
+          <div class="power-metric">
+            <h3>Voltage</h3>
+            <strong id="powerVoltage" data-unavailable>Unavailable</strong>
+            <canvas id="powerVoltageTrend" role="img" aria-label="Recent voltage in volts" hidden></canvas>
+            <small id="powerVoltageRange" class="muted" hidden></small>
+          </div>
+          <div class="power-metric">
+            <h3>Current</h3>
+            <strong id="powerCurrent" data-unavailable>Unavailable</strong>
+            <canvas id="powerCurrentTrend" role="img" aria-label="Recent current in milliamps" hidden></canvas>
+            <small id="powerCurrentRange" class="muted" hidden></small>
+          </div>
+          <div class="power-metric">
+            <h3>Power</h3>
+            <strong id="powerWatts" data-unavailable>Unavailable</strong>
+            <canvas id="powerWattsTrend" role="img" aria-label="Recent power in watts" hidden></canvas>
+            <small id="powerWattsRange" class="muted" hidden></small>
+          </div>
+        </div>
+        <p id="powerTrendWindow" class="power-trend-window muted tiny" hidden></p>
+        <dl class="power-quality" aria-label="HID report quality">
+          <div><dt>Sample age</dt><dd id="powerSampleAge">—</dd></div>
+          <div><dt>Report cadence</dt><dd id="powerReportCadence">—</dd></div>
+          <div><dt>CRC failures</dt><dd id="powerCrc">—</dd></div>
+          <div><dt>Report gaps</dt><dd id="powerGaps">—</dd></div>
+          <div><dt>Invalid reports</dt><dd id="powerInvalid">—</dd></div>
+          <div><dt>Timeouts</dt><dd id="powerTimeouts">—</dd></div>
+          <div><dt>Duplicate reports</dt><dd id="powerDuplicates">—</dd></div>
+          <div><dt>Clock jumps</dt><dd id="powerClockJumps">—</dd></div>
+        </dl>
+      </div>
+      <div id="powerRecord" class="power-record" hidden>
+        <div id="powerTopologyRow" class="power-controls">
+          <label class="power-topology"><input id="powerTopology" type="checkbox" disabled> I verified the meter is inline with the Nicla’s only power supply</label>
+          <span id="powerTopologyStatus" class="muted tiny">Topology unconfirmed</span>
+        </div>
+        <div class="power-controls">
+          <button id="powerRecordStart" class="button" type="button" disabled>Record power</button>
+          <button id="powerRecordStop" class="button" type="button" disabled>Stop recording</button>
+          <strong id="powerRecordingSummary" class="tiny" role="status" hidden></strong>
+          <span id="powerRecordingDuration" class="muted tiny" hidden></span>
+        </div>
+        <div id="powerRecordingLocation" class="power-controls" hidden>
+          <button id="powerCopyPath" class="button" type="button">Copy capture folder</button>
+          <code id="powerRecordingPath" class="mono"></code>
+        </div>
+      </div>
+    </section>
+
+    <div class="sightings-workspace">
+      <section class="panel sightings-panel" aria-labelledby="savedSightingsHeading">
+        <div class="panel-heading sightings-heading">
+          <div><h2 id="savedSightingsHeading">Saved sightings</h2><p id="sightingsCount" class="muted">Total encounters —</p></div>
+          <button id="sightingsToggle" class="button" type="button" disabled aria-describedby="sightingsStatus">Start saving</button>
+        </div>
+        <p id="sightingsStatus" class="sightings-status" role="status">Checking local sightings…</p>
+        <div id="sightingsFilters" class="sightings-filters" hidden>
+          <label for="sightingsPerson">Person</label>
+          <select id="sightingsPerson" aria-controls="sightingsList">
+            <option value="all">All people</option>
+            <option value="K01">Person 1</option>
+            <option value="K02">Person 2</option>
+            <option value="K03">Person 3</option>
+            <option value="K04">Person 4</option>
+            <option value="K05">Person 5</option>
+            <option value="other">Other</option>
+          </select>
+          <label for="sightingsSource">Source</label>
+          <select id="sightingsSource" aria-controls="sightingsList">
+            <option value="all">All sources</option>
+            <option value="onboard">On-board imports</option>
+            <option value="usb">Live USB</option>
+          </select>
+          <span id="sightingsRetention" class="muted tiny"></span>
+        </div>
+        <p id="sightingsEmpty" class="sightings-empty" hidden></p>
+        <div id="sightingsList" class="sightings-groups" hidden></div>
+        <button id="sightingsMore" class="button sightings-more" type="button" hidden>Show more photos</button>
+      </section>
+
+      <section class="panel battery-panel" aria-labelledby="batteryHeading">
+        <div class="panel-heading">
+          <h2 id="batteryHeading">Battery capture &amp; import</h2>
+          <span id="batteryState" class="small-status">CHECKING</span>
+        </div>
+        <dl class="battery-metrics">
+          <div><dt>On Nicla</dt><dd id="batteryPending">—</dd></div>
+          <div><dt>Imported to this computer</dt><dd id="batteryImported">—</dd></div>
+        </dl>
+        <p id="batteryStatus" class="sightings-status" role="status">Checking whether the Nicla can store photos while unplugged…</p>
+        <div class="battery-actions">
+          <button id="batteryPrepare" class="button primary" type="button" hidden aria-describedby="batteryStatus">Connect Nicla</button>
+          <button id="batteryArm" class="button" type="button" disabled aria-describedby="batteryStatus">Arm offline capture</button>
+          <button id="batteryDisarm" class="button" type="button" disabled aria-describedby="batteryStatus">Disarm</button>
+          <button id="batteryImport" class="button primary" type="button" disabled aria-describedby="batteryStatus">Import photos</button>
+          <a id="batteryReview" href="#savedSightingsHeading" hidden>View imported photos</a>
+        </div>
+        <details class="battery-guide">
+          <summary>Using a power bank</summary>
+          <ol>
+            <li>Connect the Nicla to the computer, stop processing, and arm offline capture.</li>
+            <li>Move its USB cable to the power bank and keep the Nicla powered while recording sightings.</li>
+            <li>Return the USB cable to the computer, connect, stop processing, and import.</li>
+          </ol>
+        </details>
+      </section>
+    </div>
+
+    <dialog id="sightingDialog" class="sighting-dialog" aria-labelledby="sightingDialogTitle">
+      <div class="panel-heading">
+        <h2 id="sightingDialogTitle">Saved encounter</h2>
+        <form method="dialog"><button class="button" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="sighting-dialog-body">
+        <div class="sighting-preview">
+          <img id="sightingDialogPhoto" alt="Nicla photo of a saved encounter">
+          <a id="sightingOriginal" target="_blank" rel="noopener">Open original photo</a>
+        </div>
+        <div class="sighting-dialog-info">
+          <p id="sightingDialogDetails" class="muted"></p>
+          <form id="sightingAssignment" class="sighting-assignment">
+            <label for="sightingAssignPerson">Assign to person</label>
+            <select id="sightingAssignPerson">
+              <option value="other">Other</option>
+              <option value="K01">Person 1</option>
+              <option value="K02">Person 2</option>
+              <option value="K03">Person 3</option>
+              <option value="K04">Person 4</option>
+              <option value="K05">Person 5</option>
+            </select>
+            <div class="sighting-assignment-actions">
+              <button id="sightingAssignSave" class="button primary" type="submit" disabled>Save assignment</button>
+              <button id="sightingClaim" class="button" type="button" hidden>Take control</button>
+            </div>
+            <p id="sightingAssignmentStatus" class="muted tiny" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <section id="diagnostics" class="operator-grid" aria-label="Device diagnostics">
+      <article class="panel input-panel operator-input">
+        <div class="panel-heading"><h2>Crop and tensor</h2><span id="inputProvenance" class="small-status">NOT RETAINED</span></div>
+        <div class="input-visuals">
+          <div class="input-visual"><span>Detector input</span><canvas id="detectorCanvas" width="128" height="128" aria-label="Exact detector input visualization"></canvas><small id="detectorSummary">Not available</small></div>
+          <div class="input-visual"><span>Nicla crop preview</span><canvas id="cropCanvas" width="128" height="128" aria-label="Nicla crop rectangle preview from the linked JPEG"></canvas><small id="cropSummary">Not available</small></div>
+          <div class="input-visual"><span>Identity model input</span><canvas id="tensorCanvas" width="128" height="128" aria-label="Exact identity model input visualization"></canvas><small id="tensorSummary">Not available</small></div>
+        </div>
+        <details><summary>Input hashes and tensor bytes</summary><dl class="detail-list">
+          <div><dt>Crop rectangle / coordinate space</dt><dd id="cropRect">—</dd></div>
+          <div><dt>Input shape / channels / dtype</dt><dd id="tensorShape">—</dd></div>
+          <div><dt>Detector input SHA-256</dt><dd id="detectorHash" class="mono">—</dd></div>
+          <div><dt>Quantization</dt><dd id="tensorQuant">—</dd></div>
+          <div><dt>Exact input SHA-256</dt><dd id="tensorHash" class="mono">—</dd></div>
+          <div><dt>Model / config / firmware</dt><dd id="modelHashes" class="mono">—</dd></div>
+        </dl><label class="tensor-label" for="tensorBytes">Exact identity input bytes, base64 · local diagnostic only</label><textarea id="tensorBytes" rows="3" readonly spellcheck="false"></textarea>
+          <details id="identityRawOutputDetails"><summary>Raw identity model output · not a score or confidence</summary>
+            <p id="identityOutputMeta" class="muted tiny">No frame-linked raw output retained.</p>
+            <pre id="identityOutputVector" class="mono">Not available</pre>
+          </details>
+        </details>
+      </article>
+
+      <article class="panel operator-trace">
+        <div class="panel-heading"><h2>Why this result</h2></div>
+        <p id="traceSummary" class="reason-text">No acquisition or inference trace has been received.</p>
+        <ol id="executionTrace" class="trace-list"><li>Connect to the device broker to inspect real execution events.</li></ol>
+      </article>
+
+      <article class="panel operator-telemetry">
+        <div class="panel-heading"><h2>Stages and resources</h2></div>
+        <dl class="operator-metrics">
+          <div><dt>Capture / detector / identity</dt><dd id="stageTimings">Not measured</dd></div>
+          <div><dt>Decision / total</dt><dd id="decisionTiming">Not measured</dd></div>
+          <div><dt>Recent rates</dt><dd id="deviceRates">Not measured</dd></div>
+          <div><dt>Heap / arena / framebuffer</dt><dd id="deviceMemory">Not measured</dd></div>
+          <div><dt>Camera / IMU</dt><dd id="cameraImu">Not measured</dd></div>
+          <div><dt>Power</dt><dd id="devicePower">Not measured</dd></div>
+          <div><dt>Applied / inferred model</dt><dd id="deviceModelObserved">Not measured</dd></div>
+          <div><dt>Command ACK</dt><dd id="commandAck">None</dd></div>
+          <div><dt>Drops / errors</dt><dd id="deviceErrors">0 / 0</dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <section class="panel timeline-panel" aria-labelledby="timelineHeading">
+      <div class="panel-heading"><h2 id="timelineHeading">Event timeline</h2><div class="timeline-actions"><span id="timelineCount" class="small-status">0 events</span><button id="returnToLive" class="button" type="button" disabled>Return to live</button></div></div>
+      <p class="muted tiny">Select an event to inspect its frame, crop, and decision.</p>
+      <div class="table-wrap timeline-scroll" tabindex="0" role="region" aria-label="Recent camera events"><table><thead><tr><th>Boot / frame</th><th>Detection</th><th>Decision</th><th>Candidate</th><th>Total</th><th>Reason</th></tr></thead><tbody id="deviceTimeline"><tr><td colspan="6">No device events received.</td></tr></tbody></table></div>
+    </section>
+  </main>
+
+  <details id="legacyWorkspace" class="legacy-workspace">
+    <summary>Historical replay and host-reference research tools</summary>
+  <header class="topbar">
+    <div class="brand">
+      <p class="eyebrow">LOCAL RESEARCH CONTROL CENTER</p>
+      <h1>Nicla Vision</h1>
+    </div>
+    <div class="connection" aria-live="polite">
+      <span id="modeBadge" class="badge replay">RECORDED REPLAY</span>
+      <span id="connectionState" class="connection-state">No live device attached</span>
+      <span id="updatedAt" class="muted">Waiting for local service…</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="toolbar" aria-label="Session controls">
+      <div class="button-row">
+        <button id="modeReplay" class="button primary" type="button" aria-pressed="true">Recorded replay</button>
+        <button id="modeLive" class="button" type="button" aria-pressed="false">Live preview</button>
+        <button id="connectLive" class="button accent" type="button">Attach to existing preview</button>
+        <button id="disconnectLive" class="button" type="button" disabled>Detach</button>
+      </div>
+      <div class="button-row secondary-controls">
+        <label class="select-label" for="caseSelect">Replay scene</label>
+        <select id="caseSelect" aria-label="Select replay scene">
+          <option value="K01">K01 — known development</option>
+          <option value="K02">K02 — known development</option>
+          <option value="K03">K03 — known development</option>
+          <option value="K04">K04 — known development</option>
+          <option value="K05">K05 — known development</option>
+          <option value="OTHER">OTHER — unknown development</option>
+          <option value="BLANK">BLANK — negative control</option>
+        </select>
+        <button id="captureOnce" class="button" type="button" disabled>Capture latest preview frame</button>
+        <button id="hostDiagnosticToggle" class="button" type="button" disabled>Enable HOST RECONSTRUCTION</button>
+        <button id="hostRgbReferenceToggle" class="button" type="button" disabled>Enable HOST RGB REFERENCE</button>
+        <button id="pauseUpdates" class="button" type="button">Pause UI updates</button>
+        <button id="shutdown" class="button danger" type="button">Stop dashboard</button>
+      </div>
+      <p id="actionStatus" class="status-line" role="status" aria-live="polite">Legacy replay is local and read-only. The v2 NiclaBroker opens serial only after explicit Connect.</p>
+    </section>
+
+    <section class="main-grid" aria-label="Camera and inference workspace">
+      <article class="panel camera-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">CAMERA</p>
+            <h2 id="cameraTitle">Recorded scene preview</h2>
+          </div>
+          <span id="frameFreshness" class="small-status">REPLAY</span>
+        </div>
+        <div class="image-stage" id="imageStage">
+          <img id="cameraImage" alt="Recorded Nicla camera preview, selected from the reviewed development run" hidden>
+          <div id="emptyFrame" class="empty-frame">
+            <span class="empty-icon" aria-hidden="true">◉</span>
+            <strong>Frame not available</strong>
+            <span>Choose a recorded scene or attach to the existing Nicla preview.</span>
+          </div>
+          <div class="frame-overlay" id="frameOverlay" aria-hidden="true"></div>
+          <div class="frame-overlay rgb-reference-overlay" id="rgbReferenceOverlay" aria-hidden="true"></div>
+        </div>
+        <div class="frame-caption">
+          <p id="frameCaption">Recorded scene preview. This image is not the exact RGB565 frame consumed by the historical board probe.</p>
+          <dl class="mini-metadata">
+            <div><dt>Frame</dt><dd id="frameId">—</dd></div>
+            <div><dt>Source</dt><dd id="frameSource">RECORDED REPLAY</dd></div>
+            <div><dt>Age</dt><dd id="frameAge">—</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <div class="right-grid">
+        <article class="panel decision-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">DECISION</p><h2 id="decisionStatus">—</h2></div>
+            <span id="experimentalBadge" class="badge experimental">EXPERIMENTAL</span>
+          </div>
+          <p id="decisionSubline" class="muted">No inference result loaded.</p>
+          <div class="decision-values">
+            <div><span>Model candidate</span><strong id="predictedClass">—</strong></div>
+            <div><span>Threshold / margin</span><strong id="thresholdValue">Not retained</strong></div>
+          </div>
+          <p class="inline-warning" id="decisionWarning">A replay result is not a current live prediction.</p>
+        </article>
+
+        <article class="panel why-panel">
+          <div class="panel-heading"><div><p class="eyebrow">WHY THIS STATE</p><h2>Evidence trace</h2></div></div>
+          <p id="reasonText" class="reason-text">No trace selected.</p>
+          <ul id="traceList" class="trace-list"></ul>
+        </article>
+
+        <article class="panel input-panel">
+          <div class="panel-heading"><div><p class="eyebrow">WHAT THE MODEL SAW</p><h2>Input inspector</h2></div></div>
+          <div id="inputUnavailable" class="empty-input">
+            <strong>No exact model input retained</strong>
+            <p>The saved board study kept a scene preview before the probe but not its exact crop or final tensor. No host recrop is substituted here.</p>
+          </div>
+          <details>
+            <summary>Input provenance and tensor fields</summary>
+            <dl class="detail-list">
+              <div><dt>Source</dt><dd id="inputSource">—</dd></div>
+              <div><dt>Shape / channels</dt><dd id="inputShape">—</dd></div>
+              <div><dt>Type / quantization</dt><dd id="inputQuant">—</dd></div>
+              <div><dt>Tensor hash</dt><dd id="inputHash" class="mono">—</dd></div>
+              <div><dt>Encoder / head hashes</dt><dd id="modelHash" class="mono">—</dd></div>
+            </dl>
+          </details>
+        </article>
+
+        <article class="panel host-diagnostic-panel" id="hostDiagnosticPanel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">OPT-IN HOST DIAGNOSTIC</p><h2>HOST RECONSTRUCTION</h2></div>
+            <span class="badge experimental">EXPERIMENTAL · UNQUALIFIED</span>
+          </div>
+          <p class="inline-warning">Every result is reconstructed from the lossy 8766 preview JPEG. It is not frame-identical or device-equivalent, and never emits a qualified identity. Alpha0.25 is a weak historical model candidate. Only hash-pinned local workspace artifacts are loaded; no training-data license or redistribution right is asserted.</p>
+          <p id="hostDiagnosticState" class="muted tiny" role="status" aria-live="polite">Off. Legacy preview remains read-only; no host model worker starts by default.</p>
+          <div id="hostDiagnosticResult" hidden>
+            <dl class="detail-list">
+              <div><dt>Host observation</dt><dd id="hostDiagnosticObservation" class="mono">—</dd></div>
+              <div><dt>Source age</dt><dd id="hostDiagnosticAge">—</dd></div>
+              <div><dt>JPEG SHA-256</dt><dd id="hostDiagnosticJpegHash" class="mono">—</dd></div>
+              <div><dt>Model output</dt><dd id="hostDiagnosticModelHashes" class="mono">—</dd></div>
+              <div><dt>Experimental gate</dt><dd id="hostDiagnosticDecision">—</dd></div>
+              <div><dt>Candidate class</dt><dd id="hostDiagnosticCandidate">—</dd></div>
+              <div><dt>Gate reason</dt><dd id="hostDiagnosticReason">—</dd></div>
+            </dl>
+            <p class="muted tiny" id="hostDiagnosticManifestNote"></p>
+            <h3>FOMO regions · camera-window coordinates · not face boxes</h3>
+            <ol id="hostDiagnosticRegions" class="diagnostic-regions"></ol>
+            <div class="crop-inspector">
+              <div><h3>JPEG-derived identity crop · 96 × 96 grayscale</h3><canvas id="hostDiagnosticCrop" width="96" height="96" aria-label="Host reconstructed grayscale crop"></canvas></div>
+              <div><h3>Host stage timings</h3><dl id="hostDiagnosticTimings" class="diagnostic-timings"></dl></div>
+            </div>
+            <h3>Historical alpha0.25 classifier scores · experimental only</h3>
+            <div class="table-wrap"><table><thead><tr><th>Class</th><th>Raw INT8 score</th><th>Dequantized logit</th><th>Softmax</th></tr></thead><tbody id="hostDiagnosticScores"><tr><td colspan="4">Classifier was not run.</td></tr></tbody></table></div>
+            <p class="muted tiny" id="hostDiagnosticThreshold">Historical threshold: unavailable</p>
+            <details><summary>Exact JPEG-derived bytes and SHA-256</summary>
+              <dl class="detail-list">
+                <div><dt>Detector tensor hash</dt><dd id="hostDiagnosticDetectorHash" class="mono">—</dd></div>
+                <div><dt>Detector output hash</dt><dd id="hostDiagnosticDetectorOutputHash" class="mono">—</dd></div>
+                <div><dt>Classifier tensor hash</dt><dd id="hostDiagnosticClassifierHash" class="mono">—</dd></div>
+                <div><dt>Classifier output hash</dt><dd id="hostDiagnosticClassifierOutputHash" class="mono">—</dd></div>
+                <div><dt>Crop bytes hash</dt><dd id="hostDiagnosticCropHash" class="mono">—</dd></div>
+                <div><dt>Crop window xywh</dt><dd id="hostDiagnosticCropCoords" class="mono">—</dd></div>
+              </dl>
+              <label class="tensor-label" for="hostDiagnosticDetectorBytes">Detector INT8 tensor bytes, base64</label><textarea id="hostDiagnosticDetectorBytes" rows="3" readonly spellcheck="false"></textarea>
+              <label class="tensor-label" for="hostDiagnosticDetectorOutputBytes">Detector raw INT8 output bytes, base64</label><textarea id="hostDiagnosticDetectorOutputBytes" rows="3" readonly spellcheck="false"></textarea>
+              <label class="tensor-label" for="hostDiagnosticCropBytes">Crop grayscale bytes, base64</label><textarea id="hostDiagnosticCropBytes" rows="3" readonly spellcheck="false"></textarea>
+              <label class="tensor-label" for="hostDiagnosticClassifierBytes">Classifier INT8 tensor bytes, base64</label><textarea id="hostDiagnosticClassifierBytes" rows="3" readonly spellcheck="false"></textarea>
+              <label class="tensor-label" for="hostDiagnosticClassifierOutputBytes">Classifier raw INT8 output bytes, base64</label><textarea id="hostDiagnosticClassifierOutputBytes" rows="2" readonly spellcheck="false"></textarea>
+            </details>
+          </div>
+        </article>
+
+        <article class="panel host-rgb-reference-panel" id="hostRgbReferencePanel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">SEPARATE OPT-IN HOST DIAGNOSTIC</p><h2>HOST RGB REFERENCE · YuNet + SFace</h2></div>
+            <span class="badge experimental">HOST ONLY · NOT ON NICLA</span>
+          </div>
+          <p class="inline-warning">This mode analyzes the exact latest 240 × 240 color JPEG from the preview service. It is derived from a lossy JPEG and is not frame-identical or device-equivalent. Pretraining exposure is unresolved, so results are experimental and unqualified; no identity is emitted.</p>
+          <p id="hostRgbReferenceState" class="muted tiny" role="status" aria-live="polite">Off. Preview-only mode remains active; the YuNet + SFace worker starts only after opt-in.</p>
+          <div id="hostRgbReferenceResult" hidden>
+            <dl class="detail-list">
+              <div><dt>Host observation</dt><dd id="hostRgbReferenceObservation" class="mono">—</dd></div>
+              <div><dt>Frame age at finish</dt><dd id="hostRgbReferenceAge">—</dd></div>
+              <div><dt>Exact JPEG SHA-256</dt><dd id="hostRgbReferenceJpegHash" class="mono">—</dd></div>
+              <div><dt>YuNet detector</dt><dd id="hostRgbReferenceDetector">—</dd></div>
+              <div><dt>Detector bbox xywh · 240 px</dt><dd id="hostRgbReferenceBbox" class="mono">—</dd></div>
+              <div><dt>Raw top class</dt><dd id="hostRgbReferenceCandidate">—</dd></div>
+              <div><dt>Host gate outcome</dt><dd id="hostRgbReferenceDecision">—</dd></div>
+              <div><dt>Gate reasons</dt><dd id="hostRgbReferenceReasons">—</dd></div>
+              <div><dt>YuNet / SFace hashes</dt><dd id="hostRgbReferenceModelHashes" class="mono">—</dd></div>
+            </dl>
+            <h3>Raw SFace cosine scores · experimental host reference</h3>
+            <div class="table-wrap"><table><thead><tr><th>Class / prototype</th><th>Raw cosine</th></tr></thead><tbody id="hostRgbReferenceScores"><tr><td colspan="2">SFace was not run.</td></tr></tbody></table></div>
+            <p id="hostRgbReferenceThresholds" class="muted tiny">Historical thresholds: unavailable</p>
+            <div class="crop-inspector rgb-crop-inspector">
+              <div><h3>Exact SFace aligned crop · 112 × 112 BGR8</h3><img id="hostRgbReferenceCrop" alt="SFace aligned crop decoded directly from in-memory host output" hidden><p id="hostRgbReferenceCropHash" class="mono tiny">No crop produced.</p></div>
+              <div><h3>Host stage timings · milliseconds</h3><dl id="hostRgbReferenceTimings" class="diagnostic-timings"></dl></div>
+            </div>
+            <details><summary>Calibration and pinned artifact provenance</summary>
+              <dl class="detail-list"><div><dt>Threshold calibration</dt><dd id="hostRgbReferenceCalibration">—</dd></div><div><dt>Run-result hash</dt><dd id="hostRgbReferenceRunHash" class="mono">—</dd></div><div><dt>Gallery construction</dt><dd id="hostRgbReferenceGallery">—</dd></div><div><dt>Output scope</dt><dd id="hostRgbReferenceScope">—</dd></div></dl>
+            </details>
+          </div>
+        </article>
+
+        <article class="panel telemetry-panel">
+          <div class="panel-heading"><div><p class="eyebrow">TELEMETRY</p><h2>Measured fields</h2></div></div>
+          <div class="telemetry-grid">
+            <div><span>Preview service avg</span><strong id="previewFps">Not measured</strong></div>
+            <div><span>Inference rate</span><strong id="inferenceRate">Not available</strong></div>
+            <div><span>Probe time</span><strong id="probeTime">—</strong></div>
+            <div><span>Power</span><strong id="powerValue">Not measured</strong></div>
+            <div><span>Heap / arena</span><strong id="memoryValue">Not retained</strong></div>
+            <div><span>IMU / camera sleep</span><strong id="imuValue">Not available</strong></div>
+          </div>
+          <p class="muted tiny" id="telemetryNote">Live preview FPS is not inference rate. Missing fields remain unavailable.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel history-panel">
+        <div class="panel-heading"><div><p class="eyebrow">HISTORY</p><h2>Reviewed development run</h2></div><span class="small-status">7 cases</span></div>
+        <p class="muted tiny">Select a row to replay the recorded scene reference and its separate historical board outcome. These are not paired frame/tensor captures.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Scene</th><th>Role</th><th>Board decision</th><th>Raw candidate</th><th>Probe total*</th></tr></thead>
+            <tbody id="historyRows"><tr><td colspan="5">Loading reviewed rows…</td></tr></tbody>
+          </table>
+        </div>
+        <p class="muted tiny">* Probe total includes reset and camera warm-up; it is not steady-state response latency.</p>
+      </article>
+
+      <article class="panel controls-panel">
+        <div class="panel-heading"><div><p class="eyebrow">DEVICE CONTROLS</p><h2>Broker status</h2></div></div>
+        <p id="controlExplain">This legacy v1 panel does not control the device. Use the v2 Nicla operator controls above.</p>
+        <div class="disabled-controls">
+          <button type="button" disabled>Single-shot inference</button>
+          <button type="button" disabled>Start / pause device loop</button>
+          <button type="button" disabled>Change policy / model</button>
+          <button type="button" disabled>Sensor sleep / wake</button>
+        </div>
+        <p class="muted tiny">These disabled controls are historical v1 placeholders. Current device capabilities and ACK-backed controls are in the v2 operator workspace above.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <span>Loopback only · no cloud requests · serial opens only after explicit v2 Connect</span>
+      <span id="serviceVersion">Service v0.2.0</span>
+    </footer>
+  </main>
+  </details>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

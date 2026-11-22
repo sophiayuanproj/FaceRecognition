@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "image-crop-v1",
+  "title": "Image/crop byte contract v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "width",
+    "height",
+    "pixel_format",
+    "layout",
+    "color_order",
+    "transform_id",
+    "bytes_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "image-crop-1"
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "pixel_format": {
+      "enum": [
+        "gray8",
+        "rgb888",
+        "bgr888",
+        "gray32_float_0_1"
+      ]
+    },
+    "layout": {
+      "const": "row_major_interleaved"
+    },
+    "color_order": {
+      "enum": [
+        "GRAY",
+        "RGB",
+        "BGR"
+      ]
+    },
+    "transform_id": {
+      "type": "string"
+    },
+    "crop_box_xyxy": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "number"
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "resize": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "rounding"
+      ]
+    },
+    "normalization": {
+      "type": "object",
+      "properties": {
+        "scale": {
+          "type": "number"
+        },
+        "offset": {
+          "type": "number"
+        }
+      }
+    },
+    "bytes_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

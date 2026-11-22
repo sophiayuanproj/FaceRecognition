@@ -1,0 +1,37 @@
+{
+  "augmentation_seed": "equal to training seed",
+  "baseline_note": "The original seed 20261021 run is reported as a historical reference, not included in the new five-seed summary, because its augmentation seeds were fixed and its run was capped at 12 epochs.",
+  "batch_identity_count": 8,
+  "early_stopping_patience": 5,
+  "embedding_dim": 64,
+  "epochs_max": 30,
+  "experiment_id": "seed_sweep_fixed_split_20261021",
+  "fixed_split_from_baseline": true,
+  "fixed_validation_pair_file": "runs/survface_supcon_v2_holdout-clean/validation_pairs.jsonl",
+  "images_per_identity": 4,
+  "intra_threads": 12,
+  "max_train_images_per_identity": 24,
+  "model_variant": "base",
+  "objective": "supervised contrastive",
+  "planned_int8_evaluation": "Convert each seed best checkpoint and evaluate validation only with 1000 pair-bootstrap replicates; no final-pair annotations.",
+  "primary_metric": "validation ROC AUC",
+  "question": "How much does the selected base supervised-contrastive embedder vary across training seeds on one fixed identity-disjoint split?",
+  "secondary_metrics": [
+    "validation EER",
+    "TAR at threshold selected for at most 1% validation FAR",
+    "train loss trajectory",
+    "epochs to best checkpoint",
+    "INT8 conversion metrics"
+  ],
+  "selection_rule": "best checkpoint within each seed is selected by validation ROC AUC; aggregate all five seeds using mean, standard deviation, and range; no cross-seed best-only result is presented as the expected performance.",
+  "split_seed": 20261021,
+  "test_set_policy": "Do not read or evaluate the final SurvFace pair annotations during this sweep. They were previously used once to evaluate the baseline and will not be reused for seed or checkpoint selection.",
+  "train_identity_limit": 0,
+  "training_seeds": [
+    20261022,
+    20261023,
+    20261024,
+    20261025,
+    20261026
+  ]
+}

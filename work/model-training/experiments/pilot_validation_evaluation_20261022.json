@@ -1,0 +1,45 @@
+{
+  "evaluation": {
+    "bootstrap_replicates": 1000,
+    "evaluation_mode": "validation-only",
+    "format": "float TFLite and full signed-integer INT8 TFLite",
+    "host_threads_per_process": 3,
+    "identity_cluster_bootstrap_replicates": 1000,
+    "parallel_evaluation_jobs": 1
+  },
+  "evaluation_jobs": [
+    {
+      "model_variant": "base",
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261022",
+      "split_seed": 20261021,
+      "training_seed": 20261022
+    },
+    {
+      "model_variant": "base",
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261023",
+      "split_seed": 20261021,
+      "training_seed": 20261023
+    },
+    {
+      "model_variant": "base",
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261024",
+      "split_seed": 20261021,
+      "training_seed": 20261024
+    },
+    {
+      "model_variant": "base",
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261025",
+      "split_seed": 20261021,
+      "training_seed": 20261025
+    },
+    {
+      "model_variant": "base",
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261026",
+      "split_seed": 20261021,
+      "training_seed": 20261026
+    }
+  ],
+  "evaluation_policy": "Validation-only. Do not load final SurvFace pair annotations or Olivetti. INT8 representative calibration images must come from training identities only; validation identities are excluded from quantization calibration. This corrected re-evaluation is separate from the standardized 45-run campaign.",
+  "experiment_id": "pilot_validation_evaluation_20261022",
+  "question": "Re-export the separate five-seed pilot using training-identity-only INT8 calibration and validation-only scoring, correcting the representative-set leakage in the historical pilot evaluation."
+}

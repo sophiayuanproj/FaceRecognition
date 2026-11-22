@@ -1,0 +1,132 @@
+{
+  "schema": "mac-accounting-conversion-check-1",
+  "created_utc": "2026-10-29T04:10:59+00:00",
+  "tensorflow_version": "2.10.1",
+  "keras_version": "2.10.0",
+  "fixture_purpose": "synthetic operator-accounting software fixture; not a face model or task result",
+  "hand_cases_macs": {
+    "conv2d": 3888,
+    "depthwise": 1944,
+    "separable": 2808,
+    "dense": 40
+  },
+  "keras_model_macs": {
+    "method": "keras_layer_formula_v2",
+    "macs_per_inference": 2828,
+    "counted_layers": [
+      {
+        "name": "separable",
+        "type": "SeparableConv2D",
+        "macs": 2808
+      },
+      {
+        "name": "classifier",
+        "type": "Dense",
+        "macs": 20
+      }
+    ],
+    "excluded_layers": [
+      {
+        "name": "synthetic_input",
+        "type": "InputLayer",
+        "reason": "outside multiply-accumulate convention"
+      },
+      {
+        "name": "mean_pool",
+        "type": "GlobalAveragePooling2D",
+        "reason": "outside multiply-accumulate convention"
+      }
+    ],
+    "complete": true
+  },
+  "tflite_operator_macs": {
+    "method": "tflite_operator_tensor_shape_v1",
+    "macs_per_inference": 2828,
+    "counted_operators": [
+      {
+        "operator_index": 0,
+        "op_name": "DEPTHWISE_CONV_2D",
+        "macs": 1944,
+        "output_shape": [
+          1,
+          6,
+          6,
+          6
+        ],
+        "filter_shape": [
+          1,
+          3,
+          3,
+          6
+        ]
+      },
+      {
+        "operator_index": 1,
+        "op_name": "CONV_2D",
+        "macs": 864,
+        "output_shape": [
+          1,
+          6,
+          6,
+          4
+        ],
+        "filter_shape": [
+          4,
+          1,
+          1,
+          6
+        ]
+      },
+      {
+        "operator_index": 3,
+        "op_name": "FULLY_CONNECTED",
+        "macs": 20,
+        "output_shape": [
+          1,
+          5
+        ],
+        "filter_shape": [
+          5,
+          4
+        ]
+      }
+    ],
+    "excluded_operators": [
+      {
+        "operator_index": 2,
+        "op_name": "MEAN"
+      }
+    ],
+    "unclassified_operators": [],
+    "complete": true
+  },
+  "comparison": {
+    "keras_layer_macs": 2828,
+    "tflite_operator_macs": 2828,
+    "difference": 0,
+    "match": true,
+    "operator_accounting_complete": true
+  },
+  "conversion_bytes": 2796,
+  "converted_model_sha256": "342ae8430be055194b5cd9c46367c11c69752cd6d018b511113430d51deb33ac",
+  "inference_smoke": {
+    "input_shape": [
+      1,
+      8,
+      8,
+      3
+    ],
+    "output_shape": [
+      5
+    ],
+    "output_values": [
+      -0.0961092859506607,
+      -0.20055606961250305,
+      0.2306995391845703,
+      0.5932775735855103,
+      0.5640854835510254
+    ]
+  },
+  "counting_convention": "one multiply-accumulate equals one MAC; bias adds, activations, pooling, normalization, indexing, memory movement and interpreter overhead excluded",
+  "interpretation": "MAC count is an operation estimate, not measured speed or energy."
+}

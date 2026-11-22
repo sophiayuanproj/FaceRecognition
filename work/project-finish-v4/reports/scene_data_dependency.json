@@ -1,0 +1,96 @@
+{
+  "schema": "scene-data-dependency-1",
+  "protocol_id": "nicla-five-known-study-v4",
+  "status": "archives_downloaded_verified_c_prep_interrupted",
+  "owner": "C scene-data lane",
+  "primary_source": {
+    "name": "WIDER FACE v1.0",
+    "project_page": "https://shuoyang1213.me/WIDERFACE/",
+    "paper": "https://openaccess.thecvf.com/content_cvpr_2016/papers/Yang_WIDER_FACE_A_CVPR_2016_paper.pdf",
+    "official_project_page_lists": [
+      "WIDER Face Training Images",
+      "WIDER Face Validation Images",
+      "Face annotations"
+    ],
+    "expected_artifacts": [
+      "WIDER_train.zip",
+      "WIDER_val.zip",
+      "wider_face_split.zip"
+    ],
+    "expected_labels": "Per-image face bounding boxes in wider_face_train_bbx_gt.txt and wider_face_val_bbx_gt.txt; test boxes are not publicly released.",
+    "published_scope": "32,203 full-scene images and 393,703 labeled faces; event-stratified 40% train, 10% validation, 50% test.",
+    "use": "Use train images/boxes for detector training and validation images/boxes for development/calibration under a frozen group policy. Do not claim labeled test evaluation without annotations.",
+    "negative_scene_limit": "The official source says images without human faces were filtered during collection. WIDER FACE therefore does not supply genuine no-face scenes."
+  },
+  "separate_negative_scene_dependency": {
+    "name": "verified empty target-camera scenes",
+    "status": "pending_instrument_camera_access",
+    "requirement": "Capture and visually verify full-frame no-face scenes using the target optical path. Keep capture session/lighting/location metadata and split by capture session; do not synthesize these negatives from face crops.",
+    "minimum_staging_plan": "At least 200 frames across four lighting states and five view locations, with two separately recorded sessions; use one session for training and hold the other for development. Expand only after checking scene variety.",
+    "available_now": false
+  },
+  "download_verification": {
+    "attempted": true,
+    "downloaded": true,
+    "archives": [
+      {
+        "filename": "WIDER_train.zip",
+        "split": "train",
+        "byte_size": 1465602149,
+        "sha256": "e23b76129c825cafae8be944f65310b2e1ba1c76885afe732f179c41e5ed6d59",
+        "published_sha256_match": true,
+        "zip_crc_check": "pass",
+        "retrieval_utc": "2026-10-29T04:53:10+00:00",
+        "requested_source_url": "https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_train.zip",
+        "pinned_repository_revision": "ba0019b20b8c674d1f7bb8426f36ce69ea082648"
+      },
+      {
+        "filename": "WIDER_val.zip",
+        "split": "validation",
+        "byte_size": 362752168,
+        "sha256": "f9efbd09f28c5d2d884be8c0eaef3967158c866a593fc36ab0413e4b2a58a17a",
+        "published_sha256_match": true,
+        "zip_crc_check": "pass",
+        "retrieval_utc": "2026-10-29T04:55:11+00:00",
+        "requested_source_url": "https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_val.zip",
+        "pinned_repository_revision": "ba0019b20b8c674d1f7bb8426f36ce69ea082648"
+      },
+      {
+        "filename": "wider_face_split.zip",
+        "split": "annotations",
+        "byte_size": 3591642,
+        "sha256": "c7561e4f5e7a118c249e0a5c5c902b0de90bbf120d7da9fa28d99041f68a8a5c",
+        "published_sha256_match": true,
+        "zip_crc_check": "pass",
+        "retrieval_utc": "2026-10-29T04:55:25+00:00",
+        "requested_source_url": "https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/wider_face_split.zip",
+        "pinned_repository_revision": "ba0019b20b8c674d1f7bb8426f36ce69ea082648"
+      }
+    ],
+    "archive_crc_checks": "pass for all three ZIP files",
+    "annotation_archive_sha256": "c7561e4f5e7a118c249e0a5c5c902b0de90bbf120d7da9fa28d99041f68a8a5c",
+    "image_count": null,
+    "box_count": null,
+    "decode_errors": null,
+    "per_image_manifest": null,
+    "partial_extraction_root": "work/dataset-prep/extracted/widerface/",
+    "c_prep_phase_status": "interrupted",
+    "test_images_downloaded_or_opened": false,
+    "test_ground_truth_parsed_or_used": false,
+    "reason": "Raw train/validation and annotation archives were downloaded from the official page-linked, commit-pinned CUHK-CSE mirror and their published SHA-256 values and ZIP CRCs pass. Preparation stopped before an image manifest was generated because annotation parsing encountered a zero-box record followed by a placeholder row. No per-image decode, full annotation count, or detector dataset receipt was completed.",
+    "required_receipt_fields": [
+      "source_url",
+      "retrieval_utc",
+      "filename",
+      "byte_size",
+      "sha256",
+      "split",
+      "annotation_file",
+      "image_count",
+      "box_count",
+      "decode_errors"
+    ]
+  },
+  "source_rights_note": "The WIDER FACE project page identifies the dataset as CC BY-NC-ND. Check the current source terms before redistribution or derivative publication.",
+  "acceptance": "C preparation remains with its assigned owner: finish parsing/indexing the staged train/validation images and boxes, then capture session-separated target-camera empty scenes. No detector training/readiness claim is made."
+}

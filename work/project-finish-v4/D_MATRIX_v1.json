@@ -1,0 +1,94 @@
+{
+  "schema": "nicla-job-d-matrix-1",
+  "matrix_id": "D-five-person-transfer-open-set-gallery-v1",
+  "protocol_id": "nicla-five-known-study-v4",
+  "frozen_before_training": true,
+  "platform": "Mac host training; no Windows training",
+  "branch": "public five-known benchmark K01-K05; no personal-photo branch",
+  "primary_dataset": "survface_96",
+  "secondary_dataset": "olivetti_96",
+  "roster_source": "work/project-finish-v4/data/roster.json",
+  "survface_roles_source": "work/project-finish-v4/data/primary_split_manifest.jsonl",
+  "olivetti_roles_source": "work/project-finish-v4/data/olivetti_sanity_manifest.jsonl",
+  "training_roots_source": "work/project-finish-v4/config/seed_registry.json",
+  "training_roots": [20261101, 20261102, 20261103, 20261104, 20261105, 20261106, 20261107, 20261108, 20261109, 20261110],
+  "pilot_roots": [20261501, 20261502, 20261503, 20261504, 20261505, 20261506, 20261507, 20261508, 20261509, 20261510],
+  "epochs_and_stopping": {
+    "development_search_seed": 20261100,
+    "transfer_initialization_search_candidates": [
+      {"id": "T1", "head_lr": 0.001, "fine_tune_lr": 0.0001, "unfreeze_top_fraction": 0.25, "augmentation": "mild_gray_v1", "head_epochs_max": 4, "fine_tune_epochs_max": 8},
+      {"id": "T2", "head_lr": 0.001, "fine_tune_lr": 0.0003, "unfreeze_top_fraction": 0.25, "augmentation": "mild_gray_v1", "head_epochs_max": 6, "fine_tune_epochs_max": 18},
+      {"id": "T3", "head_lr": 0.0005, "fine_tune_lr": 0.0001, "unfreeze_top_fraction": 0.5, "augmentation": "mild_gray_v1", "head_epochs_max": 6, "fine_tune_epochs_max": 18},
+      {"id": "T4", "head_lr": 0.001, "fine_tune_lr": 0.0001, "unfreeze_top_fraction": 0.25, "augmentation": "none", "head_epochs_max": 6, "fine_tune_epochs_max": 18}
+    ],
+    "scratch_search_candidates": [
+      {"id": "S1", "learning_rate": 0.001, "augmentation": "mild_gray_v1", "epochs_max": 12},
+      {"id": "S2", "learning_rate": 0.0003, "augmentation": "mild_gray_v1", "epochs_max": 24},
+      {"id": "S3", "learning_rate": 0.0005, "augmentation": "none", "epochs_max": 24}
+    ],
+    "selection": "For each width and initialization family choose the candidate with highest development macro utility after its threshold is fit only on threshold_calibration and unknown_calibration; tie-break by macro known accuracy then lower learning rate. Do not open final roles during search.",
+    "early_stopping": "SurvFace stopping role only; restore the epoch with highest macro known stopping accuracy, tie-break by lower stopping loss. Olivetti uses its development role because the frozen small-data split has no separate stopping role.",
+    "scratch_fair_budget": "For each width, scratch uses the same maximum total epoch count and batch/example budget as that width's selected transfer configuration. Every arm is independently initialized per registered root.",
+    "batching": "Balanced six-class batches: four examples per K01-K05 and four OTHER examples per batch; 24 images, 15 steps per epoch, 360 sample presentations per full epoch. Unknown identities are sampled uniformly for OTHER batches.",
+    "augmentation": "mild_gray_v1 is limited to training rows: deterministic seeded horizontal flip, gain U[0.92,1.08], and offset U[-8,8] gray levels. No validation/calibration/development/final augmentation."
+  },
+  "survface_arms": [
+    {"id": "sv_mnv1_a010_transfer_6", "width": 0.1, "initialization": "Edge Impulse grayscale checkpoint", "head": "K01-K05+OTHER logits", "roots": 10},
+    {"id": "sv_mnv1_a010_scratch_6", "width": 0.1, "initialization": "random", "head": "K01-K05+OTHER logits", "roots": 10},
+    {"id": "sv_mnv1_a025_transfer_6", "width": 0.25, "initialization": "Edge Impulse grayscale checkpoint", "head": "K01-K05+OTHER logits", "roots": 10},
+    {"id": "sv_mnv1_a025_scratch_6", "width": 0.25, "initialization": "random", "head": "K01-K05+OTHER logits", "roots": 10},
+    {"id": "sv_mnv1_a010_transfer_5_oe", "width": 0.1, "initialization": "Edge Impulse grayscale checkpoint", "head": "K01-K05 logits; same unknown_train images used with uniform outlier-exposure loss", "roots": 10},
+    {"id": "sv_mnv1_a025_transfer_5_oe", "width": 0.25, "initialization": "Edge Impulse grayscale checkpoint", "head": "K01-K05 logits; same unknown_train images used with uniform outlier-exposure loss", "roots": 10},
+    {"id": "sv_mnv1_a025_quality_select_6", "width": 0.25, "initialization": "Edge Impulse grayscale checkpoint", "head": "K01-K05+OTHER logits", "selection_control": "quality/diversity sampling from the D training candidate pool", "roots": 10},
+    {"id": "sv_mnv1_a025_uniform_select_6", "width": 0.25, "initialization": "Edge Impulse grayscale checkpoint", "head": "K01-K05+OTHER logits", "selection_control": "uniform sampling from the exact same D training candidate pool and camera-stratum budget", "roots": 10}
+  ],
+  "representation_comparisons": [
+    {
+      "id": "pretrained_finetuned_embedding_gallery",
+      "source_arms": ["sv_mnv1_a010_transfer_6", "sv_mnv1_a025_transfer_6"],
+      "embedding": "64-D penultimate learned representation; L2 normalization in gallery builder",
+      "gallery": "five known-identity galleries built only from training-role images; average 1, 3, 5, 10, or all available selected templates; template count and threshold chosen on calibration/development roles per root",
+      "selection_control": "quality-ranked/diverse versus uniform five-template galleries, both evaluated over the same ten trained roots"
+    },
+    {
+      "id": "v3_custom_base_tiny_historical_gallery",
+      "source_arms": ["historical_custom_base", "historical_custom_tiny"],
+      "embedding": "existing v3 ten-root outputs only after per-file exposure and hash audit",
+      "adaptation": "no encoder fine-tuning; D training-role image galleries are the only target-specific adaptation",
+      "classification": "historical representation control, not a new independent D training arm"
+    }
+  ],
+  "olivetti_arms": [
+    {"id": "ol_mnv1_a010_transfer_40", "width": 0.1, "initialization": "Edge Impulse grayscale checkpoint", "head": "40-way closed-set logits", "roots": 10},
+    {"id": "ol_mnv1_a010_scratch_40", "width": 0.1, "initialization": "random", "head": "40-way closed-set logits", "roots": 10},
+    {"id": "ol_mnv1_a025_transfer_40", "width": 0.25, "initialization": "Edge Impulse grayscale checkpoint", "head": "40-way closed-set logits", "roots": 10},
+    {"id": "ol_mnv1_a025_scratch_40", "width": 0.25, "initialization": "random", "head": "40-way closed-set logits", "roots": 10}
+  ],
+  "open_set_comparison": {
+    "matched_input_information": "Five-output and six-output models share the same known/unknown training image budget and the same train, stopping, threshold-calibration, development, and final roles. Six-output uses the unknown examples as OTHER-class supervision; five-output uses those exact unknown training examples with a uniform-distribution outlier-exposure loss and still emits only five known logits.",
+    "calibration": "Use known threshold_calibration plus identity-disjoint unknown_calibration records. Select model-specific score thresholds on calibration roles to maximize correct known acceptance subject to unknown false-identification rate <= 5%; report the achieved risk even when the empirical constraint cannot be met.",
+    "unknown_test": "unknown_final identities only; disjoint from unknown_train, unknown_calibration, and unknown_development identities."
+  },
+  "quality_selection_control": {
+    "source": "B source_manifest/quality_inventory and permitted_survface_phashes; D-derived rows only; B manifests remain immutable.",
+    "candidate_pool": "For K01-K05, include primary B train groups plus permitted, unassigned source groups. Exclude any exact/within-identity pHash component that touches B stopping/calibration/development/final/presentation roles. Exclude new candidate records connected by a cross-identity pHash<=6 edge to a frozen held-out role. Never read v3-final or unlabeled source files.",
+    "budget": "60 unique image groups per known identity; per-root camera-stratum counts match the B primary training strata. OTHER uses the exact same B unknown_train rows in both arms.",
+    "quality_policy": "Within each filename camera stratum sample without replacement using the frozen B quality score as the monotonic sampling weight; this is source-group diversity, not verified session diversity.",
+    "uniform_policy": "Uniform sample without replacement from the same candidate pool, with identical per-identity and camera-stratum counts and no quality cutoff.",
+    "roots": 10,
+    "limit": "This D-owned supplement does not alter B's canonical role manifests and is separately hashed."
+  },
+  "exports": {
+    "host_checkpoint": "Keras HDF5 weights plus source/config/curve/training summary per root",
+    "float_export": "Float32 TFLite per evaluated stage/root",
+    "quantized_export": "Full-integer INT8 TFLite using representative samples from permitted train rows only; require integer input/output and audit all operators",
+    "output_contracts": ["classifier_logits-6", "classifier_logits-5", "classifier_logits-40", "embedding-64/gallery-cosine"]
+  },
+  "final_role_gate": "No final role is opened until matrix selection, per-root checkpoints/exports, calibration, gallery counts and model/config/calibration/protocol hashes are frozen. All SurvFace public scores are exploratory because K01-K05 appeared in v3 development.",
+  "prospective_limits": [
+    "SurvFace rows are 96x96 public grayscale crops; source camera labels are not capture sessions.",
+    "Olivetti is a separate small-data, posed-face sanity set; no open-set or camera-session claim.",
+    "H5 published checkpoint class metadata and exact pretraining-data/licensing declaration are not embedded in the file; record this provenance limit instead of asserting an unverified source corpus.",
+    "Host TFLite quality does not qualify Nicla arena, OpenMV operator support, latency, power or camera pipeline."
+  ]
+}

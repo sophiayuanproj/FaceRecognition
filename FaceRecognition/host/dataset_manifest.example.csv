@@ -1,0 +1,4 @@
+session_id,person_id,identity_role,capture_camera,lighting,split,source_file,host_received_utc,frame_index,width,height,transport,source_pixel_format_id,wire_payload_bytes,stored_encoding,source_config,notes
+person01_round_01,person01,known,arduino_nicla_vision,indoor_bright,unassigned,images/frame_000001.png,,1,320,240,JPEG preview -> SDK RGB888,,,PNG RGB,source_config.json,EXAMPLE ONLY - replace with actual acquired records
+unknown01_round_03,unknown01,unknown,arduino_nicla_vision,indoor_dim,test,images/frame_000001.png,,1,320,240,JPEG preview -> SDK RGB888,,,PNG RGB,source_config.json,EXAMPLE ONLY - unknown identity excluded from training
+no_face_round_01,none,no_face,arduino_nicla_vision,indoor_bright,training,images/frame_000001.png,,1,320,240,JPEG preview -> SDK RGB888,,,PNG RGB,source_config.json,EXAMPLE ONLY - detector background scene

@@ -1,0 +1,578 @@
+{
+  "boundary": "These are crop-level experimental candidates. No camera pipeline, Nicla latency, arena, operator support, power, or physical identity workflow was qualified.",
+  "candidate_large": {
+    "backend": "float",
+    "deployment_eligible": false,
+    "development": {
+      "known_correct_acceptance": 0.28,
+      "known_identification": 0.7200000000000001,
+      "macro_utility": 0.6083333333333334,
+      "unknown_fpir": 0.06333333333333334
+    },
+    "exports": {
+      "FINAL_RESULT.json": {
+        "bytes": 55725,
+        "sha256": "a60e13d5a9feef323b2b4d89c3192df4d49128a7ef3ee480698e1de591e05827",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/FINAL_RESULT.json"
+      },
+      "FROZEN.json": {
+        "bytes": 1062,
+        "sha256": "3e728c6b7f68939d33d168caa29a59a08f7cdb3dd2aae6784f90bc2a3f373951",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/FROZEN.json"
+      },
+      "ROOT_RESULT.json": {
+        "bytes": 51546,
+        "sha256": "91c8a3cf07012b5dad34e10003f303b5d4710f0795ef7b9ad3a7e44adc9e3703",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/ROOT_RESULT.json"
+      },
+      "classifier.weights.h5": {
+        "bytes": 2110960,
+        "sha256": "2aca393504c0330b93ad704c6d6f7b34396e1ffda80c7f0569424eed62ae457c",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier.weights.h5"
+      },
+      "classifier_float.tflite": {
+        "bytes": 934360,
+        "sha256": "dba5e2087fd39e93ba594bcf390c63685199615042045a736b49a2e801644ad0",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_float.tflite"
+      },
+      "classifier_int8.tflite": {
+        "bytes": 329944,
+        "sha256": "e327d091e3f4a33c8f47c35830ad5ca04f671c9ca7a155a310b2c94d454739d9",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_int8.tflite"
+      },
+      "config.json": {
+        "bytes": 860,
+        "sha256": "f92ea2138a466cbf22f412bce63cf16f5380c390a2b00effbfeb0b1dcd61c58a",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/config.json"
+      },
+      "float_calibration.json": {
+        "bytes": 577,
+        "sha256": "68b78f32420790ecc7f58d62cb551b1ecdb1a1bc43c7e46ba8e94bfece91c201",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/float_calibration.json"
+      },
+      "int8_calibration.json": {
+        "bytes": 559,
+        "sha256": "b0f5ad3920e2b0042c22f74647f7f3b8b87f5a1381438dc5a1210e3c6c22b302",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/int8_calibration.json"
+      }
+    },
+    "family_id": "sv_mnv1_a025_quality_select_6",
+    "family_type": "six_output_classifier",
+    "final_family_mean_across_10_roots": {
+      "float": {
+        "known_identity_macro_correct_acceptance": {
+          "mean": 0.17300000000000001,
+          "root_count": 10,
+          "sd_across_roots": 0.06000925854492048
+        },
+        "known_identity_macro_coverage": {
+          "mean": 0.20400000000000001,
+          "root_count": 10,
+          "sd_across_roots": 0.06022181221672649
+        },
+        "known_identity_macro_identification": {
+          "mean": 0.5770000000000001,
+          "root_count": 10,
+          "sd_across_roots": 0.049676732760697714
+        },
+        "known_identity_macro_rejection": {
+          "mean": 0.796,
+          "root_count": 10,
+          "sd_across_roots": 0.0602218122167265
+        },
+        "known_identity_macro_wrong_known_identity": {
+          "mean": 0.031000000000000007,
+          "root_count": 10,
+          "sd_across_roots": 0.009944289260117532
+        },
+        "other_accuracy": {
+          "mean": 0.38666666666666666,
+          "root_count": 10,
+          "sd_across_roots": 0.11732617823301597
+        },
+        "unknown_false_identification_rate": {
+          "mean": 0.032999999999999995,
+          "root_count": 10,
+          "sd_across_roots": 0.016662962551348855
+        },
+        "unknown_rejection_rate": {
+          "mean": 0.967,
+          "root_count": 10,
+          "sd_across_roots": 0.01666296255134884
+        }
+      },
+      "int8": {
+        "known_identity_macro_correct_acceptance": {
+          "mean": 0.046,
+          "root_count": 10,
+          "sd_across_roots": 0.04402019738458447
+        },
+        "known_identity_macro_coverage": {
+          "mean": 0.08099999999999999,
+          "root_count": 10,
+          "sd_across_roots": 0.06384877968032489
+        },
+        "known_identity_macro_identification": {
+          "mean": 0.38,
+          "root_count": 10,
+          "sd_across_roots": 0.06480740698407864
+        },
+        "known_identity_macro_rejection": {
+          "mean": 0.9189999999999999,
+          "root_count": 10,
+          "sd_across_roots": 0.06384877968032485
+        },
+        "known_identity_macro_wrong_known_identity": {
+          "mean": 0.034999999999999996,
+          "root_count": 10,
+          "sd_across_roots": 0.028382310609877334
+        },
+        "other_accuracy": {
+          "mean": 0.4253333333333334,
+          "root_count": 10,
+          "sd_across_roots": 0.18885751373410367
+        },
+        "unknown_false_identification_rate": {
+          "mean": 0.027999999999999997,
+          "root_count": 10,
+          "sd_across_roots": 0.02097617696340303
+        },
+        "unknown_rejection_rate": {
+          "mean": 0.9719999999999999,
+          "root_count": 10,
+          "sd_across_roots": 0.02097617696340303
+        }
+      }
+    },
+    "float_tflite_contract": {
+      "all_int8_boundary": false,
+      "bytes": 934360,
+      "full_int8_requested": false,
+      "input": {
+        "dtype": "<class 'numpy.float32'>",
+        "scale": null,
+        "shape": [
+          1,
+          96,
+          96,
+          1
+        ],
+        "zero_point": null
+      },
+      "internal_float_tensor_count": 108,
+      "op_names": [
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "MEAN",
+        "FULLY_CONNECTED",
+        "FULLY_CONNECTED"
+      ],
+      "operator_count": 34,
+      "output": {
+        "dtype": "<class 'numpy.float32'>",
+        "scale": null,
+        "shape": [
+          1,
+          6
+        ],
+        "zero_point": null
+      },
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_float.tflite",
+      "sha256": "dba5e2087fd39e93ba594bcf390c63685199615042045a736b49a2e801644ad0",
+      "tensor_dtype_counts": {
+        "<class 'numpy.float32'>": 108,
+        "<class 'numpy.int32'>": 4
+      },
+      "tensor_types": [
+        "<class 'numpy.float32'>",
+        "<class 'numpy.int32'>"
+      ]
+    },
+    "input_contract": {
+      "channel_order": "single grayscale",
+      "dtype": "float32",
+      "normalization": "gray8 / 255.0",
+      "shape": [
+        null,
+        96,
+        96,
+        1
+      ]
+    },
+    "int8_tflite_contract": {
+      "all_int8_boundary": true,
+      "bytes": 329944,
+      "full_int8_requested": true,
+      "input": {
+        "dtype": "<class 'numpy.int8'>",
+        "scale": 0.003921568859368563,
+        "shape": [
+          1,
+          96,
+          96,
+          1
+        ],
+        "zero_point": -128
+      },
+      "internal_float_tensor_count": 0,
+      "op_names": [
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "MEAN",
+        "FULLY_CONNECTED",
+        "FULLY_CONNECTED"
+      ],
+      "operator_count": 34,
+      "output": {
+        "dtype": "<class 'numpy.int8'>",
+        "scale": 0.04335464909672737,
+        "shape": [
+          1,
+          6
+        ],
+        "zero_point": -25
+      },
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_int8.tflite",
+      "representative_sample_count": 128,
+      "representative_source": "SurvFace/Olivetti train role only",
+      "sha256": "e327d091e3f4a33c8f47c35830ad5ca04f671c9ca7a155a310b2c94d454739d9",
+      "tensor_dtype_counts": {
+        "<class 'numpy.int32'>": 34,
+        "<class 'numpy.int8'>": 65
+      },
+      "tensor_types": [
+        "<class 'numpy.int32'>",
+        "<class 'numpy.int8'>"
+      ]
+    },
+    "label_order": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "OTHER"
+    ],
+    "pretrained_checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+    "root_seed": 20261106,
+    "route_id": "large_a025_float_classifier",
+    "selection_role": "development only; representative root chosen by development utility, then correct acceptance, then lowest seed",
+    "width": 0.25
+  },
+  "candidate_small": {
+    "backend": "int8",
+    "deployment_eligible": false,
+    "development": {
+      "calibrated_threshold": 0.9918046593666077,
+      "gallery_template_count_per_identity": null,
+      "known_correct_acceptance": 0.1,
+      "known_identification": 0.32000000000000006,
+      "macro_utility": 0.5333333333333333,
+      "template_prototype_sha256": "c155230847d73595a5fdbb667b522e10a34653e79e03eab2cf10882a7d50526d",
+      "unknown_fpir": 0.03333333333333333
+    },
+    "exports": {
+      "FROZEN.json": {
+        "bytes": 1056,
+        "sha256": "3c9d8c05e1a7aad82e90a54b209e2a711fa005eb9f9d6623401159b9dbc1e197",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/FROZEN.json"
+      },
+      "ROOT_RESULT.json": {
+        "bytes": 36111,
+        "sha256": "0e2c1575dd38c36e8f1104619be4c97c0948cf150865f9ac639c5838f106c19d",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/ROOT_RESULT.json"
+      },
+      "classifier.weights.h5": {
+        "bytes": 602592,
+        "sha256": "6d2dc55c192957d6f0fb38c00a0c5042a8bcb910d39bbdb69bf91665b80b874d",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/classifier.weights.h5"
+      },
+      "classifier_float.tflite": {
+        "bytes": 199356,
+        "sha256": "278c304fe9719e1ae1bc9160cbdca5b4665f19c666b03681242b25613f17c7f5",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/classifier_float.tflite"
+      },
+      "classifier_int8.tflite": {
+        "bytes": 100840,
+        "sha256": "dc46bb589f657bffb5a9963415002231d612ba0aefae9ce525ee20d27e612bdc",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/classifier_int8.tflite"
+      },
+      "config.json": {
+        "bytes": 755,
+        "sha256": "e364190c65f56b45582e759fee0dc01e8b1b0b14ece2eecd5e55c764ed6787bf",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/config.json"
+      },
+      "embedding_float.tflite": {
+        "bytes": 199056,
+        "sha256": "5d59d43f449a9f9b3c8ae54c64fbd27a04689d530aefc83f75a27fb11695a6df",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_float.tflite"
+      },
+      "embedding_int8.tflite": {
+        "bytes": 101576,
+        "sha256": "0bf2bc5fb05b0c02d5d09217fe01834182578ebd92f9c001cd088c8ce5a9b0cd",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_int8.tflite"
+      },
+      "float_calibration.json": {
+        "bytes": 580,
+        "sha256": "8713bd96f86c3830e03c0dd9b64270bcf0f1b6374b011aeee55b9a75af0588c9",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/float_calibration.json"
+      },
+      "int8_calibration.json": {
+        "bytes": 559,
+        "sha256": "a0cd4cdfaf35f631cae2d0e6487538e61b26952ae4f35e74b70beed0b96f5603",
+        "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/int8_calibration.json"
+      }
+    },
+    "family_id": "a010_int8_uniform",
+    "family_type": "embedding_gallery",
+    "final_family_mean_across_10_roots": {
+      "known_macro_correct_acceptance": 0.035,
+      "known_macro_identification": 0.377,
+      "root_count": 10,
+      "unknown_fpir": 0.042,
+      "unknown_rejection": 0.958
+    },
+    "float_embedding_tflite_contract": {
+      "all_int8_boundary": false,
+      "bytes": 199056,
+      "full_int8_requested": false,
+      "input": {
+        "dtype": "<class 'numpy.float32'>",
+        "scale": null,
+        "shape": [
+          1,
+          96,
+          96,
+          1
+        ],
+        "zero_point": null
+      },
+      "internal_float_tensor_count": 105,
+      "op_names": [
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "MEAN",
+        "FULLY_CONNECTED"
+      ],
+      "operator_count": 33,
+      "output": {
+        "dtype": "<class 'numpy.float32'>",
+        "scale": null,
+        "shape": [
+          1,
+          64
+        ],
+        "zero_point": null
+      },
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_float.tflite",
+      "sha256": "5d59d43f449a9f9b3c8ae54c64fbd27a04689d530aefc83f75a27fb11695a6df",
+      "tensor_dtype_counts": {
+        "<class 'numpy.float32'>": 105,
+        "<class 'numpy.int32'>": 4
+      },
+      "tensor_types": [
+        "<class 'numpy.float32'>",
+        "<class 'numpy.int32'>"
+      ]
+    },
+    "gallery_selection_receipt": {
+      "bytes": 39767,
+      "sha256": "69d65fa8d3617e92dd09492f41831233b32ced0a5c8fb724a8a30143f5c7c5eb",
+      "workspace_path": "work/project-finish-v4/runs/D/gallery/a01/seed-20261110/int8_uniform.json"
+    },
+    "input_contract": {
+      "channel_order": "single grayscale",
+      "dtype": "float32",
+      "normalization": "gray8 / 255.0",
+      "shape": [
+        null,
+        96,
+        96,
+        1
+      ]
+    },
+    "int8_embedding_tflite_contract": {
+      "all_int8_boundary": true,
+      "bytes": 101576,
+      "full_int8_requested": true,
+      "input": {
+        "dtype": "<class 'numpy.int8'>",
+        "scale": 0.003921568859368563,
+        "shape": [
+          1,
+          96,
+          96,
+          1
+        ],
+        "zero_point": -128
+      },
+      "internal_float_tensor_count": 0,
+      "op_names": [
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "PAD",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "CONV_2D",
+        "MEAN",
+        "FULLY_CONNECTED"
+      ],
+      "operator_count": 33,
+      "output": {
+        "dtype": "<class 'numpy.int8'>",
+        "scale": 0.009992608800530434,
+        "shape": [
+          1,
+          64
+        ],
+        "zero_point": -128
+      },
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_int8.tflite",
+      "representative_sample_count": 128,
+      "representative_source": "SurvFace/Olivetti train role only",
+      "sha256": "0bf2bc5fb05b0c02d5d09217fe01834182578ebd92f9c001cd088c8ce5a9b0cd",
+      "tensor_dtype_counts": {
+        "<class 'numpy.int32'>": 33,
+        "<class 'numpy.int8'>": 63
+      },
+      "tensor_types": [
+        "<class 'numpy.int32'>",
+        "<class 'numpy.int8'>"
+      ]
+    },
+    "label_order": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05"
+    ],
+    "policy": "uniform",
+    "pretrained_checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+    "root_seed": 20261110,
+    "route_id": "small_a010_int8_uniform_gallery",
+    "selection_role": "development only; representative gallery root chosen by development utility, then correct acceptance, then lowest seed",
+    "width": 0.1
+  },
+  "quality_status": {
+    "prospective_usefulness_goal_met": false,
+    "reason": "The selected float classifier is non-reject-all but correctly accepts only 17.3% of known images on average, with pronounced per-person imbalance; the compact route correctly accepts 3.5% on average."
+  },
+  "schema": "job-d-candidate-routes-1",
+  "selection_evidence_path": "work/project-finish-v4/reports/D/CANDIDATE_SELECTION.json",
+  "selection_evidence_sha256": "38a6934a3aa2314f3b6de623910a77d53504085dd08fa419ba17fa6160abab86",
+  "selection_frozen_before_final": true,
+  "status": "complete_verified"
+}

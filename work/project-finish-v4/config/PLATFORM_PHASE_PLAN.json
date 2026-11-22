@@ -1,0 +1,355 @@
+{
+  "schema": "mac-main-windows-measurement-phase-plan-1",
+  "pack_revision": 5,
+  "confirmed_by_human": true,
+  "mac_master": "03_MAC_EXECUTION.md",
+  "windows_master": "04_WINDOWS_MEASUREMENT_EXECUTION.md",
+  "parallel_contract": "PLATFORM_AND_PARALLEL_CONTRACT.md",
+  "normal_windows_visits": 1,
+  "substantive_repair_may_require_remeasurement": true,
+  "default_heavy_training_capacity": 1,
+  "shared_state_writers": 1,
+  "phases": [
+    {
+      "id": "A_mac",
+      "host": "mac",
+      "job": "A",
+      "requires": [],
+      "resources": []
+    },
+    {
+      "id": "B_mac",
+      "host": "mac",
+      "job": "B",
+      "requires": [
+        "A_mac"
+      ],
+      "resources": [
+        "data_manifest_writer"
+      ]
+    },
+    {
+      "id": "C_prep_mac",
+      "host": "mac",
+      "job": "C",
+      "requires": [
+        "A_mac"
+      ],
+      "resources": []
+    },
+    {
+      "id": "C_train_mac",
+      "host": "mac",
+      "job": "C",
+      "requires": [
+        "B_mac",
+        "C_prep_mac"
+      ],
+      "resources": [
+        "heavy_training"
+      ]
+    },
+    {
+      "id": "D_prep_mac",
+      "host": "mac",
+      "job": "D",
+      "requires": [
+        "A_mac"
+      ],
+      "resources": []
+    },
+    {
+      "id": "D_train_mac",
+      "host": "mac",
+      "job": "D",
+      "requires": [
+        "B_mac",
+        "D_prep_mac"
+      ],
+      "resources": [
+        "heavy_training"
+      ]
+    },
+    {
+      "id": "E_mac",
+      "host": "mac",
+      "job": "E",
+      "requires": [
+        "D_train_mac"
+      ],
+      "resources": [
+        "heavy_training"
+      ]
+    },
+    {
+      "id": "F_prep_mac",
+      "host": "mac",
+      "job": "F",
+      "requires": [
+        "A_mac"
+      ],
+      "resources": [
+        "firmware_source_owner"
+      ]
+    },
+    {
+      "id": "F_finalize_mac",
+      "host": "mac",
+      "job": "F",
+      "requires": [
+        "C_train_mac",
+        "E_mac",
+        "F_prep_mac"
+      ],
+      "resources": [
+        "firmware_source_owner"
+      ]
+    },
+    {
+      "id": "H_mac",
+      "host": "mac",
+      "job": "H",
+      "requires": [
+        "F_finalize_mac"
+      ],
+      "resources": [
+        "nicla"
+      ],
+      "conditional": "Actual Nicla attached to a Mac, including Sophia's Mac"
+    },
+    {
+      "id": "J_prep_mac",
+      "host": "mac",
+      "job": "J",
+      "requires": [
+        "A_mac",
+        "F_prep_mac"
+      ],
+      "resources": []
+    },
+    {
+      "id": "J_ready_mac",
+      "host": "mac",
+      "job": "J",
+      "requires": [
+        "J_prep_mac",
+        "F_finalize_mac"
+      ],
+      "resources": [],
+      "note": "Implemented portable pilot/selection/capture code; measured-cost fit remains pending. H timing evidence consumed if already available."
+    },
+    {
+      "id": "L_methods_mac",
+      "host": "mac",
+      "job": "L",
+      "requires": [
+        "A_mac"
+      ],
+      "resources": []
+    },
+    {
+      "id": "W_prepare_mac",
+      "host": "mac",
+      "job": "W",
+      "requires": [
+        "A_mac"
+      ],
+      "resources": []
+    },
+    {
+      "id": "W_outbound_mac",
+      "host": "mac",
+      "job": "W",
+      "requires": [
+        "W_prepare_mac",
+        "F_finalize_mac",
+        "J_ready_mac"
+      ],
+      "resources": [],
+      "note": "Default: include completed H_mac evidence. If H must run at Windows-only device access, include the full portable H prerequisite runner and keep qualification pending."
+    },
+    {
+      "id": "W_setup_windows",
+      "host": "windows",
+      "job": "W",
+      "requires": [
+        "W_outbound_mac"
+      ],
+      "resources": []
+    },
+    {
+      "id": "G_windows",
+      "host": "windows",
+      "job": "G",
+      "requires": [
+        "W_setup_windows"
+      ],
+      "resources": [
+        "meter",
+        "commissioning_load"
+      ]
+    },
+    {
+      "id": "H_windows",
+      "host": "windows",
+      "job": "H",
+      "requires": [
+        "W_setup_windows"
+      ],
+      "resources": [
+        "nicla"
+      ],
+      "conditional": "Only if required H physical evidence is missing or stale and actual Nicla access is only available here; record exception"
+    },
+    {
+      "id": "H_qualified_gate",
+      "host": "gate",
+      "job": "H",
+      "requires": [],
+      "resources": [],
+      "requires_any": [
+        [
+          "H_mac"
+        ],
+        [
+          "H_windows"
+        ]
+      ],
+      "note": "Exact current firmware/model/config resource/parity acceptance required; no Nano substitution"
+    },
+    {
+      "id": "I_capture_windows",
+      "host": "windows",
+      "job": "I",
+      "requires": [
+        "G_windows",
+        "H_qualified_gate"
+      ],
+      "resources": [
+        "meter",
+        "nicla"
+      ]
+    },
+    {
+      "id": "I_selection_windows",
+      "host": "windows",
+      "job": "I",
+      "requires": [
+        "I_capture_windows"
+      ],
+      "resources": [],
+      "note": "Run immutable Mac-prepared development selection script; not final formal analysis"
+    },
+    {
+      "id": "J_pilot_windows",
+      "host": "windows",
+      "job": "J",
+      "requires": [
+        "I_selection_windows",
+        "J_ready_mac"
+      ],
+      "resources": [
+        "meter",
+        "nicla"
+      ]
+    },
+    {
+      "id": "J_freeze_windows",
+      "host": "windows",
+      "job": "J",
+      "requires": [
+        "J_pilot_windows"
+      ],
+      "resources": [],
+      "note": "Freeze exact hashes before final K access under predeclared rules"
+    },
+    {
+      "id": "K_capture_windows",
+      "host": "windows",
+      "job": "K",
+      "requires": [
+        "J_freeze_windows",
+        "H_qualified_gate"
+      ],
+      "resources": [
+        "meter",
+        "nicla"
+      ]
+    },
+    {
+      "id": "W_return_windows",
+      "host": "windows",
+      "job": "W",
+      "requires": [
+        "W_setup_windows"
+      ],
+      "resources": [],
+      "default_after": [
+        "K_capture_windows"
+      ],
+      "allow_partial_return": true,
+      "note": "May package partial failure evidence earlier; package validity is not experiment completion"
+    },
+    {
+      "id": "W_import_mac",
+      "host": "mac",
+      "job": "W",
+      "requires": [
+        "W_return_windows"
+      ],
+      "resources": []
+    },
+    {
+      "id": "I_analysis_mac",
+      "host": "mac",
+      "job": "I",
+      "requires": [
+        "W_import_mac",
+        "I_capture_windows",
+        "I_selection_windows"
+      ],
+      "resources": []
+    },
+    {
+      "id": "J_analysis_mac",
+      "host": "mac",
+      "job": "J",
+      "requires": [
+        "I_analysis_mac",
+        "J_pilot_windows",
+        "J_freeze_windows"
+      ],
+      "resources": []
+    },
+    {
+      "id": "K_analysis_mac",
+      "host": "mac",
+      "job": "K",
+      "requires": [
+        "J_analysis_mac",
+        "K_capture_windows"
+      ],
+      "resources": []
+    },
+    {
+      "id": "L_final_mac",
+      "host": "mac",
+      "job": "L",
+      "requires": [
+        "K_analysis_mac",
+        "L_methods_mac"
+      ],
+      "resources": []
+    },
+    {
+      "id": "M_mac",
+      "host": "mac",
+      "job": "M",
+      "requires": [
+        "L_final_mac"
+      ],
+      "resources": [],
+      "note": "Remaining physical acceptance uses actual board; final default host is Mac"
+    }
+  ]
+}

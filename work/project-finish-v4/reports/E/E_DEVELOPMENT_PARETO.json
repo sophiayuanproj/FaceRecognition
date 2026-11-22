@@ -1,0 +1,241 @@
+{
+  "points": [
+    {
+      "family": "capacity",
+      "arm_id": "capacity_a010",
+      "alpha": 0.1,
+      "utility": 0.5015,
+      "unknown_fpir": 0.013000000000000001,
+      "bytes": 99064.0
+    },
+    {
+      "family": "capacity",
+      "arm_id": "capacity_a025",
+      "alpha": 0.25,
+      "utility": 0.5031666666666667,
+      "unknown_fpir": 0.033666666666666664,
+      "bytes": 327072.0
+    },
+    {
+      "family": "capacity",
+      "arm_id": "capacity_a050",
+      "alpha": 0.5,
+      "utility": 0.5495,
+      "unknown_fpir": 0.05500000000000001,
+      "bytes": 1024360.0
+    },
+    {
+      "family": "capacity",
+      "arm_id": "capacity_a075",
+      "alpha": 0.75,
+      "utility": 0.5751666666666667,
+      "unknown_fpir": 0.06966666666666668,
+      "bytes": 2109704.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_dense_equal_finetune",
+      "utility": 0.5021666666666667,
+      "unknown_fpir": 0.03166666666666667,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_qat",
+      "utility": 0.4991666666666667,
+      "unknown_fpir": 0.0016666666666666666,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_magnitude_prune_50",
+      "utility": 0.5023333333333333,
+      "unknown_fpir": 0.039333333333333324,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_magnitude_prune_75",
+      "utility": 0.49899999999999994,
+      "unknown_fpir": 0.034,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_structured_prune_2of4",
+      "utility": 0.5096666666666667,
+      "unknown_fpir": 0.03666666666666667,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_physical_channel_keep_50",
+      "utility": 0.5038333333333334,
+      "unknown_fpir": 0.05233333333333333,
+      "bytes": 280248.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "small_a050_dense_equal_finetune",
+      "utility": 0.564,
+      "unknown_fpir": 0.054000000000000006,
+      "bytes": 1024360.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_cluster_16",
+      "utility": 0.5085,
+      "unknown_fpir": 0.035,
+      "bytes": 327712.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "small_a010_dense_equal_finetune",
+      "utility": 0.497,
+      "unknown_fpir": 0.016,
+      "bytes": 99064.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "small_a010_distilled",
+      "utility": 0.4916666666666666,
+      "unknown_fpir": 0.018666666666666668,
+      "bytes": 99064.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_head_32_sliced_initialization",
+      "utility": 0.5035000000000001,
+      "unknown_fpir": 0.040999999999999995,
+      "bytes": 316296.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_head_32_reset_initialization",
+      "utility": 0.49483333333333335,
+      "unknown_fpir": 0.04033333333333333,
+      "bytes": 316296.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_head_direct_gap_logits",
+      "utility": 0.5098333333333332,
+      "unknown_fpir": 0.036333333333333336,
+      "bytes": 309472.0
+    }
+  ],
+  "eligible_fp_ir_at_most_005": [
+    {
+      "family": "capacity",
+      "arm_id": "capacity_a010",
+      "alpha": 0.1,
+      "utility": 0.5015,
+      "unknown_fpir": 0.013000000000000001,
+      "bytes": 99064.0
+    },
+    {
+      "family": "capacity",
+      "arm_id": "capacity_a025",
+      "alpha": 0.25,
+      "utility": 0.5031666666666667,
+      "unknown_fpir": 0.033666666666666664,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_dense_equal_finetune",
+      "utility": 0.5021666666666667,
+      "unknown_fpir": 0.03166666666666667,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_qat",
+      "utility": 0.4991666666666667,
+      "unknown_fpir": 0.0016666666666666666,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_magnitude_prune_50",
+      "utility": 0.5023333333333333,
+      "unknown_fpir": 0.039333333333333324,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_magnitude_prune_75",
+      "utility": 0.49899999999999994,
+      "unknown_fpir": 0.034,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_structured_prune_2of4",
+      "utility": 0.5096666666666667,
+      "unknown_fpir": 0.03666666666666667,
+      "bytes": 327072.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_cluster_16",
+      "utility": 0.5085,
+      "unknown_fpir": 0.035,
+      "bytes": 327712.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "small_a010_dense_equal_finetune",
+      "utility": 0.497,
+      "unknown_fpir": 0.016,
+      "bytes": 99064.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "small_a010_distilled",
+      "utility": 0.4916666666666666,
+      "unknown_fpir": 0.018666666666666668,
+      "bytes": 99064.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_head_32_sliced_initialization",
+      "utility": 0.5035000000000001,
+      "unknown_fpir": 0.040999999999999995,
+      "bytes": 316296.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_head_32_reset_initialization",
+      "utility": 0.49483333333333335,
+      "unknown_fpir": 0.04033333333333333,
+      "bytes": 316296.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_head_direct_gap_logits",
+      "utility": 0.5098333333333332,
+      "unknown_fpir": 0.036333333333333336,
+      "bytes": 309472.0
+    }
+  ],
+  "pareto_shortlist": [
+    {
+      "family": "capacity",
+      "arm_id": "capacity_a010",
+      "alpha": 0.1,
+      "utility": 0.5015,
+      "unknown_fpir": 0.013000000000000001,
+      "bytes": 99064.0
+    },
+    {
+      "family": "optimization",
+      "arm_id": "large_head_direct_gap_logits",
+      "utility": 0.5098333333333332,
+      "unknown_fpir": 0.036333333333333336,
+      "bytes": 309472.0
+    }
+  ],
+  "role": "development-only; no final role",
+  "status": "complete_verified"
+}

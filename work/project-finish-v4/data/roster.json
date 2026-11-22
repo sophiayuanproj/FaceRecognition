@@ -1,0 +1,163 @@
+{
+  "archive_sha256": "f61b38dd7364e2dd912ec573c5e9180a5de3d68b95b910b4b5dddda42b265fe6",
+  "class_order": [
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "OTHER"
+  ],
+  "created_utc": "2026-10-29T04:43:14+00:00",
+  "dataset": "SurvFace-derived 96x96 grayscale crops",
+  "identity_map": [
+    {
+      "eligible_images": 264,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K01",
+      "metadata_only_rank": 1,
+      "pseudonym": "K01",
+      "pseudonymous_identity_id": "identity_0257",
+      "quality_valid_near_duplicate_groups": 261,
+      "source_camera_groups": {
+        "cam1": 57,
+        "cam2": 59,
+        "cam3": 66,
+        "cam4": 79
+      },
+      "source_identity_id": "10447",
+      "unique_near_duplicate_groups": 261
+    },
+    {
+      "eligible_images": 307,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K02",
+      "metadata_only_rank": 2,
+      "pseudonym": "K02",
+      "pseudonymous_identity_id": "identity_5250",
+      "quality_valid_near_duplicate_groups": 298,
+      "source_camera_groups": {
+        "cam1": 91,
+        "cam2": 96,
+        "cam3": 25,
+        "cam4": 86
+      },
+      "source_identity_id": "9889",
+      "unique_near_duplicate_groups": 298
+    },
+    {
+      "eligible_images": 189,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K03",
+      "metadata_only_rank": 3,
+      "pseudonym": "K03",
+      "pseudonymous_identity_id": "identity_0347",
+      "quality_valid_near_duplicate_groups": 185,
+      "source_camera_groups": {
+        "cam1": 20,
+        "cam2": 62,
+        "cam3": 46,
+        "cam4": 57
+      },
+      "source_identity_id": "10631",
+      "unique_near_duplicate_groups": 185
+    },
+    {
+      "eligible_images": 155,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K04",
+      "metadata_only_rank": 4,
+      "pseudonym": "K04",
+      "pseudonymous_identity_id": "identity_0313",
+      "quality_valid_near_duplicate_groups": 151,
+      "source_camera_groups": {
+        "cam1": 26,
+        "cam2": 63,
+        "cam3": 46,
+        "cam4": 16
+      },
+      "source_identity_id": "10554",
+      "unique_near_duplicate_groups": 151
+    },
+    {
+      "eligible_images": 197,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K05",
+      "metadata_only_rank": 5,
+      "pseudonym": "K05",
+      "pseudonymous_identity_id": "identity_5029",
+      "quality_valid_near_duplicate_groups": 185,
+      "source_camera_groups": {
+        "cam1": 19,
+        "cam2": 85,
+        "cam3": 67,
+        "cam4": 14
+      },
+      "source_identity_id": "9452",
+      "unique_near_duplicate_groups": 185
+    }
+  ],
+  "image_budget_per_known_identity": {
+    "development": 10,
+    "final": 20,
+    "presentation": 20,
+    "stopping": 10,
+    "threshold_calibration": 10,
+    "train": 60
+  },
+  "original_v3_final": "sealed; excluded from all v4 splits; its source image files were not opened or rehashed by this job",
+  "protocol_id": "nicla-five-known-study-v4",
+  "quality_rule": {
+    "brightness_mean_u8": [
+      5.0,
+      250.0
+    ],
+    "minimum_gray_std_u8": 2.0,
+    "minimum_laplacian_variance": 0.1,
+    "score": "0.30*brightness_midrange + 0.30*contrast_clipped_at_64 + 0.40*log1p(laplacian_variance)/log1p(128), each component clipped to [0,1]",
+    "use": "descriptive and train-only curation; never used to exclude development, calibration, evaluation, or presentation images"
+  },
+  "schema": "public-five-roster-1",
+  "selection_rule": {
+    "candidate_pool": "v3 development-role SurvFace identities only; v3 train, v3 calibration and sealed v3 final identities excluded from known-roster selection",
+    "historical_exposure": "all five selected identities and images were in v3 development. This v4 public benchmark is exploratory; it is not a fresh confirmatory set.",
+    "minimum_quality_valid_groups_per_covered_camera_group": 10,
+    "minimum_quality_valid_training_groups": 60,
+    "minimum_source_camera_groups": 2,
+    "minimum_unique_near_duplicate_groups": 130,
+    "prohibited_inputs": [
+      "v3 development scores",
+      "v3 calibration scores",
+      "held-out/final recognition performance",
+      "demographics or inferred real names"
+    ],
+    "ranking_order": [
+      "number of source camera groups with at least ten quality-valid unique image groups, descending",
+      "minimum eligible group count among covered camera groups, descending",
+      "quality-valid near-duplicate-group count, descending",
+      "numeric source identity as lexical tie-break"
+    ]
+  },
+  "split_grouping": "exact checksum and existing within-identity pHash<=6 candidate groups are kept within one role; filename camera groups are strata, not capture sessions; sessions are unknown.",
+  "split_seed": 20261201,
+  "training_gallery_parity": {
+    "classifier_train_images_per_identity": 60,
+    "embedding_gallery_images_per_identity": 60,
+    "gallery_role": "train records; no extra permitted information",
+    "same_source_record_ids": true,
+    "train_selection": "quality-valid groups only, ranked by quality score within filename-camera groups with hash-based tie break; applied only to the training role. All verified images remain eligible for other roles."
+  },
+  "unknown_roles": {
+    "class_balance": "300 OTHER train images total matches the 300 known training images; downstream batches must sample five known classes and OTHER with equal class weights.",
+    "identities_per_role": 50,
+    "images_per_identity": 6,
+    "roles": [
+      "unknown_train",
+      "unknown_calibration",
+      "unknown_development",
+      "unknown_final",
+      "unknown_presentation"
+    ]
+  },
+  "unlabeled_survface_verification_pool": "excluded; never treated as OTHER"
+}

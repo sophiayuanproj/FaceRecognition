@@ -1,0 +1,7 @@
+{
+  "release_id": "haar-sightings-r19-20261111",
+  "verification": "versioned deployment startup readback",
+  "startup_sha256": "043e9dadb65b64329161e84e66f0890b8278c2468eab34cbcc6bd9158e416ba5",
+  "usb_hook_sha256": "b675fd0f0e2bc22edd6b06c183a1f4e6e68c1fe3c99a822a85206da054afcfae",
+  "previous_startup_sha256": "043e9dadb65b64329161e84e66f0890b8278c2468eab34cbcc6bd9158e416ba5"
+}

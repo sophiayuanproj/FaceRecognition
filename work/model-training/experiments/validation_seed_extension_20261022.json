@@ -1,0 +1,44 @@
+{
+  "experiment_id": "validation_seed_extension_20261022",
+  "design_status": "Sequential exploratory replication extension created after reviewing initial campaign progress; all five new seeds, matched architecture/split cells, evaluation policy and continuation rule were fixed before launching any of these 20 runs.",
+  "question": "Do the base-versus-tiny and identity-split comparisons persist across five additional independent initialization seeds per model/split cell?",
+  "objective": "supervised contrastive loss with a 64-dimensional feature head",
+  "base_variant": "base",
+  "architecture_ablation": "tiny uses the same objective, feature dimension, split, batch composition, augmentation, and seeds as base; only channel widths change",
+  "split_method": "identity-disjoint 80/20 split stratified by image-count decile",
+  "split_seeds": [20261021, 20261022],
+  "training_seeds": [20261032, 20261033, 20261034, 20261035, 20261036],
+  "epochs_max": 30,
+  "early_stopping_patience": 5,
+  "cap_extension_rule": "After initial training, resume any run that reaches epoch 30 with fewer than five epochs since its last validation-AUC improvement to a total target of epoch 40. If a resumed run reaches epoch 40 with fewer than five no-improvement epochs, continue the same run to epoch 50. These are continuations, not additional independent seeds; retain full histories and report extensions explicitly.",
+  "primary_checkpoint_metric": "identity-disjoint validation ROC AUC",
+  "batch": "8 identities x 4 images",
+  "max_train_images_per_identity": 24,
+  "augmentation": ["horizontal flip", "translation <= 1.5%", "contrast +/- 12%"],
+  "per_job_host_threads": {"intra_op": 4, "inter_op": 1},
+  "planned_training_jobs": 20,
+  "job_groups": [
+    {"model_variant": "base", "split_seed": 20261021, "training_seeds": [20261032, 20261033, 20261034, 20261035, 20261036]},
+    {"model_variant": "tiny", "split_seed": 20261021, "training_seeds": [20261032, 20261033, 20261034, 20261035, 20261036]},
+    {"model_variant": "base", "split_seed": 20261022, "training_seeds": [20261032, 20261033, 20261034, 20261035, 20261036]},
+    {"model_variant": "tiny", "split_seed": 20261022, "training_seeds": [20261032, 20261033, 20261034, 20261035, 20261036]}
+  ],
+  "selection_and_test_policy": "All seeds and comparisons are specified before inspecting this extension's results. Checkpoint selection and decision thresholds use each run's identity-disjoint validation pairs only. Export and score float and full-integer INT8 TFLite models on that validation set. Do not load the supplied final SurvFace pair annotations or Olivetti. Do not deploy a candidate based on this validation comparison without a separately documented decision and board check.",
+  "interpretation_caveats": [
+    "Best-epoch metrics are validation-selected and are not unbiased test estimates.",
+    "Ten matched base/tiny seeds per model/split cell are the target after combining the five earlier matched seeds with this extension; the distinct-seed base split-B cell also contains earlier seeds 20261027-20261031.",
+    "Seed variability on fixed identity splits does not create independent test sets.",
+    "Pair-bootstrap intervals resample pairs and may be optimistic because pairs share identities and images; identity-cluster intervals are also reported.",
+    "Recorded runtime is wall-clock and can include data loading and host idle/sleep gaps, so it is not active CPU time or a throughput measurement.",
+    "The five-seed pilot used different TensorFlow thread settings and remains separate."
+  ],
+  "evaluation": {
+    "format": "float TFLite and full signed-integer INT8 TFLite",
+    "bootstrap_replicates": 1000,
+    "identity_cluster_bootstrap_replicates": 1000,
+    "evaluation_mode": "validation-only",
+    "host_threads_per_process": 3,
+    "parallel_training_jobs": 3,
+    "parallel_evaluation_jobs": 4
+  }
+}

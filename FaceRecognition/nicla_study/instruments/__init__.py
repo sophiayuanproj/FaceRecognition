@@ -1,0 +1,1 @@
+"""Platform-specific device adapters."""

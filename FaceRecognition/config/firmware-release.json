@@ -1,0 +1,24 @@
+{
+  "version": "v5.0.1",
+  "board": "ARDUINO_NICLA_VISION",
+  "source": "https://github.com/openmv/openmv/releases/download/v5.0.1/firmware_v5.0.1.zip",
+  "archive_sha256": "1338b9607b57d88cf1de5aee115ea0e18cb17d06ff4d8dc55d6c022dba66dbc8",
+  "files": [
+    {
+      "name": "romfs0.img",
+      "bytes": 1006372,
+      "sha256": "f5dd7a04155fa819aab39d9b8d20528f8dd5669c2f9b41bc9dcc751277857e9b"
+    },
+    {
+      "name": "firmware.elf",
+      "bytes": 12926924,
+      "sha256": "7680ce2b063a08066746335d54a11ff528bca140a066b9fdcc98b53a9a926077"
+    },
+    {
+      "name": "firmware.bin",
+      "bytes": 1639184,
+      "sha256": "7a6eac67d6ce53a19e927864ed4b6a51f88763f927bda0f69e1ea541201efc10"
+    }
+  ],
+  "status": "downloaded; not flashed"
+}

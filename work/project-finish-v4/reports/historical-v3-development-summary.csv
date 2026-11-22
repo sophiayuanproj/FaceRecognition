@@ -1,0 +1,26 @@
+Model,Export format,Completed roots,"ROC-AUC mean (%) - higher is better, not accuracy",ROC-AUC 95% CI lower (%),ROC-AUC 95% CI upper (%),Equal-error rate mean (%) - lower is better,Mean host model size (KiB),Unsupported roots,Host result status,"Nicla latency, memory, and energy"
+Custom Base CNN,Float32,10,74.71,74.25,75.18,32.1,50.7,0,Complete (diagnostic),pending Nicla and meter
+Custom Base CNN,Full INT8,10,74.72,74.25,75.19,32.3,26.2,0,Complete (diagnostic),pending Nicla and meter
+Custom Base CNN,FP16 weights,10,74.71,74.25,75.18,32.0,31.4,0,Complete (diagnostic),pending Nicla and meter
+Custom Base CNN,Dynamic-range quantization,10,74.71,74.25,75.17,32.0,26.6,0,Complete (diagnostic),pending Nicla and meter
+Custom Base CNN,8-centroid clustering,10,70.77,68.63,72.91,34.9,50.7,0,Complete (diagnostic),pending Nicla and meter
+Custom Tiny CNN,Float32,10,72.76,72.32,73.20,33.5,22.8,0,Complete (diagnostic),pending Nicla and meter
+Custom Tiny CNN,Full INT8,10,72.76,72.30,73.21,33.5,15.2,0,Complete (diagnostic),pending Nicla and meter
+Custom Tiny CNN,FP16 weights,10,72.76,72.32,73.21,33.5,17.5,0,Complete (diagnostic),pending Nicla and meter
+Custom Tiny CNN,Dynamic-range quantization,10,72.75,72.31,73.20,33.5,16.9,0,Complete (diagnostic),pending Nicla and meter
+Custom Tiny CNN,8-centroid clustering,10,67.92,65.93,69.92,36.9,22.8,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.10,Float32,10,71.53,70.78,72.28,34.4,184.4,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.10,Full INT8,10,71.46,70.68,72.24,34.3,91.8,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.10,FP16 weights,10,71.53,70.78,72.28,34.4,112.2,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.10,Dynamic-range quantization,10,71.53,70.78,72.29,34.4,87.5,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.10,8-centroid clustering,0,,,,,,10,Unsupported,pending Nicla and meter
+MobileNetV1 alpha 0.25,Float32,10,72.41,71.91,72.91,33.6,904.9,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.25,Full INT8,10,72.41,71.95,72.88,33.7,315.5,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.25,FP16 weights,10,72.41,71.91,72.91,33.6,472.4,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.25,Dynamic-range quantization,10,72.41,71.93,72.90,33.5,286.4,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.25,8-centroid clustering,0,,,,,,10,Unsupported,pending Nicla and meter
+MobileNetV1 alpha 0.10 (distilled),Float32,10,72.08,71.28,72.87,33.5,184.4,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.10 (distilled),Full INT8,10,72.06,71.27,72.86,33.4,91.8,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.10 (distilled),FP16 weights,10,72.08,71.28,72.87,33.4,112.2,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.10 (distilled),Dynamic-range quantization,10,72.08,71.28,72.88,33.4,87.5,0,Complete (diagnostic),pending Nicla and meter
+MobileNetV1 alpha 0.10 (distilled),8-centroid clustering,0,,,,,,10,Unsupported,pending Nicla and meter

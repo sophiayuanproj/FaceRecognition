@@ -1,0 +1,14 @@
+{
+  "addendum_sha256": "586ea4b3a854e84c54e055ab9deaf23a088c35fa611ee167fd63d94848a9872f",
+  "known_role_image_hash_manifest_sha256": "ea90be2fdd6dc78219c35dde506fc9fbf0b0fbea13bf7707784b5617c3124109",
+  "known_rows": 100,
+  "matrix_sha256": "7078347d7deb075ca9679961e10962958b4718cfa61447035133b75ac208e847",
+  "opened_by": "Job D teacher/student final evaluation after registry freeze",
+  "opened_utc": "2026-10-29T23:19:22+00:00",
+  "registry_sha256": "0d138ff76dd039753ed78cfcb39125271c561f74edeb07065270fc34700f0282",
+  "schema": "job-d-teacher-final-role-opened-1",
+  "status": "opened_after_freeze",
+  "unknown_identity_count": 50,
+  "unknown_role_image_hash_manifest_sha256": "c94f81cbbbe9719ae2c95d8e029a906cab17686bc6a61121f69a0abbc76d23df",
+  "unknown_rows": 300
+}

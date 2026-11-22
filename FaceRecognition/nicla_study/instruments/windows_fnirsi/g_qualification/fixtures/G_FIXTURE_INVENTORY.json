@@ -1,0 +1,168 @@
+{
+  "schema": "G-synthetic-fixture-inventory-1",
+  "source": "Windows packet import, synthetic-only fixtures",
+  "seeds": [
+    5101,
+    5102,
+    5103,
+    5104,
+    5105,
+    5106,
+    5107,
+    5108,
+    5109,
+    5110
+  ],
+  "files": [
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5101.csv",
+      "bytes": 3124,
+      "sha256": "d74db881097acb22df0571ce3024142bd983a66c808120869aecb11a8ea8a32f"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5101.json",
+      "bytes": 316,
+      "sha256": "661be7bda662c25db0295157abc7b4c89d9c85bbad6dbf5080bdaf33c61c57c9"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5101.jsonl",
+      "bytes": 45935,
+      "sha256": "456cbf85d61c2f412eb1cb010f214bdb083b1237623800762c40f2ed874744fe"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5102.csv",
+      "bytes": 3124,
+      "sha256": "c0f8e56f82cffc4a115c4cb8dc0bc367345467b4deec173a3f63a78a4067e022"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5102.json",
+      "bytes": 316,
+      "sha256": "f7167692af06b0d48b3845caad00ae3f3ca6d175fc59878194ce4c93980b4cff"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5102.jsonl",
+      "bytes": 45665,
+      "sha256": "17ef1df968616ef098404507b978f11e0d20cad0a028807186e0c52a93c0e07c"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5103.csv",
+      "bytes": 3136,
+      "sha256": "f50eeb74ae650986e42788571e16a8765c6921638d39aff8a9ad46e50a834d0a"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5103.json",
+      "bytes": 317,
+      "sha256": "86129c27afffdb3af38579a45db69761c8138197ca9da857f0bb3290bc0ba572"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5103.jsonl",
+      "bytes": 45880,
+      "sha256": "62dde6adc2839484bf9d6bc269d89b5ce0ad8442a32ed4cf115bd6eda68810ff"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5104.csv",
+      "bytes": 3122,
+      "sha256": "86d12638977bfffc5255a0bfb2df52ed4ffd6c92c84d419e3f4cdb094580c397"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5104.json",
+      "bytes": 317,
+      "sha256": "05944c4fca1a27006534fc155ba95e7f86c769798e6760f2e694224f52944be6"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5104.jsonl",
+      "bytes": 45785,
+      "sha256": "4ec0b8f32e75f2fa4987e2f959d8395cbf4cbc582b10494505ae3eb164437d65"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5105.csv",
+      "bytes": 3113,
+      "sha256": "b574712969cf5aa17d7fad9bdd3423aff8fb5784fd1d326cb9c081d13e534ad7"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5105.json",
+      "bytes": 317,
+      "sha256": "d4dd49d8c325435af6bcc9323d9ffaab8e3b5d0420a6550407272d613c1453a5"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5105.jsonl",
+      "bytes": 45775,
+      "sha256": "95d0b99c7b2aaa2d35f27836604e0cc1678f5063d5ac0e7a7f478ba9d2a281fa"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5106.csv",
+      "bytes": 3127,
+      "sha256": "dfe656eac9b053bee7d5e5b29bdcd806586182ae64fb5927b31d091a5dc686cd"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5106.json",
+      "bytes": 317,
+      "sha256": "380d6935bf8e1abb85c71a2dc31a67e172b4e2c6b4ed72cb7c11f188d68bb74f"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5106.jsonl",
+      "bytes": 45980,
+      "sha256": "2700330122754924eb0387cf727602611b40e1e50e8ac2b3292905a0719f7f65"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5107.csv",
+      "bytes": 3116,
+      "sha256": "da0c9285445bee29fe701dd4918dd190882341a158a9dc3568b14e5ce12d5f09"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5107.json",
+      "bytes": 316,
+      "sha256": "12c9fe0ea00b6b5196d8f7e53a7b5b0135ccc3872ee51d5f613e9fada8a91f64"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5107.jsonl",
+      "bytes": 45875,
+      "sha256": "da0da74016a4b71485ed5274c08da45c68c349237c5c24af7fe8c7f366bf73d2"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5108.csv",
+      "bytes": 3123,
+      "sha256": "528abde20efbc19ddb08e812d988253b428a9ef0b788fde1a0f5dfadf6422a5a"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5108.json",
+      "bytes": 317,
+      "sha256": "1a867b7d4640ee4b316c17dec06a096fd87d02c89c66e4cc2f488e733b4f3a5f"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5108.jsonl",
+      "bytes": 45920,
+      "sha256": "1e75fe094151292a5e5b5924e80afe177d5b59e853324c1288c830653a730604"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5109.csv",
+      "bytes": 3125,
+      "sha256": "a10fd778a461f645530441134d0f92c6bab4ee43d812ead2377a2cc0d7bd0c3c"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5109.json",
+      "bytes": 316,
+      "sha256": "b0fcfe1d9515bdccd199341ed227e2071389beb1007c708526c9d22f36def65a"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5109.jsonl",
+      "bytes": 45770,
+      "sha256": "58ed806c9c714f1772b33e90adea59b55a43ab89be6741bda5fc10313502ff10"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-trace-seed-5110.csv",
+      "bytes": 3117,
+      "sha256": "b084664ef65fd2ad915a1eabf1673bafde333123e2b5eaffd77bbd69d9252f35"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-expected-seed-5110.json",
+      "bytes": 316,
+      "sha256": "1c2a76cd64d0ec6e86f1680aca66456f4eeace02608b57e0295d18a963d606e9"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/instruments/windows_fnirsi/g_qualification/fixtures/synthetic/synthetic-packets-seed-5110.jsonl",
+      "bytes": 45725,
+      "sha256": "950d26c854c047125d0ba5e2beece2345e14805f90337468d57180feeaccb536"
+    }
+  ]
+}

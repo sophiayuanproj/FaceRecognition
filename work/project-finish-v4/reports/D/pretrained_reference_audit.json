@@ -1,0 +1,183 @@
+{
+  "checkpoints": {
+    "0.1": {
+      "architecture": {
+        "alpha": 0.1,
+        "feature_layer": "conv_pw_13_relu",
+        "feature_shape": [
+          3,
+          3,
+          102
+        ],
+        "first_conv_kernel_shape": [
+          3,
+          3,
+          1,
+          3
+        ],
+        "include_top": true,
+        "input_shape": [
+          96,
+          96,
+          1
+        ],
+        "parameter_count": 142827,
+        "top_classes": 1000,
+        "version": "MobileNetV1"
+      },
+      "bytes": 2746736,
+      "feature_output_finite": true,
+      "feature_output_shape": [
+        1,
+        3,
+        3,
+        102
+      ],
+      "head_removed_from_adapted_graph": [
+        "global_average_pooling2d",
+        "reshape",
+        "dropout",
+        "conv_preds",
+        "reshape",
+        "predictions"
+      ],
+      "loaded_into": "tf.keras.applications.MobileNet",
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/models/pretrained/edgeimpulse_mobilenetv1_0.1_96_grayscale.h5",
+      "published_normalization": "gray8 uint8 / 255 to float32 [0,1]",
+      "published_pretraining_corpus_and_license": "not declared in checkpoint metadata/source page; not inferred from 1000-class head",
+      "sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "source_head_output_finite": true,
+      "source_head_output_shape": [
+        1,
+        1000
+      ],
+      "source_head_output_sum_max": 1.0,
+      "source_head_output_sum_min": 1.0,
+      "source_url": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "strict_topological_load": true
+    },
+    "0.25": {
+      "architecture": {
+        "alpha": 0.25,
+        "feature_layer": "conv_pw_13_relu",
+        "feature_shape": [
+          3,
+          3,
+          256
+        ],
+        "first_conv_kernel_shape": [
+          3,
+          3,
+          1,
+          8
+        ],
+        "include_top": true,
+        "input_shape": [
+          96,
+          96,
+          1
+        ],
+        "parameter_count": 475400,
+        "top_classes": 1000,
+        "version": "MobileNetV1"
+      },
+      "bytes": 8029336,
+      "feature_output_finite": true,
+      "feature_output_shape": [
+        1,
+        3,
+        3,
+        256
+      ],
+      "head_removed_from_adapted_graph": [
+        "global_average_pooling2d",
+        "reshape",
+        "dropout",
+        "conv_preds",
+        "reshape",
+        "predictions"
+      ],
+      "loaded_into": "tf.keras.applications.MobileNet",
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/models/pretrained/edgeimpulse_mobilenetv1_0.25_96_grayscale.h5",
+      "published_normalization": "gray8 uint8 / 255 to float32 [0,1]",
+      "published_pretraining_corpus_and_license": "not declared in checkpoint metadata/source page; not inferred from 1000-class head",
+      "sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "source_head_output_finite": true,
+      "source_head_output_shape": [
+        1,
+        1000
+      ],
+      "source_head_output_sum_max": 1.0,
+      "source_head_output_sum_min": 1.0,
+      "source_url": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "strict_topological_load": true
+    }
+  },
+  "runtime": {
+    "h5py": "3.14.0",
+    "interpreter": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/.venv/bin/python",
+    "keras": "2.10.0",
+    "numpy": "1.23.5",
+    "platform": "macOS-26.7.1-x86_64-i386-64bit",
+    "processor": "i386",
+    "python": "3.9.6",
+    "tensorflow": "2.10.1",
+    "thread_budget": {
+      "OMP_NUM_THREADS": "4",
+      "TF_NUM_INTEROP_THREADS": "2",
+      "TF_NUM_INTRAOP_THREADS": "4"
+    },
+    "training_environment_lock_lines": [
+      "absl-py==1.4.0",
+      "astunparse==1.6.3",
+      "certifi==2026.10.19",
+      "cffi==2.0.0",
+      "charset-normalizer==3.5.2",
+      "cryptography==50.0.2",
+      "dm-tree==0.1.8",
+      "flatbuffers==25.12.19",
+      "gast==0.4.0",
+      "google-auth==2.50.0",
+      "google-auth-oauthlib==0.4.6",
+      "google-pasta==0.2.0",
+      "grpcio==1.80.0",
+      "h5py==3.14.0",
+      "idna==3.20",
+      "importlib_metadata==8.7.1",
+      "keras==2.10.0",
+      "Keras-Preprocessing==1.1.2",
+      "libclang==18.1.1",
+      "Markdown==3.9",
+      "MarkupSafe==3.0.4",
+      "numpy==1.23.5",
+      "oauthlib==4.0.0",
+      "opt_einsum==3.4.0",
+      "packaging==26.3",
+      "pillow==10.4.0",
+      "pip==26.0.1",
+      "protobuf==3.19.6",
+      "pyasn1==0.6.4",
+      "pyasn1_modules==0.4.2",
+      "pycparser==2.23",
+      "requests==2.32.5",
+      "requests-oauthlib==2.0.0",
+      "setuptools==56.0.0",
+      "six==1.17.0",
+      "tensorboard==2.10.1",
+      "tensorboard-data-server==0.6.1",
+      "tensorboard-plugin-wit==1.8.1",
+      "tensorflow==2.10.1",
+      "tensorflow-estimator==2.10.0",
+      "tensorflow-io-gcs-filesystem==0.37.1",
+      "tensorflow-model-optimization==0.7.5",
+      "termcolor==3.1.0",
+      "typing_extensions==4.16.0",
+      "urllib3==2.6.3",
+      "Werkzeug==3.1.9",
+      "wheel==0.48.0",
+      "wrapt==2.5.1",
+      "zipp==3.23.1"
+    ],
+    "training_environment_lock_sha256": "1febfd419f06acce3c1d195d67f4001e437e3d163501101b6a4fa54dd56cb63c"
+  }
+}

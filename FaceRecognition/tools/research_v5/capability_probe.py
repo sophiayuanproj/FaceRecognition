@@ -1,0 +1,28 @@
+import gc,json,time,csi,ml,umalloc
+cam=csi.CSI();cam.reset()
+def attempt(name,fn):
+    try:print(json.dumps({'control':name,'supported':True,'value':fn()}))
+    except Exception as e:print(json.dumps({'control':name,'supported':False,'error':repr(e)}))
+for size in [csi.QQVGA,csi.QVGA,csi.VGA]:
+    cam.framesize(size);cam.pixformat(csi.GRAYSCALE);cam.framebuffers(1)
+    print(json.dumps({'kind':'configured_size','width':cam.width(),'height':cam.height()}))
+    attempt('window',lambda:cam.window())
+    attempt('readout',lambda:cam.ioctl(csi.IOCTL_GET_READOUT_WINDOW))
+    attempt('wide_fov',lambda:cam.ioctl(csi.IOCTL_GET_FOV_WIDE))
+    attempt('exposure_us',lambda:cam.exposure_us())
+    attempt('gain_db',lambda:cam.gain_db())
+    attempt('auto_exposure_off',lambda:cam.auto_exposure(False,exposure_us=10000))
+    attempt('auto_gain_off',lambda:cam.auto_gain(False,gain_db=0))
+    attempt('hmirror',lambda:cam.hmirror(False))
+    attempt('vflip',lambda:cam.vflip(False))
+    attempt('wide_fov_enable',lambda:cam.ioctl(csi.IOCTL_SET_FOV_WIDE,True))
+    attempt('wide_fov_after',lambda:cam.ioctl(csi.IOCTL_GET_FOV_WIDE))
+    cam.framesize(size)
+    attempt('readout_after_wide',lambda:cam.ioctl(csi.IOCTL_GET_READOUT_WINDOW))
+    try:
+        cam.snapshot(time=200);frame=cam.snapshot();print(json.dumps({'kind':'captured_size','width':frame.width(),'height':frame.height(),'allocator':umalloc.stats(0),'gc_free':gc.mem_free()}))
+        frame=None;gc.collect()
+    except Exception as e:print(json.dumps({'kind':'capture_error','error':repr(e)}))
+cam.framesize(csi.QVGA);cam.window((240,240));cam.pixformat(csi.RGB565);cam.snapshot(time=200)
+attempt('rgb565_capture',lambda:(cam.snapshot().width(),cam.height(),umalloc.stats(0),gc.mem_free()))
+print(json.dumps({'kind':'complete'}))

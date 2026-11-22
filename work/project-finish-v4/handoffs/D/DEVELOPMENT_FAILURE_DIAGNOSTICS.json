@@ -1,0 +1,234 @@
+{
+  "background_shortcut_proxy": {
+    "center_region_only": {
+      "known_correct_acceptance_macro": 0.16,
+      "known_identification_macro": 0.3,
+      "known_rejection_macro": 0.6399999999999999,
+      "known_wrong_known_macro": 0.2,
+      "per_person": {
+        "K01": {
+          "correct_acceptance": 0.0,
+          "identification": 0.4,
+          "n": 10,
+          "rejection": 0.7,
+          "wrong_known": 0.3
+        },
+        "K02": {
+          "correct_acceptance": 0.0,
+          "identification": 0.1,
+          "n": 10,
+          "rejection": 0.9,
+          "wrong_known": 0.1
+        },
+        "K03": {
+          "correct_acceptance": 0.8,
+          "identification": 1.0,
+          "n": 10,
+          "rejection": 0.2,
+          "wrong_known": 0.0
+        },
+        "K04": {
+          "correct_acceptance": 0.0,
+          "identification": 0.0,
+          "n": 10,
+          "rejection": 1.0,
+          "wrong_known": 0.0
+        },
+        "K05": {
+          "correct_acceptance": 0.0,
+          "identification": 0.0,
+          "n": 10,
+          "rejection": 0.4,
+          "wrong_known": 0.6
+        }
+      },
+      "threshold_from_permitted_calibration_roles": 0.6788156492652212,
+      "unknown_fpir": 0.13,
+      "unknown_predicted_other_rate": 0.23666666666666666
+    },
+    "full_crop": {
+      "known_correct_acceptance_macro": 0.28,
+      "known_identification_macro": 0.7200000000000001,
+      "known_rejection_macro": 0.7200000000000001,
+      "known_wrong_known_macro": 0.0,
+      "per_person": {
+        "K01": {
+          "correct_acceptance": 0.1,
+          "identification": 0.8,
+          "n": 10,
+          "rejection": 0.9,
+          "wrong_known": 0.0
+        },
+        "K02": {
+          "correct_acceptance": 0.2,
+          "identification": 0.4,
+          "n": 10,
+          "rejection": 0.8,
+          "wrong_known": 0.0
+        },
+        "K03": {
+          "correct_acceptance": 0.5,
+          "identification": 0.9,
+          "n": 10,
+          "rejection": 0.5,
+          "wrong_known": 0.0
+        },
+        "K04": {
+          "correct_acceptance": 0.4,
+          "identification": 0.8,
+          "n": 10,
+          "rejection": 0.6,
+          "wrong_known": 0.0
+        },
+        "K05": {
+          "correct_acceptance": 0.2,
+          "identification": 0.7,
+          "n": 10,
+          "rejection": 0.8,
+          "wrong_known": 0.0
+        }
+      },
+      "threshold_from_permitted_calibration_roles": 0.6788156492652212,
+      "unknown_fpir": 0.06333333333333334,
+      "unknown_predicted_other_rate": 0.4766666666666667
+    },
+    "full_vs_center": {
+      "known": 0.44,
+      "overall": 0.44285714285714284,
+      "unknown": 0.44333333333333336
+    },
+    "full_vs_periphery": {
+      "known": 0.78,
+      "overall": 0.7914285714285715,
+      "unknown": 0.7933333333333333
+    },
+    "interpretation": "Coarse sensitivity check; not a verified face mask and cannot rule out background/context shortcuts.",
+    "method": "Retain only centered 64x64 region and resize to 96x96; periphery-only replaces the centered region with the crop mean. There is no landmark-derived face segmentation in this proxy.",
+    "periphery_only": {
+      "known_correct_acceptance_macro": 0.2,
+      "known_identification_macro": 0.24,
+      "known_rejection_macro": 0.24,
+      "known_wrong_known_macro": 0.5599999999999999,
+      "per_person": {
+        "K01": {
+          "correct_acceptance": 0.0,
+          "identification": 0.0,
+          "n": 10,
+          "rejection": 0.2,
+          "wrong_known": 0.8
+        },
+        "K02": {
+          "correct_acceptance": 0.1,
+          "identification": 0.2,
+          "n": 10,
+          "rejection": 0.2,
+          "wrong_known": 0.7
+        },
+        "K03": {
+          "correct_acceptance": 0.9,
+          "identification": 1.0,
+          "n": 10,
+          "rejection": 0.1,
+          "wrong_known": 0.0
+        },
+        "K04": {
+          "correct_acceptance": 0.0,
+          "identification": 0.0,
+          "n": 10,
+          "rejection": 0.2,
+          "wrong_known": 0.8
+        },
+        "K05": {
+          "correct_acceptance": 0.0,
+          "identification": 0.0,
+          "n": 10,
+          "rejection": 0.5,
+          "wrong_known": 0.5
+        }
+      },
+      "threshold_from_permitted_calibration_roles": 0.6788156492652212,
+      "unknown_fpir": 0.5733333333333334,
+      "unknown_predicted_other_rate": 0.023333333333333334
+    }
+  },
+  "data_boundary": {
+    "known_n": 50,
+    "manifest_sha256": "325466868b2a56f9cccb853ad6a725a97f90889e4e09c49a8360988f98ef63bb",
+    "new_images_or_people_used": false,
+    "roles_used": [
+      "development",
+      "unknown_development"
+    ],
+    "source_image_hashes_reverified": true,
+    "source_manifest": "work/project-finish-v4/data/primary_split_manifest.jsonl",
+    "unknown_identity_count": 50,
+    "unknown_n": 300
+  },
+  "embedding_collapse_diagnostic": {
+    "active_dimensions_variance_gt_1e_8": 40,
+    "cosine_different_known_identities": {
+      "mean": 0.83757166364789,
+      "median": 0.887320339679718,
+      "p05": 0.5095555543899536,
+      "p95": 0.9861453771591187,
+      "pair_count": 1000
+    },
+    "cosine_known_to_unknown": {
+      "mean": 0.7762492779761553,
+      "median": 0.8315110802650452,
+      "p05": 0.38895003497600555,
+      "p95": 0.9739559292793274,
+      "pair_count": 15000
+    },
+    "cosine_same_known_identity": {
+      "mean": 0.8720866958300273,
+      "median": 0.9240835905075073,
+      "p05": 0.586871349811554,
+      "p95": 0.9899682760238647,
+      "pair_count": 225
+    },
+    "cosine_same_unknown_identity": {
+      "mean": 0.8751395690441132,
+      "median": 0.9179362952709198,
+      "p05": 0.6091951072216034,
+      "p95": 0.9877575665712357,
+      "pair_count": 750
+    },
+    "dimension": 64,
+    "effective_covariance_rank": 3.1826133728027344,
+    "interpretation": "Strongly concentrated/weakly separated development representation; not a fully constant embedding, and not a population-generalization estimate.",
+    "norm_mean": 3.891263246536255,
+    "norm_sd": 0.5846806764602661,
+    "roles": "development and unknown_development only",
+    "route": "a010 transfer seed 20261110 float 64-D embedding; float graph used for feature geometry; selected compact route uses INT8 gallery",
+    "rows": 350
+  },
+  "final_role_opened": false,
+  "models": {
+    "classifier": {
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_float.tflite",
+      "sha256": "dba5e2087fd39e93ba594bcf390c63685199615042045a736b49a2e801644ad0"
+    },
+    "embedding": {
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_float.tflite",
+      "sha256": "5d59d43f449a9f9b3c8ae54c64fbd27a04689d530aefc83f75a27fb11695a6df"
+    }
+  },
+  "overconfident_other_error_slices": {
+    "known_predicted_other_n": 0,
+    "known_predicted_other_rate": 0.0,
+    "max_max_known_probability_on_false_known_accepts": 0.9741941305017796,
+    "mean_max_known_probability_on_false_known_accepts": 0.7858172292998772,
+    "mean_p_other_on_known_predicted_other": null,
+    "mean_p_other_when_unknown_predicted_other": 0.6059911375001713,
+    "min_max_known_probability_on_false_known_accepts": 0.6818538932511653,
+    "threshold_for_known_acceptance": 0.6788156492652212,
+    "unknown_development_n": 300,
+    "unknown_false_known_accept_n": 19,
+    "unknown_false_known_accept_rate": 0.06333333333333334,
+    "unknown_predicted_other_n": 143,
+    "unknown_predicted_other_rate": 0.4766666666666667
+  },
+  "schema": "job-d-development-failure-diagnostics-1",
+  "status": "complete_verified"
+}

@@ -1,0 +1,10 @@
+{
+  "0": {
+    "size": "0x400000",
+    "entries": [
+      {"type": "tflite", "path": "{TOP}/models/face_detector.tflite", "alignment": 16},
+      {"type": "tflite", "path": "{TOP}/models/identity_classifier.tflite", "alignment": 16}
+    ]
+  }
+}
+

@@ -1,0 +1,228 @@
+{
+  "schema": "study-job-result-1",
+  "job_id": "B",
+  "status": "complete_verified",
+  "evidence_tier": "software_verified_public_data_curation",
+  "created_utc": "2026-10-29T04:48:18+00:00",
+  "protocol_id": "nicla-five-known-study-v4",
+  "platform": "Mac-host public-data preparation; no instrument or camera access used",
+  "prerequisites": [
+    "Job A handoff verified complete",
+    "Existing local SurvFace-derived 96x96 data and October archive receipts",
+    "Existing v3 role manifests; original v3 final records and image files kept sealed"
+  ],
+  "source_data_model_config_protocol_environment_hashes": {
+    "survface_archive_sha256": "f61b38dd7364e2dd912ec573c5e9180a5de3d68b95b910b4b5dddda42b265fe6",
+    "olivetti_archive_sha256": "552c65c1b925374ecae40b0808b1c91c280f0d0baa8c74080bc26e4dafdad256",
+    "source_manifest_sha256": "d47d109d2f5711d6f688e47cae5ee0f4f326135a71f70167719e93eed3ba9c71",
+    "primary_split_sha256": "325466868b2a56f9cccb853ad6a725a97f90889e4e09c49a8360988f98ef63bb",
+    "presentation_manifest_sha256": "ca50cd8eb9364c170d18af4dd7e509a4b718719377df9b0088a5107467ab881c"
+  },
+  "acceptance_checks": [
+    {
+      "id": "independent_archive_and_permitted_image_recheck",
+      "status": "pass",
+      "evidence": [
+        "FaceRecognition/nicla_study/audit_frozen_sources.py",
+        "work/project-finish-v4/data/source_recheck_report.json"
+      ],
+      "detail": "Rehashed both raw archive files and reopened/rehashed/decoded all 198,980 manifest-permitted images as 96x96 mode L with orientation tag 1. No errors. Skipped 22,308 sealed v3-final and 10,051 unlabeled files. Two exact cross-label hash groups were found and confirmed absent from primary, presentation, pretraining, and Olivetti study manifests."
+    },
+    {
+      "id": "permitted_source_integrity_and_access_control",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/data/verification_report.json",
+        "work/project-finish-v4/data/source_access_exposure_ledger.json",
+        "work/project-finish-v4/data/source_recheck_report.json"
+      ],
+      "detail": "Prior verification and this independent recheck confirm 198,980 permitted labeled source files hash and decode with no missing files, hash mismatches, metadata errors, or decode errors. Both raw archive SHA-256 values match their receipts. 22,308 sealed v3-final image files and 10,051 unlabeled verification images remained unopened; the two exact cross-label hash groups were verified absent from all study manifests."
+    },
+    {
+      "id": "frozen_known_roster_and_group_safe_budgets",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/data/roster.json",
+        "work/project-finish-v4/data/primary_split_manifest.jsonl",
+        "work/project-finish-v4/data/presentation_manifest.jsonl",
+        "work/project-finish-v4/data/candidate_ranking.csv"
+      ],
+      "detail": "From 59 eligible candidates, the metadata-only ranking selected K01=10447, K02=9889, K03=10631, K04=10554, K05=9452. Each has 60 train, 10 stopping, 10 threshold-calibration, 10 development, 20 final and 20 separate presentation groups. Quality scoring does not filter nontraining roles."
+    },
+    {
+      "id": "unknown_roles_duplicates_and_identity_separation",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/data/primary_split_manifest.jsonl",
+        "work/project-finish-v4/data/presentation_manifest.jsonl",
+        "work/project-finish-v4/data/validation_report.json"
+      ],
+      "detail": "Validation reproduced 50 identity-disjoint unknown identities with six groups per role for train, calibration, development, final and presentation across all ten roots. Exact duplicates and recorded within-identity pHash candidate groups remain together. A seven-band cross-identity search exhaustively enumerated 64-bit pHash pairs at Hamming distance <=6 among permitted labeled images; only the one candidate crossing frozen roles was visually reviewed and retained as ambiguous, while the other candidates were not individually adjudicated."
+    },
+    {
+      "id": "ten_seed_sensitivity_and_loader_validation",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/data/sensitivity_blocks.json",
+        "work/project-finish-v4/data/validation_report.json"
+      ],
+      "detail": "All ten registered data roots passed reproducibility, role-leakage, duplicate-group, loader-transform, train-only augmentation, corrupt-hash, path-traversal and final-gate checks. Each block has 1,750 primary rows and 400 presentation rows; the roster and known budgets remain fixed."
+    },
+    {
+      "id": "baseline_sensitivity_receipt_corrected",
+      "status": "pass",
+      "evidence": [
+        "FaceRecognition/nicla_study/curate_public_data.py",
+        "work/project-finish-v4/data/sensitivity/20261201/BLOCK_RESULT.json",
+        "work/project-finish-v4/data/sensitivity_blocks.json"
+      ],
+      "detail": "Corrected a receipt-generation count that read unknown presentation identities from the primary split. The baseline receipt reports 50, matching its presentation manifest; the validator was rerun and passed."
+    },
+    {
+      "id": "optional_pretraining_and_olivetti_sanity_pools",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/data/pretraining_manifest_summary.json",
+        "work/project-finish-v4/data/olivetti_sanity_summary.json"
+      ],
+      "detail": "Optional fresh-weight pretraining has 144,656 group-deduplicated records across 3,729 v3-train identities; 134 ambiguous cross-identity exact-hash records were excluded and training was not run. Olivetti remains separate with 395 rows across 40 people after excluding five cross-identity pHash candidate endpoints."
+    },
+    {
+      "id": "quality_selection_and_runtime_coverage_protocol",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/data/DATA_FLOW.md",
+        "work/project-finish-v4/data/PRESENTATION_PROTOCOL.md"
+      ],
+      "detail": "Defined D’s unrun ten-root paired comparison of quality-aware and uniform group selection with matched per-camera quotas and identical nontraining roles. Runtime rejection is a calibration-frozen abstention; detection and quality misses remain in face-present coverage denominators and are reported separately."
+    },
+    {
+      "id": "contact_sheet_review_documented",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/data/contact_sheets/",
+        "work/project-finish-v4/data/CONTACT_SHEET_REVIEW.md"
+      ],
+      "detail": "K01-K05 and pseudonymized OTHER sheets have recorded initial findings and an additional visual check in this completion turn. The check confirmed substantial blur and partial/off-center crops, without per-record exclusions or changes to the metadata-selected roster."
+    },
+    {
+      "id": "presentation_protocol_and_player_prepared",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/data/PRESENTATION_PROTOCOL.md",
+        "FaceRecognition/nicla_study/presentation_player.py"
+      ],
+      "detail": "Development and final optical presentation blocks, source SHA checks, session metadata, randomized stimuli, event markers, and final freeze-receipt gate are implemented and documented. No physical camera presentation was run on this Mac."
+    },
+    {
+      "id": "detector_scene_data_dependency_separately_defined",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/reports/scene_data_dependency.json"
+      ],
+      "detail": "The C dependency is tracked. Raw WIDER FACE train/validation and annotation archives are staged and archive SHA/CRC checks pass, but per-image decode/annotation indexing stopped before producing a verified manifest; target-camera empty scenes remain pending instrument access. B makes no detector-training readiness claim."
+    },
+    {
+      "id": "raw_source_archives_rehashed_without_opening_sealed_members",
+      "status": "pass",
+      "evidence": [
+        "work/project-finish-v4/reports/source_archive_rehash.json",
+        "work/project-finish-v4/data/verification_report.json"
+      ],
+      "detail": "Raw SurvFace and Olivetti archive bytes were rehashed and match the prior SHA-256 receipts. No archive entries were extracted or decoded by this rehash; sealed v3-final image files remained unopened at image level."
+    },
+    {
+      "id": "permitted_cross_identity_phash_threshold_search",
+      "status": "pass",
+      "evidence": [
+        "FaceRecognition/nicla_study/cross_identity_phash_audit.py",
+        "work/project-finish-v4/data/cross_identity_phash_audit.json",
+        "work/project-finish-v4/data/cross_identity_phash_candidates.jsonl",
+        "work/project-finish-v4/data/PHASH_AUDIT_REVIEW.md"
+      ],
+      "detail": "A seven-band search exhaustively found all cross-identity 64-bit pHash candidates at Hamming distance <=6 among 198,580 permitted images. It found 10,801 candidate pairs and one pair spanning frozen roles; that pair was visually reviewed and retained as ambiguous under the declared nonautomatic-exclusion policy. No role manifest changed."
+    }
+  ],
+  "commands": [
+    {
+      "command": "PYTHONPATH=. .venv-nicla/bin/python -m nicla_study.curate_public_data --workspace /Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20",
+      "exit_code": 0,
+      "result": "metadata-only roster and group-safe source manifests generated; source verification complete"
+    },
+    {
+      "command": "PYTHONPATH=. .venv-nicla/bin/python -m nicla_study.prepare_pretraining_manifest --workspace /Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20",
+      "exit_code": 0,
+      "result": "optional v3-train-only pretraining manifest generated"
+    },
+    {
+      "command": "PYTHONPATH=. .venv-nicla/bin/python -m nicla_study.finalize_olivetti_sanity --workspace /Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20",
+      "exit_code": 0,
+      "result": "separate Olivetti sanity manifest finalized"
+    },
+    {
+      "command": "PYTHONPATH=. .venv-nicla/bin/python -m nicla_study.validate_public_data --workspace /Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20",
+      "exit_code": 0,
+      "result": "ten sensitivity roots and data/loader/access-control checks pass after correcting baseline presentation identity count"
+    },
+    {
+      "command": "PYTHONPATH=. .venv-nicla/bin/python -m nicla_study.render_contact_sheets --workspace /Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20",
+      "exit_code": 0,
+      "result": "K01-K05 and pseudonymized OTHER review sheets rendered"
+    },
+    {
+      "command": "PYTHONPATH=FaceRecognition FaceRecognition/.venv-nicla/bin/python -m nicla_study.cross_identity_phash_audit --workspace /Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20",
+      "exit_code": 0,
+      "result": "198580 permitted SurvFace images hash-verified; exhaustive Hamming<=6 cross-identity candidate search complete; prior distances rechecked with zero mismatches"
+    },
+    {
+      "command": "python3 raw archive SHA-256 verification for survface_96.zip and olivetti_96.zip",
+      "exit_code": 0,
+      "result": "both raw archive hashes match existing receipts"
+    },
+    {
+      "command": "PYTHONPATH=FaceRecognition FaceRecognition/.venv-nicla/bin/python -m nicla_study.audit_frozen_sources --workspace \"$PWD\"",
+      "exit_code": 0,
+      "result": "both archive hashes match; 198,980 permitted images rehashed and decoded; sealed and unlabeled sources were not opened"
+    },
+    {
+      "command": "PYTHONPATH=FaceRecognition FaceRecognition/.venv-nicla/bin/python -m nicla_study.validate_public_data --workspace \"$PWD\"",
+      "exit_code": 0,
+      "result": "final rerun passed all ten roots; report timestamp 2026-10-29T05:16:09.327313+00:00"
+    }
+  ],
+  "supported_claims": [
+    "Local public-crop source files and curated role manifests passed recorded software checks.",
+    "Known roster was selected from metadata only and all known-role budgets reproduce from registered roots.",
+    "Loader enforces declared pixel transforms, train-only augmentation, source hashes, path containment, role gates, and class-balanced sampling.",
+    "Presentation player is prepared for a later camera session under the documented protocol."
+  ],
+  "unsupported_or_pending_claims": [
+    "No model training, detector training, or recognition performance measurement was run.",
+    "The known identities and source images appeared in v3 development; all new public-image results are exploratory, not confirmatory.",
+    "No physical optical presentation, Nicla capture, Windows acquisition, or instrument measurement was run.",
+    "Raw WIDER FACE archives and annotation ZIP are staged with verified archive SHA/CRC checks; per-image indexing remains incomplete, and target-camera empty scenes are pending.",
+    "Transformed public-data provenance and rights limits remain as recorded; source images are local and excluded from shareable releases.",
+    "The exhaustive pHash audit found 10801 heuristic cross-identity candidates; only the single candidate crossing frozen study roles was visually reviewed. The other candidates were not individually adjudicated and no automatic exclusions were made."
+  ],
+  "external_dependencies": [
+    "C owner: finish per-image verification/indexing from staged WIDER FACE archives and capture session-separated target-camera empty scenes.",
+    "Physical Nicla camera and instrument computer for later optical and hardware work."
+  ],
+  "evidence_paths": {
+    "data": "work/project-finish-v4/data/",
+    "contact_sheet_review": "work/project-finish-v4/data/CONTACT_SHEET_REVIEW.md",
+    "validation_report": "work/project-finish-v4/data/validation_report.json",
+    "source_verification": "work/project-finish-v4/data/verification_report.json",
+    "scene_dependency": "work/project-finish-v4/reports/scene_data_dependency.json",
+    "presentation_protocol": "work/project-finish-v4/data/PRESENTATION_PROTOCOL.md",
+    "phash_audit": "work/project-finish-v4/data/cross_identity_phash_audit.json",
+    "phash_review": "work/project-finish-v4/data/PHASH_AUDIT_REVIEW.md",
+    "archive_rehash": "work/project-finish-v4/reports/source_archive_rehash.json",
+    "source_recheck_report": "work/project-finish-v4/data/source_recheck_report.json"
+  },
+  "artifact_manifest": "work/project-finish-v4/handoffs/B/artifact_manifest.json",
+  "repository_preservation": {
+    "repository": "FaceRecognition",
+    "note": "B changes are limited to maintained nicla_study data curation code and study data/handoff artifacts; unrelated pre-existing workspace content was preserved."
+  }
+}

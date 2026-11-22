@@ -1,0 +1,8 @@
+mpremote==1.29.0
+numpy==2.5.4
+openmv==1.0.7
+pillow==12.3.0
+platformdirs==4.13.0
+pyelftools==0.33
+pygame==2.6.1
+pyserial==3.5

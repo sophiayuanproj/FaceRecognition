@@ -1,0 +1,46 @@
+{
+  "resource_owners": {
+    "data_manifest_writer": "job_B",
+    "firmware_source_owner": "job_F",
+    "heavy_training": "mac_coordinator",
+    "meter": "windows_instrument_owner",
+    "nicla": "physical_board_owner",
+    "report_analysis": "mac_coordinator",
+    "serial_interface": "windows_instrument_owner"
+  },
+  "rules": [
+    "one canonical application/research source tree: FaceRecognition/",
+    "one writer for shared RUN_STATE, claim ledger and contracts",
+    "parallel workers use owned paths or staging plus patch and hashes",
+    "exclusive board, serial and meter leases",
+    "training and device acquisition code holds resource_lease(study_root, resource, owner=...) for the full action; resume reconciles stale rows only after the OS lock is free",
+    "J1 controller and capture extensions preserve F/A source ownership and must be requalified against their exact recorded source hashes before physical results qualify"
+  ],
+  "schema": "nicla-source-and-resource-ownership-1",
+  "shared_state_writer": "mac_coordinator",
+  "source_paths": {
+    "FaceRecognition/firmware/": "job_F source owner plus J1 adaptive-controller extension under Mac preparation receipt",
+    "FaceRecognition/nicla_study/": "job_A_foundation_maintainer",
+    "FaceRecognition/nicla_study/instruments/windows_fnirsi/": "job_A_instrument_adapter plus J1 Nicla raw capture and synchronized stimulus extension; source receipt required",
+    "work/project-finish-v4/RUN_STATE.json": "mac_coordinator_transactional_writer",
+    "work/project-finish-v4/config/contracts/": "mac_coordinator",
+    "work/project-finish-v4/data/": "job_B"
+  },
+  "transactions": {
+    "event_history": "work/project-finish-v4/RUN_EVENTS.jsonl",
+    "heavy_training_lease": "work/project-finish-v4/runs/leases/heavy_training.lock",
+    "lease_api": "FaceRecognition/nicla_study/state.py::resource_lease",
+    "meter_lease": "work/project-finish-v4/runs/leases/meter.lock",
+    "nicla_lease": "work/project-finish-v4/runs/leases/nicla.lock",
+    "stale_lease_reconciliation": "FaceRecognition/nicla_study/state.py::reconcile_stale_resource_leases",
+    "state_lock": "work/project-finish-v4/.state.lock"
+  },
+  "version_receipts": {
+    "J1_deployment_preview": "work/project-finish-v4/handoffs/J/DEPLOYMENT_PREVIEW.json",
+    "J1_expected_deployed_config_sha256": "5f724f0fbd59ef7f1de223f1b992176707b5d7956e91003f68bcddfa50578900",
+    "J1_firmware_sha256": "76f5f2e79f49a6a90ad7146215160d226f8fe880056a68edd00a5f2d9bf08b80",
+    "J1_mac_source_extension": "work/project-finish-v4/handoffs/J/SOURCE_RECEIPT.json",
+    "J1_physical_requalification": "required; previous F/H receipts are tied to earlier firmware/config hashes",
+    "J1_runtime_config_sha256": "7c6d3c9645c904aa9fcd37707390c54e5e0cc48aaf8333d428c896139714d146"
+  }
+}

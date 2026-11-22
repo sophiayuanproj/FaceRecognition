@@ -1,0 +1,63 @@
+{
+  "compile_opt_level": 0,
+  "compiler": "MicroPython v1.28.0 on 2026-08-11; mpy-cross emitting mpy v6.3",
+  "compiler_package": "mpy-cross==1.28.0.post2",
+  "created_utc": "2026-11-12T05:07:48.616642+00:00",
+  "format_low_byte": 6,
+  "modules": {
+    "identity_contracts.mpy": {
+      "bytes": 12571,
+      "module": "identity_contracts",
+      "sha256": "ccbf3b5c8a8a1adeba9c22bcc03a5da57f11f6ddf897af6c470a1c9a56530f00",
+      "source": "identity_contracts.py"
+    },
+    "offline_sightings.mpy": {
+      "bytes": 4462,
+      "module": "offline_sightings",
+      "sha256": "a4e2fe95efdba408ff2a416b50c3f0d9191aaebad773bda34c826f644d8a5e5a",
+      "source": "offline_sightings.py"
+    },
+    "runtime_support.mpy": {
+      "bytes": 8243,
+      "module": "runtime_support",
+      "sha256": "2a2f77991769980bf44b75783de987b9aea86c7b457dabc6cf9e3d09359d9c01",
+      "source": "runtime_support.py"
+    },
+    "telemetry.mpy": {
+      "bytes": 5804,
+      "module": "telemetry",
+      "sha256": "827bced548fbab11d46e2fe469f21c6cb017439b0e7e4d2de0e20ab859e4ecac",
+      "source": "telemetry.py"
+    },
+    "wearable_app.mpy": {
+      "bytes": 70571,
+      "module": "wearable_app",
+      "sha256": "e929e917344ae5c9214d2c97f7a5075cccc2d3ed59bca00f20c55d9aeee67981",
+      "source": "wearable_app.py"
+    }
+  },
+  "mpy_value": 8966,
+  "schema": "nicla-precompiled-runtime-1",
+  "sources": {
+    "identity_contracts.py": {
+      "bytes": 39304,
+      "sha256": "85ab54c40648a8ca65834b64ac1ef7bb5f740581f604c01f6bd861a0c661d927"
+    },
+    "offline_sightings.py": {
+      "bytes": 10307,
+      "sha256": "a770ab21e002513b8546ff776f0125382488b98346e7fa3a9ce9595c8d9d6348"
+    },
+    "runtime_support.py": {
+      "bytes": 21608,
+      "sha256": "674673c61533ec81cb566a7e46fe94da8a42540f653bb878ea575637f3a429e9"
+    },
+    "telemetry.py": {
+      "bytes": 17975,
+      "sha256": "1fd93063b2639bc391fbaae1caebddf738b354a7e77b13b1482f0d773d50bf58"
+    },
+    "wearable_app.py": {
+      "bytes": 196946,
+      "sha256": "6939bfa0cc997e30e0e16ed20d5c968ccc82746dea2e748c9c5acba79e70ae3a"
+    }
+  }
+}

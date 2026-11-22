@@ -1,0 +1,176 @@
+{
+  "files": [
+    {
+      "bytes": 22544,
+      "path": "work/project-finish-v4/handoffs/D/CANDIDATE_PAIRWISE_FINAL_ANALYSIS.json",
+      "sha256": "9abf1419cab74f92c1a2d44d76008ccc11e9169eb014898c7076c53e60d5e60b"
+    },
+    {
+      "bytes": 7680,
+      "path": "work/project-finish-v4/handoffs/D/DEVELOPMENT_FAILURE_DIAGNOSTICS.json",
+      "sha256": "3fff8e9a23ca42e1c2cbae0af30cb6ad1ae3de9602828f8da378b0705b3862a0"
+    },
+    {
+      "bytes": 3712418,
+      "path": "work/project-finish-v4/handoffs/D/D_candidate_models.zip",
+      "sha256": "1fc24e6c2ce2bb2cbf197c5ccc9fa39324741d2f0c4e3eb77432927c3dce1ddc"
+    },
+    {
+      "bytes": 19274,
+      "path": "work/project-finish-v4/handoffs/D/E_CANDIDATE_ROUTES.json",
+      "sha256": "53c3e0e8aca23210dd26b5643bf65aa0d9a3370624234602e5e41f936845d61a"
+    },
+    {
+      "bytes": 779845,
+      "path": "work/project-finish-v4/handoffs/D/FINAL_SUMMARY.json",
+      "sha256": "d419bf7385ddf05f0600d71f99ac11dfd4d3b441bd4a90f0021ed5f88077b204"
+    },
+    {
+      "bytes": 273395,
+      "path": "work/project-finish-v4/handoffs/D/HISTORICAL_FINAL_SUMMARY.json",
+      "sha256": "89873fe5462fd05c4cd116a9ddf9635f7f3b5aab3743a08b9204ea2f94a4cfd2"
+    },
+    {
+      "bytes": 49327,
+      "path": "work/project-finish-v4/handoffs/D/RESULT.json",
+      "sha256": "92235c33f7dd1b32ed87ac589ae211b03b2bb8997f9fb6c05aed41bdedba54f8"
+    },
+    {
+      "bytes": 10648,
+      "path": "work/project-finish-v4/handoffs/D/RESULT.md",
+      "sha256": "0485100e95e9fe5a117976111ede2cb0c02488473bf70af65aaf65801cfa95d7"
+    },
+    {
+      "bytes": 1500830,
+      "path": "work/project-finish-v4/handoffs/D/TEACHER_FINAL_SUMMARY.json",
+      "sha256": "dc81b832029ce916915ce266972b828722126d492b782772267913d7183fcf94"
+    },
+    {
+      "bytes": 268246,
+      "path": "work/project-finish-v4/reports/D/CANDIDATE_SELECTION.json",
+      "sha256": "38a6934a3aa2314f3b6de623910a77d53504085dd08fa419ba17fa6160abab86"
+    },
+    {
+      "bytes": 14770,
+      "path": "work/project-finish-v4/reports/D/DEVELOPMENT_VISUAL_REVIEW/SUMMARY.json",
+      "sha256": "aee7bb00e14a2ac6183f78b2ae9f8c00b397d4725c9caddb99dcde8144ef0681"
+    },
+    {
+      "bytes": 111125,
+      "path": "work/project-finish-v4/reports/D/DEVELOPMENT_VISUAL_REVIEW/classifier_sv_mnv1_a025_quality_select_6.png",
+      "sha256": "b37745f953c3a7efa97ad10544aca0cdad86140a839262ddbe2fcdeffcdbaa52"
+    },
+    {
+      "bytes": 102746,
+      "path": "work/project-finish-v4/reports/D/DEVELOPMENT_VISUAL_REVIEW/embedding_gallery_a010_int8_uniform.png",
+      "sha256": "c9b2fa4c0d2deb825119bce1f245db32e8a153dfdbfa87926b4f3cf86e12dd43"
+    },
+    {
+      "bytes": 70386,
+      "path": "work/project-finish-v4/reports/D/D_HISTORICAL_CONTROL_AUDIT.json",
+      "sha256": "80e2fcb9b195c82f5a636e3b533b29f103f5e64a417617424426d431a7339f99"
+    },
+    {
+      "bytes": 254,
+      "path": "work/project-finish-v4/reports/D/FINAL_DEVICE_DISCOVERY.json",
+      "sha256": "8ddb28f0e03b0e4aa63e5093d7562a93b9264e6fc4c42ad251997dfe7ca94729"
+    },
+    {
+      "bytes": 1133,
+      "path": "work/project-finish-v4/reports/D/FINAL_ROLE_OPENED.json",
+      "sha256": "595dc11c96f034532d90dff4363cd32d2a5f4c14a229bc5c5c622856fd35a904"
+    },
+    {
+      "bytes": 196256,
+      "path": "work/project-finish-v4/reports/D/HISTORICAL_MODEL_REGISTRY_FROZEN.json",
+      "sha256": "a1abfca36ec904ccc2859a875b3df609731bc0f42417e664b71981ecf6e9fe0b"
+    },
+    {
+      "bytes": 625940,
+      "path": "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json",
+      "sha256": "e3d1275600927dd5cb2384e98f5ef03a5415318cc018f0caf10fc1d19ebc4bd7"
+    },
+    {
+      "bytes": 2614,
+      "path": "work/project-finish-v4/reports/D/PRETRAINED_PROVENANCE_STATUS.json",
+      "sha256": "6900879910056293930b527fbd738b0043294b7bf773ff9c4deb60476d66c69f"
+    },
+    {
+      "bytes": 106424,
+      "path": "work/project-finish-v4/reports/D/TEACHER_MODEL_REGISTRY_FROZEN.json",
+      "sha256": "dda5c9bb417d7c7e1673cad8e2517c884569c28ab624731d87b66e5557a50198"
+    },
+    {
+      "bytes": 5533,
+      "path": "work/project-finish-v4/reports/D/pretrained_reference_audit.json",
+      "sha256": "da10c103b3855ecc6b3b275c67b794b595c1b99bd34aaf4ca642ef089eb1d329"
+    },
+    {
+      "bytes": 456551,
+      "path": "work/project-finish-v4/runs/D/TRAINING_CAMPAIGN.json",
+      "sha256": "f413f365931ae55aa3d30840ff315984850349034a060e863839ac4254ae9ce5"
+    },
+    {
+      "bytes": 39767,
+      "path": "work/project-finish-v4/runs/D/gallery/a01/seed-20261110/int8_uniform.json",
+      "sha256": "69d65fa8d3617e92dd09492f41831233b32ced0a5c8fb724a8a30143f5c7c5eb"
+    },
+    {
+      "bytes": 47297,
+      "path": "work/project-finish-v4/runs/D/pilot/PILOT_RESULT.json",
+      "sha256": "d9e64a53d105cb40206489d4bd69b8c8f232e1a6a86a6a6fa0b53f866a8b7a94"
+    },
+    {
+      "bytes": 1056,
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/FROZEN.json",
+      "sha256": "3c9d8c05e1a7aad82e90a54b209e2a711fa005eb9f9d6623401159b9dbc1e197"
+    },
+    {
+      "bytes": 36111,
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/ROOT_RESULT.json",
+      "sha256": "0e2c1575dd38c36e8f1104619be4c97c0948cf150865f9ac639c5838f106c19d"
+    },
+    {
+      "bytes": 199056,
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_float.tflite",
+      "sha256": "5d59d43f449a9f9b3c8ae54c64fbd27a04689d530aefc83f75a27fb11695a6df"
+    },
+    {
+      "bytes": 101576,
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_int8.tflite",
+      "sha256": "0bf2bc5fb05b0c02d5d09217fe01834182578ebd92f9c001cd088c8ce5a9b0cd"
+    },
+    {
+      "bytes": 55725,
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/FINAL_RESULT.json",
+      "sha256": "a60e13d5a9feef323b2b4d89c3192df4d49128a7ef3ee480698e1de591e05827"
+    },
+    {
+      "bytes": 1062,
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/FROZEN.json",
+      "sha256": "3e728c6b7f68939d33d168caa29a59a08f7cdb3dd2aae6784f90bc2a3f373951"
+    },
+    {
+      "bytes": 51546,
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/ROOT_RESULT.json",
+      "sha256": "91c8a3cf07012b5dad34e10003f303b5d4710f0795ef7b9ad3a7e44adc9e3703"
+    },
+    {
+      "bytes": 934360,
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_float.tflite",
+      "sha256": "dba5e2087fd39e93ba594bcf390c63685199615042045a736b49a2e801644ad0"
+    },
+    {
+      "bytes": 329944,
+      "path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_int8.tflite",
+      "sha256": "e327d091e3f4a33c8f47c35830ad5ca04f671c9ca7a155a310b2c94d454739d9"
+    },
+    {
+      "bytes": 870,
+      "path": "work/project-finish-v4/runs/D/teacher/TEACHER_STUDENT_CAMPAIGN.json",
+      "sha256": "ccb8fc0771cbba7de3325c7968050de5831a0bf5c4fcea32169900275ba0544e"
+    }
+  ],
+  "schema": "nicla-artifact-manifest-1",
+  "self_hash_excluded": true
+}

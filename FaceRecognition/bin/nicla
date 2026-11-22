@@ -1,0 +1,139 @@
+#!/bin/sh
+# Native Intel Mac entry point. Commands need explicit device selection.
+set -eu
+PROJECT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+PYTHON="$PROJECT_DIR/.venv-nicla/bin/python"
+
+usage() {
+    cat <<'EOF'
+Usage: bin/nicla COMMAND [arguments]
+
+  ports                         List serial ports without connecting
+  info PORT                     Run read-only board diagnostics
+  camera PORT                   Run camera/IMU bring-up
+  detect PORT                   Run the stock face detector
+  upload-config PORT            Copy recognition settings to /flash and reset
+  recognize PORT                Run the custom two-stage recognition pipeline
+  upload-embedding-config PORT  Copy embedding settings to /flash and reset
+  recognize-embedding PORT      Run stock FOMO plus INT8 verification over serial
+  embedding-smoke PORT          Run the bounded embedding test over serial
+  model-matrix PORT             Probe installed/custom/stock models headlessly
+  seed-matrix PORT              Run every unique trained embedder export on-board
+  scene-repeat PORT             Sample stock face/person outputs over 10 frames
+  compression-matrix PORT       Probe host compression candidates on the board
+  edge-probe PORT               Exercise validation guards on board MicroPython
+  deploy-standalone PORT        Install boot-on-power recognition to /flash/main.py
+  enroll PORT PSEUDONYM         Enroll one consenting person; saves embeddings only
+  restore-startup PORT          Restore the on-board pre-project main.py backup
+  record [recorder arguments]   Record logs; images require --capture
+  build-models                  Build an aligned ROMFS from supplied models
+  flash-stock                   Install downloaded stock firmware (board in DFU)
+  flash-models                  Upload built model ROMFS (board in DFU)
+  arduino [CLI arguments]        Use Arduino IDE's bundled CLI
+
+Use a real /dev/cu.usbmodem... port. Board script commands need compatible firmware.
+EOF
+}
+
+COMMAND=${1:-help}
+if [ "$#" -gt 0 ]; then shift; fi
+case "$COMMAND" in
+    help|-h|--help) usage; exit 0 ;;
+    arduino)
+        ARDUINO_TOOL=${NICLA_ARDUINO_CLI:-/Applications/Arduino IDE.app/Contents/Resources/app/lib/backend/resources/arduino-cli}
+        exec "$ARDUINO_TOOL" "$@"
+        ;;
+esac
+if [ ! -x "$PYTHON" ]; then
+    echo "Missing project environment. Follow README.md's host installation steps." >&2
+    exit 2
+fi
+case "$COMMAND" in
+    ports) exec "$PYTHON" "$PROJECT_DIR/host/record_openmv.py" --list-ports ;;
+    record) exec "$PYTHON" "$PROJECT_DIR/host/record_openmv.py" "$@" ;;
+    build-models) exec "$PYTHON" "$PROJECT_DIR/tools/build_romfs.py" "$@" ;;
+    flash-stock) exec "$PYTHON" "$PROJECT_DIR/tools/flash_nicla.py" --stock "$@" ;;
+    flash-models) exec "$PYTHON" "$PROJECT_DIR/tools/flash_nicla.py" --romfs "$PROJECT_DIR/build/romfs/romfs0.img" "$@" ;;
+    deploy-standalone)
+        if [ "$#" -ne 1 ]; then
+            echo "deploy-standalone needs one explicit device port." >&2
+            exit 2
+        fi
+        exec "$PYTHON" "$PROJECT_DIR/tools/deploy_standalone.py" --port "$1"
+        ;;
+    restore-startup)
+        if [ "$#" -ne 1 ]; then
+            echo "restore-startup needs one explicit device port." >&2
+            exit 2
+        fi
+        exec "$PYTHON" "$PROJECT_DIR/tools/restore_standalone.py" --port "$1"
+        ;;
+    enroll)
+        if [ "$#" -lt 2 ]; then
+            echo "enroll needs an explicit device port and pseudonymous identity ID." >&2
+            exit 2
+        fi
+        PORT=$1
+        ID=$2
+        shift 2
+        exec "$PYTHON" "$PROJECT_DIR/tools/enroll_on_nicla.py" \
+            --port "$PORT" --identity-id "$ID" "$@"
+        ;;
+    info|camera|detect|recognize|upload-config|upload-embedding-config|recognize-embedding|embedding-smoke|model-matrix|seed-matrix|scene-repeat|compression-matrix|edge-probe)
+        if [ "$#" -ne 1 ]; then
+            echo "$COMMAND needs one explicit device port." >&2
+            exit 2
+        fi
+        PORT=$1
+        if [ "$COMMAND" = info ]; then
+            exec "$PROJECT_DIR/.venv-nicla/bin/mpremote" connect "$PORT" run \
+                "$PROJECT_DIR/firmware/board_info.py"
+        fi
+        if [ "$COMMAND" = upload-config ]; then
+            "$PROJECT_DIR/.venv-nicla/bin/mpremote" connect "$PORT" fs cp \
+                "$PROJECT_DIR/firmware/recognition_config.py" :/flash/recognition_config.py
+            "$PROJECT_DIR/.venv-nicla/bin/mpremote" connect "$PORT" soft-reset
+            exit 0
+        fi
+        if [ "$COMMAND" = upload-embedding-config ]; then
+            "$PROJECT_DIR/.venv-nicla/bin/mpremote" connect "$PORT" fs cp \
+                "$PROJECT_DIR/firmware/embedding_config.py" :/flash/embedding_config.py
+            "$PROJECT_DIR/.venv-nicla/bin/mpremote" connect "$PORT" soft-reset
+            exit 0
+        fi
+        if [ "$COMMAND" = recognize-embedding ]; then
+            exec "$PROJECT_DIR/.venv-nicla/bin/mpremote" connect "$PORT" run \
+                "$PROJECT_DIR/firmware/recognize_embedding.py"
+        fi
+        if [ "$COMMAND" = embedding-smoke ]; then
+            exec "$PROJECT_DIR/.venv-nicla/bin/mpremote" connect "$PORT" run \
+                "$PROJECT_DIR/firmware/embedding_smoke.py"
+        fi
+        if [ "$COMMAND" = model-matrix ]; then
+            exec "$PYTHON" "$PROJECT_DIR/tools/run_model_matrix.py" --port "$PORT"
+        fi
+        if [ "$COMMAND" = seed-matrix ]; then
+            exec "$PYTHON" "$PROJECT_DIR/tools/run_seed_matrix.py" --port "$PORT"
+        fi
+        if [ "$COMMAND" = scene-repeat ]; then
+            exec "$PROJECT_DIR/.venv-nicla/bin/mpremote" connect "$PORT" run \
+                "$PROJECT_DIR/firmware/scene_repeat_probe.py"
+        fi
+        if [ "$COMMAND" = compression-matrix ]; then
+            exec "$PYTHON" "$PROJECT_DIR/tools/run_compression_matrix.py" --port "$PORT"
+        fi
+        if [ "$COMMAND" = edge-probe ]; then
+            exec "$PYTHON" "$PROJECT_DIR/tools/run_edge_guard_probe.py" --port "$PORT"
+        fi
+        case "$COMMAND" in
+            camera) SCRIPT=camera_imu.py ;;
+            detect) SCRIPT=stock_face_detector.py ;;
+            recognize) SCRIPT=recognize.py ;;
+            recognize-embedding) SCRIPT=recognize_embedding.py ;;
+            embedding-smoke) SCRIPT=embedding_smoke.py ;;
+        esac
+        exec "$PROJECT_DIR/.venv-nicla/bin/openmv" --port "$PORT" --script "$PROJECT_DIR/firmware/$SCRIPT"
+        ;;
+    *) usage; echo "Unknown command: $COMMAND" >&2; exit 2 ;;
+esac
+

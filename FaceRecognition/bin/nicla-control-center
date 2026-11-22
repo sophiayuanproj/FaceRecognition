@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+launcher_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+app_root=$(CDPATH= cd -- "$launcher_dir/.." && pwd)
+python_bin="$app_root/.venv-nicla/bin/python"
+if [ ! -x "$python_bin" ]; then
+  python_bin=$(command -v python3 || true)
+fi
+if [ -z "$python_bin" ]; then
+  echo "Python 3 was not found. Install Python 3 or restore FaceRecognition/.venv-nicla." >&2
+  exit 2
+fi
+
+PYTHONPATH="$app_root${PYTHONPATH:+:$PYTHONPATH}" exec "$python_bin" -m control_center.server "$@"

@@ -1,0 +1,66 @@
+{
+  "schema": "nicla-path-registry-1",
+  "platform": "macOS",
+  "workspace": {
+    "portable_relative": ".",
+    "mac_local_absolute": null,
+    "windows_resolution": "pass --workspace with the transferred root; never reuse a Mac absolute path"
+  },
+  "paths": {
+    "repository": {
+      "relative": "FaceRecognition",
+      "status": "canonical_source"
+    },
+    "study_root": {
+      "relative": "work/project-finish-v4",
+      "status": "canonical_v4_study"
+    },
+    "raw_dataset_root": {
+      "relative": "work/dataset-prep/raw",
+      "status": "exists"
+    },
+    "prepared_dataset_root": {
+      "relative": "work/dataset-prep/prepared",
+      "status": "exists"
+    },
+    "extracted_dataset_root": {
+      "relative": "work/dataset-prep/extracted",
+      "status": "exists"
+    },
+    "immutable_v3_root": {
+      "relative": "work/research-complete-v3",
+      "status": "read_only_input"
+    },
+    "v3_model_inventory": {
+      "relative": "work/research-complete-v3/MODEL_INVENTORY.csv",
+      "status": "read_only_input"
+    },
+    "imported_windows_evidence": {
+      "relative": "work/windows-fnirsi-results-import-2026-10-28",
+      "status": "read_only_input"
+    },
+    "windows_current_manifest": {
+      "relative": "work/windows-fnirsi-results-import-2026-10-28/CURRENT_WINDOWS_PACKAGE_SHA256.json",
+      "status": "verified_read_only_input"
+    },
+    "training_interpreter": {
+      "relative": "work/model-training/.venv/bin/python",
+      "status": "verified_tf_2_10_1"
+    },
+    "instrument_interpreter": {
+      "relative": null,
+      "status": "windows_host_only; resolve a local isolated Python 3.14.9 environment"
+    },
+    "v4_runner": {
+      "relative": "FaceRecognition/nicla_study/cli.py",
+      "status": "maintained_source"
+    }
+  },
+  "windows": {
+    "workspace_root": "resolve_from_cli_argument",
+    "required_cli_argument": "--workspace",
+    "instrument_interpreter_relative": ".venv-instrument/Scripts/python.exe",
+    "instrument_python_target": "3.14.9 CPython, separate from TensorFlow training",
+    "current_mac_has_windows_interpreter": false
+  }
+}

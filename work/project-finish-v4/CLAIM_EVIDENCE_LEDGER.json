@@ -1,0 +1,599 @@
+{
+  "claims": [
+    {
+      "claim_id": "a_maintained_host_foundation",
+      "description": "Maintained v4 host study foundation, runner, plans, contracts and resumable state.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/A/RESULT.json",
+        "work/project-finish-v4/handoffs/A/artifact_manifest.json"
+      ],
+      "evidence_tier": "software",
+      "revision": 1,
+      "status": "software_verified",
+      "supported_claim": "Host foundation and workflows verified on the current Mac.",
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "a_host_conversion_fixture",
+      "description": "Small synthetic Keras-to-TFLite conversion and independent MAC accounting.",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/mac-accounting-conversion.json",
+        "work/project-finish-v4/models/host_reference/mac-accounting-separable-fixture.tflite"
+      ],
+      "evidence_tier": "host_development",
+      "revision": 1,
+      "status": "host_development_only",
+      "supported_claim": "The synthetic fixture converts and its Keras and TFLite MAC totals match at 2828.",
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "a_windows_acquisition_source",
+      "description": "Maintained Windows HID/serial adapter source and imported diagnostic packet.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/A/windows_packet_integration.json"
+      ],
+      "evidence_tier": "software_and_historical_diagnostic",
+      "revision": 1,
+      "status": "software_verified",
+      "supported_claim": "Source integration is verified; historical Nano USB serial and HID ran concurrently, but this does not qualify power or Nicla energy.",
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "nicla_physical_power",
+      "description": "Physical Nicla camera/inference/power qualification.",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/fresh-device-discovery.json",
+        "work/project-finish-v4/handoffs/A/windows_packet_integration.json"
+      ],
+      "evidence_tier": "hardware",
+      "revision": 1,
+      "status": "hardware_pending",
+      "supported_claim": null,
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "fnirsi_absolute_and_relative_energy",
+      "description": "Physical instrument identity, sample timing, power boundary, and relative/absolute energy claims.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/A/windows_packet_integration.json"
+      ],
+      "evidence_tier": "hardware",
+      "revision": 1,
+      "status": "hardware_pending",
+      "supported_claim": null,
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "b_public_data_curation",
+      "description": "Public-image role manifests, loader, optional pretraining manifest, Olivetti sanity set, and presentation preparation for the five-known study.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/B/RESULT.json",
+        "work/project-finish-v4/handoffs/B/artifact_manifest.json",
+        "work/project-finish-v4/data/validation_report.json"
+      ],
+      "evidence_tier": "software_verified_public_data_curation",
+      "revision": 1,
+      "status": "software_verified",
+      "supported_claim": "Frozen metadata-only roster and group-safe manifests pass the ten-root validator. All public-image results remain exploratory; model training and physical capture are not claimed.",
+      "updated_utc": "2026-10-29T04:48:49+00:00"
+    },
+    {
+      "claim_id": "d_five_person_crop_recognition_baselines",
+      "description": "Five-person SurvFace crop-level campaign, paired selected-candidate comparison, and development-only failure diagnostics.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/D/RESULT.json",
+        "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json",
+        "work/project-finish-v4/handoffs/D/CANDIDATE_PAIRWISE_FINAL_ANALYSIS.json",
+        "work/project-finish-v4/handoffs/D/DEVELOPMENT_FAILURE_DIAGNOSTICS.json"
+      ],
+      "evidence_tier": "host_crop_experiment",
+      "revision": 2,
+      "status": "software_verified",
+      "supported_claim": "The complete Mac-host experiment identifies a non-reject-all but weak large crop model and a weaker compact gallery candidate. The selected-route paired final comparison and development-only failure diagnostics are recorded; practical usefulness and external-person generalization are not established.",
+      "updated_utc": "2026-10-29T23:39:23+00:00"
+    },
+    {
+      "claim_id": "d_nicla_camera_deployment",
+      "description": "Nicla arena, operator, latency, power, and camera-pipeline recognition qualification for Job D models.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/D/RESULT.json",
+        "work/project-finish-v4/reports/D/FINAL_DEVICE_DISCOVERY.json"
+      ],
+      "evidence_tier": "host_only_no_physical_capture",
+      "revision": 2,
+      "status": "hardware_pending",
+      "supported_claim": null,
+      "updated_utc": "2026-10-29T23:39:23+00:00"
+    },
+    {
+      "claim_id": "d_pretrained_corpus_and_redistribution",
+      "description": "Corpus provenance and redistribution permission for downloaded Edge Impulse and SFace pretrained checkpoints.",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/D/PRETRAINED_REFERENCE_AUDIT.json",
+        "work/project-finish-v4/reports/D/PRETRAINED_PROVENANCE_STATUS.json"
+      ],
+      "evidence_tier": "official_source_review_with_unresolved_training_data_provenance",
+      "revision": 2,
+      "status": "host_development_only",
+      "supported_claim": "Checkpoint artifacts and architectures were verified; source review leaves Edge Impulse corpus/license and SFace exact training corpus/upstream authorization unresolved. No external contact or additional data acquisition was made.",
+      "updated_utc": "2026-10-29T23:39:23+00:00"
+    },
+    {
+      "claim_id": "e_compression_capacity_experiments",
+      "description": "Job E Mac-host compression, capacity, calibration-sensitivity and synthetic-robustness experiments.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/E/RESULT.json",
+        "work/project-finish-v4/handoffs/E/FHI_ARTIFACT_ROOTS.json",
+        "work/project-finish-v4/reports/E/E_ANALYSIS_SUMMARY.json",
+        "work/project-finish-v4/reports/E/E_METHOD_SUMMARY.csv"
+      ],
+      "evidence_tier": "Mac host experiment with static tensor-lifetime estimates",
+      "revision": 1,
+      "status": "software_verified",
+      "supported_claim": "Capacity and compression experiments completed across 40 capacity roots and 130 matched optimization roots. All 170 full-integer models passed host inference. This does not claim Nicla SRAM arena, ROMFS, camera or energy feasibility.",
+      "updated_utc": "2026-10-30T14:11:24+00:00"
+    },
+    {
+      "claim_id": "f_wearable_runtime_host_verified",
+      "description": "Maintained Nicla runtime and C/D/E host interfaces verified against the current exported model artifacts.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/F/RESULT.json",
+        "work/project-finish-v4/handoffs/F/artifact_manifest.json",
+        "work/project-finish-v4/reports/F/host_verification.json"
+      ],
+      "evidence_tier": "host_verified_firmware_source_and_model_interfaces",
+      "revision": 2,
+      "status": "software_verified",
+      "supported_claim": "The host verifier passes 10 seeded blocks and 14 fault checks. Preprocessing inputs and FOMO scene/crop states match all 13 C fixtures, but host raw C outputs differ at 714/3744 values (maximum INT8 delta 12). Physical runtime and bit-exact C output parity are not claimed.",
+      "updated_utc": "2026-10-31T03:08:08+00:00"
+    },
+    {
+      "claim_id": "f_nicla_physical_acceptance",
+      "description": "Nicla physical commissioning, backup, deployment, standalone boot and UART/USB H smoke.",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/F/device_discovery.json",
+        "work/project-finish-v4/handoffs/F/H_ACCEPTANCE_QUEUE.md"
+      ],
+      "evidence_tier": "hardware",
+      "revision": 1,
+      "status": "hardware_pending",
+      "supported_claim": null,
+      "updated_utc": "2026-10-30T17:26:55+00:00"
+    },
+    {
+      "claim_id": "j_mac_controller_and_capture_preparation",
+      "description": "Hash-bound Mac source preparation for controller policies, FNIRSI diagnostics, current-contract I runner, bounded J pilot workflow, and independent K annotation/stimulus gates.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.json",
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.md",
+        "work/project-finish-v4/handoffs/J/SOURCE_RECEIPT.json",
+        "work/project-finish-v4/handoffs/J/DEPLOYMENT_PREVIEW.json",
+        "work/project-finish-v4/handoffs/J/artifact_manifest.json",
+        "work/project-finish-v4/config/I_DEPLOYABLE_PHYSICAL_MATRIX.json",
+        "work/project-finish-v4/config/J_PILOT_SELECTION_PROTOCOL.json",
+        "work/project-finish-v4/config/K_PRESENTATION_OPERATOR_PROTOCOL.md",
+        "work/project-finish-v4/reports/J/I_MATRIX_SOURCE_CHECKS.json",
+        "work/project-finish-v4/reports/J/G_PACKET_ANOMALY_AUDIT.json",
+        "work/project-finish-v4/reports/J/NICLA_RUNTIME_RETRY_AFTER_RESET.json",
+        "work/project-finish-v4/reports/F/host_verification.json"
+      ],
+      "evidence_tier": "mac_host_source_and_dry_run",
+      "revision": 5,
+      "status": "software_verified",
+      "supported_claim": "All source-prep tests pass. The full host verifier passes 10 seeded blocks and 14 faults but retains 714/3744 C output differences (max delta 12). The local runtime CDC is present but returns no control ACK; the safe J1 release cannot fit in 14,336 available flash bytes. Windows G, exact-current-firmware H, per-root I probes/physical comparisons, J pilot/cost fit and K capture remain pending.",
+      "updated_utc": "2026-10-31T03:54:00+00:00"
+    },
+    {
+      "claim_id": "nicla_j1_requalification",
+      "description": "Physical qualification of the updated J1 Nicla firmware and device configuration.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.json",
+        "work/project-finish-v4/handoffs/J/NICLA_BOARD_CHECK.md",
+        "work/project-finish-v4/handoffs/F/RESULT.json"
+      ],
+      "evidence_tier": "physical_hardware",
+      "revision": 1,
+      "status": "hardware_pending",
+      "supported_claim": null,
+      "updated_utc": "2026-10-31T01:56:43+00:00"
+    },
+    {
+      "claim_id": "g_historical_fnirsi_packet_anomaly_audit",
+      "description": "Read-only offline re-decode and anomaly summary of an existing historical Nano FNIRSI packet log.",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/J/G_PACKET_ANOMALY_AUDIT.json",
+        "work/project-finish-v4/reports/J/G_PACKET_ANOMALY_AUDIT.md",
+        "FaceRecognition/nicla_study/instruments/windows_fnirsi/offline_audit.py"
+      ],
+      "evidence_tier": "historical_offline_diagnostic_no_physical_qualification",
+      "revision": 1,
+      "status": "host_development_only",
+      "supported_claim": "The existing parser was evaluated against the archived raw packet and all anomalies were retained. No parser change, G qualification, sample timing, calibration, or Nicla energy claim is supported.",
+      "updated_utc": "2026-10-31T02:27:53+00:00"
+    },
+    {
+      "claim_id": "j1_local_nicla_reset_retry",
+      "description": "Local Nicla retry after user resets, including current firmware-port response and safe storage preflight.",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/J/NICLA_USB_RETRY.json",
+        "work/project-finish-v4/reports/J/NICLA_RUNTIME_RETRY_AFTER_RESET.json",
+        "work/project-finish-v4/runs/J/board-smoke-retry-02/identity_config_ping.json",
+        "work/project-finish-v4/runs/J/board-smoke-retry-03/identity_config_ping.json",
+        "work/project-finish-v4/runs/J/board-smoke-retry-04/identity_config_ping.json"
+      ],
+      "evidence_tier": "usb_runtime_no_control_ack_and_insufficient_flash_no_target_write",
+      "revision": 2,
+      "status": "hardware_pending",
+      "supported_claim": "After the latest reset, the runtime CDC port and MicroPython filesystem are reachable, but repeated identity/config/ping commands return no ACK. The J1 versioned payload is 590,765 bytes and only 14,336 bytes are free. No deployment, policy smoke, device-file write, or measurement occurred.",
+      "updated_utc": "2026-10-31T03:54:00+00:00"
+    },
+    {
+      "claim_id": "C_software_artifacts_integrated",
+      "description": "Canonical C model exports and permitted development parity fixtures are workspace-local and hash-verified.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/C/INTEGRATION_RESULT.json"
+      ],
+      "evidence_tier": "host_software",
+      "revision": 1,
+      "status": "software_verified",
+      "supported_claim": "The previously completed C software/training artifacts resolve locally; physical C cells and deployment candidacy remain separate pending claims.",
+      "updated_utc": "2026-10-31T19:10:14+00:00"
+    },
+    {
+      "claim_id": "w_mac_outbound_package",
+      "description": "Mac-built Windows transfer package, role-separated input companions and relocated integrity/software verification.",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/W/OUTBOUND_RESULT.json",
+        "work/project-finish-v4/handoffs/W/artifact_manifest.json",
+        "work/project-finish-v4/handoffs/W/PREP_RESULT.json"
+      ],
+      "evidence_tier": "host_verified_portable_transfer",
+      "revision": 2,
+      "status": "software_verified",
+      "supported_claim": "Three source-side archives and their SHA/manifest sidecars pass integrity checks; relocated main extraction, public-input merge, 15 Python launch paths, import isolation and host-only G software checks pass. Windows HID and physical Nicla measurements were not run.",
+      "updated_utc": "2026-10-31T19:56:41+00:00"
+    }
+  ],
+  "history": [
+    {
+      "claim_id": "a_maintained_host_foundation",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/A/RESULT.json",
+        "work/project-finish-v4/handoffs/A/artifact_manifest.json"
+      ],
+      "revision": 1,
+      "status": "software_verified",
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "a_host_conversion_fixture",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/mac-accounting-conversion.json",
+        "work/project-finish-v4/models/host_reference/mac-accounting-separable-fixture.tflite"
+      ],
+      "revision": 1,
+      "status": "host_development_only",
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "a_windows_acquisition_source",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/A/windows_packet_integration.json"
+      ],
+      "revision": 1,
+      "status": "software_verified",
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "nicla_physical_power",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/fresh-device-discovery.json",
+        "work/project-finish-v4/handoffs/A/windows_packet_integration.json"
+      ],
+      "revision": 1,
+      "status": "hardware_pending",
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "fnirsi_absolute_and_relative_energy",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/A/windows_packet_integration.json"
+      ],
+      "revision": 1,
+      "status": "hardware_pending",
+      "updated_utc": "2026-10-29T04:14:12+00:00"
+    },
+    {
+      "claim_id": "b_public_data_curation",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/B/RESULT.json",
+        "work/project-finish-v4/handoffs/B/artifact_manifest.json",
+        "work/project-finish-v4/data/validation_report.json"
+      ],
+      "revision": 1,
+      "status": "software_verified",
+      "updated_utc": "2026-10-29T04:48:49+00:00"
+    },
+    {
+      "claim_id": "d_five_person_crop_recognition_baselines",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/D/RESULT.json",
+        "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json",
+        "work/project-finish-v4/handoffs/D/FINAL_SUMMARY.json"
+      ],
+      "revision": 1,
+      "status": "software_verified",
+      "updated_utc": "2026-10-29T23:33:24+00:00"
+    },
+    {
+      "claim_id": "d_nicla_camera_deployment",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/D/RESULT.json",
+        "work/project-finish-v4/reports/D/D-fresh-device-discovery.json"
+      ],
+      "revision": 1,
+      "status": "hardware_pending",
+      "updated_utc": "2026-10-29T23:33:24+00:00"
+    },
+    {
+      "claim_id": "d_pretrained_corpus_and_redistribution",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/D/pretrained_reference_audit.json",
+        "work/project-finish-v4/handoffs/D/RESULT.json"
+      ],
+      "revision": 1,
+      "status": "host_development_only",
+      "updated_utc": "2026-10-29T23:33:24+00:00"
+    },
+    {
+      "claim_id": "d_five_person_crop_recognition_baselines",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/D/RESULT.json",
+        "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json",
+        "work/project-finish-v4/handoffs/D/CANDIDATE_PAIRWISE_FINAL_ANALYSIS.json",
+        "work/project-finish-v4/handoffs/D/DEVELOPMENT_FAILURE_DIAGNOSTICS.json"
+      ],
+      "revision": 2,
+      "status": "software_verified",
+      "updated_utc": "2026-10-29T23:39:23+00:00"
+    },
+    {
+      "claim_id": "d_nicla_camera_deployment",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/D/RESULT.json",
+        "work/project-finish-v4/reports/D/FINAL_DEVICE_DISCOVERY.json"
+      ],
+      "revision": 2,
+      "status": "hardware_pending",
+      "updated_utc": "2026-10-29T23:39:23+00:00"
+    },
+    {
+      "claim_id": "d_pretrained_corpus_and_redistribution",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/D/PRETRAINED_REFERENCE_AUDIT.json",
+        "work/project-finish-v4/reports/D/PRETRAINED_PROVENANCE_STATUS.json"
+      ],
+      "revision": 2,
+      "status": "host_development_only",
+      "updated_utc": "2026-10-29T23:39:23+00:00"
+    },
+    {
+      "claim_id": "e_compression_capacity_experiments",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/E/RESULT.json",
+        "work/project-finish-v4/handoffs/E/FHI_ARTIFACT_ROOTS.json",
+        "work/project-finish-v4/reports/E/E_ANALYSIS_SUMMARY.json",
+        "work/project-finish-v4/reports/E/E_METHOD_SUMMARY.csv"
+      ],
+      "revision": 1,
+      "status": "software_verified",
+      "updated_utc": "2026-10-30T14:11:24+00:00"
+    },
+    {
+      "claim_id": "f_wearable_runtime_host_verified",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/F/RESULT.json",
+        "work/project-finish-v4/reports/F/host_verification.json",
+        "FaceRecognition/firmware/main.py",
+        "FaceRecognition/models/deployment-v1/integration_manifest.json"
+      ],
+      "revision": 1,
+      "status": "software_verified",
+      "updated_utc": "2026-10-30T17:26:55+00:00"
+    },
+    {
+      "claim_id": "f_nicla_physical_acceptance",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/F/device_discovery.json",
+        "work/project-finish-v4/handoffs/F/H_ACCEPTANCE_QUEUE.md"
+      ],
+      "revision": 1,
+      "status": "hardware_pending",
+      "updated_utc": "2026-10-30T17:26:55+00:00"
+    },
+    {
+      "claim_id": "j_mac_controller_and_capture_preparation",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.json",
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.md",
+        "work/project-finish-v4/handoffs/J/SOURCE_RECEIPT.json",
+        "work/project-finish-v4/handoffs/J/DEPLOYMENT_PREVIEW.json"
+      ],
+      "revision": 1,
+      "status": "software_verified",
+      "updated_utc": "2026-10-31T01:56:43+00:00"
+    },
+    {
+      "claim_id": "nicla_j1_requalification",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.json",
+        "work/project-finish-v4/handoffs/J/NICLA_BOARD_CHECK.md",
+        "work/project-finish-v4/handoffs/F/RESULT.json"
+      ],
+      "revision": 1,
+      "status": "hardware_pending",
+      "updated_utc": "2026-10-31T01:56:43+00:00"
+    },
+    {
+      "claim_id": "j_mac_controller_and_capture_preparation",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.json",
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.md",
+        "work/project-finish-v4/handoffs/J/SOURCE_RECEIPT.json",
+        "work/project-finish-v4/handoffs/J/DEPLOYMENT_PREVIEW.json",
+        "work/project-finish-v4/handoffs/J/artifact_manifest.json",
+        "work/project-finish-v4/config/I_DEPLOYABLE_PHYSICAL_MATRIX.json",
+        "work/project-finish-v4/reports/J/I_MATRIX_SOURCE_CHECKS.json",
+        "FaceRecognition/nicla_study/i_matrix_campaign.py",
+        "FaceRecognition/tools/deploy_nicla_variant.py",
+        "FaceRecognition/tools/nicla_variant_probe.py",
+        "FaceRecognition/nicla_study/tests/test_i_matrix_campaign.py"
+      ],
+      "revision": 2,
+      "status": "software_verified",
+      "updated_utc": "2026-10-31T02:11:37+00:00"
+    },
+    {
+      "claim_id": "j_mac_controller_and_capture_preparation",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.json",
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.md",
+        "work/project-finish-v4/handoffs/J/SOURCE_RECEIPT.json",
+        "work/project-finish-v4/handoffs/J/DEPLOYMENT_PREVIEW.json",
+        "work/project-finish-v4/handoffs/J/artifact_manifest.json",
+        "work/project-finish-v4/config/I_DEPLOYABLE_PHYSICAL_MATRIX.json",
+        "work/project-finish-v4/config/J_PILOT_SELECTION_PROTOCOL.json",
+        "work/project-finish-v4/config/K_PRESENTATION_OPERATOR_PROTOCOL.md",
+        "work/project-finish-v4/reports/J/I_MATRIX_SOURCE_CHECKS.json",
+        "work/project-finish-v4/reports/J/G_PACKET_ANOMALY_AUDIT.json",
+        "FaceRecognition/nicla_study/j_pilot_workflow.py",
+        "FaceRecognition/nicla_study/annotation_workflow.py",
+        "FaceRecognition/nicla_study/instruments/windows_fnirsi/offline_audit.py"
+      ],
+      "revision": 3,
+      "status": "software_verified",
+      "updated_utc": "2026-10-31T02:27:53+00:00"
+    },
+    {
+      "claim_id": "g_historical_fnirsi_packet_anomaly_audit",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/J/G_PACKET_ANOMALY_AUDIT.json",
+        "work/project-finish-v4/reports/J/G_PACKET_ANOMALY_AUDIT.md",
+        "FaceRecognition/nicla_study/instruments/windows_fnirsi/offline_audit.py"
+      ],
+      "revision": 1,
+      "status": "host_development_only",
+      "updated_utc": "2026-10-31T02:27:53+00:00"
+    },
+    {
+      "claim_id": "f_wearable_runtime_host_verified",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/F/RESULT.json",
+        "work/project-finish-v4/handoffs/F/artifact_manifest.json",
+        "work/project-finish-v4/reports/F/host_verification.json"
+      ],
+      "revision": 2,
+      "status": "software_verified",
+      "updated_utc": "2026-10-31T03:08:08+00:00"
+    },
+    {
+      "claim_id": "j_mac_controller_and_capture_preparation",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.json",
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.md",
+        "work/project-finish-v4/handoffs/J/SOURCE_RECEIPT.json",
+        "work/project-finish-v4/handoffs/J/DEPLOYMENT_PREVIEW.json",
+        "work/project-finish-v4/handoffs/J/artifact_manifest.json",
+        "work/project-finish-v4/config/I_DEPLOYABLE_PHYSICAL_MATRIX.json",
+        "work/project-finish-v4/config/J_PILOT_SELECTION_PROTOCOL.json",
+        "work/project-finish-v4/config/K_PRESENTATION_OPERATOR_PROTOCOL.md",
+        "work/project-finish-v4/reports/J/I_MATRIX_SOURCE_CHECKS.json",
+        "work/project-finish-v4/reports/J/G_PACKET_ANOMALY_AUDIT.json",
+        "work/project-finish-v4/reports/J/NICLA_USB_RETRY.json",
+        "work/project-finish-v4/reports/F/host_verification.json"
+      ],
+      "revision": 4,
+      "status": "software_verified",
+      "updated_utc": "2026-10-31T03:08:08+00:00"
+    },
+    {
+      "claim_id": "j1_local_nicla_reset_retry",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/J/NICLA_USB_RETRY.json",
+        "work/project-finish-v4/reports/J/NICLA_USB_RETRY.md"
+      ],
+      "revision": 1,
+      "status": "hardware_pending",
+      "updated_utc": "2026-10-31T03:08:08+00:00"
+    },
+    {
+      "claim_id": "j1_local_nicla_reset_retry",
+      "evidence_paths": [
+        "work/project-finish-v4/reports/J/NICLA_USB_RETRY.json",
+        "work/project-finish-v4/reports/J/NICLA_RUNTIME_RETRY_AFTER_RESET.json",
+        "work/project-finish-v4/runs/J/board-smoke-retry-02/identity_config_ping.json",
+        "work/project-finish-v4/runs/J/board-smoke-retry-03/identity_config_ping.json",
+        "work/project-finish-v4/runs/J/board-smoke-retry-04/identity_config_ping.json"
+      ],
+      "revision": 2,
+      "status": "hardware_pending",
+      "updated_utc": "2026-10-31T03:54:00+00:00"
+    },
+    {
+      "claim_id": "j_mac_controller_and_capture_preparation",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.json",
+        "work/project-finish-v4/handoffs/J/PREP_RESULT.md",
+        "work/project-finish-v4/handoffs/J/SOURCE_RECEIPT.json",
+        "work/project-finish-v4/handoffs/J/DEPLOYMENT_PREVIEW.json",
+        "work/project-finish-v4/handoffs/J/artifact_manifest.json",
+        "work/project-finish-v4/config/I_DEPLOYABLE_PHYSICAL_MATRIX.json",
+        "work/project-finish-v4/config/J_PILOT_SELECTION_PROTOCOL.json",
+        "work/project-finish-v4/config/K_PRESENTATION_OPERATOR_PROTOCOL.md",
+        "work/project-finish-v4/reports/J/I_MATRIX_SOURCE_CHECKS.json",
+        "work/project-finish-v4/reports/J/G_PACKET_ANOMALY_AUDIT.json",
+        "work/project-finish-v4/reports/J/NICLA_RUNTIME_RETRY_AFTER_RESET.json",
+        "work/project-finish-v4/reports/F/host_verification.json"
+      ],
+      "revision": 5,
+      "status": "software_verified",
+      "updated_utc": "2026-10-31T03:54:00+00:00"
+    },
+    {
+      "claim_id": "C_software_artifacts_integrated",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/C/INTEGRATION_RESULT.json"
+      ],
+      "revision": 1,
+      "status": "software_verified",
+      "updated_utc": "2026-10-31T19:10:14+00:00"
+    },
+    {
+      "claim_id": "w_mac_outbound_package",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/W/OUTBOUND_RESULT.json",
+        "work/project-finish-v4/handoffs/W/artifact_manifest.json",
+        "outputs/ok-x20-windows-outbound.zip",
+        "outputs/v4-development-presentation-inputs.zip",
+        "outputs/v4-sealed-final-inputs.zip"
+      ],
+      "revision": 1,
+      "status": "software_verified",
+      "updated_utc": "2026-10-31T19:39:31+00:00"
+    },
+    {
+      "claim_id": "w_mac_outbound_package",
+      "evidence_paths": [
+        "work/project-finish-v4/handoffs/W/OUTBOUND_RESULT.json",
+        "work/project-finish-v4/handoffs/W/artifact_manifest.json",
+        "work/project-finish-v4/handoffs/W/PREP_RESULT.json"
+      ],
+      "revision": 2,
+      "status": "software_verified",
+      "updated_utc": "2026-10-31T19:56:41+00:00"
+    }
+  ],
+  "protocol_id": "nicla-five-known-study-v4",
+  "schema": "claim-evidence-ledger-1",
+  "updated_utc": "2026-11-02T02:59:23+00:00"
+}

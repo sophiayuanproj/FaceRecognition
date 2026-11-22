@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "preprocessing-quantization-v1",
+  "title": "Per-model preprocessing and quantization v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "model_type",
+    "input_contract_id",
+    "preprocessing_id",
+    "quantization_mode",
+    "input_dtype",
+    "output_dtype"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "preprocessing-quantization-1"
+    },
+    "model_type": {
+      "enum": [
+        "classifier_logits",
+        "embedding",
+        "detector_centroids"
+      ]
+    },
+    "input_contract_id": {
+      "type": "string"
+    },
+    "preprocessing_id": {
+      "type": "string"
+    },
+    "quantization_mode": {
+      "enum": [
+        "float32",
+        "fp16_weights",
+        "dynamic_range_int8",
+        "full_int8",
+        "qat_int8"
+      ]
+    },
+    "input_dtype": {
+      "type": "string"
+    },
+    "output_dtype": {
+      "type": "string"
+    },
+    "input_scale": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "input_zero_point": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "representative_data_role": {
+      "enum": [
+        "train",
+        "scene_train",
+        "none"
+      ]
+    }
+  }
+}

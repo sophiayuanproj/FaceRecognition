@@ -1,0 +1,1289 @@
+{
+  "schema": "nicla-power-optical-workload-v1",
+  "items": [
+    {
+      "token": "power-bodycam-v1",
+      "path": "work/project-research-v5/bench/live-pipeline-20261110/conditions/power/power-bodycam-v1.webm",
+      "sha256": "23c85e1af1e8554002e5ad3ecd9136f16e13ed97eb767996222361e8a2a926bf",
+      "bytes": 7103565,
+      "media_type": "video/webm",
+      "codec": "vp8",
+      "fps": 20,
+      "frame_count": 580,
+      "duration_ms": 29000,
+      "width": 800,
+      "height": 800,
+      "recommended_display": {
+        "size_vmin": 96,
+        "opacity": 0.76,
+        "background": "#444",
+        "x_pct": 50,
+        "y_pct": 50,
+        "rotation_deg": -10
+      },
+      "episodes": [
+        {
+          "id": "quiet-open",
+          "start_ms": 0,
+          "end_ms_exclusive": 4000,
+          "frame_start_inclusive": 0,
+          "frame_end_exclusive": 80,
+          "source_token": "conditions-control-overcast-lane",
+          "source_record_id": "pass:bc30b627882ea71ada8311934e67add5",
+          "source_target_sha256": "83207199b572f1ea6b0b7c3d57f5165cc938c99b4591d43dca9af7526c1900c1",
+          "source_path": "work/project-research-v5/private/live-pipeline-20261110/conditions/targets/control-overcast-lane.jpg",
+          "expected_face": false,
+          "distance_band": null,
+          "visibility": "no face"
+        },
+        {
+          "id": "far-outdoor",
+          "start_ms": 4000,
+          "end_ms_exclusive": 8000,
+          "frame_start_inclusive": 80,
+          "frame_end_exclusive": 160,
+          "source_token": "bodycam-outdoor-sunny-far",
+          "source_record_id": "wider-val:38_Tennis_Tennis_38_94.jpg::outdoor-sunny-far",
+          "source_target_sha256": "e94889d9229e84332633dcaaece255e06fcf35de00384f72a8820f9dfe72be57",
+          "source_path": "work/project-research-v5/private/live-pipeline-20261110/conditions/targets/outdoor-sunny-far.jpg",
+          "expected_face": true,
+          "distance_band": "far",
+          "visibility": "source face visible",
+          "face_box_xywh_video_px": [
+            345.363,
+            86.341,
+            107.926,
+            137.605
+          ]
+        },
+        {
+          "id": "quiet-after-far",
+          "start_ms": 8000,
+          "end_ms_exclusive": 12000,
+          "frame_start_inclusive": 160,
+          "frame_end_exclusive": 240,
+          "source_token": "conditions-control-overcast-lane",
+          "source_record_id": "pass:bc30b627882ea71ada8311934e67add5",
+          "source_target_sha256": "83207199b572f1ea6b0b7c3d57f5165cc938c99b4591d43dca9af7526c1900c1",
+          "source_path": "work/project-research-v5/private/live-pipeline-20261110/conditions/targets/control-overcast-lane.jpg",
+          "expected_face": false,
+          "distance_band": null,
+          "visibility": "no face"
+        },
+        {
+          "id": "hallway-approach-medium",
+          "start_ms": 12000,
+          "end_ms_exclusive": 15000,
+          "frame_start_inclusive": 240,
+          "frame_end_exclusive": 300,
+          "source_token": "bodycam-hallway-medium",
+          "source_record_id": "wider-val:31_Waiter_Waitress_Waiter_Waitress_31_932.jpg::hallway-medium",
+          "source_target_sha256": "ac4b464e58354c5b794598c60c0a6aac88c12465a5501d2637142c564e5b2cdb",
+          "source_path": "work/project-research-v5/private/live-pipeline-20261110/bodycam-distance/targets/hallway-medium.jpg",
+          "expected_face": true,
+          "distance_band": "medium",
+          "visibility": "source face visible",
+          "zoom_first_to_last": [
+            1.0,
+            1.3
+          ],
+          "face_box_track": [
+            {
+              "frame_index": 240,
+              "face_box_xywh_video_px": [
+                291.892,
+                97.297,
+                216.216,
+                315.676
+              ]
+            },
+            {
+              "frame_index": 241,
+              "face_box_xywh_video_px": [
+                291.351,
+                96.508,
+                217.297,
+                317.254
+              ]
+            },
+            {
+              "frame_index": 242,
+              "face_box_xywh_video_px": [
+                290.811,
+                95.719,
+                218.378,
+                318.833
+              ]
+            },
+            {
+              "frame_index": 243,
+              "face_box_xywh_video_px": [
+                290.27,
+                94.929,
+                219.459,
+                320.411
+              ]
+            },
+            {
+              "frame_index": 244,
+              "face_box_xywh_video_px": [
+                289.73,
+                94.14,
+                220.54,
+                321.99
+              ]
+            },
+            {
+              "frame_index": 245,
+              "face_box_xywh_video_px": [
+                289.189,
+                93.351,
+                221.621,
+                323.568
+              ]
+            },
+            {
+              "frame_index": 246,
+              "face_box_xywh_video_px": [
+                288.649,
+                92.562,
+                222.702,
+                325.146
+              ]
+            },
+            {
+              "frame_index": 247,
+              "face_box_xywh_video_px": [
+                288.108,
+                91.773,
+                223.784,
+                326.725
+              ]
+            },
+            {
+              "frame_index": 248,
+              "face_box_xywh_video_px": [
+                287.568,
+                90.983,
+                224.865,
+                328.303
+              ]
+            },
+            {
+              "frame_index": 249,
+              "face_box_xywh_video_px": [
+                287.027,
+                90.194,
+                225.946,
+                329.881
+              ]
+            },
+            {
+              "frame_index": 250,
+              "face_box_xywh_video_px": [
+                286.487,
+                89.405,
+                227.027,
+                331.46
+              ]
+            },
+            {
+              "frame_index": 251,
+              "face_box_xywh_video_px": [
+                285.946,
+                88.616,
+                228.108,
+                333.038
+              ]
+            },
+            {
+              "frame_index": 252,
+              "face_box_xywh_video_px": [
+                285.406,
+                87.827,
+                229.189,
+                334.617
+              ]
+            },
+            {
+              "frame_index": 253,
+              "face_box_xywh_video_px": [
+                284.865,
+                87.038,
+                230.27,
+                336.195
+              ]
+            },
+            {
+              "frame_index": 254,
+              "face_box_xywh_video_px": [
+                284.324,
+                86.248,
+                231.351,
+                337.773
+              ]
+            },
+            {
+              "frame_index": 255,
+              "face_box_xywh_video_px": [
+                283.784,
+                85.459,
+                232.432,
+                339.352
+              ]
+            },
+            {
+              "frame_index": 256,
+              "face_box_xywh_video_px": [
+                283.243,
+                84.67,
+                233.513,
+                340.93
+              ]
+            },
+            {
+              "frame_index": 257,
+              "face_box_xywh_video_px": [
+                282.703,
+                83.881,
+                234.594,
+                342.508
+              ]
+            },
+            {
+              "frame_index": 258,
+              "face_box_xywh_video_px": [
+                282.162,
+                83.092,
+                235.675,
+                344.087
+              ]
+            },
+            {
+              "frame_index": 259,
+              "face_box_xywh_video_px": [
+                281.622,
+                82.302,
+                236.757,
+                345.665
+              ]
+            },
+            {
+              "frame_index": 260,
+              "face_box_xywh_video_px": [
+                281.081,
+                81.513,
+                237.838,
+                347.244
+              ]
+            },
+            {
+              "frame_index": 261,
+              "face_box_xywh_video_px": [
+                280.541,
+                80.724,
+                238.919,
+                348.822
+              ]
+            },
+            {
+              "frame_index": 262,
+              "face_box_xywh_video_px": [
+                280.0,
+                79.935,
+                240.0,
+                350.4
+              ]
+            },
+            {
+              "frame_index": 263,
+              "face_box_xywh_video_px": [
+                279.46,
+                79.146,
+                241.081,
+                351.979
+              ]
+            },
+            {
+              "frame_index": 264,
+              "face_box_xywh_video_px": [
+                278.919,
+                78.356,
+                242.162,
+                353.557
+              ]
+            },
+            {
+              "frame_index": 265,
+              "face_box_xywh_video_px": [
+                278.378,
+                77.567,
+                243.243,
+                355.135
+              ]
+            },
+            {
+              "frame_index": 266,
+              "face_box_xywh_video_px": [
+                277.838,
+                76.778,
+                244.324,
+                356.714
+              ]
+            },
+            {
+              "frame_index": 267,
+              "face_box_xywh_video_px": [
+                277.297,
+                75.989,
+                245.405,
+                358.292
+              ]
+            },
+            {
+              "frame_index": 268,
+              "face_box_xywh_video_px": [
+                276.757,
+                75.2,
+                246.486,
+                359.871
+              ]
+            },
+            {
+              "frame_index": 269,
+              "face_box_xywh_video_px": [
+                276.216,
+                74.41,
+                247.567,
+                361.449
+              ]
+            },
+            {
+              "frame_index": 270,
+              "face_box_xywh_video_px": [
+                275.676,
+                73.621,
+                248.648,
+                363.027
+              ]
+            },
+            {
+              "frame_index": 271,
+              "face_box_xywh_video_px": [
+                275.135,
+                72.832,
+                249.729,
+                364.606
+              ]
+            },
+            {
+              "frame_index": 272,
+              "face_box_xywh_video_px": [
+                274.595,
+                72.043,
+                250.811,
+                366.184
+              ]
+            },
+            {
+              "frame_index": 273,
+              "face_box_xywh_video_px": [
+                274.054,
+                71.254,
+                251.892,
+                367.763
+              ]
+            },
+            {
+              "frame_index": 274,
+              "face_box_xywh_video_px": [
+                273.514,
+                70.465,
+                252.973,
+                369.341
+              ]
+            },
+            {
+              "frame_index": 275,
+              "face_box_xywh_video_px": [
+                272.973,
+                69.675,
+                254.054,
+                370.919
+              ]
+            },
+            {
+              "frame_index": 276,
+              "face_box_xywh_video_px": [
+                272.433,
+                68.886,
+                255.135,
+                372.498
+              ]
+            },
+            {
+              "frame_index": 277,
+              "face_box_xywh_video_px": [
+                271.892,
+                68.097,
+                256.216,
+                374.076
+              ]
+            },
+            {
+              "frame_index": 278,
+              "face_box_xywh_video_px": [
+                271.351,
+                67.308,
+                257.297,
+                375.654
+              ]
+            },
+            {
+              "frame_index": 279,
+              "face_box_xywh_video_px": [
+                270.811,
+                66.519,
+                258.378,
+                377.233
+              ]
+            },
+            {
+              "frame_index": 280,
+              "face_box_xywh_video_px": [
+                270.27,
+                65.729,
+                259.459,
+                378.811
+              ]
+            },
+            {
+              "frame_index": 281,
+              "face_box_xywh_video_px": [
+                269.73,
+                64.94,
+                260.54,
+                380.39
+              ]
+            },
+            {
+              "frame_index": 282,
+              "face_box_xywh_video_px": [
+                269.189,
+                64.151,
+                261.621,
+                381.968
+              ]
+            },
+            {
+              "frame_index": 283,
+              "face_box_xywh_video_px": [
+                268.649,
+                63.362,
+                262.702,
+                383.546
+              ]
+            },
+            {
+              "frame_index": 284,
+              "face_box_xywh_video_px": [
+                268.108,
+                62.573,
+                263.784,
+                385.125
+              ]
+            },
+            {
+              "frame_index": 285,
+              "face_box_xywh_video_px": [
+                267.568,
+                61.783,
+                264.865,
+                386.703
+              ]
+            },
+            {
+              "frame_index": 286,
+              "face_box_xywh_video_px": [
+                267.027,
+                60.994,
+                265.946,
+                388.281
+              ]
+            },
+            {
+              "frame_index": 287,
+              "face_box_xywh_video_px": [
+                266.487,
+                60.205,
+                267.027,
+                389.86
+              ]
+            },
+            {
+              "frame_index": 288,
+              "face_box_xywh_video_px": [
+                265.946,
+                59.416,
+                268.108,
+                391.438
+              ]
+            },
+            {
+              "frame_index": 289,
+              "face_box_xywh_video_px": [
+                265.406,
+                58.627,
+                269.189,
+                393.017
+              ]
+            },
+            {
+              "frame_index": 290,
+              "face_box_xywh_video_px": [
+                264.865,
+                57.838,
+                270.27,
+                394.595
+              ]
+            },
+            {
+              "frame_index": 291,
+              "face_box_xywh_video_px": [
+                264.324,
+                57.048,
+                271.351,
+                396.173
+              ]
+            },
+            {
+              "frame_index": 292,
+              "face_box_xywh_video_px": [
+                263.784,
+                56.259,
+                272.432,
+                397.752
+              ]
+            },
+            {
+              "frame_index": 293,
+              "face_box_xywh_video_px": [
+                263.243,
+                55.47,
+                273.513,
+                399.33
+              ]
+            },
+            {
+              "frame_index": 294,
+              "face_box_xywh_video_px": [
+                262.703,
+                54.681,
+                274.594,
+                400.909
+              ]
+            },
+            {
+              "frame_index": 295,
+              "face_box_xywh_video_px": [
+                262.162,
+                53.892,
+                275.675,
+                402.487
+              ]
+            },
+            {
+              "frame_index": 296,
+              "face_box_xywh_video_px": [
+                261.622,
+                53.102,
+                276.756,
+                404.065
+              ]
+            },
+            {
+              "frame_index": 297,
+              "face_box_xywh_video_px": [
+                261.081,
+                52.313,
+                277.838,
+                405.644
+              ]
+            },
+            {
+              "frame_index": 298,
+              "face_box_xywh_video_px": [
+                260.541,
+                51.524,
+                278.919,
+                407.222
+              ]
+            },
+            {
+              "frame_index": 299,
+              "face_box_xywh_video_px": [
+                260.0,
+                50.735,
+                280.0,
+                408.8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hallway-approach-near",
+          "start_ms": 15000,
+          "end_ms_exclusive": 18000,
+          "frame_start_inclusive": 300,
+          "frame_end_exclusive": 360,
+          "source_token": "bodycam-hallway-medium",
+          "source_record_id": "wider-val:31_Waiter_Waitress_Waiter_Waitress_31_932.jpg::hallway-medium",
+          "source_target_sha256": "ac4b464e58354c5b794598c60c0a6aac88c12465a5501d2637142c564e5b2cdb",
+          "source_path": "work/project-research-v5/private/live-pipeline-20261110/bodycam-distance/targets/hallway-medium.jpg",
+          "expected_face": true,
+          "distance_band": "near",
+          "visibility": "source face visible",
+          "zoom_first_to_last": [
+            1.3,
+            1.53
+          ],
+          "face_box_track": [
+            {
+              "frame_index": 300,
+              "face_box_xywh_video_px": [
+                259.46,
+                49.946,
+                281.081,
+                410.379
+              ]
+            },
+            {
+              "frame_index": 301,
+              "face_box_xywh_video_px": [
+                259.045,
+                49.341,
+                281.91,
+                411.589
+              ]
+            },
+            {
+              "frame_index": 302,
+              "face_box_xywh_video_px": [
+                258.631,
+                48.736,
+                282.738,
+                412.799
+              ]
+            },
+            {
+              "frame_index": 303,
+              "face_box_xywh_video_px": [
+                258.216,
+                48.13,
+                283.567,
+                414.009
+              ]
+            },
+            {
+              "frame_index": 304,
+              "face_box_xywh_video_px": [
+                257.802,
+                47.525,
+                284.396,
+                415.219
+              ]
+            },
+            {
+              "frame_index": 305,
+              "face_box_xywh_video_px": [
+                257.388,
+                46.92,
+                285.225,
+                416.429
+              ]
+            },
+            {
+              "frame_index": 306,
+              "face_box_xywh_video_px": [
+                256.973,
+                46.315,
+                286.054,
+                417.639
+              ]
+            },
+            {
+              "frame_index": 307,
+              "face_box_xywh_video_px": [
+                256.559,
+                45.71,
+                286.883,
+                418.849
+              ]
+            },
+            {
+              "frame_index": 308,
+              "face_box_xywh_video_px": [
+                256.144,
+                45.105,
+                287.711,
+                420.06
+              ]
+            },
+            {
+              "frame_index": 309,
+              "face_box_xywh_video_px": [
+                255.73,
+                44.5,
+                288.54,
+                421.27
+              ]
+            },
+            {
+              "frame_index": 310,
+              "face_box_xywh_video_px": [
+                255.315,
+                43.895,
+                289.369,
+                422.48
+              ]
+            },
+            {
+              "frame_index": 311,
+              "face_box_xywh_video_px": [
+                254.901,
+                43.29,
+                290.198,
+                423.69
+              ]
+            },
+            {
+              "frame_index": 312,
+              "face_box_xywh_video_px": [
+                254.487,
+                42.685,
+                291.027,
+                424.9
+              ]
+            },
+            {
+              "frame_index": 313,
+              "face_box_xywh_video_px": [
+                254.072,
+                42.08,
+                291.856,
+                426.11
+              ]
+            },
+            {
+              "frame_index": 314,
+              "face_box_xywh_video_px": [
+                253.658,
+                41.475,
+                292.684,
+                427.32
+              ]
+            },
+            {
+              "frame_index": 315,
+              "face_box_xywh_video_px": [
+                253.243,
+                40.87,
+                293.513,
+                428.53
+              ]
+            },
+            {
+              "frame_index": 316,
+              "face_box_xywh_video_px": [
+                252.829,
+                40.265,
+                294.342,
+                429.74
+              ]
+            },
+            {
+              "frame_index": 317,
+              "face_box_xywh_video_px": [
+                252.415,
+                39.66,
+                295.171,
+                430.95
+              ]
+            },
+            {
+              "frame_index": 318,
+              "face_box_xywh_video_px": [
+                252.0,
+                39.055,
+                296.0,
+                432.16
+              ]
+            },
+            {
+              "frame_index": 319,
+              "face_box_xywh_video_px": [
+                251.586,
+                38.45,
+                296.829,
+                433.371
+              ]
+            },
+            {
+              "frame_index": 320,
+              "face_box_xywh_video_px": [
+                251.171,
+                37.845,
+                297.657,
+                434.581
+              ]
+            },
+            {
+              "frame_index": 321,
+              "face_box_xywh_video_px": [
+                250.757,
+                37.24,
+                298.486,
+                435.791
+              ]
+            },
+            {
+              "frame_index": 322,
+              "face_box_xywh_video_px": [
+                250.342,
+                36.635,
+                299.315,
+                437.001
+              ]
+            },
+            {
+              "frame_index": 323,
+              "face_box_xywh_video_px": [
+                249.928,
+                36.03,
+                300.144,
+                438.211
+              ]
+            },
+            {
+              "frame_index": 324,
+              "face_box_xywh_video_px": [
+                249.514,
+                35.425,
+                300.973,
+                439.421
+              ]
+            },
+            {
+              "frame_index": 325,
+              "face_box_xywh_video_px": [
+                249.099,
+                34.819,
+                301.802,
+                440.631
+              ]
+            },
+            {
+              "frame_index": 326,
+              "face_box_xywh_video_px": [
+                248.685,
+                34.214,
+                302.63,
+                441.841
+              ]
+            },
+            {
+              "frame_index": 327,
+              "face_box_xywh_video_px": [
+                248.27,
+                33.609,
+                303.459,
+                443.051
+              ]
+            },
+            {
+              "frame_index": 328,
+              "face_box_xywh_video_px": [
+                247.856,
+                33.004,
+                304.288,
+                444.261
+              ]
+            },
+            {
+              "frame_index": 329,
+              "face_box_xywh_video_px": [
+                247.442,
+                32.399,
+                305.117,
+                445.471
+              ]
+            },
+            {
+              "frame_index": 330,
+              "face_box_xywh_video_px": [
+                247.027,
+                31.794,
+                305.946,
+                446.682
+              ]
+            },
+            {
+              "frame_index": 331,
+              "face_box_xywh_video_px": [
+                246.613,
+                31.189,
+                306.774,
+                447.892
+              ]
+            },
+            {
+              "frame_index": 332,
+              "face_box_xywh_video_px": [
+                246.198,
+                30.584,
+                307.603,
+                449.102
+              ]
+            },
+            {
+              "frame_index": 333,
+              "face_box_xywh_video_px": [
+                245.784,
+                29.979,
+                308.432,
+                450.312
+              ]
+            },
+            {
+              "frame_index": 334,
+              "face_box_xywh_video_px": [
+                245.37,
+                29.374,
+                309.261,
+                451.522
+              ]
+            },
+            {
+              "frame_index": 335,
+              "face_box_xywh_video_px": [
+                244.955,
+                28.769,
+                310.09,
+                452.732
+              ]
+            },
+            {
+              "frame_index": 336,
+              "face_box_xywh_video_px": [
+                244.541,
+                28.164,
+                310.919,
+                453.942
+              ]
+            },
+            {
+              "frame_index": 337,
+              "face_box_xywh_video_px": [
+                244.126,
+                27.559,
+                311.747,
+                455.152
+              ]
+            },
+            {
+              "frame_index": 338,
+              "face_box_xywh_video_px": [
+                243.712,
+                26.954,
+                312.576,
+                456.362
+              ]
+            },
+            {
+              "frame_index": 339,
+              "face_box_xywh_video_px": [
+                243.297,
+                26.349,
+                313.405,
+                457.572
+              ]
+            },
+            {
+              "frame_index": 340,
+              "face_box_xywh_video_px": [
+                242.883,
+                25.744,
+                314.234,
+                458.782
+              ]
+            },
+            {
+              "frame_index": 341,
+              "face_box_xywh_video_px": [
+                242.469,
+                25.139,
+                315.063,
+                459.993
+              ]
+            },
+            {
+              "frame_index": 342,
+              "face_box_xywh_video_px": [
+                242.054,
+                24.534,
+                315.892,
+                461.203
+              ]
+            },
+            {
+              "frame_index": 343,
+              "face_box_xywh_video_px": [
+                241.64,
+                23.929,
+                316.72,
+                462.413
+              ]
+            },
+            {
+              "frame_index": 344,
+              "face_box_xywh_video_px": [
+                241.225,
+                23.324,
+                317.549,
+                463.623
+              ]
+            },
+            {
+              "frame_index": 345,
+              "face_box_xywh_video_px": [
+                240.811,
+                22.719,
+                318.378,
+                464.833
+              ]
+            },
+            {
+              "frame_index": 346,
+              "face_box_xywh_video_px": [
+                240.397,
+                22.114,
+                319.207,
+                466.043
+              ]
+            },
+            {
+              "frame_index": 347,
+              "face_box_xywh_video_px": [
+                239.982,
+                21.508,
+                320.036,
+                467.253
+              ]
+            },
+            {
+              "frame_index": 348,
+              "face_box_xywh_video_px": [
+                239.568,
+                20.903,
+                320.865,
+                468.463
+              ]
+            },
+            {
+              "frame_index": 349,
+              "face_box_xywh_video_px": [
+                239.153,
+                20.298,
+                321.693,
+                469.673
+              ]
+            },
+            {
+              "frame_index": 350,
+              "face_box_xywh_video_px": [
+                238.739,
+                19.693,
+                322.522,
+                470.883
+              ]
+            },
+            {
+              "frame_index": 351,
+              "face_box_xywh_video_px": [
+                238.324,
+                19.088,
+                323.351,
+                472.093
+              ]
+            },
+            {
+              "frame_index": 352,
+              "face_box_xywh_video_px": [
+                237.91,
+                18.483,
+                324.18,
+                473.304
+              ]
+            },
+            {
+              "frame_index": 353,
+              "face_box_xywh_video_px": [
+                237.496,
+                17.878,
+                325.009,
+                474.514
+              ]
+            },
+            {
+              "frame_index": 354,
+              "face_box_xywh_video_px": [
+                237.081,
+                17.273,
+                325.838,
+                475.724
+              ]
+            },
+            {
+              "frame_index": 355,
+              "face_box_xywh_video_px": [
+                236.667,
+                16.668,
+                326.666,
+                476.934
+              ]
+            },
+            {
+              "frame_index": 356,
+              "face_box_xywh_video_px": [
+                236.252,
+                16.063,
+                327.495,
+                478.144
+              ]
+            },
+            {
+              "frame_index": 357,
+              "face_box_xywh_video_px": [
+                235.838,
+                15.458,
+                328.324,
+                479.354
+              ]
+            },
+            {
+              "frame_index": 358,
+              "face_box_xywh_video_px": [
+                235.424,
+                14.853,
+                329.153,
+                480.564
+              ]
+            },
+            {
+              "frame_index": 359,
+              "face_box_xywh_video_px": [
+                235.009,
+                14.248,
+                329.982,
+                481.774
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quiet-night-glare",
+          "start_ms": 18000,
+          "end_ms_exclusive": 21000,
+          "frame_start_inclusive": 360,
+          "frame_end_exclusive": 420,
+          "source_token": "conditions-control-night-lamp-glare",
+          "source_record_id": "pass:f7e91fd26b6ff3a5c7a15ec7e6b533e",
+          "source_target_sha256": "7fdf0d77bd43b1f4c9d02ebe8bd907b69ec84abad2d7993d1260d09487e9d2ef",
+          "source_path": "work/project-research-v5/private/live-pipeline-20261110/conditions/targets/control-night-lamp-glare.jpg",
+          "expected_face": false,
+          "distance_band": null,
+          "visibility": "no face"
+        },
+        {
+          "id": "far-wet-lens",
+          "start_ms": 21000,
+          "end_ms_exclusive": 25000,
+          "frame_start_inclusive": 420,
+          "frame_end_exclusive": 500,
+          "source_token": "conditions-wet-lens-outdoor-far",
+          "source_record_id": "wider-val:6_Funeral_Funeral_6_1005.jpg::outdoor-far::wet-lens",
+          "source_target_sha256": "c8ac791902c890302183250f40b8d26e6ccdc6a91032aa5393d601ef72c5a2bd",
+          "source_path": "work/project-research-v5/private/live-pipeline-20261110/conditions/targets/wet-lens__outdoor-far.jpg",
+          "expected_face": true,
+          "distance_band": "far",
+          "visibility": "digitally degraded but source face present",
+          "face_box_xywh_video_px": [
+            345.975,
+            183.356,
+            108.049,
+            145.157
+          ]
+        },
+        {
+          "id": "quiet-close",
+          "start_ms": 25000,
+          "end_ms_exclusive": 29000,
+          "frame_start_inclusive": 500,
+          "frame_end_exclusive": 580,
+          "source_token": "conditions-control-overcast-lane",
+          "source_record_id": "pass:bc30b627882ea71ada8311934e67add5",
+          "source_target_sha256": "83207199b572f1ea6b0b7c3d57f5165cc938c99b4591d43dca9af7526c1900c1",
+          "source_path": "work/project-research-v5/private/live-pipeline-20261110/conditions/targets/control-overcast-lane.jpg",
+          "expected_face": false,
+          "distance_band": null,
+          "visibility": "no face"
+        }
+      ],
+      "verification": {
+        "decoded_frames": 580,
+        "decoded_fps": 20.0,
+        "codec_tag": "vp80",
+        "decoded_duration_ms": 29000,
+        "sampled_luma_means_each_second": [
+          108.352,
+          108.363,
+          108.364,
+          108.352,
+          88.405,
+          88.419,
+          88.42,
+          88.405,
+          108.352,
+          108.363,
+          108.371,
+          108.364,
+          124.866,
+          120.742,
+          117.113,
+          116.572,
+          116.996,
+          118.114,
+          41.481,
+          41.576,
+          41.578,
+          123.587,
+          123.669,
+          123.669,
+          123.587,
+          108.352,
+          108.369,
+          108.371,
+          108.364
+        ]
+      }
+    }
+  ],
+  "generator": "work/project-research-v5/private/live-pipeline-20261110/conditions/power/prepare_power_video.py",
+  "source_manifest": "work/project-research-v5/private/live-pipeline-20261110/conditions/DISPLAY_SOURCES.json",
+  "source_manifest_sha256": "5965c6ae1150b0c734d3422ef157690f05cb4400fa70935625e769a96b76bf02",
+  "generator_environment": {
+    "opencv": "4.10.0",
+    "numpy": "1.23.5"
+  },
+  "scope": "Repeatable monitor stimulus derived from real WIDER still photos and PASS controls. The approach motion, zoom and wet-lens degradation are digital. Apparent face scale and visibility are labeled in the clip; physical wearer motion, distance and weather are outside the scope of this clip. The run does not test enrolled identity acceptance."
+}

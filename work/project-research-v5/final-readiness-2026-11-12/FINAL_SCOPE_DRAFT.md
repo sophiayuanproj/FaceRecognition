@@ -1,0 +1,9 @@
+# P04 · Power-aware face detection on a wearable Nicla Vision
+
+We ask whether the Nicla Vision can skip redundant face processing when the scene is quiet while preserving face encounters. Our prototype runs face detection, crops a detected face, and can run a compact INT8 identity model. The local dashboard shows the corresponding camera frame, processing result, and saved encounter. The minimum demo is a working face capture and review workflow over USB. We will report a separate battery capture and import check if it passes.
+
+Our original plan included recognition of a small enrolled group. The compact models ran, but reliable acceptance of known identities did not hold up in our evaluations. We use the proposal's face-detection fallback and keep the recognition experiments in the report as evidence for the scope decision. The final comparison isolates scene gating with the same small model and capture interval. Capture-only and detector-only workloads show the cost of the earlier pipeline stages.
+
+Ten independent Nicla power starts replayed the same 29-second clip under all four workloads. Scene gating lowered mean input power from 680.29 to 630.75 mW, a paired reduction of 7.28%. Both pipelines matched 30 of 40 face episodes. Median delay to first match rose from 0.65 to 1.38 seconds among matched episodes. Both modes missed the far-outdoor segment in every block. The final report will include the paired uncertainty interval, all exclusion reasons, the detector and inference call counts, and the meter and workload limits. The dataset and compression experiments will be reported separately with their own evaluation splits.
+
+Before submitting the final-scope milestone, add the actual checkpoint feedback and explain how it changed the scope or evaluation. The [paired power evidence](https://drive.google.com/file/d/1mtApN_bmOrwQbWZ9yQawIGyMUX0N02Ha/view?usp=drivesdk) is available in the team Drive.

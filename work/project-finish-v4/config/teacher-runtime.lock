@@ -1,0 +1,4 @@
+# Additional wheels installed into the existing locked Mac training environment for the host SFace reference.
+# TensorFlow, NumPy, Keras, and Pillow remain pinned by training-environment.lock.
+opencv-python-headless==4.10.0.84
+onnxruntime==1.19.2

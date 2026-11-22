@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "telemetry-v1",
+  "title": "Model/controller telemetry v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_type",
+    "reset_id",
+    "sequence",
+    "host_utc",
+    "host_monotonic_ns",
+    "source_sha256",
+    "model_sha256",
+    "config_sha256",
+    "data_manifest_sha256",
+    "protocol_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "telemetry-1"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "reset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "host_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "host_monotonic_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "device_utc": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "device_tick_ms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "model_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "config_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "data_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "protocol_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "firmware_source_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "firmware_binary_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "firmware_config_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

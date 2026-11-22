@@ -1,0 +1,486 @@
+{
+  "schema": "nicla-independent-raw-power-replay-v1",
+  "schedule_sha256": "cfdb7b07679e207d2ca04fc40308d2d642e670f663d41acfc6b534e800b5b58c",
+  "method": "Decode four voltage/current slots per AA04 report, average V\u00d7I, and integrate at exact UTC receipt microseconds.",
+  "qualified_independent_pairs": 10,
+  "replayed_arms": 40,
+  "mean_gated_minus_fixed_w": -0.04954352855655242,
+  "interval_95_w": [
+    -0.05211532159712081,
+    -0.04697173551598403
+  ],
+  "max_replay_error_j": 1.1482423190045665e-07,
+  "max_replay_error_w": 3.959046757096019e-09,
+  "blocks": [
+    {
+      "planned_block": "B01",
+      "attempt_id": "R19-B01-A08",
+      "boot_id": "boot-0000034c-000ce1d4-3ccd0f03",
+      "meter_run_id": "meter-R19-B01-A08",
+      "arm_order": [
+        "detector-only",
+        "scene-gated-small",
+        "capture-only",
+        "fixed-small"
+      ],
+      "arms": {
+        "detector-only": {
+          "joules": 19.409443678768326,
+          "mean_w": 0.6692219314818579,
+          "duration_s": 29.003,
+          "reports": 655,
+          "error_j": 1.1482423190045665e-07,
+          "error_w": 3.959046757096019e-09
+        },
+        "scene-gated-small": {
+          "joules": 18.35797212703094,
+          "mean_w": 0.6329898671481602,
+          "duration_s": 29.002,
+          "reports": 656,
+          "error_j": 5.412900350165728e-09,
+          "error_w": 1.866389265359203e-10
+        },
+        "capture-only": {
+          "joules": 17.8325504647534,
+          "mean_w": 0.614597637937391,
+          "duration_s": 29.015,
+          "reports": 654,
+          "error_j": 8.333085332878909e-09,
+          "error_w": 2.871992643704857e-10
+        },
+        "fixed-small": {
+          "joules": 19.922443328638636,
+          "mean_w": 0.6866256532358654,
+          "duration_s": 29.015,
+          "reports": 656,
+          "error_j": 2.8546647712346385e-08,
+          "error_w": 9.838582171184385e-10
+        }
+      },
+      "gated_minus_fixed_w": -0.05363578608770525
+    },
+    {
+      "planned_block": "B02",
+      "attempt_id": "R19-B02-A02",
+      "boot_id": "boot-0000034c-000ce1cd-379c0873",
+      "meter_run_id": "meter-R19-B02-A02",
+      "arm_order": [
+        "detector-only",
+        "fixed-small",
+        "scene-gated-small",
+        "capture-only"
+      ],
+      "arms": {
+        "detector-only": {
+          "joules": 19.551254835001455,
+          "mean_w": 0.6741579543809335,
+          "duration_s": 29.001,
+          "reports": 655,
+          "error_j": 5.183458284818698e-08,
+          "error_w": 1.7873377222699105e-09
+        },
+        "fixed-small": {
+          "joules": 19.908440251512882,
+          "mean_w": 0.6864742681808518,
+          "duration_s": 29.001,
+          "reports": 653,
+          "error_j": 7.49651363207704e-09,
+          "error_w": 2.5849156148893826e-10
+        },
+        "scene-gated-small": {
+          "joules": 18.453809785456038,
+          "mean_w": 0.6363163265217074,
+          "duration_s": 29.001,
+          "reports": 655,
+          "error_j": 4.455152691207331e-09,
+          "error_w": 1.536206717389632e-10
+        },
+        "capture-only": {
+          "joules": 17.920458900331766,
+          "mean_w": 0.6179468586321298,
+          "duration_s": 29.0,
+          "reports": 655,
+          "error_j": 4.5570658357974025e-11,
+          "error_w": 1.5714096690544466e-12
+        }
+      },
+      "gated_minus_fixed_w": -0.050157941659144334
+    },
+    {
+      "planned_block": "B03",
+      "attempt_id": "R19-B03-A06",
+      "boot_id": "boot-0000034c-000ce1c7-05c0e790",
+      "meter_run_id": "meter-R19-B03-A06",
+      "arm_order": [
+        "capture-only",
+        "scene-gated-small",
+        "detector-only",
+        "fixed-small"
+      ],
+      "arms": {
+        "capture-only": {
+          "joules": 17.49663862401855,
+          "mean_w": 0.6033115624984846,
+          "duration_s": 29.001,
+          "reports": 657,
+          "error_j": 8.441912058287926e-09,
+          "error_w": 2.9109037402719196e-10
+        },
+        "scene-gated-small": {
+          "joules": 18.16446282764311,
+          "mean_w": 0.6260153993535674,
+          "duration_s": 29.016,
+          "reports": 656,
+          "error_j": 2.5098355393993188e-08,
+          "error_w": 8.649831961804466e-10
+        },
+        "detector-only": {
+          "joules": 19.33065614460182,
+          "mean_w": 0.6662756745114886,
+          "duration_s": 29.013,
+          "reports": 655,
+          "error_j": 3.5294441147470934e-08,
+          "error_w": 1.2165043417056154e-09
+        },
+        "fixed-small": {
+          "joules": 19.67010212866526,
+          "mean_w": 0.6780923237956861,
+          "duration_s": 29.008,
+          "reports": 654,
+          "error_j": 6.888332748644643e-08,
+          "error_w": 2.374632157575718e-09
+        }
+      },
+      "gated_minus_fixed_w": -0.052076924442118644
+    },
+    {
+      "planned_block": "B04",
+      "attempt_id": "R19-B04-A01",
+      "boot_id": "boot-0000034c-000ce1c5-18d08002",
+      "meter_run_id": "meter-R19-B04-A01",
+      "arm_order": [
+        "scene-gated-small",
+        "detector-only",
+        "fixed-small",
+        "capture-only"
+      ],
+      "arms": {
+        "scene-gated-small": {
+          "joules": 18.16474245993077,
+          "mean_w": 0.6260681898370019,
+          "duration_s": 29.014,
+          "reports": 657,
+          "error_j": 4.045212165237899e-09,
+          "error_w": 1.3942280663314932e-10
+        },
+        "detector-only": {
+          "joules": 19.341555540271944,
+          "mean_w": 0.6665824214320356,
+          "duration_s": 29.016,
+          "reports": 654,
+          "error_j": 8.08952904662874e-09,
+          "error_w": 2.787954311855856e-10
+        },
+        "fixed-small": {
+          "joules": 19.70418983864741,
+          "mean_w": 0.6794079663005106,
+          "duration_s": 29.002,
+          "reports": 654,
+          "error_j": 1.8656834299690672e-08,
+          "error_w": 6.432947508017151e-10
+        },
+        "capture-only": {
+          "joules": 17.700445125754992,
+          "mean_w": 0.6103391305732558,
+          "duration_s": 29.001,
+          "reports": 656,
+          "error_j": 1.2837325868986227e-08,
+          "error_w": 4.4265113796626565e-10
+        }
+      },
+      "gated_minus_fixed_w": -0.05333977646350874
+    },
+    {
+      "planned_block": "B05",
+      "attempt_id": "R19-B05-A10",
+      "boot_id": "boot-0000034c-000ce1d2-1d190e08",
+      "meter_run_id": "meter-R19-B05-A10",
+      "arm_order": [
+        "fixed-small",
+        "capture-only",
+        "scene-gated-small",
+        "detector-only"
+      ],
+      "arms": {
+        "fixed-small": {
+          "joules": 19.588475236825712,
+          "mean_w": 0.6750689332744844,
+          "duration_s": 29.017,
+          "reports": 655,
+          "error_j": 2.2308146441218923e-08,
+          "error_w": 7.687958047952748e-10
+        },
+        "capture-only": {
+          "joules": 17.535854270215374,
+          "mean_w": 0.6046429304949787,
+          "duration_s": 29.002,
+          "reports": 657,
+          "error_j": 2.1734791744165705e-10,
+          "error_w": 7.494227460824732e-12
+        },
+        "scene-gated-small": {
+          "joules": 18.238259953202004,
+          "mean_w": 0.628602052567795,
+          "duration_s": 29.014,
+          "reports": 658,
+          "error_j": 1.966061091707161e-09,
+          "error_w": 6.776246230799643e-11
+        },
+        "detector-only": {
+          "joules": 19.45738529444964,
+          "mean_w": 0.670643687121278,
+          "duration_s": 29.013,
+          "reports": 657,
+          "error_j": 3.623852862233434e-08,
+          "error_w": 1.2490445344681689e-09
+        }
+      },
+      "gated_minus_fixed_w": -0.04646688070668936
+    },
+    {
+      "planned_block": "B06",
+      "attempt_id": "R19-B06-A01",
+      "boot_id": "boot-0000034c-000ce1c1-29ddf836",
+      "meter_run_id": "meter-R19-B06-A01",
+      "arm_order": [
+        "capture-only",
+        "scene-gated-small",
+        "fixed-small",
+        "detector-only"
+      ],
+      "arms": {
+        "capture-only": {
+          "joules": 17.501761483741923,
+          "mean_w": 0.603509016680756,
+          "duration_s": 29.0,
+          "reports": 659,
+          "error_j": 7.831957304915704e-10,
+          "error_w": 2.7006730185519245e-11
+        },
+        "scene-gated-small": {
+          "joules": 18.19672259231742,
+          "mean_w": 0.6271704209111953,
+          "duration_s": 29.014,
+          "reports": 661,
+          "error_j": 3.7189980872653905e-08,
+          "error_w": 1.2817943373377716e-09
+        },
+        "fixed-small": {
+          "joules": 19.668867673367473,
+          "mean_w": 0.6782368163230162,
+          "duration_s": 29.0,
+          "reports": 657,
+          "error_j": 4.074151860322672e-08,
+          "error_w": 1.4048799901189568e-09
+        },
+        "detector-only": {
+          "joules": 19.454192773417667,
+          "mean_w": 0.6707648440994954,
+          "duration_s": 29.003,
+          "reports": 655,
+          "error_j": 1.833142349028094e-08,
+          "error_w": 6.320526324543607e-10
+        }
+      },
+      "gated_minus_fixed_w": -0.0510663954118209
+    },
+    {
+      "planned_block": "B07",
+      "attempt_id": "R19-B07-A05",
+      "boot_id": "boot-0000034c-000ce1d5-0e5b6e90",
+      "meter_run_id": "meter-R19-B07-A05",
+      "arm_order": [
+        "capture-only",
+        "scene-gated-small",
+        "detector-only",
+        "fixed-small"
+      ],
+      "arms": {
+        "capture-only": {
+          "joules": 17.536051382403336,
+          "mean_w": 0.6043996478390893,
+          "duration_s": 29.014,
+          "reports": 658,
+          "error_j": 2.185526426501383e-09,
+          "error_w": 7.532663381937255e-11
+        },
+        "scene-gated-small": {
+          "joules": 18.28387678303868,
+          "mean_w": 0.6304785097599545,
+          "duration_s": 29.0,
+          "reports": 659,
+          "error_j": 1.624028200808425e-08,
+          "error_w": 5.60009705274922e-10
+        },
+        "detector-only": {
+          "joules": 19.45647479332163,
+          "mean_w": 0.6707047741501475,
+          "duration_s": 29.009,
+          "reports": 659,
+          "error_j": 1.5859530577699843e-08,
+          "error_w": 5.467106767298446e-10
+        },
+        "fixed-small": {
+          "joules": 19.815849167866666,
+          "mean_w": 0.6832580224766108,
+          "duration_s": 29.002,
+          "reports": 659,
+          "error_j": 6.228168558664038e-08,
+          "error_w": 2.147496180882058e-09
+        }
+      },
+      "gated_minus_fixed_w": -0.052779512716656374
+    },
+    {
+      "planned_block": "B08",
+      "attempt_id": "R19-B08-A01",
+      "boot_id": "boot-0000034c-000ce1b7-17dc4d31",
+      "meter_run_id": "meter-R19-B08-A01",
+      "arm_order": [
+        "fixed-small",
+        "scene-gated-small",
+        "capture-only",
+        "detector-only"
+      ],
+      "arms": {
+        "fixed-small": {
+          "joules": 19.65342031945701,
+          "mean_w": 0.677470538416305,
+          "duration_s": 29.01,
+          "reports": 659,
+          "error_j": 5.2111715831415495e-08,
+          "error_w": 1.7963363019291023e-09
+        },
+        "scene-gated-small": {
+          "joules": 18.317061891375598,
+          "mean_w": 0.6316228238405379,
+          "duration_s": 29.0,
+          "reports": 657,
+          "error_j": 2.6354893378766064e-08,
+          "error_w": 9.087893770853839e-10
+        },
+        "capture-only": {
+          "joules": 17.69021462292636,
+          "mean_w": 0.6099443031040361,
+          "duration_s": 29.003,
+          "reports": 659,
+          "error_j": 1.1838103830541513e-09,
+          "error_w": 4.081690541113403e-11
+        },
+        "detector-only": {
+          "joules": 19.526821114621246,
+          "mean_w": 0.6730833516466598,
+          "duration_s": 29.011,
+          "reports": 660,
+          "error_j": 4.115458906994718e-08,
+          "error_w": 1.4185856933579544e-09
+        }
+      },
+      "gated_minus_fixed_w": -0.045847714575767085
+    },
+    {
+      "planned_block": "B09",
+      "attempt_id": "R19-B09-A04",
+      "boot_id": "boot-0000034c-000ce1e4-224b1e4f",
+      "meter_run_id": "meter-R19-B09-A04",
+      "arm_order": [
+        "fixed-small",
+        "scene-gated-small",
+        "capture-only",
+        "detector-only"
+      ],
+      "arms": {
+        "fixed-small": {
+          "joules": 19.648710368198824,
+          "mean_w": 0.6771681268334306,
+          "duration_s": 29.016,
+          "reports": 655,
+          "error_j": 3.348506893985359e-08,
+          "error_w": 1.1540207678351067e-09
+        },
+        "scene-gated-small": {
+          "joules": 18.314282386259,
+          "mean_w": 0.6312004958214371,
+          "duration_s": 29.015,
+          "reports": 658,
+          "error_j": 3.06332097466111e-08,
+          "error_w": 1.055771470248601e-09
+        },
+        "capture-only": {
+          "joules": 17.669052732624007,
+          "mean_w": 0.6089836883099196,
+          "duration_s": 29.014,
+          "reports": 659,
+          "error_j": 4.19099066562012e-09,
+          "error_w": 1.4444712093109047e-10
+        },
+        "detector-only": {
+          "joules": 19.505185350787276,
+          "mean_w": 0.6725230269553935,
+          "duration_s": 29.003,
+          "reports": 656,
+          "error_j": 1.3617821537081909e-08,
+          "error_w": 4.695315247715826e-10
+        }
+      },
+      "gated_minus_fixed_w": -0.045967631011993526
+    },
+    {
+      "planned_block": "B10",
+      "attempt_id": "R19-B10-A02",
+      "boot_id": "boot-0000034c-000ce1b4-21f946ed",
+      "meter_run_id": "meter-R19-B10-A02",
+      "arm_order": [
+        "detector-only",
+        "fixed-small",
+        "capture-only",
+        "scene-gated-small"
+      ],
+      "arms": {
+        "detector-only": {
+          "joules": 19.365887497290274,
+          "mean_w": 0.6677661976238844,
+          "duration_s": 29.001,
+          "reports": 656,
+          "error_j": 3.5074375404064995e-08,
+          "error_w": 1.2094195644962724e-09
+        },
+        "fixed-small": {
+          "joules": 19.76142251981587,
+          "mean_w": 0.6811465090243992,
+          "duration_s": 29.012,
+          "reports": 658,
+          "error_j": 2.378557439897122e-08,
+          "error_w": 8.198529632963414e-10
+        },
+        "capture-only": {
+          "joules": 17.67737527272813,
+          "mean_w": 0.6095436458304241,
+          "duration_s": 29.001,
+          "reports": 660,
+          "error_j": 3.231473755249681e-09,
+          "error_w": 1.1142631262117675e-10
+        },
+        "scene-gated-small": {
+          "joules": 18.475080859280634,
+          "mean_w": 0.6370497865342792,
+          "duration_s": 29.001,
+          "reports": 656,
+          "error_j": 1.733426557848361e-08,
+          "error_w": 5.977127681688899e-10
+        }
+      },
+      "gated_minus_fixed_w": -0.04409672249011998
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+openmv==1.0.7
+mpremote==1.29.0
+Pillow==12.3.0
+pyserial==3.5
+

@@ -1,0 +1,8 @@
+# Firmware source, compiled modules and research receipts use exact SHA-256 pins.
+# Preserve their original bytes on Windows and Mac, including line endings.
+* -text
+*.tflite binary
+*.mpy binary
+*.h5 binary
+*.onnx binary
+*.webm binary

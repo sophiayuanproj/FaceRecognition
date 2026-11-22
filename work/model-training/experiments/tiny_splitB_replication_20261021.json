@@ -1,0 +1,34 @@
+{
+  "experiment_id": "tiny_splitB_replication_20261021",
+  "question": "Does the paired tiny-versus-base architecture comparison on matched split A seeds reproduce on identity split B?",
+  "design_status": "Supplemental replication added while the predeclared 20-run campaign was in progress; interpret as exploratory and report transparently.",
+  "model_variant": "tiny",
+  "objective": "supervised contrastive loss with a 64-dimensional feature head",
+  "training_seeds": [20261022, 20261023, 20261024, 20261025, 20261026],
+  "augmentation_seed": "equal to training seed",
+  "split_seed": 20261022,
+  "matched_comparison": "base model with the same split, train seed, augmentation seed, batch, optimizer and stopping rule",
+  "epochs_max": 30,
+  "early_stopping_patience": 5,
+  "cap_extension_rule": "If epoch 30 is reached before five epochs have elapsed since the best validation-AUC checkpoint, resume that same run to total epoch 40 and preserve the full history.",
+  "cap_extension_rule_addendum_2026_10_22": "If a run resumed to epoch 40 still reaches the cap before five no-improvement epochs, continue that same run to a total target of epoch 50 so patience can stop it; this is a post-hoc continuation, not a new seed.",
+  "batch": "8 identities x 4 images",
+  "max_train_images_per_identity": 24,
+  "per_job_host_threads": {"intra_op": 4, "inter_op": 1},
+  "parallel_training_jobs": 2,
+  "selection_and_test_policy": "Select checkpoints and thresholds using only identity-disjoint validation pairs. Do not load the supplied SurvFace final pair annotations or Olivetti.",
+  "evaluation": {
+    "format": "float TFLite and full signed-integer INT8 TFLite",
+    "bootstrap_replicates": 1000,
+    "identity_cluster_bootstrap_replicates": 1000,
+    "host_threads_per_process": 3,
+    "parallel_evaluation_jobs": 8,
+    "mode": "validation-only"
+  },
+  "interpretation_caveats": [
+    "This supplemental cell was added after the core campaign had started and is exploratory.",
+    "The core 20-run design remains the predeclared confirmatory analysis.",
+    "Validation checkpoint-selection optimism applies to all validation metrics.",
+    "Pair bootstrap intervals may understate uncertainty because identities and images recur across pairs."
+  ]
+}

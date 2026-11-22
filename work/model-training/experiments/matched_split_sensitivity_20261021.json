@@ -1,0 +1,27 @@
+{
+  "experiment_id": "matched_split_sensitivity_20261021",
+  "question": "Holding training and augmentation seeds fixed, how sensitive are the base model's validation results to the identity-disjoint split seed?",
+  "model_variant": "base",
+  "objective": "supervised contrastive loss with a 64-dimensional feature head",
+  "training_seeds": [20261022, 20261023, 20261024, 20261025, 20261026],
+  "augmentation_seed": "equal to training seed",
+  "split_seed": 20261022,
+  "matched_reference_split_seed": 20261021,
+  "epochs_max": 30,
+  "early_stopping_patience": 5,
+  "cap_extension_rule": "After initial training, resume any run that reached epoch 30 with fewer than five epochs since its last validation-AUC improvement to a total target of epoch 40. This is a continuation of the same run, not an additional independent seed; retain its full history and report the cap extension explicitly.",
+  "cap_extension_rule_addendum_2026_10_22": "For any run resumed to epoch 40 that still reaches the cap with fewer than five no-improvement epochs, continue the same run to a total target of epoch 50 so patience can stop it. Report this post-hoc continuation separately; it is not a new seed.",
+  "batch": "8 identities x 4 images",
+  "max_train_images_per_identity": 24,
+  "per_job_host_threads": {"intra_op": 4, "inter_op": 1},
+  "parallel_training_jobs": 4,
+  "selection_and_test_policy": "Checkpoint selection and threshold calibration use only this split's identity-disjoint validation pairs. The supplied SurvFace final pair annotations and Olivetti are not loaded.",
+  "evaluation": {
+    "bootstrap_replicates": 1000,
+    "identity_cluster_bootstrap_replicates": 1000,
+    "host_threads_per_process": 3,
+    "parallel_evaluation_jobs": 8,
+    "mode": "validation-only"
+  },
+  "design_note": "Training seed and augmentation seed match the split-20261021 base runs so per-seed score differences can be paired across split seeds. Image-count-capped train records and validation identities/pairs change with split seed."
+}

@@ -1,0 +1,45 @@
+{
+  "experiment_id": "research_seed_architecture_campaign_20261021",
+  "question": "How do initialization seed, identity split seed, and channel-width variant affect identity-disjoint SurvFace verification and full-INT8 export quality?",
+  "objective": "supervised contrastive loss with a 64-dimensional feature head",
+  "base_variant": "base",
+  "architecture_ablation": "tiny uses the same objective, feature dimension, data split, batch composition, augmentation, and training seeds as base; only channel widths change",
+  "split_method": "identity-disjoint 80/20 split stratified by image-count decile",
+  "split_seeds": [20261021, 20261022],
+  "training_seed_sets": {
+    "split_20261021_base_and_tiny": [20261022, 20261023, 20261024, 20261025, 20261026],
+    "split_20261022_base": [20261027, 20261028, 20261029, 20261030, 20261031]
+  },
+  "epochs_max": 30,
+  "early_stopping_patience": 5,
+  "cap_extension_rule": "After initial training, resume any run that reached epoch 30 with fewer than five epochs since its last validation-AUC improvement to a total target of epoch 40. This is a continuation of the same run, not an additional independent seed; retain its full history and report the cap extension explicitly.",
+  "cap_extension_rule_addendum_2026_10_22": "For runs resumed to epoch 40 that still reach the new cap with fewer than five no-improvement epochs, continue the same run to a total target of epoch 50 so the predeclared patience rule can stop it. This post-hoc continuation is reported separately and does not add independent seeds.",
+  "primary_checkpoint_metric": "identity-disjoint validation ROC AUC",
+  "batch": "8 identities x 4 images",
+  "max_train_images_per_identity": 24,
+  "augmentation": ["horizontal flip", "translation <= 1.5%", "contrast +/- 12%"],
+  "per_job_host_threads": {"intra_op": 4, "inter_op": 1},
+  "planned_training_jobs": 15,
+  "job_groups": [
+    {"model_variant": "base", "split_seed": 20261021, "training_seeds": [20261022, 20261023, 20261024, 20261025, 20261026]},
+    {"model_variant": "base", "split_seed": 20261022, "training_seeds": [20261027, 20261028, 20261029, 20261030, 20261031]},
+    {"model_variant": "tiny", "split_seed": 20261021, "training_seeds": [20261022, 20261023, 20261024, 20261025, 20261026]}
+  ],
+  "selection_and_test_policy": "Checkpoint selection and thresholds use validation pairs only. Every exported candidate is evaluated on its own identity-disjoint validation pairs. Do not open the supplied SurvFace final pair annotations or Olivetti during this campaign; the final annotations were used once for the historical baseline and are not reused for selection.",
+  "interpretation_caveats": [
+    "Best-epoch metrics on the validation set are subject to checkpoint-selection optimism.",
+    "Pair-bootstrap intervals treat pairs as independent and can be optimistic because images and identities recur across pairs.",
+    "The five-seed distribution estimates training-run variability on a fixed split; two split seeds provide only limited evidence about identity-split sensitivity.",
+    "The primary second-split group uses distinct training seeds; a supplemental matched-seed split-sensitivity campaign is predeclared separately.",
+    "The historical five-seed pilot used 12 intra-op and 2 inter-op threads; the predeclared 15-job campaign uses 4 intra-op and 1 inter-op thread for every job. Report those as separate cohorts."
+  ],
+  "evaluation": {
+    "format": "float TFLite and full signed-integer INT8 TFLite",
+    "bootstrap_replicates": 1000,
+    "identity_cluster_bootstrap_replicates": 1000,
+    "evaluation_mode": "validation-only",
+    "host_threads_per_process": 3,
+    "parallel_training_jobs": 4,
+    "parallel_evaluation_jobs": 8
+  }
+}

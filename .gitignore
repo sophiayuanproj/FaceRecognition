@@ -1,0 +1,77 @@
+# Local environments and caches
+.venv*/
+**/.venv*/
+**/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+.mypy_cache/
+.DS_Store
+._*
+
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Photos, recordings and local device histories
+**/private/
+**/raw/
+**/downloads/
+**/logs/
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+
+# Rebuildable files and optional research assets
+**/build/
+outputs/
+assets/
+**/windows_wheels/
+**/windows_calibration_wheels/
+**/.port-locks/
+*.zip
+*.tar
+*.tar.gz
+*.whl
+*.dmg
+*.exe
+*.part
+
+# Training datasets and generated run output
+work/model-training/data/
+work/model-training/output/
+work/model-training/runs/
+work/project-finish-v4/runs/
+!work/project-finish-v4/runs/
+work/project-finish-v4/runs/*
+!work/project-finish-v4/runs/D/
+!work/project-finish-v4/runs/E/
+**/checkpoints/
+**/tb_logs/
+**/wandb/
+
+# Current models, compiled Nicla modules, split manifests and results are versioned.
+bench-results/
+work/dataset-prep/extracted/
+work/dataset-prep/reports/
+work/model-training/new-*/
+work/project-finish-v4/deployments/
+work/project-finish-v4/cache/
+work/project-finish-v4/runs/D/*
+!work/project-finish-v4/runs/D/CAMPAIGN_PROGRESS.json
+!work/project-finish-v4/runs/D/development_search/
+work/project-finish-v4/runs/D/development_search/*
+!work/project-finish-v4/runs/D/development_search/DEVELOPMENT_SEARCH.json
+work/project-finish-v4/runs/E/*
+!work/project-finish-v4/runs/E/scripts/
+work/project-research-v5/runs/*
+!work/project-research-v5/runs/optical/
+work/project-research-v5/runs/optical/*
+!work/project-research-v5/runs/optical/DISPLAY_SOURCES.json
+work/project-finish-v4/models/pretrained/sface/
+work/project-finish-v4/models/keras_cache/

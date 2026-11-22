@@ -1,0 +1,250 @@
+{
+  "schema": "nicla-seed-registry-1",
+  "protocol_id": "nicla-five-known-study-v4",
+  "units_note": "A seed labels a randomized computation or trial order. It never implies an independent person, image session, camera session, or hardware run.",
+  "training_roots": [
+    {
+      "root_seed": 20261101,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    },
+    {
+      "root_seed": 20261102,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    },
+    {
+      "root_seed": 20261103,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    },
+    {
+      "root_seed": 20261104,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    },
+    {
+      "root_seed": 20261105,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    },
+    {
+      "root_seed": 20261106,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    },
+    {
+      "root_seed": 20261107,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    },
+    {
+      "root_seed": 20261108,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    },
+    {
+      "root_seed": 20261109,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    },
+    {
+      "root_seed": 20261110,
+      "matched_across_arms": true,
+      "independent_training_initialization_required": true
+    }
+  ],
+  "child_streams": [
+    "weight_initialization",
+    "identity_sampling",
+    "augmentation",
+    "batch_order",
+    "distillation_pairs",
+    "pruning_mask",
+    "qat_order",
+    "ptq_representative_sampling"
+  ],
+  "training_child_seeds": [
+    {
+      "root_seed": 20261101,
+      "streams": {
+        "weight_initialization": 2706318610,
+        "identity_sampling": 3729274428,
+        "augmentation": 1585534859,
+        "batch_order": 133697970,
+        "distillation_pairs": 1951769311,
+        "pruning_mask": 1247260665,
+        "qat_order": 4294904117,
+        "ptq_representative_sampling": 55793175
+      }
+    },
+    {
+      "root_seed": 20261102,
+      "streams": {
+        "weight_initialization": 2932191549,
+        "identity_sampling": 2401457733,
+        "augmentation": 2998667770,
+        "batch_order": 3019809530,
+        "distillation_pairs": 3465133032,
+        "pruning_mask": 1356767143,
+        "qat_order": 963271763,
+        "ptq_representative_sampling": 40350137
+      }
+    },
+    {
+      "root_seed": 20261103,
+      "streams": {
+        "weight_initialization": 3819112182,
+        "identity_sampling": 463672188,
+        "augmentation": 4052757237,
+        "batch_order": 2491169805,
+        "distillation_pairs": 1547633167,
+        "pruning_mask": 2515314309,
+        "qat_order": 1430998083,
+        "ptq_representative_sampling": 593378499
+      }
+    },
+    {
+      "root_seed": 20261104,
+      "streams": {
+        "weight_initialization": 361116463,
+        "identity_sampling": 2765626120,
+        "augmentation": 3501492729,
+        "batch_order": 3262511245,
+        "distillation_pairs": 2886102655,
+        "pruning_mask": 2979919543,
+        "qat_order": 496173206,
+        "ptq_representative_sampling": 743385301
+      }
+    },
+    {
+      "root_seed": 20261105,
+      "streams": {
+        "weight_initialization": 3244722125,
+        "identity_sampling": 887576724,
+        "augmentation": 2163886756,
+        "batch_order": 698007879,
+        "distillation_pairs": 3303070532,
+        "pruning_mask": 3188864948,
+        "qat_order": 393339675,
+        "ptq_representative_sampling": 1997843898
+      }
+    },
+    {
+      "root_seed": 20261106,
+      "streams": {
+        "weight_initialization": 1133400217,
+        "identity_sampling": 2740680063,
+        "augmentation": 2630871107,
+        "batch_order": 2077433251,
+        "distillation_pairs": 2923435256,
+        "pruning_mask": 1515478281,
+        "qat_order": 1767961468,
+        "ptq_representative_sampling": 1799442361
+      }
+    },
+    {
+      "root_seed": 20261107,
+      "streams": {
+        "weight_initialization": 1348370740,
+        "identity_sampling": 3570991067,
+        "augmentation": 3092901776,
+        "batch_order": 4155832199,
+        "distillation_pairs": 1787471624,
+        "pruning_mask": 514883407,
+        "qat_order": 3510754066,
+        "ptq_representative_sampling": 1584338879
+      }
+    },
+    {
+      "root_seed": 20261108,
+      "streams": {
+        "weight_initialization": 16479805,
+        "identity_sampling": 738314008,
+        "augmentation": 656669701,
+        "batch_order": 3751954054,
+        "distillation_pairs": 3609959981,
+        "pruning_mask": 272742545,
+        "qat_order": 486402516,
+        "ptq_representative_sampling": 1468099156
+      }
+    },
+    {
+      "root_seed": 20261109,
+      "streams": {
+        "weight_initialization": 6185264,
+        "identity_sampling": 1638433000,
+        "augmentation": 2527021294,
+        "batch_order": 1924374270,
+        "distillation_pairs": 1490887424,
+        "pruning_mask": 2512862954,
+        "qat_order": 3963168527,
+        "ptq_representative_sampling": 735138915
+      }
+    },
+    {
+      "root_seed": 20261110,
+      "streams": {
+        "weight_initialization": 2219204991,
+        "identity_sampling": 3015971169,
+        "augmentation": 2325735093,
+        "batch_order": 180493080,
+        "distillation_pairs": 2104244367,
+        "pruning_mask": 276526657,
+        "qat_order": 3815333189,
+        "ptq_representative_sampling": 288486152
+      }
+    }
+  ],
+  "data_selection_sensitivity_roots": [
+    20261201,
+    20261202,
+    20261203,
+    20261204,
+    20261205,
+    20261206,
+    20261207,
+    20261208,
+    20261209,
+    20261210
+  ],
+  "physical_block_roots": [
+    20261301,
+    20261302,
+    20261303,
+    20261304,
+    20261305,
+    20261306,
+    20261307,
+    20261308,
+    20261309,
+    20261310
+  ],
+  "physical_order_roots": [
+    20261401,
+    20261402,
+    20261403,
+    20261404,
+    20261405,
+    20261406,
+    20261407,
+    20261408,
+    20261409,
+    20261410
+  ],
+  "historical_v3_root_families": {
+    "training": [
+      20261022,
+      20261023,
+      20261024,
+      20261025,
+      20261026,
+      20261032,
+      20261033,
+      20261034,
+      20261035,
+      20261036
+    ],
+    "status": "historical; not counted as new v4 trainings"
+  }
+}

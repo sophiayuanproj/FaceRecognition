@@ -1,0 +1,158 @@
+{
+  "schema": "nicla-versioned-deployment-1",
+  "created_utc": "20261112T051227Z",
+  "release_id": "haar-sightings-r19-20261111",
+  "release_root": "/flash/releases/haar-sightings-r19-20261111",
+  "model_asset_root": "/flash/releases/haar-box-r3-20261110",
+  "referenced_model_asset_roots": [
+    "/flash/releases/haar-box-r3-20261110"
+  ],
+  "referenced_release_manifests": {
+    "/flash/releases/haar-close-r17-20261111": {
+      "present": true,
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/deployments/backups/20261112T051227Z/haar-close-r17-20261111.integration_manifest.json",
+      "sha256": "e5754cfb8a5807be25d8012af0aae6d710ba5fecffe5260f2c8a148167500980",
+      "model_asset_root": "/flash/releases/haar-box-r3-20261110"
+    },
+    "/flash/releases/haar-fast-r18-20261111": {
+      "present": true,
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/deployments/backups/20261112T051227Z/haar-fast-r18-20261111.integration_manifest.json",
+      "sha256": "40a7a9d50d03eb54790d0bd2721a1ff7abb1378f065a3ecf14784bbcaa8303f1",
+      "model_asset_root": "/flash/releases/haar-box-r3-20261110"
+    }
+  },
+  "reused_model_files": {
+    "detector_gray_fomo_int8.tflite": {
+      "path": "/flash/releases/haar-box-r3-20261110/models/deployment-v1/detector_gray_fomo_int8.tflite",
+      "sha256": "4a484c9b56f806b4d13b603e66c3f7df60012ac74149e7a28655ddd497e5195c",
+      "bytes": 10160
+    },
+    "identity_embedding_a010_int8.tflite": {
+      "path": "/flash/releases/haar-box-r3-20261110/models/deployment-v1/identity_embedding_a010_int8.tflite",
+      "sha256": "0bf2bc5fb05b0c02d5d09217fe01834182578ebd92f9c001cd088c8ce5a9b0cd",
+      "bytes": 101576
+    },
+    "identity_classifier_a025_int8.tflite": {
+      "path": "/flash/releases/haar-box-r3-20261110/models/deployment-v1/identity_classifier_a025_int8.tflite",
+      "sha256": "8be1d461ae1606fd7d6be4295049e7e47f0c7516323cb9f5889e7346b9b9ca55",
+      "bytes": 327072
+    },
+    "detector_gray_fomo_int8.txt": {
+      "path": "/flash/releases/haar-box-r3-20261110/models/deployment-v1/detector_gray_fomo_int8.txt",
+      "sha256": "4906796f240d09d35ca93217806fa4ecbb150f976f58dc1cde1bca45986bc18a",
+      "bytes": 16
+    },
+    "identity_classifier_a025_int8.txt": {
+      "path": "/flash/releases/haar-box-r3-20261110/models/deployment-v1/identity_classifier_a025_int8.txt",
+      "sha256": "ffe5362e8fe16d53526aa5f1342d1f0f7b3b4115f21022e3d5ca52b39ac562b7",
+      "bytes": 26
+    },
+    "fixed_roster_gallery.json": {
+      "path": "/flash/releases/haar-box-r3-20261110/models/deployment-v1/fixed_roster_gallery.json",
+      "sha256": "be32c3bea2d5911990f6cfa886318bb9ee808df6303485e89997c80a7c229cae",
+      "bytes": 9359
+    },
+    "embedding_gallery_calibration.json": {
+      "path": "/flash/releases/haar-box-r3-20261110/models/deployment-v1/embedding_gallery_calibration.json",
+      "sha256": "c949cc0fa02740dfd21afde4b5755be789e9d34e02526f904defd290d823a137",
+      "bytes": 13253
+    }
+  },
+  "port_used": "/dev/cu.usbmodem3270395F35321",
+  "preflight": "C/D/E model metadata and UART4 constructor passed",
+  "installed_files": {
+    "runtime_config.json": {
+      "sha256": "ad664dec2170648d07f5e9966d33e44635f37631dd901b3aea13fca28f54680e",
+      "bytes": 11389
+    },
+    "models/deployment-v1/integration_manifest.json": {
+      "sha256": "7e03036c445f68cf20f2a05fba81ccfdaa3485de44424a162d4762a7c9d26c9e",
+      "bytes": 9149
+    },
+    "boot.py": {
+      "sha256": "043e9dadb65b64329161e84e66f0890b8278c2468eab34cbcc6bd9158e416ba5",
+      "bytes": 12731
+    },
+    "mpy/wearable_app.mpy": {
+      "sha256": "e929e917344ae5c9214d2c97f7a5075cccc2d3ed59bca00f20c55d9aeee67981",
+      "bytes": 70571
+    },
+    "mpy/identity_contracts.mpy": {
+      "sha256": "ccbf3b5c8a8a1adeba9c22bcc03a5da57f11f6ddf897af6c470a1c9a56530f00",
+      "bytes": 12571
+    },
+    "mpy/runtime_support.mpy": {
+      "sha256": "2a2f77991769980bf44b75783de987b9aea86c7b457dabc6cf9e3d09359d9c01",
+      "bytes": 8243
+    },
+    "mpy/telemetry.mpy": {
+      "sha256": "827bced548fbab11d46e2fe469f21c6cb017439b0e7e4d2de0e20ab859e4ecac",
+      "bytes": 5804
+    },
+    "mpy/build_manifest.json": {
+      "sha256": "84c4076e75baad02674d96f77b6e6d5f1daf58c77108c78f8eece20d862c1a32",
+      "bytes": 2089
+    },
+    "mpy/offline_sightings.mpy": {
+      "sha256": "a4e2fe95efdba408ff2a416b50c3f0d9191aaebad773bda34c826f644d8a5e5a",
+      "bytes": 4462
+    }
+  },
+  "post_promotion_hashes": {
+    "runtime_config.json": "ad664dec2170648d07f5e9966d33e44635f37631dd901b3aea13fca28f54680e",
+    "models/deployment-v1/integration_manifest.json": "7e03036c445f68cf20f2a05fba81ccfdaa3485de44424a162d4762a7c9d26c9e",
+    "boot.py": "043e9dadb65b64329161e84e66f0890b8278c2468eab34cbcc6bd9158e416ba5",
+    "mpy/wearable_app.mpy": "e929e917344ae5c9214d2c97f7a5075cccc2d3ed59bca00f20c55d9aeee67981",
+    "mpy/identity_contracts.mpy": "ccbf3b5c8a8a1adeba9c22bcc03a5da57f11f6ddf897af6c470a1c9a56530f00",
+    "mpy/runtime_support.mpy": "2a2f77991769980bf44b75783de987b9aea86c7b457dabc6cf9e3d09359d9c01",
+    "mpy/telemetry.mpy": "827bced548fbab11d46e2fe469f21c6cb017439b0e7e4d2de0e20ab859e4ecac",
+    "mpy/build_manifest.json": "84c4076e75baad02674d96f77b6e6d5f1daf58c77108c78f8eece20d862c1a32",
+    "mpy/offline_sightings.mpy": "a4e2fe95efdba408ff2a416b50c3f0d9191aaebad773bda34c826f644d8a5e5a"
+  },
+  "post_promotion_hashes_all_match": true,
+  "prior_target": {
+    "main.py": {
+      "present": true,
+      "sha256": "043e9dadb65b64329161e84e66f0890b8278c2468eab34cbcc6bd9158e416ba5",
+      "bytes": 12731
+    },
+    "face_runtime.current": {
+      "present": true,
+      "sha256": "059f91e32b4e4a7fe4bfc0fa78d65116d12078af7ee08d3a35056783c9210085",
+      "bytes": 39
+    },
+    "face_runtime.current.prev": {
+      "present": true,
+      "sha256": "00e5fce4388a0c7c81783a8feb1757e9351675b80597feabe2c352a8977d2939",
+      "bytes": 40
+    },
+    "boot.py": {
+      "present": true,
+      "sha256": "b675fd0f0e2bc22edd6b06c183a1f4e6e68c1fe3c99a822a85206da054afcfae",
+      "bytes": 488,
+      "already_vcp_hook": true,
+      "usb_mode_before": "VCP"
+    }
+  },
+  "startup_sha256": "043e9dadb65b64329161e84e66f0890b8278c2468eab34cbcc6bd9158e416ba5",
+  "source_free": true,
+  "offline_sightings_enabled": true,
+  "battery_usb_boot": {
+    "port": "/dev/cu.usbmodem3270395F35321",
+    "initial_port": "/dev/cu.usbmodem3270395F35321",
+    "usb_mode": "VCP",
+    "usb_serial_verified": true,
+    "port_changed": false,
+    "sha256": "b675fd0f0e2bc22edd6b06c183a1f4e6e68c1fe3c99a822a85206da054afcfae",
+    "status": "already_installed"
+  },
+  "resumed_from_target_sha256": null,
+  "rollback_release_id": "haar-fast-r18-20261111",
+  "flash_free_bytes_before_install": 915456,
+  "flash_allocation_unit": 2048,
+  "payload_allocated_bytes": 149504,
+  "reserved_flash_bytes": 202752,
+  "preserved_previous_pointer": "/flash/face_runtime.history.20261112T051227Z",
+  "rollback_pointer_backup": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/deployments/backups/20261112T051227Z/face_runtime.current",
+  "physical_camera_inference": "pending real board smoke"
+}

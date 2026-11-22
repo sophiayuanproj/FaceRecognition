@@ -1,0 +1,18 @@
+{
+  "experiment_id": "seed_sweep_fixed_split_20261021",
+  "evaluation_jobs": [
+    {"model_variant": "base", "split_seed": 20261021, "training_seed": 20261022, "run_dir": "work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261022"},
+    {"model_variant": "base", "split_seed": 20261021, "training_seed": 20261023, "run_dir": "work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261023"},
+    {"model_variant": "base", "split_seed": 20261021, "training_seed": 20261024, "run_dir": "work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261024"},
+    {"model_variant": "base", "split_seed": 20261021, "training_seed": 20261025, "run_dir": "work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261025"},
+    {"model_variant": "base", "split_seed": 20261021, "training_seed": 20261026, "run_dir": "work/model-training/runs/seed_sweep_fixed_split_20261021/seed-20261026"}
+  ],
+  "evaluation": {
+    "bootstrap_replicates": 1000,
+    "identity_cluster_bootstrap_replicates": 1000,
+    "evaluation_mode": "validation-only",
+    "host_threads_per_process": 3,
+    "parallel_evaluation_jobs": 5
+  },
+  "test_set_policy": "The supplied SurvFace final pair annotations are intentionally not loaded. This export/evaluation is only for identity-disjoint validation and INT8 comparison."
+}

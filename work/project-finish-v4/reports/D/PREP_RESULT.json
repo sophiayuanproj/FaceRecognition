@@ -1,0 +1,450 @@
+{
+  "acceptance_checks": [
+    {
+      "detail": "A and B handoffs are complete_verified.",
+      "evidence": [
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/A/RESULT.json",
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/B/RESULT.json"
+      ],
+      "id": "A_B_prerequisites",
+      "status": "pass"
+    },
+    {
+      "detail": "C provides gray8 96x96x1, u8/255, with int8 scale 1/255 and zero point -128.",
+      "evidence": [
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/handoffs/C/RESULT.json",
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/config/contracts/v1/image-crop.schema.json"
+      ],
+      "id": "C_gray8_crop_contract",
+      "status": "pass"
+    },
+    {
+      "detail": "Both downloaded EI checkpoints loaded strictly into reference-compatible Keras MobileNetV1 and produced finite 1000-way and backbone outputs at 96x96 grayscale.",
+      "evidence": [
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/D/pretrained_reference_audit.json"
+      ],
+      "id": "real_pretrained_checkpoint_architecture",
+      "status": "pass"
+    },
+    {
+      "detail": "The exact D matrix is frozen and declares ten registered training roots for each required arm.",
+      "evidence": [
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/D_MATRIX_v1.json"
+      ],
+      "id": "frozen_finite_matrix_and_roots",
+      "status": "pass"
+    },
+    {
+      "detail": "Primary/Olivetti manifests validate and all twenty D-derived selection manifests have 300 known plus the same 300 unknown training images.",
+      "evidence": [
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/data/primary_split_manifest.jsonl",
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/data/olivetti_sanity_manifest.jsonl",
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/data/derived/D_selection/INDEX.json"
+      ],
+      "id": "role_gated_data_and_selection_controls",
+      "status": "pass"
+    },
+    {
+      "detail": "Training remains on the Mac host. Fresh discovery was recorded; if no Nicla is observed, independent host training proceeds while physical qualification remains pending.",
+      "evidence": [
+        "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/D/D-fresh-device-discovery.json"
+      ],
+      "id": "Mac_training_host_and_device_probe",
+      "status": "pass"
+    }
+  ],
+  "created_utc": "2026-10-29T16:58:18+00:00",
+  "device_discovery": {
+    "attached_device_count": 0,
+    "enumerated_utc": "2026-10-29T16:58:17.512672+00:00",
+    "errors": [],
+    "hid_devices": [],
+    "platform": "macOS-26.7.1-x86_64-i386-64bit",
+    "schema": "fresh-device-discovery-1",
+    "serial_ports": [],
+    "usb_text": ""
+  },
+  "evidence_paths": {
+    "device_discovery": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/D/D-fresh-device-discovery.json",
+    "matrix": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/D_MATRIX_v1.json",
+    "pretrained_reference_audit": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/D/pretrained_reference_audit.json",
+    "selection_index": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/data/derived/D_selection/INDEX.json"
+  },
+  "job_id": "D_prep_mac",
+  "matrix": {
+    "matrix_id": "D-five-person-transfer-open-set-gallery-v1",
+    "olivetti_arms": 4,
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/D_MATRIX_v1.json",
+    "roots": [
+      20261101,
+      20261102,
+      20261103,
+      20261104,
+      20261105,
+      20261106,
+      20261107,
+      20261108,
+      20261109,
+      20261110
+    ],
+    "sha256": "7078347d7deb075ca9679961e10962958b4718cfa61447035133b75ac208e847",
+    "survface_arms": 8
+  },
+  "notes": [
+    "The EI H5 1000-output head is retained only for reference forward verification and removed from task graphs.",
+    "Published EI checkpoint metadata does not declare exact pretraining corpus/licensing; no corpus is inferred.",
+    "C physical arena cells remain pending and are outside the host training dependency."
+  ],
+  "olivetti_manifest_validation": {
+    "errors": [],
+    "rows": 395,
+    "schema": "dataset-role-manifest-check-1",
+    "status": "pass"
+  },
+  "platform": "Mac host only; training will not move to Windows",
+  "prerequisites": {
+    "A": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/A/RESULT.json",
+      "sha256": "5cbc0ea6e09f9263e443d5a240821935bf43a25fe718d928bbda4570acb3048a"
+    },
+    "B": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/B/RESULT.json",
+      "sha256": "be850776e374d689d881a28982c71a8d6bfbab5c4080891e99d1a72e93c8d2c9"
+    },
+    "C": {
+      "crop_contract": {
+        "coordinate_factor_window_per_detector_px": 2.5,
+        "format": "gray8",
+        "full_int8_affine": "q=gray8-128",
+        "input_scale": 0.00392156862745098,
+        "input_zero_point": -128,
+        "normalization": "u8/255",
+        "resize": "bilinear square 240x240 to 96x96, no letterbox/padding for square ROI",
+        "shape": [
+          1,
+          96,
+          96,
+          1
+        ],
+        "window_to_sensor_offset": [
+          40,
+          0
+        ]
+      },
+      "identity_boundary": {
+        "D_input_if_current_embedding_is_used": "raw gray8 96x96; quantization int8 scale 1/255, zero point -128 (gray-128); D outputs a 64-value embedding and needs local enrollment templates for identity decisions.",
+        "downstream_identity_states": [
+          "NO_FACE",
+          "UNCERTAIN",
+          "OTHER",
+          "KNOWN_IDENTITY"
+        ],
+        "identity_model_invoked_by_C": false,
+        "image_crop_schema": "image-crop-1: width=96,height=96,pixel_format=gray8,color_order=GRAY,row_major_interleaved,bytes_sha256,crop_box_xyxy and transform_id.",
+        "model_role": "face existence/localization only",
+        "pass_condition": "exactly one face after model/label/shape checks; crop wholly inside window; native and 96x96 gray quality gates pass; crop transform and SHA are recorded.",
+        "status_mapping": {
+          "multiple detections / clipped crop / failed quality / unsupported tensor or label / unknown transform": "UNCERTAIN",
+          "one valid crop": "CROP_READY event; only then may F invoke D",
+          "zero detections": "NO_FACE"
+        }
+      },
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/handoffs/C/RESULT.json",
+      "sha256": "412ffeee3eb909d710f45a7ffa0329ba5b6e19957c405a0282416a70db73db20",
+      "status": "complete_verified_with_physical_cells_pending"
+    }
+  },
+  "pretrained_reference_audit": {
+    "checkpoints": {
+      "0.1": {
+        "architecture": {
+          "alpha": 0.1,
+          "feature_layer": "conv_pw_13_relu",
+          "feature_shape": [
+            3,
+            3,
+            102
+          ],
+          "first_conv_kernel_shape": [
+            3,
+            3,
+            1,
+            3
+          ],
+          "include_top": true,
+          "input_shape": [
+            96,
+            96,
+            1
+          ],
+          "parameter_count": 142827,
+          "top_classes": 1000,
+          "version": "MobileNetV1"
+        },
+        "bytes": 2746736,
+        "feature_output_finite": true,
+        "feature_output_shape": [
+          1,
+          3,
+          3,
+          102
+        ],
+        "head_removed_from_adapted_graph": [
+          "global_average_pooling2d",
+          "reshape",
+          "dropout",
+          "conv_preds",
+          "reshape",
+          "predictions"
+        ],
+        "loaded_into": "tf.keras.applications.MobileNet",
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/models/pretrained/edgeimpulse_mobilenetv1_0.1_96_grayscale.h5",
+        "published_normalization": "gray8 uint8 / 255 to float32 [0,1]",
+        "published_pretraining_corpus_and_license": "not declared in checkpoint metadata/source page; not inferred from 1000-class head",
+        "sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+        "source_head_output_finite": true,
+        "source_head_output_shape": [
+          1,
+          1000
+        ],
+        "source_head_output_sum_max": 1.0,
+        "source_head_output_sum_min": 1.0,
+        "source_url": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+        "strict_topological_load": true
+      },
+      "0.25": {
+        "architecture": {
+          "alpha": 0.25,
+          "feature_layer": "conv_pw_13_relu",
+          "feature_shape": [
+            3,
+            3,
+            256
+          ],
+          "first_conv_kernel_shape": [
+            3,
+            3,
+            1,
+            8
+          ],
+          "include_top": true,
+          "input_shape": [
+            96,
+            96,
+            1
+          ],
+          "parameter_count": 475400,
+          "top_classes": 1000,
+          "version": "MobileNetV1"
+        },
+        "bytes": 8029336,
+        "feature_output_finite": true,
+        "feature_output_shape": [
+          1,
+          3,
+          3,
+          256
+        ],
+        "head_removed_from_adapted_graph": [
+          "global_average_pooling2d",
+          "reshape",
+          "dropout",
+          "conv_preds",
+          "reshape",
+          "predictions"
+        ],
+        "loaded_into": "tf.keras.applications.MobileNet",
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/models/pretrained/edgeimpulse_mobilenetv1_0.25_96_grayscale.h5",
+        "published_normalization": "gray8 uint8 / 255 to float32 [0,1]",
+        "published_pretraining_corpus_and_license": "not declared in checkpoint metadata/source page; not inferred from 1000-class head",
+        "sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+        "source_head_output_finite": true,
+        "source_head_output_shape": [
+          1,
+          1000
+        ],
+        "source_head_output_sum_max": 1.0,
+        "source_head_output_sum_min": 1.0,
+        "source_url": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+        "strict_topological_load": true
+      }
+    },
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/D/pretrained_reference_audit.json",
+    "sha256": "da10c103b3855ecc6b3b275c67b794b595c1b99bd34aaf4ca642ef089eb1d329"
+  },
+  "primary_manifest_validation": {
+    "errors": [],
+    "rows": 1750,
+    "schema": "dataset-role-manifest-check-1",
+    "status": "pass"
+  },
+  "protocol_id": "nicla-five-known-study-v4",
+  "schema": "study-job-result-1",
+  "selection_index": {
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/data/derived/D_selection/INDEX.json",
+    "selections": [
+      {
+        "known_rows": 300,
+        "manifest_sha256": "ee3cb4446b20f68791353f7df5de8f7c2f21a4d1f3ae6b1b568c5057a6002ccc",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261101,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "f790dc6191ce4ba088819445381c057ccab56930e29ae044b5df107261150fb3",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261101,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "66c86cc69489136d1fd5096f9f682a04fffdb4e6b93c5e475c2d780033b4bbf4",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261102,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "dfdb8af8b606c987b7be210810d1b16483d018d65c070bf2c5ccb1d036e0faa5",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261102,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "d1b1cdfdd385aecc887dafe0a6ba3750db838aa01863c4f664bf50b270d4eac9",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261103,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "7eda38e37813672f4a5ed4fc78d5c75b3c71ce53de82ab6f8fb9c3fd3f39db4f",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261103,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "8d709953c6dd17eff1ed866d7ad740fb463e7c85b01c7be4174ba1a428e8b5be",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261104,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "01afe916aa3c136ab1cf0c4a6842144f853a0092fb3b3046bc12bdadba7dd0df",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261104,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "d0af578ab05e6af9ca1126a3ab530bd1b5049c5de172e9aeea6ed45b20dc8354",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261105,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "b634a4ea2e6aa8966cb48785bb3c9e74257b3191880e2a25f3ee8c45d118b005",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261105,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "85eb0f7ad9121ebea3e1f8a1f0945f248fc5296270db02f42f336633ec5d5b3d",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261106,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "9da89634056079a374919dfc19af5ada30e1ebd907d4b74eb87273af6b74527c",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261106,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "81ba7238e706901fb85257c3e4fa4e23bdeec6723a3aa202e96279c8d9f35e13",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261107,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "696eb11cc23841b065c98b4c2f978b10b3054b4887e0814e95e1bb1859367deb",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261107,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "bf51b9db8bd937de8fe537115409dad6a0d5498568ef9784e2f46f0c9225d7e6",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261108,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "b8bb4d1ed3d98d0c74e6805b1251ffd66a3861773223fc3e5086729ad632eae2",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261108,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "4939408ae4a782fbcd21d9f8cf9c248cc3aed10c05a2732ef4861cf3e401dd57",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261109,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "4bd7d6436d120e0eb6c236a82227092eb3810a9520ff55e9abbbbe7e641afe6d",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261109,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "881fe7d4102cdde2aa003738e009d61a4722b377a257d62d013309b429b5565a",
+        "policy": "quality",
+        "row_count": 600,
+        "seed": 20261110,
+        "unknown_rows": 300
+      },
+      {
+        "known_rows": 300,
+        "manifest_sha256": "680f400bbd233667812705503ee295f330572941045a78ef6d4fa753c074eac1",
+        "policy": "uniform",
+        "row_count": 600,
+        "seed": 20261110,
+        "unknown_rows": 300
+      }
+    ],
+    "sha256": "cf50132f2694fb8ac753c4ccacccc80b25b078af17c0e823f9c756dd60955de9"
+  },
+  "status": "complete_verified"
+}

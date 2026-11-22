@@ -1,0 +1,7 @@
+numpy==1.23.5
+h5py==3.14.0
+Pillow==10.4.0
+opencv-python-headless==4.10.0.84
+protobuf==3.19.6
+tensorflow-model-optimization==0.7.5
+setuptools==56.0.0

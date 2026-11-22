@@ -1,0 +1,69 @@
+{
+  "protocol_id": "model-system-2026-10-22-v2",
+  "policy_config_version": 1,
+  "sampling": {
+    "high_ms": 250,
+    "low_ms": 2000,
+    "adaptive_moving_ms": 250,
+    "adaptive_stationary_ms": 2500,
+    "adaptive_face_candidate_ms": 500,
+    "max_sample_gap_ms": 5000,
+    "min_sample_interval_ms": 250,
+    "max_sample_interval_ms": 5000,
+    "fixed_model_selection_ms": 1000
+  },
+  "quality": {
+    "mean_min_u8": 12,
+    "mean_max_u8": 243,
+    "stdev_min_u8": 5,
+    "low_quality_action": "uncertain_and_recapture",
+    "image_brightness_is_lux": false
+  },
+  "motion": {
+    "source": "Nicla IMU wearer/device only",
+    "acceleration_norm_reference_mg": 1000,
+    "high_motion_threshold_mg": 150,
+    "low_motion_threshold_mg": 75,
+    "gyro_high_threshold_mdps": 5000,
+    "high_samples_to_activate": 2,
+    "low_samples_to_clear": 3,
+    "stationary_suppression_keeps_periodic_camera_check": true
+  },
+  "models": {
+    "small_path": "/flash/identity_embedding_small_int8.tflite",
+    "large_path": "/flash/identity_embedding_int8.tflite",
+    "small_to_large_rule": "Escalate only for a valid quality-passing crop whose small-model maximum-gallery score falls within its calibration threshold +/- 0.025.",
+    "max_escalations_per_minute": 6,
+    "load_one_model_at_a_time": true,
+    "missing_or_incompatible_model": "uncertain_error; do not silently substitute another candidate"
+  },
+  "temporal_confirmation": {
+    "window_valid_recognition_results": 3,
+    "required_same_decision": 2,
+    "applies_to": ["G", "A-full"],
+    "missing_evidence_counts_as_vote": false
+  },
+  "camera_sleep": {
+    "production_enabled": false,
+    "reason": "OpenMV 5.0.1 documents CSI sleep/shutdown APIs, but GC2145 sensor wake timing, exposure settling, memory behavior, and measured power savings have not been qualified on this device.",
+    "request_after_consecutive_stationary_no_face_frames": 3,
+    "minimum_idle_interval_ms": 1500,
+    "required_wake_to_usable_frame_measurement": true
+  },
+  "policies": {
+    "H": {"interval_ms": 250, "model": "large", "quality_gate": true, "temporal_confirmation": false},
+    "L": {"interval_ms": 2000, "model": "large", "quality_gate": true, "temporal_confirmation": false},
+    "S": {"interval_ms": 250, "model": "small", "quality_gate": true, "temporal_confirmation": false},
+    "G": {"interval_ms": 250, "model": "large", "quality_gate": true, "temporal_confirmation": "2_of_3"},
+    "A-acquire": {"interval_ms": 250, "model": null, "quality_gate": false, "detector": false, "scope": "camera_capture_only"},
+    "A-sense": {"interval_ms": "adaptive", "model": "large", "quality_gate": true, "imu_motion": true, "temporal_confirmation": false},
+    "A-model": {"interval_ms": 1000, "model": "small_then_large_on_uncertainty", "quality_gate": true, "temporal_confirmation": false},
+    "A-full": {"interval_ms": "adaptive", "model": "small_then_large_on_uncertainty", "quality_gate": true, "imu_motion": true, "camera_sleep_request": true, "temporal_confirmation": "2_of_3"}
+  },
+  "ablation_protocol": {
+    "factors": ["motion", "image_quality_adaptation", "confidence_escalation", "camera_sleep", "temporal_confirmation"],
+    "retune_remaining_parameters": false,
+    "remaining_parameters": "Frozen to the A-full development values; same input/event scripts and equal simulation budget per factor.",
+    "interpretation": "Host logic only until same-session face encounters and valid power trials are available."
+  }
+}

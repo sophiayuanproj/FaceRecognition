@@ -1,0 +1,31 @@
+{
+  "schema": "nicla-engineering-targets-1",
+  "protocol_id": "nicla-five-known-study-v4",
+  "authority": "Prospective team-selected engineering goals; no instructor-mandated numerical recognition target was verified.",
+  "known_frontal_recognition": {
+    "goal": "At least 90% macro top-1 known identity on valid, single-face, frontal observations, with at least 90% identity-decision coverage.",
+    "rationale": "Requires useful correct recognition and nontrivial coverage; report per-person confusion and reject/uncertain counts."
+  },
+  "unseen_person_errors": {
+    "goal": "At most 1% false identification of genuinely unseen people at the frozen operating threshold; only met if the one-sided 95% upper confidence bound is also at or below 1%.",
+    "minimum_evaluation_design": "At least 300 held-out unknown encounters from at least 30 unseen identities, with identity-clustered uncertainty; report people, encounters, and images separately. Sparse evidence is inconclusive.",
+    "rationale": "Prevents a small unknown sample or reject-all behavior from appearing successful."
+  },
+  "response_time": {
+    "goal": "At most 1.0 second p95 from camera capture timestamp to final system decision on the qualified standalone Nicla.",
+    "rationale": "One-second response is a practical wearable interaction target and includes capture, detector, crop, identity and controller."
+  },
+  "energy_quality": {
+    "goal": "Seek at least 10% lower whole-board energy per accepted correct known encounter than fixed-high cadence while keeping known macro top-1 loss within 5 percentage points and meeting the frozen unknown-error target.",
+    "design": "At least ten independently started randomized paired physical blocks per contrast under the same qualified Nicla boundary and firmware/model/config hashes. Report paired effect and uncertainty.",
+    "rationale": "Requires measurable efficiency improvement while preserving task quality; relative only after meter boundary and timing qualification."
+  },
+  "reject_all_prohibition": "Rejecting every input or chance-level known identity is not a successful recognizer.",
+  "physical_claim_gates": [
+    "actual Nicla and exact firmware/model/config verified",
+    "fresh discovery and exclusive board lease",
+    "camera/model parity and memory measured",
+    "meter identity, power boundary, raw protocol and clock/timing qualified",
+    "failures and unsupported runs retained"
+  ]
+}

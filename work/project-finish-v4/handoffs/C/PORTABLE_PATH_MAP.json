@@ -1,0 +1,12 @@
+{
+  "schema": "C-portable-path-map-1",
+  "status": "workspace_relative_resolution_verified",
+  "canonical_active_locations": {
+    "selected_challenger_fixtures": "work/project-finish-v4/fixtures/C/selected_challenger",
+    "selected_detector_model": "work/project-finish-v4/models/C/cheap_sepconv_16/seed-20261102/detector_full_int8.tflite",
+    "twenty_root_export_archive": "work/project-finish-v4/models/C/fomo_tflite_20_roots_and_audit.zip",
+    "FOMO_geometry_helpers": "FaceRecognition/nicla_study/c_reference/common.py",
+    "Nicla fixture parity runner": "FaceRecognition/tools/nicla_fixture_parity.py"
+  },
+  "historical_external_reference_policy": "Original C and F receipts are preserved as evidence. Active code has no external Job C path dependency. The original WIDER/PASS source datasets and local visual contact sheets remain excluded; the thirteen exact-byte development fixtures and their model are integrated under the paths above."
+}

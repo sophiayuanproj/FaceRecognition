@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "calibration-gallery-v1",
+  "title": "Calibration/gallery v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "calibration_role",
+    "gallery_format",
+    "model_type",
+    "model_sha256",
+    "data_manifest_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "calibration-gallery-1"
+    },
+    "calibration_role": {
+      "enum": [
+        "threshold_calibration",
+        "quant_calibration"
+      ]
+    },
+    "gallery_format": {
+      "enum": [
+        "class-prototypes-v1",
+        "embedding-gallery-v1",
+        "thresholds-v1"
+      ]
+    },
+    "model_type": {
+      "enum": [
+        "classifier_logits",
+        "embedding"
+      ]
+    },
+    "model_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "data_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "identity_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unknown_identities_disjoint": {
+      "type": "boolean"
+    }
+  }
+}

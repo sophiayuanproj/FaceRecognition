@@ -1,0 +1,3255 @@
+{
+  "addendum_id": "D-sface-host-reference-and-mobilenet-distillation-v1",
+  "addendum_sha256": "586ea4b3a854e84c54e055ab9deaf23a088c35fa611ee167fd63d94848a9872f",
+  "created_utc": "2026-10-29T22:50:30+00:00",
+  "final_results": {
+    "student_root_count": 20,
+    "teacher": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/SFACE_HOST_FINAL.json"
+  },
+  "final_role_opened": true,
+  "final_role_opened_utc": "2026-10-29T23:22:15+00:00",
+  "matrix_id": "D-five-person-transfer-open-set-gallery-v1",
+  "matrix_sha256": "7078347d7deb075ca9679961e10962958b4718cfa61447035133b75ac208e847",
+  "model_count": 21,
+  "models": [
+    {
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "fixed_face_pretrained_host_teacher",
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/SFACE_HOST.FROZEN.json",
+      "model_id": "sface_2021dec_host_reference",
+      "output_contract": "embedding-128/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/D/SFACE_TEACHER_RESULT.json",
+      "root_seed": null,
+      "status": "research_reference"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261201/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261201/embedding_float.tflite",
+        "sha256": "b9eba542e2c88d44002da6d3696e7d0a7d44a28531a92a092e55196f0397e3cd",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261201/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0030997188296169043,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261201/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "d4956a1b69b442abcbd25b8b0cfd06fde272eb032f78cdfcfb8926f9d47926f6",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261201/ROOT_RESULT.json",
+      "root_seed": 20261201,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261202/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261202/embedding_float.tflite",
+        "sha256": "d1ba8f14c9463ebd61457b4d57696e1e2da09e64fe820782e9824f359cfb77bf",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261202/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003436999162659049,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261202/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "9810cd3fa59b1f1a325b535ba6c470d8241ab384d0b111adc6dbc44fc2d0d14c",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261202/ROOT_RESULT.json",
+      "root_seed": 20261202,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261203/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261203/embedding_float.tflite",
+        "sha256": "dc2e787bbbbfb053635065cf2dc4fbd6a5d1c51770b7e5d61e239464069153eb",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261203/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003288829466328025,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261203/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "577318a5816ad93ae54ea17a405a2db5ab8e47b2dddcfbf6f07b2fed31363792",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261203/ROOT_RESULT.json",
+      "root_seed": 20261203,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261204/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261204/embedding_float.tflite",
+        "sha256": "7baa8912bec0eb0b24ddfecf6a336b8b82b14315dc1dc0248461aedf1345b018",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261204/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0035298685543239117,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261204/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "8f1f4c1ddc6a08cbc289aecbc48017bfc8e603819a311b6cb56e678ef4c8e070",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261204/ROOT_RESULT.json",
+      "root_seed": 20261204,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261205/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261205/embedding_float.tflite",
+        "sha256": "6053e24712d5596d8167926094afce7746b09cc4f7c2ced4a1b19649a38f1e75",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261205/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0025010660756379366,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261205/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "ef615bc17c36f2beca494b6b0e5866b22b8121a8561574286950ba66340ca1fb",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261205/ROOT_RESULT.json",
+      "root_seed": 20261205,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261206/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261206/embedding_float.tflite",
+        "sha256": "6cd92532eeb575f89a766a6b0d6bfd0cae70749ef8bef28b2ae2ab8877d61cb2",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261206/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0035215176176279783,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261206/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "42bd0d103225d04c5ff392c1fd8481208d91d4139afcc541e02f06739d49c0c4",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261206/ROOT_RESULT.json",
+      "root_seed": 20261206,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261207/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261207/embedding_float.tflite",
+        "sha256": "f8ba4b8c62a287b6138a53f181fd7752f347b1df9d56a66cfedcaba4955738d2",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261207/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0039153085090219975,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261207/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "760512ca1deeb67acc0fc6c28109a47c991f27118bdf5c8e1fb89ddda6965d17",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261207/ROOT_RESULT.json",
+      "root_seed": 20261207,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261208/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261208/embedding_float.tflite",
+        "sha256": "7baeaf5e3a2fb64907b3ac114b4fce1e48cbaa89add283ea5ae57e21bae2d495",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261208/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0028965729288756847,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261208/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "bd6dc50cff55a299851cde3f27d2fb659759db64fe89ccb567be1aff300c31fe",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261208/ROOT_RESULT.json",
+      "root_seed": 20261208,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261209/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261209/embedding_float.tflite",
+        "sha256": "aee0c3d1ae2641575aca9b5b60c98c0b5f8c40fed63dd4d4a92289f4f9e77e0b",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261209/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0036773402243852615,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261209/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "072f077db5e4adf0825f78a2bed0f2f513eb0d8623a8df72ea92052e9a07274c",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261209/ROOT_RESULT.json",
+      "root_seed": 20261209,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261210/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 198168,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261210/embedding_float.tflite",
+        "sha256": "4c8b6fd28b6dd2c06b8f331f148fde6594c981e46c71ed478b5d929683020d3f",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261210/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 100664,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0027456169482320547,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261210/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "7f99e5f8af5bec44406b7dce7d262cda208155d0782cc7dd2e226087e7e7b9b5",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a010",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a010/seed-20261210/ROOT_RESULT.json",
+      "root_seed": 20261210,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261211/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261211/embedding_float.tflite",
+        "sha256": "44417611a5a2276504527907d95779e0041473dc2f54cd6015917a1bdd09879c",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261211/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003988985437899828,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261211/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "98fcd260b8176e69617980dee459ca1af421c8bd3741c19faf4e8ab7853dd003",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261211/ROOT_RESULT.json",
+      "root_seed": 20261211,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261212/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261212/embedding_float.tflite",
+        "sha256": "6af9f28ad7081218791d8222a390338760b0d9e4ef151116b2df0b69a601f58e",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261212/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0067614964209496975,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261212/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "52c37d41c9d7a830a3f9186c19b2e213415fb0bd88e7312b305eb296458de4f4",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261212/ROOT_RESULT.json",
+      "root_seed": 20261212,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261213/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261213/embedding_float.tflite",
+        "sha256": "7868d973c794d13e4c3843da1823c7e9af211fdd76fcd6b1c21452273171e695",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261213/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.004550617188215256,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261213/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "2920bdf988ca184e95112e1a53c61e48144c46b4ba19b723f2633a90aa72d26d",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261213/ROOT_RESULT.json",
+      "root_seed": 20261213,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261214/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261214/embedding_float.tflite",
+        "sha256": "4452b86e1471d19527d898631306f44169f07f6e12eb85ed2820ad69082382e7",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261214/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0038778127636760473,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261214/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "66fbfc819a63b829a18e06d68a2015fc9ed39e7af2d8bb13e204a4a40a3bda00",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261214/ROOT_RESULT.json",
+      "root_seed": 20261214,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261215/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261215/embedding_float.tflite",
+        "sha256": "4b62617d19802d7c929c46d03b3a4dc72c387beee318706dd5d29afb2d131e71",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261215/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.005448938813060522,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261215/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "c741afbdf90199976894932c5ef179835c8a52fb47c4306fa8133fa7e7a46184",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261215/ROOT_RESULT.json",
+      "root_seed": 20261215,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261216/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261216/embedding_float.tflite",
+        "sha256": "2d335efcf5b6fe0e8e8c5a153153ecc022a9617ba7a38af201dfe89ebf51e6bf",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261216/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0036249293480068445,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261216/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "eb0d5a4cc8665de237c01aa3ca8abbe87f781dbe8d39d409c4284a4f8f574701",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261216/ROOT_RESULT.json",
+      "root_seed": 20261216,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261217/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261217/embedding_float.tflite",
+        "sha256": "e9a78d777edba8c5b6b87df2a9562d21bb184f67e0e3181cf56de0cdd67042c3",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261217/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.004302472807466984,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261217/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "19273381fc8b1ad934f11e1469ad0fab319d3f2ac5f01c69c6c7cbdb2d5bd2dc",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261217/ROOT_RESULT.json",
+      "root_seed": 20261217,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261218/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261218/embedding_float.tflite",
+        "sha256": "8b1e2fb6b5de1212815c847b5b77c4cacea60e9a128684425c058dcc57ebc816",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261218/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.0033856763038784266,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261218/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "9fa251090138d9dfd9dbbfb7ea175332a7897bbb67ffc73774b6a3be0d2a87df",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261218/ROOT_RESULT.json",
+      "root_seed": 20261218,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261219/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261219/embedding_float.tflite",
+        "sha256": "b0a00ab2b8a3fcab6f48cbfe89eacd2268c245e733e621fe06260712852a97bf",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261219/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003527994267642498,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261219/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "d5f529e31213ac980cffd35dbbf72ffe42e82bc141998f0bbf5c0710ea7dbcd5",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261219/ROOT_RESULT.json",
+      "root_seed": 20261219,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    },
+    {
+      "checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "dataset": "survface_96",
+      "deployment_eligible": false,
+      "family_type": "sface_distilled_mobilenet_student",
+      "final_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261220/FINAL_RESULT.json",
+      "float_tflite": {
+        "all_int8_boundary": false,
+        "bytes": 932060,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261220/embedding_float.tflite",
+        "sha256": "860a512422eae16b23c0da80287161ae327ad85c0ea796a623342a440d3a1a01",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "freeze_receipt": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261220/FROZEN.json",
+      "initialization_source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+      "int8_tflite": {
+        "all_int8_boundary": true,
+        "bytes": 328680,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.004529853351414204,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261220/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "ea43dbaf806c0fcdf6b9482ef17900acd60c9ab4538051eaaeb6850f50f07c56",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "model_id": "sv_sface_distill_mnv1_a025",
+      "output_contract": "embedding-64/gallery-cosine",
+      "pretrained": true,
+      "result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/students/a025/seed-20261220/ROOT_RESULT.json",
+      "root_seed": 20261220,
+      "teacher_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+    }
+  ],
+  "schema": "job-d-teacher-student-registry-1",
+  "search_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/teacher/student_search/SEARCH_RESULT.json",
+  "search_sha256": "993203c90e22199fbe98bba92bd7a4d4f133176debbac3bba9eb7d6d95791e18",
+  "status": "complete_verified",
+  "student_root_count": 20,
+  "teacher_result_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/D/SFACE_TEACHER_RESULT.json",
+  "teacher_result_sha256": "a39bd9ee7c80838d7b0d9afe1607a8bcdb09ad0a33783ecf1060c3290ce74b8b"
+}

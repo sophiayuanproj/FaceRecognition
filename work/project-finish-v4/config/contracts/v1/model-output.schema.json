@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "model-output-v1",
+  "title": "Typed model output v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "model_type",
+    "values",
+    "model_sha256",
+    "config_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "model-output-1"
+    },
+    "model_type": {
+      "enum": [
+        "classifier_logits",
+        "embedding",
+        "detector_centroids"
+      ]
+    },
+    "values": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "class_labels": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "embedding_dimension": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "quantization": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "model_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "config_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

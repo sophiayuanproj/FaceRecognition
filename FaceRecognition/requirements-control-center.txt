@@ -1,0 +1,4 @@
+pyserial==3.5
+mpremote==1.29.0
+Pillow==12.3.0
+platformdirs==4.14.2

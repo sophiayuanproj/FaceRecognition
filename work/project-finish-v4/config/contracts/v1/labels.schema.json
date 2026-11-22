@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "identity-labels-v1",
+  "title": "Identity and system-state labels v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "known_identities",
+    "unknown_label",
+    "system_states",
+    "class_order"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "identity-labels-1"
+    },
+    "known_identities": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "unknown_label": {
+      "const": "OTHER"
+    },
+    "class_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "system_states": {
+      "const": [
+        "NO_FACE",
+        "UNCERTAIN",
+        "OTHER",
+        "KNOWN_IDENTITY"
+      ]
+    }
+  }
+}

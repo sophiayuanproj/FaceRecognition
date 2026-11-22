@@ -1,0 +1,316 @@
+{
+  "attempt_log": {
+    "path": "work/project-finish-v4/runs/JPILOT/ATTEMPTS.jsonl",
+    "registration": "register all ten policy settings before physical capture; append-only",
+    "required_fields": [
+      "attempt_id",
+      "candidate_setting_id",
+      "policy_id",
+      "registered_utc",
+      "protocol_sha256",
+      "policy_definition_sha256",
+      "registered_before_capture"
+    ]
+  },
+  "candidate_budget": {
+    "candidate_outcomes_may_not_be_added_after_pilot_results_are_seen": true,
+    "maximum_candidate_settings": 12,
+    "predeclared_candidate_settings": 10,
+    "settings": [
+      {
+        "candidate_setting_id": "H",
+        "policy_definition": {
+          "camera_sleep": false,
+          "identity_backend": "large",
+          "interval_ms": 250,
+          "motion_adaptation": false,
+          "motion_gate": false,
+          "quality_gate": true,
+          "resolution": "QVGA",
+          "temporal_confirmation": false
+        },
+        "policy_definition_sha256": "d1ec815d712b361038001d30761d616c4baba72ef2c3db76f641a0c2691a92fb",
+        "policy_id": "H",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      },
+      {
+        "candidate_setting_id": "L",
+        "policy_definition": {
+          "camera_sleep": false,
+          "identity_backend": "large",
+          "interval_ms": 2000,
+          "motion_adaptation": false,
+          "motion_gate": false,
+          "quality_gate": true,
+          "resolution": "QVGA",
+          "temporal_confirmation": false
+        },
+        "policy_definition_sha256": "1f2fbfb26e2a5461020b46ea5833d3dded953f08c4738fe49e11f1519e49391e",
+        "policy_id": "L",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      },
+      {
+        "candidate_setting_id": "T",
+        "policy_definition": {
+          "camera_sleep": false,
+          "identity_backend": "small",
+          "interval_ms": 250,
+          "motion_adaptation": false,
+          "motion_gate": false,
+          "quality_gate": true,
+          "resolution": "QVGA",
+          "scene_trigger": {
+            "detector_fallback_ms": 2000,
+            "hysteresis_mean_u8": 4,
+            "hysteresis_stdev_u8": 3,
+            "mean_delta_u8": 8,
+            "min_detector_interval_ms": 500,
+            "stdev_delta_u8": 6
+          },
+          "temporal_confirmation": false
+        },
+        "policy_definition_sha256": "f779fb9f82f25b91c0bbd07180286655e3ff953fc5f422df06a57d6da78c6016",
+        "policy_id": "T",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      },
+      {
+        "candidate_setting_id": "G",
+        "policy_definition": {
+          "camera_sleep": false,
+          "identity_backend": "large",
+          "interval_ms": 250,
+          "motion_adaptation": false,
+          "motion_gate": false,
+          "quality_gate": true,
+          "resolution": "QVGA",
+          "temporal_confirmation": false
+        },
+        "policy_definition_sha256": "d1ec815d712b361038001d30761d616c4baba72ef2c3db76f641a0c2691a92fb",
+        "policy_id": "G",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      },
+      {
+        "candidate_setting_id": "A-sense",
+        "policy_definition": {
+          "camera_sleep": false,
+          "identity_backend": "large",
+          "interval_ms": "adaptive",
+          "motion_adaptation": true,
+          "motion_gate": true,
+          "moving_interval_ms": 250,
+          "quality_gate": true,
+          "resolution": "QVGA",
+          "still_interval_ms": 1500,
+          "temporal_confirmation": false
+        },
+        "policy_definition_sha256": "c86c31b148c98f92a579fafb37e93d4eb2b0ce4be3f8595cb94e5b9346b0a183",
+        "policy_id": "A-sense",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      },
+      {
+        "candidate_setting_id": "A-model",
+        "policy_definition": {
+          "camera_sleep": false,
+          "identity_backend": "small_then_large_near_threshold",
+          "interval_ms": 1000,
+          "max_escalations_per_minute": 6,
+          "motion_adaptation": false,
+          "motion_gate": false,
+          "quality_gate": true,
+          "resolution": "QVGA",
+          "temporal_confirmation": false
+        },
+        "policy_definition_sha256": "74eb0332503dc419902ea06c599446003afef366fb247962a01f8a09bccd4a77",
+        "policy_id": "A-model",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      },
+      {
+        "candidate_setting_id": "A-risk",
+        "policy_definition": {
+          "camera_sleep": false,
+          "identity_backend": "small_then_large_risk_aware",
+          "interval_ms": 1000,
+          "max_escalations_per_minute": 6,
+          "motion_adaptation": false,
+          "motion_gate": false,
+          "quality_gate": true,
+          "resolution": "QVGA",
+          "temporal_confirmation": false
+        },
+        "policy_definition_sha256": "d5454c7650738698979444a52ddb2f92f35ecedb1c9e4872763bb34f2e8fbba7",
+        "policy_id": "A-risk",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      },
+      {
+        "candidate_setting_id": "A-cost",
+        "policy_definition": {
+          "camera_sleep": false,
+          "identity_backend": "small_then_large_cost_aware",
+          "interval_ms": 1000,
+          "max_escalations_per_minute": 6,
+          "motion_adaptation": false,
+          "motion_gate": false,
+          "quality_gate": true,
+          "resolution": "QVGA",
+          "temporal_confirmation": false
+        },
+        "policy_definition_sha256": "010ecbe8cfdcccb3c01f5b67e28a1649686e0c729c0309c4076e9586ed470a6d",
+        "policy_id": "A-cost",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      },
+      {
+        "candidate_setting_id": "A-full",
+        "policy_definition": {
+          "camera_sleep": true,
+          "identity_backend": "small_then_large_near_threshold",
+          "interval_ms": "adaptive",
+          "max_escalations_per_minute": 6,
+          "motion_adaptation": true,
+          "motion_gate": true,
+          "moving_interval_ms": 250,
+          "quality_gate": true,
+          "resolution": "VGA",
+          "still_interval_ms": 1500,
+          "temporal_confirmation": "2_of_3"
+        },
+        "policy_definition_sha256": "156afe812010a448fa757f5a0c04604fecd11add90ecc00194297b8b5abf415a",
+        "policy_id": "A-full",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      },
+      {
+        "candidate_setting_id": "U",
+        "policy_definition": {
+          "camera_sleep": false,
+          "identity_backend": "small",
+          "interval_ms": 2000,
+          "motion_adaptation": false,
+          "motion_gate": false,
+          "quality_gate": false,
+          "resolution": "QVGA",
+          "stage_behavior": "fixed 2000ms capture; run detector; NO_FACE stops; reject multiple/clipped crops; do not gate on scene/crop quality; one valid crop may invoke D embedding gallery; never invoke E classifier; no temporal votes",
+          "temporal_confirmation": false
+        },
+        "policy_definition_sha256": "d7f216b8da4f69c807102c66a1af3b01e89a2707bbe6f18baed9073e08130be0",
+        "policy_id": "U",
+        "reason": "predeclared named baseline, mechanism ablation, or adaptive controller in the frozen J plan"
+      }
+    ],
+    "unallocated_slots_require_versioned_protocol_amendment_before_data_collection": true
+  },
+  "candidate_selection": {
+    "metrics": [
+      "known_macro_top1",
+      "known_macro_accepted_coverage",
+      "response_p95_ms",
+      "energy_per_accepted_correct_known_vs_fixed_high",
+      "unknown false-identification counts by identity"
+    ],
+    "minimum_independent_paired_blocks": 10,
+    "reject_all_is_not_success": true,
+    "rule": "filter every candidate through every quality, unknown, response, measurement, role and hash gate; select lowest energy per accepted correct known encounter; tie-break by known macro top-1 then policy ID",
+    "thresholds": {
+      "authority": "Prospective team-selected engineering goals; no instructor-mandated numerical recognition target was verified.",
+      "energy_quality": {
+        "design": "At least ten independently started randomized paired physical blocks per contrast under the same qualified Nicla boundary and firmware/model/config hashes. Report paired effect and uncertainty.",
+        "goal": "Seek at least 10% lower whole-board energy per accepted correct known encounter than fixed-high cadence while keeping known macro top-1 loss within 5 percentage points and meeting the frozen unknown-error target.",
+        "rationale": "Requires measurable efficiency improvement while preserving task quality; relative only after meter boundary and timing qualification."
+      },
+      "known_frontal_recognition": {
+        "goal": "At least 90% macro top-1 known identity on valid, single-face, frontal observations, with at least 90% identity-decision coverage.",
+        "rationale": "Requires useful correct recognition and nontrivial coverage; report per-person confusion and reject/uncertain counts."
+      },
+      "physical_claim_gates": [
+        "actual Nicla and exact firmware/model/config verified",
+        "fresh discovery and exclusive board lease",
+        "camera/model parity and memory measured",
+        "meter identity, power boundary, raw protocol and clock/timing qualified",
+        "failures and unsupported runs retained"
+      ],
+      "protocol_id": "nicla-five-known-study-v4",
+      "reject_all_prohibition": "Rejecting every input or chance-level known identity is not a successful recognizer.",
+      "response_time": {
+        "goal": "At most 1.0 second p95 from camera capture timestamp to final system decision on the qualified standalone Nicla.",
+        "rationale": "One-second response is a practical wearable interaction target and includes capture, detector, crop, identity and controller."
+      },
+      "schema": "nicla-engineering-targets-1",
+      "unseen_person_errors": {
+        "goal": "At most 1% false identification of genuinely unseen people at the frozen operating threshold; only met if the one-sided 95% upper confidence bound is also at or below 1%.",
+        "minimum_evaluation_design": "At least 300 held-out unknown encounters from at least 30 unseen identities, with identity-clustered uncertainty; report people, encounters, and images separately. Sparse evidence is inconclusive.",
+        "rationale": "Prevents a small unknown sample or reject-all behavior from appearing successful."
+      }
+    },
+    "unknown_bound": "maximum of identity-cluster bootstrap and exact one-sided encounter Clopper-Pearson bound"
+  },
+  "cost_calibration": {
+    "energy_value_mj_per_correct": 100.0,
+    "energy_value_source": "fixed prospective engineering exchange rate; not an observed measurement",
+    "fit_bin_width": 0.1,
+    "fit_score": "small-model candidate cosine score, in [0,1]",
+    "minimum_encounters_per_bin": 30,
+    "minimum_session_identity_clusters_per_bin": 10,
+    "required_fields": [
+      "status",
+      "source_role",
+      "incremental_energy_mj",
+      "incremental_latency_ms"
+    ],
+    "risk_threshold": 0.1,
+    "source": "I development-only measured incremental small-to-large cost receipt",
+    "training_row_unit": "one independently annotated encounter, never adjacent frames"
+  },
+  "created_utc": "2026-10-31T02:26:26+00:00",
+  "physical_outcomes": "pending; this source protocol contains no measurements or selected candidate",
+  "pilot_schedule": {
+    "all_predeclared_policy_attempts_required_for_selection": true,
+    "conditions": [
+      "known_frontal_stationary_normal",
+      "known_low_light",
+      "known_motion_blur",
+      "known_offcenter_range",
+      "unknown_entry_stationary"
+    ],
+    "independently_started_paired_blocks": 50,
+    "physical_block_seed_is_distinct_from_training_root": true,
+    "plan_phase": "JPILOT",
+    "planned_capture_count": 500,
+    "policy_settings_per_block": 10,
+    "randomized_block_and_policy_order": true,
+    "training_roots": [
+      20261101,
+      20261102,
+      20261103,
+      20261104,
+      20261105,
+      20261106,
+      20261107,
+      20261108,
+      20261109,
+      20261110
+    ]
+  },
+  "protocol_sha256": "f365ceef888c6054afe093ed1cae0fd704d17e7a1cf25334c4b0e680b36ca5f1",
+  "schema": "J-pilot-selection-protocol-1",
+  "scope": "J development pilot and pre-final selection only; final data are not opened or read",
+  "sequence": [
+    "Generate the protocol against the fitted runtime config before the pilot.",
+    "Register every preregistered policy setting in the append-only attempt log.",
+    "Run the JPILOT schedule only after I cost and exact-current-firmware H gates pass.",
+    "Prepare one development-only encounter row per annotated encounter and a complete candidate result row per policy.",
+    "Fit calibration from development encounters and I's measured cost; stage a new runtime config and rerun affected H checks.",
+    "Score candidates only after all preregistered policy rows are present; then use the separate one-way freeze tool before K."
+  ],
+  "source_sha256": {
+    "controller_plan": "af6c79143b1fa7825e066eb59d9973227000a005724926c55bc8a2e1b08bc1f7",
+    "engineering_targets": "56e5d7a0a233b8b0c9d72af38156cb8deb66861b9310311e4613d95322185057",
+    "pilot_workflow_source": "8b1a2e1d9fa6475f8e672f0de0986c9870bfb1dae7af11eadc239cc93ea2fbb7",
+    "runtime_config": "7c6d3c9645c904aa9fcd37707390c54e5e0cc48aaf8333d428c896139714d146",
+    "selector_source": "c36b3c77a7a0e6803b873d519bcdbeba19c3904028cd35c23b727cbad9a59fce"
+  },
+  "status": "predeclared_source_protocol_no_outcomes",
+  "workspace_relative_paths": {
+    "controller_plan": "work/project-finish-v4/config/J_CONTROLLER_PLAN.json",
+    "engineering_targets": "work/project-finish-v4/config/ENGINEERING_TARGETS.json",
+    "runtime_config": "FaceRecognition/firmware/runtime_config.json",
+    "selector_source": "FaceRecognition/nicla_study/development_selector.py"
+  }
+}

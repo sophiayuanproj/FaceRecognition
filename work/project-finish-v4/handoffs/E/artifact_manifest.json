@@ -1,0 +1,14 @@
+{
+  "capacity_selection_sha256": "b5ab5ac053bbdbd428c49e9375ced13bc812f555342d8f1815710b0451897ff8",
+  "final_role_accessed": false,
+  "manifest": {
+    "bytes": 3774544,
+    "exists": true,
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/E/FHI_ARTIFACT_ROOTS.json",
+    "receipt_sha256_matches": true,
+    "sha256": "b31c03635560ae46480ae28393e3e3062ba3d23203c887bd903bccf3dd170349"
+  },
+  "predeclaration_sha256": "732d98f9ab2ec449b407a6ba38c67aa578bf25f91c4699bbe598523e4b02b0e1",
+  "schema": "job-e-artifact-manifest-1",
+  "status": "complete_verified"
+}

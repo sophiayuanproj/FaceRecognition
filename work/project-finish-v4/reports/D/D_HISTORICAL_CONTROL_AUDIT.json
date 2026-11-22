@@ -1,0 +1,1185 @@
+{
+  "D_final_role_opened": false,
+  "D_known_roster_v3_exposure": {
+    "K01": {
+      "source_identity_id": "10447",
+      "v3_calibration_record_count": 0,
+      "v3_development_record_count": 264,
+      "v3_train_record_count": 0
+    },
+    "K02": {
+      "source_identity_id": "9889",
+      "v3_calibration_record_count": 0,
+      "v3_development_record_count": 307,
+      "v3_train_record_count": 0
+    },
+    "K03": {
+      "source_identity_id": "10631",
+      "v3_calibration_record_count": 0,
+      "v3_development_record_count": 189,
+      "v3_train_record_count": 0
+    },
+    "K04": {
+      "source_identity_id": "10554",
+      "v3_calibration_record_count": 0,
+      "v3_development_record_count": 155,
+      "v3_train_record_count": 0
+    },
+    "K05": {
+      "source_identity_id": "9452",
+      "v3_calibration_record_count": 0,
+      "v3_development_record_count": 197,
+      "v3_train_record_count": 0
+    }
+  },
+  "created_files": [
+    "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/D/D_HISTORICAL_CONTROL_AUDIT.json"
+  ],
+  "created_utc": "2026-10-29T22:05:58+00:00",
+  "errors": [],
+  "historical_audit_read_D_primary_split_manifest": false,
+  "historical_selection_exposure": {
+    "D_roster_source_images_in_v3_development": true,
+    "checkpoint_selection_metric": "best v3 development ROC-AUC",
+    "interpretation": "All source image groups for K01-K05 were in v3 development. Historical results on D roles are exploratory and cannot establish an independent final benchmark."
+  },
+  "methods": [
+    "custom_base",
+    "custom_tiny"
+  ],
+  "per_file_training_and_artifact_audit": [
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "1e9ac80dfaf02a8a77f7cc926dba7ec4f881d508c77dd6f22e4dbcec4d8abfb1",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261022/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "1e9ac80dfaf02a8a77f7cc926dba7ec4f881d508c77dd6f22e4dbcec4d8abfb1",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "c6bb981ae3534cb30a6fd75067726f2944c9665c684e153da373399135d67c96",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261022/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "c6bb981ae3534cb30a6fd75067726f2944c9665c684e153da373399135d67c96",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "804af1ef1631e41ff345d19b4291e5146a0ebaaf3eeb7f23f567a24fb55d91c4",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261022/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "804af1ef1631e41ff345d19b4291e5146a0ebaaf3eeb7f23f567a24fb55d91c4",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "1e9ac80dfaf02a8a77f7cc926dba7ec4f881d508c77dd6f22e4dbcec4d8abfb1",
+      "best_epoch_selected_by_v3_development_auc": 13,
+      "best_v3_development_roc_auc": 0.7466153435386258,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261022/exports/embedding_float32.tflite",
+          "sha256": "c6bb981ae3534cb30a6fd75067726f2944c9665c684e153da373399135d67c96"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261022/exports/embedding_full_int8.tflite",
+          "sha256": "804af1ef1631e41ff345d19b4291e5146a0ebaaf3eeb7f23f567a24fb55d91c4"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261022",
+      "root_seed": 20261022,
+      "run_manifest_sha256": "09b0187acb443da44b91a48867a9222109a3f36f596e674a6dde7a75e9af765c",
+      "selected_train_records_sha256": "da23ef20c0d7d0837ba2181dc27b8f2b99749664d2233f6deffd43c24ac98a93",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "54c24b0ce16453096f5fe9e1c3ee60ba8160b66857cf1be57c6f4f1683d2ce21",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "cb0fab15623302f097b89eaa60f0c13c1bd621cf0dfbf771332214ee0367c25e",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261023/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "cb0fab15623302f097b89eaa60f0c13c1bd621cf0dfbf771332214ee0367c25e",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "ee11f2e8f4c989e5401626520180f185707a668a1fc6be949e68f9be18e1697e",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261023/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "ee11f2e8f4c989e5401626520180f185707a668a1fc6be949e68f9be18e1697e",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "4206bc3d94caef3b9a83953a9018bcbd5ef1d79e7c9f8655bada7aae2cdab150",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261023/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "4206bc3d94caef3b9a83953a9018bcbd5ef1d79e7c9f8655bada7aae2cdab150",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "cb0fab15623302f097b89eaa60f0c13c1bd621cf0dfbf771332214ee0367c25e",
+      "best_epoch_selected_by_v3_development_auc": 5,
+      "best_v3_development_roc_auc": 0.748560341758633,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261023/exports/embedding_float32.tflite",
+          "sha256": "ee11f2e8f4c989e5401626520180f185707a668a1fc6be949e68f9be18e1697e"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261023/exports/embedding_full_int8.tflite",
+          "sha256": "4206bc3d94caef3b9a83953a9018bcbd5ef1d79e7c9f8655bada7aae2cdab150"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261023",
+      "root_seed": 20261023,
+      "run_manifest_sha256": "e299030b9f97c20dba3d943adc259b1d39b8b234d5589e029a40650e04b914d4",
+      "selected_train_records_sha256": "c15e6fdf9f049be1d74de668de609e5e579ed42028dee7fa398c30caebc5dff4",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "6cb647218b9f4fdbded748d66e10a01553dbebc407287f995c18c1fae554ec36",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "a45461c43b9cdfc8c003c85c02f30fff7928100174149bb7b5844faead095069",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261024/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "a45461c43b9cdfc8c003c85c02f30fff7928100174149bb7b5844faead095069",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "3351b9ffc20fbedc1b8c2d4d90df9322f35481c4c89abb4d1860b2f4c1f0b506",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261024/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "3351b9ffc20fbedc1b8c2d4d90df9322f35481c4c89abb4d1860b2f4c1f0b506",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "08dd94b9c055a9fb954e89781ff441d9b570f9d453b3e3b18107824babad5a8e",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261024/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "08dd94b9c055a9fb954e89781ff441d9b570f9d453b3e3b18107824babad5a8e",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "a45461c43b9cdfc8c003c85c02f30fff7928100174149bb7b5844faead095069",
+      "best_epoch_selected_by_v3_development_auc": 7,
+      "best_v3_development_roc_auc": 0.7431986472054112,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261024/exports/embedding_float32.tflite",
+          "sha256": "3351b9ffc20fbedc1b8c2d4d90df9322f35481c4c89abb4d1860b2f4c1f0b506"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261024/exports/embedding_full_int8.tflite",
+          "sha256": "08dd94b9c055a9fb954e89781ff441d9b570f9d453b3e3b18107824babad5a8e"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261024",
+      "root_seed": 20261024,
+      "run_manifest_sha256": "c6d2b131696734ec05a6bc2f6cdcf017c1dfb109f840f3f32190d046dc2a77a3",
+      "selected_train_records_sha256": "9a39730ef0bb53e8724dbee64b7255e6134d71ad3203988ce93f0358e14a76ca",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "429eaeb76cdd1915813462c247df53e3516e95f5c0cc42845544c59ea7dd750f",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "3a79d4ff26600bc09ba5661c34df6e1b33066aafb5b22ac676faca093aaee340",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261025/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "3a79d4ff26600bc09ba5661c34df6e1b33066aafb5b22ac676faca093aaee340",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "e2d1b05598f673bb7605bd8baf1d563f5eec4c83ed2b14627e2f49286a26ced5",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261025/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "e2d1b05598f673bb7605bd8baf1d563f5eec4c83ed2b14627e2f49286a26ced5",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "a2f12ace4654b1fe3b1024c944035a427033b7fddda246154903e3db97f99d81",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261025/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "a2f12ace4654b1fe3b1024c944035a427033b7fddda246154903e3db97f99d81",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "3a79d4ff26600bc09ba5661c34df6e1b33066aafb5b22ac676faca093aaee340",
+      "best_epoch_selected_by_v3_development_auc": 6,
+      "best_v3_development_roc_auc": 0.7437388750444999,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261025/exports/embedding_float32.tflite",
+          "sha256": "e2d1b05598f673bb7605bd8baf1d563f5eec4c83ed2b14627e2f49286a26ced5"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261025/exports/embedding_full_int8.tflite",
+          "sha256": "a2f12ace4654b1fe3b1024c944035a427033b7fddda246154903e3db97f99d81"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261025",
+      "root_seed": 20261025,
+      "run_manifest_sha256": "391fa625daffb48f02d1add914c10c6b961a9923d4ea0e89bb7e95726a426cc9",
+      "selected_train_records_sha256": "da871912317a23162b92afb8c6b8d10d5a7ffa16be4f1955fdbd0fa937af9267",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "b51cdbcf5ffabc11c50d8a09181008ba4ddbe3382a648dc2d80db3d9f4980cb2",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "6ba51acf183aaf95b3814f0c8670bcd205fd32a78d2f483f2630d44752a0c174",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261026/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "6ba51acf183aaf95b3814f0c8670bcd205fd32a78d2f483f2630d44752a0c174",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "ff297c43cf6b3f052af5077e378702694649b40eb05df8414c39dde3e01544a1",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261026/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "ff297c43cf6b3f052af5077e378702694649b40eb05df8414c39dde3e01544a1",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "cc09e73d9b2e00761b2bcf20dd6eb4e405bafb9128f195eaacff374a1b2e5572",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261026/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "cc09e73d9b2e00761b2bcf20dd6eb4e405bafb9128f195eaacff374a1b2e5572",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "6ba51acf183aaf95b3814f0c8670bcd205fd32a78d2f483f2630d44752a0c174",
+      "best_epoch_selected_by_v3_development_auc": 14,
+      "best_v3_development_roc_auc": 0.7538597365610538,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261026/exports/embedding_float32.tflite",
+          "sha256": "ff297c43cf6b3f052af5077e378702694649b40eb05df8414c39dde3e01544a1"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261026/exports/embedding_full_int8.tflite",
+          "sha256": "cc09e73d9b2e00761b2bcf20dd6eb4e405bafb9128f195eaacff374a1b2e5572"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261026",
+      "root_seed": 20261026,
+      "run_manifest_sha256": "64562e59d9b11c97175060facb983a7135b18ab594f026cdb199397876496ef3",
+      "selected_train_records_sha256": "191e7d8ebadfc9e3fa5099dd978306e4f5bbf7772ba8d3ca7482a4a91fdfa7c0",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "40332d6e651e67418875565594a64747b0b9e332a0c3d22fe27ddc101d0c7ae0",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "d0f2005f1bf824f36f6b4ad03d00d39bf64fffa9e79a18b3446b893dbf685995",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261032/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "d0f2005f1bf824f36f6b4ad03d00d39bf64fffa9e79a18b3446b893dbf685995",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "fe9bff02cabe1a76480a4a8ab186a7817f5984046e7895373cae4721395838e1",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261032/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "fe9bff02cabe1a76480a4a8ab186a7817f5984046e7895373cae4721395838e1",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "d052a910c718e3920921baced812609cc3950efc0ab73ba68b3ed1ac1ae2b9e7",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261032/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "d052a910c718e3920921baced812609cc3950efc0ab73ba68b3ed1ac1ae2b9e7",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "d0f2005f1bf824f36f6b4ad03d00d39bf64fffa9e79a18b3446b893dbf685995",
+      "best_epoch_selected_by_v3_development_auc": 9,
+      "best_v3_development_roc_auc": 0.755999466002136,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261032/exports/embedding_float32.tflite",
+          "sha256": "fe9bff02cabe1a76480a4a8ab186a7817f5984046e7895373cae4721395838e1"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261032/exports/embedding_full_int8.tflite",
+          "sha256": "d052a910c718e3920921baced812609cc3950efc0ab73ba68b3ed1ac1ae2b9e7"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261032",
+      "root_seed": 20261032,
+      "run_manifest_sha256": "a7f99b10e151d80e07956b0cdba23d169cb3b37ce122c6276e7f7f9fe1175faf",
+      "selected_train_records_sha256": "af7df0384b00323366487087d586048628d8965c71553d81505b6bae3377c4c6",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "202cda5ac9fbcfb1de10ecdc3870d415207a39b88f694b6f147539801b631a16",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "790aa7070490f5d417d52d6d7828b994d83a7855290c0eb78409523036200ec9",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261033/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "790aa7070490f5d417d52d6d7828b994d83a7855290c0eb78409523036200ec9",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "ee291c037d3086b86e81eb774ae4a1d264c8046ac690c21df7d44ebc62a08987",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261033/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "ee291c037d3086b86e81eb774ae4a1d264c8046ac690c21df7d44ebc62a08987",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "cb0361fade59dc0c13960f651451d783c85d8f478d87eefad710cc337021dd3e",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261033/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "cb0361fade59dc0c13960f651451d783c85d8f478d87eefad710cc337021dd3e",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "790aa7070490f5d417d52d6d7828b994d83a7855290c0eb78409523036200ec9",
+      "best_epoch_selected_by_v3_development_auc": 9,
+      "best_v3_development_roc_auc": 0.7429512281950872,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261033/exports/embedding_float32.tflite",
+          "sha256": "ee291c037d3086b86e81eb774ae4a1d264c8046ac690c21df7d44ebc62a08987"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261033/exports/embedding_full_int8.tflite",
+          "sha256": "cb0361fade59dc0c13960f651451d783c85d8f478d87eefad710cc337021dd3e"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261033",
+      "root_seed": 20261033,
+      "run_manifest_sha256": "a33b64760ba4304b57ce7dd84ba16e021fdab780b2a73163563f7cde1e04683d",
+      "selected_train_records_sha256": "18412c831830aec88792115faa214a66ba26067048f83d64e1d7a1394fa76cf9",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "e2341833caf4d535115e15617e6a80f39416b54e2644dbfa5c801dc08822b5dd",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "a37b086db7bfee2826e5594180c5d756134497c4c59bc7e7e7d439440a88fe11",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261034/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "a37b086db7bfee2826e5594180c5d756134497c4c59bc7e7e7d439440a88fe11",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "18f76c71423f6bdf578ddab5d96bed05487cdcb48d633da521ed60c9e97fdb1e",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261034/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "18f76c71423f6bdf578ddab5d96bed05487cdcb48d633da521ed60c9e97fdb1e",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "9a35aff2818bc122ee613ccbcfdfccf86c727c5def1a11202873b28f40cb8740",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261034/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "9a35aff2818bc122ee613ccbcfdfccf86c727c5def1a11202873b28f40cb8740",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "a37b086db7bfee2826e5594180c5d756134497c4c59bc7e7e7d439440a88fe11",
+      "best_epoch_selected_by_v3_development_auc": 14,
+      "best_v3_development_roc_auc": 0.7498442506229975,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261034/exports/embedding_float32.tflite",
+          "sha256": "18f76c71423f6bdf578ddab5d96bed05487cdcb48d633da521ed60c9e97fdb1e"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261034/exports/embedding_full_int8.tflite",
+          "sha256": "9a35aff2818bc122ee613ccbcfdfccf86c727c5def1a11202873b28f40cb8740"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261034",
+      "root_seed": 20261034,
+      "run_manifest_sha256": "4dd0f13021ed7aa299ff8cbb86d62b69bfbe3adc491163906cea057faaa3ff1c",
+      "selected_train_records_sha256": "e61d790155d96e10d3c4cfb8578c09864605972bc43d61cfeca1c8b993c6a02b",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "94c89a6855ca54c67b556c75a3b5726f3226cdc9ca7ba7c203abeb82766b3745",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "c9258746c581f016f5f698f28eb024b42785a897e77e73cd6aa028bb88dfd804",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261035/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "c9258746c581f016f5f698f28eb024b42785a897e77e73cd6aa028bb88dfd804",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "c374e7a037cbfbb3f4dbb46a3ba3253c154a618ace6871da6b98d196e5c1c237",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261035/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "c374e7a037cbfbb3f4dbb46a3ba3253c154a618ace6871da6b98d196e5c1c237",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "52ba6f4752d1865ebc8ab8be69460e57f5116a47629f02bf8d3afa58034c4d54",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261035/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "52ba6f4752d1865ebc8ab8be69460e57f5116a47629f02bf8d3afa58034c4d54",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "c9258746c581f016f5f698f28eb024b42785a897e77e73cd6aa028bb88dfd804",
+      "best_epoch_selected_by_v3_development_auc": 4,
+      "best_v3_development_roc_auc": 0.7340302598789605,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261035/exports/embedding_float32.tflite",
+          "sha256": "c374e7a037cbfbb3f4dbb46a3ba3253c154a618ace6871da6b98d196e5c1c237"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261035/exports/embedding_full_int8.tflite",
+          "sha256": "52ba6f4752d1865ebc8ab8be69460e57f5116a47629f02bf8d3afa58034c4d54"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261035",
+      "root_seed": 20261035,
+      "run_manifest_sha256": "a6f8f5ff73e000623a8f3fe0586b3407196200a124d793a77eece094c0e7e810",
+      "selected_train_records_sha256": "ba11adfbf73194a15febd8e626b741a2627a80e1c38f77f8fa3abe845c6d68e7",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "6f067cc7bdb6ad827523303ea80a29c8c2495d478638b94dd1d7c09d77104c88",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "e59270d23fde73b454da718d4fc3a5f88b401370762ad8a56ab9c86cf9ce15c2",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "63e563a6c6d941542f50e6df36dfe44e265b561f8230fa0c82764c846450f947",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261036/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "63e563a6c6d941542f50e6df36dfe44e265b561f8230fa0c82764c846450f947",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "2ace470f19e6badb5932cfaeed5bde61a40958a1471cc50d586b3f45f317fc3b",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261036/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "2ace470f19e6badb5932cfaeed5bde61a40958a1471cc50d586b3f45f317fc3b",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "19c02044b4fc6577b4d2cf065c7b28372d7ac9ddd12c0dbccf7a28cce55608bd",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_base/seed-20261036/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "19c02044b4fc6577b4d2cf065c7b28372d7ac9ddd12c0dbccf7a28cce55608bd",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "63e563a6c6d941542f50e6df36dfe44e265b561f8230fa0c82764c846450f947",
+      "best_epoch_selected_by_v3_development_auc": 15,
+      "best_v3_development_roc_auc": 0.7525898896404415,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 51916,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261036/exports/embedding_float32.tflite",
+          "sha256": "2ace470f19e6badb5932cfaeed5bde61a40958a1471cc50d586b3f45f317fc3b"
+        },
+        "int8": {
+          "bytes": 26848,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261036/exports/embedding_full_int8.tflite",
+          "sha256": "19c02044b4fc6577b4d2cf065c7b28372d7ac9ddd12c0dbccf7a28cce55608bd"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_base",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_base/seed-20261036",
+      "root_seed": 20261036,
+      "run_manifest_sha256": "74461ab320929cfc668cbdcd39b4fdbe24174b5f3483ebf8db67004256fa9370",
+      "selected_train_records_sha256": "10e0aabd8f36b10fd35ce7d8a212deebfbaac54fdfe6f7fdec1ab3a46d0286e2",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "acf53ab30bdf921fd221b99026332114708591b9af4a3966332519ac0f408009",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "bac456eec246f3b88bdf06841a177b6a612f7703d71b2cfbb1c3da1522df10d4",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261022/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "bac456eec246f3b88bdf06841a177b6a612f7703d71b2cfbb1c3da1522df10d4",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "ae5020e442fb2235983c60f4056fd3dd8addd31ac1dcb5c319863b471a25a3cd",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261022/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "ae5020e442fb2235983c60f4056fd3dd8addd31ac1dcb5c319863b471a25a3cd",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "65ae6ad5ac1cb44559b9f3b4d96ac0cc4d3908592844c1a508bb9bb9653f0ed3",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261022/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "65ae6ad5ac1cb44559b9f3b4d96ac0cc4d3908592844c1a508bb9bb9653f0ed3",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "bac456eec246f3b88bdf06841a177b6a612f7703d71b2cfbb1c3da1522df10d4",
+      "best_epoch_selected_by_v3_development_auc": 3,
+      "best_v3_development_roc_auc": 0.717752402990388,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261022/exports/embedding_float32.tflite",
+          "sha256": "ae5020e442fb2235983c60f4056fd3dd8addd31ac1dcb5c319863b471a25a3cd"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261022/exports/embedding_full_int8.tflite",
+          "sha256": "65ae6ad5ac1cb44559b9f3b4d96ac0cc4d3908592844c1a508bb9bb9653f0ed3"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261022",
+      "root_seed": 20261022,
+      "run_manifest_sha256": "4fb83e14cd78b2b5bd5ed3556a49b07095c0e6a4d7ad885c3bddf3412f106cda",
+      "selected_train_records_sha256": "da23ef20c0d7d0837ba2181dc27b8f2b99749664d2233f6deffd43c24ac98a93",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "aa8c25c8a9fe997999958cac1f7737c3023f14e72f327f6a07f9eb6199a34240",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "3451e48ad8649572c6c3f419c0d7e0cecfca47670f710b209d71d27c56a2398a",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261023/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "3451e48ad8649572c6c3f419c0d7e0cecfca47670f710b209d71d27c56a2398a",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "e6cd067beb83e022a94dc48d384893ecc2921da08f9b4c2f2b29cd929f05e6d7",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261023/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "e6cd067beb83e022a94dc48d384893ecc2921da08f9b4c2f2b29cd929f05e6d7",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "3ad1e0c5edf341c4f33798858b1c1ab222bbb1b0e2d03d652c5c141526c0d22f",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261023/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "3ad1e0c5edf341c4f33798858b1c1ab222bbb1b0e2d03d652c5c141526c0d22f",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "3451e48ad8649572c6c3f419c0d7e0cecfca47670f710b209d71d27c56a2398a",
+      "best_epoch_selected_by_v3_development_auc": 15,
+      "best_v3_development_roc_auc": 0.7374864720541118,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261023/exports/embedding_float32.tflite",
+          "sha256": "e6cd067beb83e022a94dc48d384893ecc2921da08f9b4c2f2b29cd929f05e6d7"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261023/exports/embedding_full_int8.tflite",
+          "sha256": "3ad1e0c5edf341c4f33798858b1c1ab222bbb1b0e2d03d652c5c141526c0d22f"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261023",
+      "root_seed": 20261023,
+      "run_manifest_sha256": "1ede6d589cf01cfcd75859202f3b97e103ac740ef786129f0e779d8a41476976",
+      "selected_train_records_sha256": "c15e6fdf9f049be1d74de668de609e5e579ed42028dee7fa398c30caebc5dff4",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "dcac741ebc3ea253e587e8661621a535a94ab52fca8a6e982c0c2ddf193d2d91",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "24b62aaaed73ab97d5a8ea17cdaa73ac37fb6efcbdc13d24aa29210e1cc98298",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261024/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "24b62aaaed73ab97d5a8ea17cdaa73ac37fb6efcbdc13d24aa29210e1cc98298",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "bc72eec217276fd7d1838cecc55029b1f8a6367470ed158c923d17a78c901d1b",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261024/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "bc72eec217276fd7d1838cecc55029b1f8a6367470ed158c923d17a78c901d1b",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "deba17de8e746c26457f0db4c5a2ce300e85bd6f6424c0b6399c8d2ebcb5bf28",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261024/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "deba17de8e746c26457f0db4c5a2ce300e85bd6f6424c0b6399c8d2ebcb5bf28",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "24b62aaaed73ab97d5a8ea17cdaa73ac37fb6efcbdc13d24aa29210e1cc98298",
+      "best_epoch_selected_by_v3_development_auc": 10,
+      "best_v3_development_roc_auc": 0.729810608757565,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261024/exports/embedding_float32.tflite",
+          "sha256": "bc72eec217276fd7d1838cecc55029b1f8a6367470ed158c923d17a78c901d1b"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261024/exports/embedding_full_int8.tflite",
+          "sha256": "deba17de8e746c26457f0db4c5a2ce300e85bd6f6424c0b6399c8d2ebcb5bf28"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261024",
+      "root_seed": 20261024,
+      "run_manifest_sha256": "6903954e957b8dcde28ba464754a2a88cd57085b6b395b32c3625d5db19b4778",
+      "selected_train_records_sha256": "9a39730ef0bb53e8724dbee64b7255e6134d71ad3203988ce93f0358e14a76ca",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "d427c4c30f9879f9bee73892b4ae30eaac04bfc2a082ae517d05c031d4e37d2d",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "ee77bc174a1490a897544a05002a305d40ddf2e232214c5f2f036577f44b18f2",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261025/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "ee77bc174a1490a897544a05002a305d40ddf2e232214c5f2f036577f44b18f2",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "7123323ab90757ee88fb66b72637069bf74d4786221d729b22f13e17a9124251",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261025/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "7123323ab90757ee88fb66b72637069bf74d4786221d729b22f13e17a9124251",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "b9d4d170ba6c53c939f1d929d95f846f61893b4a832da6a36788e4268391ae2f",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261025/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "b9d4d170ba6c53c939f1d929d95f846f61893b4a832da6a36788e4268391ae2f",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "ee77bc174a1490a897544a05002a305d40ddf2e232214c5f2f036577f44b18f2",
+      "best_epoch_selected_by_v3_development_auc": 6,
+      "best_v3_development_roc_auc": 0.7227180491278035,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261025/exports/embedding_float32.tflite",
+          "sha256": "7123323ab90757ee88fb66b72637069bf74d4786221d729b22f13e17a9124251"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261025/exports/embedding_full_int8.tflite",
+          "sha256": "b9d4d170ba6c53c939f1d929d95f846f61893b4a832da6a36788e4268391ae2f"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261025",
+      "root_seed": 20261025,
+      "run_manifest_sha256": "ee95410340522c36f1dea61c3877b2079fa793568b6deb4769f2989a599c787b",
+      "selected_train_records_sha256": "da871912317a23162b92afb8c6b8d10d5a7ffa16be4f1955fdbd0fa937af9267",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "e0ab6737155fc1d8891403025182bdf7050c27956cad9a0974b05ba285080147",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "2e85e1c7d20795b6df4f37ab1982b3cf6c79f5fa2622b296bfb1906f31c7cfac",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261026/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "2e85e1c7d20795b6df4f37ab1982b3cf6c79f5fa2622b296bfb1906f31c7cfac",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "4c6bb24ed707e193e8d45018ca7d5d9e10c97003efbab1427f24a865b84bc54e",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261026/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "4c6bb24ed707e193e8d45018ca7d5d9e10c97003efbab1427f24a865b84bc54e",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "7b90d84ca12e08079191cdd4dc2e44daa89417d174214bced25733c33c7f5eac",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261026/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "7b90d84ca12e08079191cdd4dc2e44daa89417d174214bced25733c33c7f5eac",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "2e85e1c7d20795b6df4f37ab1982b3cf6c79f5fa2622b296bfb1906f31c7cfac",
+      "best_epoch_selected_by_v3_development_auc": 7,
+      "best_v3_development_roc_auc": 0.7196676753292987,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261026/exports/embedding_float32.tflite",
+          "sha256": "4c6bb24ed707e193e8d45018ca7d5d9e10c97003efbab1427f24a865b84bc54e"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261026/exports/embedding_full_int8.tflite",
+          "sha256": "7b90d84ca12e08079191cdd4dc2e44daa89417d174214bced25733c33c7f5eac"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261026",
+      "root_seed": 20261026,
+      "run_manifest_sha256": "856a2aa7b18d937d18111f6ce962c9cf96ebaf4485b8912c75781a8cd462b3bc",
+      "selected_train_records_sha256": "191e7d8ebadfc9e3fa5099dd978306e4f5bbf7772ba8d3ca7482a4a91fdfa7c0",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "f51fffc5c27a979f3743724301474802ea3a836c0ecf1b142775cd8b0863c185",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "4b8c7defa3525cc88bc1bb1cd9fdaaf55893e10d031b841dae5e32cabea94648",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261032/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "4b8c7defa3525cc88bc1bb1cd9fdaaf55893e10d031b841dae5e32cabea94648",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "12d1975862a2b213b92409992a4f2e7cfb476af48b61155e05219eb1b56de345",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261032/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "12d1975862a2b213b92409992a4f2e7cfb476af48b61155e05219eb1b56de345",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "6745fc749febeaf806c5a6bfe106b3809633837f292a161d8273dd5278710f0a",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261032/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "6745fc749febeaf806c5a6bfe106b3809633837f292a161d8273dd5278710f0a",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "4b8c7defa3525cc88bc1bb1cd9fdaaf55893e10d031b841dae5e32cabea94648",
+      "best_epoch_selected_by_v3_development_auc": 13,
+      "best_v3_development_roc_auc": 0.7258394446422214,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261032/exports/embedding_float32.tflite",
+          "sha256": "12d1975862a2b213b92409992a4f2e7cfb476af48b61155e05219eb1b56de345"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261032/exports/embedding_full_int8.tflite",
+          "sha256": "6745fc749febeaf806c5a6bfe106b3809633837f292a161d8273dd5278710f0a"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261032",
+      "root_seed": 20261032,
+      "run_manifest_sha256": "766016d3b2da3291461dd320ebe16b6fde6bbb49a6d41a50ad577ae7da6f9cab",
+      "selected_train_records_sha256": "af7df0384b00323366487087d586048628d8965c71553d81505b6bae3377c4c6",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "40816a591bf0d2bbf5999198769b228a80eea77ee7e9c78f5b18c678758cc599",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "a58994f715625135600f0dff87c305d384289076ce49252d525b339340865ffb",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261033/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "a58994f715625135600f0dff87c305d384289076ce49252d525b339340865ffb",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "7c6256eebe3535297d3b275c5edfc1d078fae4cf7256e3aad3181f4fb44d1019",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261033/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "7c6256eebe3535297d3b275c5edfc1d078fae4cf7256e3aad3181f4fb44d1019",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "97162bb549c9c0192d94516f48b20103512bcd0e71d29f500f82a9a99f87409e",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261033/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "97162bb549c9c0192d94516f48b20103512bcd0e71d29f500f82a9a99f87409e",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "a58994f715625135600f0dff87c305d384289076ce49252d525b339340865ffb",
+      "best_epoch_selected_by_v3_development_auc": 11,
+      "best_v3_development_roc_auc": 0.7298369526521894,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261033/exports/embedding_float32.tflite",
+          "sha256": "7c6256eebe3535297d3b275c5edfc1d078fae4cf7256e3aad3181f4fb44d1019"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261033/exports/embedding_full_int8.tflite",
+          "sha256": "97162bb549c9c0192d94516f48b20103512bcd0e71d29f500f82a9a99f87409e"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261033",
+      "root_seed": 20261033,
+      "run_manifest_sha256": "0d53520b5f48bbefa56bd309b1103be3cee668e7d4a4bdbec016249fe766e3c4",
+      "selected_train_records_sha256": "18412c831830aec88792115faa214a66ba26067048f83d64e1d7a1394fa76cf9",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "107acf8316394273bd92ecbaef5d36de57680a06388b710b635aff5f14cc5867",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "9ec6229b971f3e1b1761d7996419cb62aaf55730e3b64559389c6417f387c242",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261034/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "9ec6229b971f3e1b1761d7996419cb62aaf55730e3b64559389c6417f387c242",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "2cd705f088975c871aae6d82160cf5ce576985a8fe5748f4e0af7fad549d4685",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261034/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "2cd705f088975c871aae6d82160cf5ce576985a8fe5748f4e0af7fad549d4685",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "586739826506446a2c651e545abc7367ba658f371527b1b79b5d282bbfda98b4",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261034/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "586739826506446a2c651e545abc7367ba658f371527b1b79b5d282bbfda98b4",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "9ec6229b971f3e1b1761d7996419cb62aaf55730e3b64559389c6417f387c242",
+      "best_epoch_selected_by_v3_development_auc": 8,
+      "best_v3_development_roc_auc": 0.7324346742613029,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261034/exports/embedding_float32.tflite",
+          "sha256": "2cd705f088975c871aae6d82160cf5ce576985a8fe5748f4e0af7fad549d4685"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261034/exports/embedding_full_int8.tflite",
+          "sha256": "586739826506446a2c651e545abc7367ba658f371527b1b79b5d282bbfda98b4"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261034",
+      "root_seed": 20261034,
+      "run_manifest_sha256": "7bcf69f523ae8c0e9a14b098d7a6a54166d5ce1d44d73cb8060e2f68085a357a",
+      "selected_train_records_sha256": "e61d790155d96e10d3c4cfb8578c09864605972bc43d61cfeca1c8b993c6a02b",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "3af869a632a6f39922b95155368a759118390214232003170c10571bb6ad54bc",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "f9136ce9f13646c3989d12e715673669e8b4b8bf21cbdf210e920b8a02b5b5d3",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261035/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "f9136ce9f13646c3989d12e715673669e8b4b8bf21cbdf210e920b8a02b5b5d3",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "399f9953b3d67d6e2840a8ec16b2f4d550af10740579dcdbf1d264f3b28022d2",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261035/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "399f9953b3d67d6e2840a8ec16b2f4d550af10740579dcdbf1d264f3b28022d2",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "ec64b0255fdbc1b18659702a79de6dee05bb15f1035ffe49b68de637bf9dcbcb",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261035/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "ec64b0255fdbc1b18659702a79de6dee05bb15f1035ffe49b68de637bf9dcbcb",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "f9136ce9f13646c3989d12e715673669e8b4b8bf21cbdf210e920b8a02b5b5d3",
+      "best_epoch_selected_by_v3_development_auc": 11,
+      "best_v3_development_roc_auc": 0.7330889996440014,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261035/exports/embedding_float32.tflite",
+          "sha256": "399f9953b3d67d6e2840a8ec16b2f4d550af10740579dcdbf1d264f3b28022d2"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261035/exports/embedding_full_int8.tflite",
+          "sha256": "ec64b0255fdbc1b18659702a79de6dee05bb15f1035ffe49b68de637bf9dcbcb"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261035",
+      "root_seed": 20261035,
+      "run_manifest_sha256": "f4adbf4a2f692875bcef5c8b1555a8c2d654dcd6ec43853f436bc3905258e622",
+      "selected_train_records_sha256": "ba11adfbf73194a15febd8e626b741a2627a80e1c38f77f8fa3abe845c6d68e7",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "c9e9be696e7bf0fec766bf3d6d8282ff371499bd699ecc7462cc45cdffad7956",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    },
+    {
+      "architecture_sha256": "99f798a52f903dbe8a1f71e6d98ecaf7b62cb292a286617067d77aa745860a73",
+      "artifact_inventory_checks": {
+        "best_checkpoint": {
+          "file_sha256": "970f570122ef3ebc304644803ffefd6f630c0e351a4c44d085e5a1ea55de7199",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261036/best_embedding.h5",
+          "inventory_rows": 1,
+          "inventory_sha256": "970f570122ef3ebc304644803ffefd6f630c0e351a4c44d085e5a1ea55de7199",
+          "match": true
+        },
+        "float": {
+          "file_sha256": "a27cbc6355e14d01d3f3e22c7a11f9c0e9ab8d62c9f7e9c4505c9da14fd171e3",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261036/exports/embedding_float32.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "a27cbc6355e14d01d3f3e22c7a11f9c0e9ab8d62c9f7e9c4505c9da14fd171e3",
+          "match": true
+        },
+        "int8": {
+          "file_sha256": "c02578e92288399cc01a56d58478014a229502c331554905945cf95edcb158df",
+          "inventory_path": "work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261036/exports/embedding_full_int8.tflite",
+          "inventory_rows": 1,
+          "inventory_sha256": "c02578e92288399cc01a56d58478014a229502c331554905945cf95edcb158df",
+          "match": true
+        }
+      },
+      "best_checkpoint_sha256": "970f570122ef3ebc304644803ffefd6f630c0e351a4c44d085e5a1ea55de7199",
+      "best_epoch_selected_by_v3_development_auc": 10,
+      "best_v3_development_roc_auc": 0.7273565325738697,
+      "errors": [],
+      "exports": {
+        "float": {
+          "bytes": 23388,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261036/exports/embedding_float32.tflite",
+          "sha256": "a27cbc6355e14d01d3f3e22c7a11f9c0e9ab8d62c9f7e9c4505c9da14fd171e3"
+        },
+        "int8": {
+          "bytes": 15616,
+          "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261036/exports/embedding_full_int8.tflite",
+          "sha256": "c02578e92288399cc01a56d58478014a229502c331554905945cf95edcb158df"
+        }
+      },
+      "initialization": "random initialization of the v3 custom CNN; not face-pretrained",
+      "method": "custom_tiny",
+      "root_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/runs/training-v3/custom_tiny/seed-20261036",
+      "root_seed": 20261036,
+      "run_manifest_sha256": "22acd2297c3491d1aebf7c7dc46a117e9a45603c7aab2c031476cc7fe6ac2cc7",
+      "selected_train_records_sha256": "10e0aabd8f36b10fd35ce7d8a212deebfbaac54fdfe6f7fdec1ab3a46d0286e2",
+      "status": "trained",
+      "target_adaptation": "none for D; trained on v3 train identities and model-selected on v3 development",
+      "training_history_sha256": "1d4c0e79023a008182cade9384c3e24879c7808b9b9a11276603c5f27f4e81de",
+      "training_identity_count": 3729,
+      "training_record_count": 39305,
+      "training_role_record_mismatches": 0,
+      "training_source_identity_overlap_with_D_known": []
+    }
+  ],
+  "roots_per_method": 10,
+  "schema": "job-d-historical-control-audit-1",
+  "status": "complete_verified",
+  "v3_model_inventory": {
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/MODEL_INVENTORY.csv",
+    "sha256": "9104b506e7e22b25a8264aa7a898e58f7216267e0b5e31d6b57c1819d9d62070"
+  },
+  "v3_protocol_sha256": "acde6aa6ab7b7165e271741f1d44c60ac7f4376bd7f1437de90e4c3685d5a61c",
+  "v3_role_identity_overlap": {
+    "development_calibration": 0,
+    "train_calibration": 0,
+    "train_development": 0
+  },
+  "v3_role_manifests": {
+    "calibration": {
+      "identity_count": 530,
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/data/v3/calibration_records.jsonl",
+      "rows": 21784,
+      "sha256": "45c1d3a49c9e04ebf24d9c1b2bb6a26681ebc0392e67ae399b34dc02f89f3802"
+    },
+    "development": {
+      "identity_count": 530,
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/data/v3/development_records.jsonl",
+      "rows": 21138,
+      "sha256": "5fc30ac4273e1c6e594be91ba8ea97094868f1bd592647ba149e3511f242f9c8"
+    },
+    "train": {
+      "identity_count": 3729,
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/research-complete-v3/project/work/research-next/model-system/data/v3/train_records.jsonl",
+      "rows": 155514,
+      "sha256": "7537c3b552ce628f37534febb6181f69e00a4a50121423416bdcdd8eb6ab4fc8"
+    }
+  }
+}

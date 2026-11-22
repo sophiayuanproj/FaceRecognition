@@ -1,0 +1,160 @@
+{
+  "blocked_comparisons": [
+    "Nicla idle/capture/FOMO/identity/full pipeline: no useful exact application",
+    "mapped/copy/sleep/reuse/model policy cost: no useful exact application and meter unqualified",
+    "battery/motion/wearable comparisons: out of scope"
+  ],
+  "capture_duration_s": 60,
+  "estimator_scope": "report-level steady-window centers and relative block paired differences only after a prospective validity rule is frozen; no timestamps assigned within four co-received slots; no per-event energy or absolute calibration.",
+  "firmware_binary_sha256": "must_be_recorded_after_target_host_compile",
+  "firmware_source": "work/project-research-v5/instrument/nano_meter_diagnostic/nano_meter_diagnostic.ino",
+  "firmware_source_sha256": "3a5d4df57f3de3683d3905d26e7c5cb45041038c8bae5e307f5983afbb2ce409",
+  "future_final_used": false,
+  "independent_unit": "fresh Nano measured-power start per block, with all four randomized firmware phases measured inside that block; n=10 independent block starts.",
+  "instrument_workload": "Nano 33 BLE / Sense Rev2 historical diagnostic firmware only; no Nicla model/policy arm.",
+  "objective": "Qualify the Windows FNIRSI HID acquisition/decoder and a stable Nano load boundary before any relative whole-window use. This is not a Nicla power or recognition comparison.",
+  "phase_duration_s": 5,
+  "phase_settling_s": 1,
+  "physical_preconditions": [
+    "freshly identify meter model/firmware/input-output direction and HID interface",
+    "document measured supply topology and serial telemetry return route",
+    "prove host/Nano telemetry does not provide a second 5V board supply",
+    "verify the official app is closed during exclusive HID capture",
+    "single device owner; no Nicla load and no fast-charge/high-voltage tests"
+  ],
+  "planned_blocks": [
+    {
+      "block_id": "W5-I-01",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "active_led_off",
+        "idle_led_on",
+        "active_led_on",
+        "idle_led_off"
+      ],
+      "physical_block_seed": 61001
+    },
+    {
+      "block_id": "W5-I-02",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "idle_led_on",
+        "active_led_off",
+        "idle_led_off",
+        "active_led_on"
+      ],
+      "physical_block_seed": 61002
+    },
+    {
+      "block_id": "W5-I-03",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "active_led_on",
+        "idle_led_off",
+        "active_led_off",
+        "idle_led_on"
+      ],
+      "physical_block_seed": 61003
+    },
+    {
+      "block_id": "W5-I-04",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "idle_led_off",
+        "active_led_on",
+        "idle_led_on",
+        "active_led_off"
+      ],
+      "physical_block_seed": 61004
+    },
+    {
+      "block_id": "W5-I-05",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "idle_led_on",
+        "active_led_on",
+        "active_led_off",
+        "idle_led_off"
+      ],
+      "physical_block_seed": 61005
+    },
+    {
+      "block_id": "W5-I-06",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "idle_led_off",
+        "active_led_off",
+        "idle_led_on",
+        "active_led_on"
+      ],
+      "physical_block_seed": 61006
+    },
+    {
+      "block_id": "W5-I-07",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "active_led_off",
+        "active_led_on",
+        "idle_led_off",
+        "idle_led_on"
+      ],
+      "physical_block_seed": 61007
+    },
+    {
+      "block_id": "W5-I-08",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "idle_led_on",
+        "active_led_on",
+        "active_led_off",
+        "idle_led_off"
+      ],
+      "physical_block_seed": 61008
+    },
+    {
+      "block_id": "W5-I-09",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "idle_led_on",
+        "active_led_on",
+        "idle_led_off",
+        "active_led_off"
+      ],
+      "physical_block_seed": 61009
+    },
+    {
+      "block_id": "W5-I-10",
+      "new_nano_power_start_required": true,
+      "phase_order": [
+        "active_led_off",
+        "active_led_on",
+        "idle_led_off",
+        "idle_led_on"
+      ],
+      "physical_block_seed": 61010
+    }
+  ],
+  "planned_disk_upper_bound_bytes": 100000000,
+  "planned_elapsed_min_excluding_one_time_setup": 10,
+  "preblock_meter_warmup_s": 60,
+  "qc": [
+    "CRC/header/length and four-slot consistency",
+    "zero/spike/reserved-byte/duplicate payload audit",
+    "host receipt gap and reconnect audit",
+    "preserve records; no post hoc filtering to improve an arm"
+  ],
+  "raw_retention": [
+    "all 64-byte HID reports before decode",
+    "serial event log and start/phase/end acknowledgements",
+    "actual meter/Nano descriptors and firmware source/binary/config SHA-256",
+    "all invalid, excluded, failed, and rerun blocks"
+  ],
+  "schema": "v5-windows-instrument-commissioning-plan-1",
+  "status": "prepared_not_physically_run",
+  "within_block_contrasts": [
+    "active_led_off minus idle_led_off",
+    "active_led_on minus idle_led_on",
+    "idle_led_on minus idle_led_off",
+    "active_led_on minus active_led_off"
+  ]
+}

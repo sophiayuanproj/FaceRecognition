@@ -1,0 +1,457 @@
+Windows Nano serial reconnect and experiment-completeness changes.Diff is against the preserved reconstructed pre-reconnect Windows CDC baseline in work/patch-baselines/pre-reconnect.Patch adds disconnect recovery, private-in-memory Nano identity matching across COM changes, reseeding after reboot, and reconnect integration coverage.--- a/scripts/fnirsi_windows/nano_serial_capture_windows.py
++++ b/scripts/fnirsi_windows/nano_serial_capture_windows.py
+@@ -27,7 +27,8 @@
+ 
+ class NanoSerialCapture:
+     def __init__(self, run_dir, port_name, run_id, root_seed, *,
+-                 dtr=False, rts=False, port_info=None, serial_module=None):
++                 dtr=False, rts=False, port_info=None, serial_module=None,
++                 list_ports_module=None, reconnect_interval_s=0.25):
+         if root_seed is None or not 0 <= int(root_seed) <= 0xFFFFFFFF:
+             raise ValueError("simultaneous Nano logging requires a recorded 32-bit --root-seed")
+         self.run_dir = Path(run_dir)
+@@ -38,13 +39,20 @@
+         self.rts_requested = bool(rts)
+         if serial_module is None:
+             import serial as serial_module
+-            import serial.tools.list_ports as list_ports
+-            matches = [p for p in list_ports.comports() if p.device.upper() == self.port_name]
++            import serial.tools.list_ports as list_ports_module
++            matches = [p for p in list_ports_module.comports() if p.device.upper() == self.port_name]
+             if len(matches) != 1:
+                 raise ValueError("Nano COM selection matched %d present ports" % len(matches))
+             port_info = matches[0]
+         if port_info is None:
+             raise ValueError("port_info is required for a test-injected serial module")
++        self.serial_module = serial_module
++        self.list_ports_module = list_ports_module
++        self.reconnect_interval_ns = int(float(reconnect_interval_s) * 1_000_000_000)
++        self._last_reconnect_attempt_ns = 0
++        self._last_reconnect_wait_record_ns = 0
++        self.reconnect_count = 0
++        self.connected = False
+         self.descriptor = describe_port(port_info)
+         if (self.descriptor["vid"], self.descriptor["pid"]) == (METER_VID, METER_PID):
+             raise ValueError("refusing meter interface COM port as Nano serial; select a separately identified Nano port")
+@@ -52,38 +60,147 @@
+             raise ValueError("fresh COM descriptor does not match the requested port")
+         self.path = self.run_dir / "nano_serial.jsonl"
+         self.stream = self.path.open("x", encoding="utf-8", newline="\n")
++        self._serial_identity_key = self._normalized_identity(getattr(port_info, "serial_number", None))
++        self._port_vid_pid = (self.descriptor["vid"], self.descriptor["pid"])
+         self.buffer = bytearray()
+         self.previous_sequence = None
+         self.previous_tick = None
+         self.tick_wraps = 0
+         self.seed_sent = False
++        self.seed_acknowledged = False
+         self.start_sent = False
++        self.experiment_started = False
++        self.experiment_completed = False
+         self.closed = False
+         self.opened_monotonic_ns = time.monotonic_ns()
+-        self.serial = serial_module.Serial()
+-        self.serial.port = self.port_name
+-        self.serial.baudrate = 115200
+-        self.serial.timeout = 0
+-        self.serial.write_timeout = 1
+-        self.serial.dtr = self.dtr_requested
+-        self.serial.rts = self.rts_requested
+-        self._write_record("event", {"event": "serial_open_attempt",
+-                                     "port": self.descriptor,
++        self.serial = None
++        try:
++            self._open_port(port_info, reconnect=False)
++        except BaseException as exc:
++            self._write_record("event", {"event": "serial_open_failed",
++                                         "error": "%s: %s" % (type(exc).__name__, exc)})
++            self.close("failed")
++            raise
++
++    @staticmethod
++    def _normalized_identity(value):
++        if not value:
++            return None
++        normalized = "".join(ch for ch in str(value).upper() if ch.isalnum())
++        return normalized or None
++
++    def _open_port(self, port_info, *, reconnect):
++        descriptor = describe_port(port_info)
++        if (descriptor["vid"], descriptor["pid"]) == (METER_VID, METER_PID):
++            raise ValueError("refusing meter interface COM port during Nano re-enumeration")
++        serial_obj = self.serial_module.Serial()
++        serial_obj.port = descriptor["device"]
++        serial_obj.baudrate = 115200
++        serial_obj.timeout = 0
++        serial_obj.write_timeout = 1
++        serial_obj.dtr = self.dtr_requested
++        serial_obj.rts = self.rts_requested
++        self._write_record("event", {"event": "serial_reconnect_attempt" if reconnect else "serial_open_attempt",
++                                     "port": descriptor,
+                                      "baudrate": 115200,
+                                      "dtr_requested_before_open": self.dtr_requested,
+                                      "rts_requested_before_open": self.rts_requested,
+                                      "dtr_may_reset_board": True,
+                                      "settling_rule": "record all lines; no sample time inferred"})
+         try:
+-            self.serial.open()
++            serial_obj.open()
++        except BaseException:
++            try:
++                serial_obj.close()
++            except Exception:
++                pass
++            raise
++        self.serial = serial_obj
++        self.port_name = descriptor["device"].upper()
++        self.descriptor = descriptor
++        self.connected = True
++        self.opened_monotonic_ns = time.monotonic_ns()
++        if reconnect:
++            self.reconnect_count += 1
++            # A device reboot resets the sketch sequence and seed state. Re-arm
++            # this root on the fresh ready banner or the bounded fallback timer.
++            self.seed_sent = False
++            self.seed_acknowledged = False
++            self.start_sent = False
++            self.experiment_started = False
++            self.experiment_completed = False
++            self.previous_sequence = None
++            self.previous_tick = None
++            self.tick_wraps = 0
++            self._write_record("event", {"event": "serial_reconnected",
++                                         "port": self.descriptor,
++                                         "reconnect_count": self.reconnect_count,
++                                         "dtr_state_after_open": bool(serial_obj.dtr),
++                                         "rts_state_after_open": bool(serial_obj.rts)})
++        else:
+             self._write_record("event", {"event": "serial_open",
+-                                         "dtr_state_after_open": bool(self.serial.dtr),
+-                                         "rts_state_after_open": bool(self.serial.rts)})
+-        except BaseException as exc:
+-            self._write_record("event", {"event": "serial_open_failed",
++                                         "dtr_state_after_open": bool(serial_obj.dtr),
++                                         "rts_state_after_open": bool(serial_obj.rts)})
++
++    def _find_reconnected_port(self):
++        if self.list_ports_module is None:
++            return None
++        ports = list(self.list_ports_module.comports())
++        ports = [p for p in ports if (getattr(p, "vid", None), getattr(p, "pid", None)) !=
++                 (METER_VID, METER_PID)]
++        if self._serial_identity_key:
++            matches = [p for p in ports if self._normalized_identity(getattr(p, "serial_number", None)) ==
++                       self._serial_identity_key]
++        else:
++            matches = [p for p in ports if (getattr(p, "vid", None), getattr(p, "pid", None)) ==
++                       self._port_vid_pid]
++        if len(matches) == 1:
++            return matches[0]
++        return None
++
++    def _try_reconnect(self, now_ns):
++        if self.list_ports_module is None or now_ns - self._last_reconnect_attempt_ns < self.reconnect_interval_ns:
++            return
++        self._last_reconnect_attempt_ns = now_ns
++        port_info = self._find_reconnected_port()
++        if port_info is None:
++            return
++        try:
++            self._open_port(port_info, reconnect=True)
++        except (OSError, PermissionError) as exc:
++            self._write_record("event", {"event": "serial_reconnect_open_failed",
++                                         "port": describe_port(port_info),
+                                          "error": "%s: %s" % (type(exc).__name__, exc)})
+-            self.close("failed")
+-            raise
++
++    @staticmethod
++    def _is_transport_error(exc):
++        return isinstance(exc, OSError) or exc.__class__.__name__ == "SerialException"
++
++    def _handle_disconnect(self, exc):
++        self._write_record("event", {"event": "serial_disconnect",
++                                     "port": self.descriptor,
++                                     "error": "%s: %s" % (type(exc).__name__, exc),
++                                     "reconnect_policy": "poll fresh serial descriptors every 250 ms; match the same private USB serial identity in memory"})
++        if self.buffer:
++            self._write_record("rx_partial_line", {"raw_hex": bytes(self.buffer).hex(),
++                                                     "length_bytes": len(self.buffer),
++                                                     "run_status": "disconnected"})
++            self.buffer.clear()
++        serial_obj = self.serial
++        self.serial = None
++        self.connected = False
++        self._last_reconnect_attempt_ns = time.monotonic_ns()
++        self.seed_sent = False
++        self.seed_acknowledged = False
++        self.start_sent = False
++        self.previous_sequence = None
++        self.previous_tick = None
++        self.tick_wraps = 0
++        if serial_obj is not None:
++            try:
++                serial_obj.close()
++            except Exception:
++                pass
+ 
+     def _write_record(self, record_type, fields):
+         row = {
+@@ -137,6 +254,12 @@
+                 parsed["parse_status"] = "bad_sequence_or_millis"
+         self._write_record("rx_line", {"raw_hex": payload.hex(), **parsed})
+ 
++        if kind == "EV" and len(fields) >= 4:
++            if fields[3] == "experiment_start":
++                self.experiment_started = True
++            elif fields[3] == "experiment_end":
++                self.experiment_completed = True
++
+         if kind == "EV" and len(fields) >= 4 and fields[3] == "ready" and not self.seed_sent:
+             self._send("SEED %d" % self.root_seed, "ready event observed")
+             self.seed_sent = True
+@@ -147,22 +270,37 @@
+             except ValueError:
+                 accepted_seed = None
+             if accepted_seed == self.root_seed and not self.start_sent:
++                self.seed_acknowledged = True
+                 self._send("START", "matching seed acknowledgement observed")
+                 self.start_sent = True
+ 
+     def poll(self):
+-        if self.closed or not getattr(self.serial, "is_open", False):
++        if self.closed:
+             return
+-        waiting = int(self.serial.in_waiting)
+-        if waiting > 0:
+-            self.buffer.extend(self.serial.read(min(waiting, 4096)))
+-        while True:
+-            newline = self.buffer.find(b"\n")
+-            if newline < 0:
+-                break
+-            raw_line = bytes(self.buffer[:newline + 1])
+-            del self.buffer[:newline + 1]
+-            self._handle_line(raw_line)
++        if self.serial is None or not getattr(self.serial, "is_open", False):
++            self.connected = False
++            self._try_reconnect(time.monotonic_ns())
++            if self.serial is None or not getattr(self.serial, "is_open", False):
++                return
++        try:
++            waiting = int(self.serial.in_waiting)
++            if waiting > 0:
++                self.buffer.extend(self.serial.read(min(waiting, 4096)))
++            while True:
++                newline = self.buffer.find(b"\n")
++                if newline < 0:
++                    break
++                raw_line = bytes(self.buffer[:newline + 1])
++                del self.buffer[:newline + 1]
++                self._handle_line(raw_line)
++            if not self.seed_sent and time.monotonic_ns() - self.opened_monotonic_ns >= 1_000_000_000:
++                self._send("SEED %d" % self.root_seed, "ready banner not observed after 1 s")
++                self.seed_sent = True
++                self._send("PING win-%s" % self.run_id, "serial echo check after ready-banner timeout")
++        except Exception as exc:
++            if not self._is_transport_error(exc):
++                raise
++            self._handle_disconnect(exc)
+         if len(self.buffer) >= MAX_UNTERMINATED_BYTES:
+             chunk = bytes(self.buffer)
+             self.buffer.clear()
+@@ -176,11 +314,14 @@
+         if self.closed:
+             return
+         try:
+-            if getattr(self.serial, "is_open", False):
++            if self.serial is not None and getattr(self.serial, "is_open", False):
++                self.poll()
++            if self.serial is not None and getattr(self.serial, "is_open", False):
+                 try:
+-                    self.poll()
+-                finally:
+                     self.serial.close()
++                except Exception as exc:
++                    self._write_record("event", {"event": "serial_close_error",
++                                                 "error": "%s: %s" % (type(exc).__name__, exc)})
+             if self.buffer:
+                 self._write_record("rx_partial_line", {"raw_hex": bytes(self.buffer).hex(),
+                                                         "length_bytes": len(self.buffer),
+@@ -188,7 +329,12 @@
+                 self.buffer.clear()
+             self._write_record("event", {"event": "serial_close", "run_status": status,
+                                          "seed_command_sent": self.seed_sent,
++                                         "seed_acknowledged": self.seed_acknowledged,
+                                          "start_command_sent": self.start_sent,
++                                         "experiment_started": self.experiment_started,
++                                         "experiment_completed": self.experiment_completed,
++                                         "connected_at_close": self.connected,
++                                         "reconnect_count": self.reconnect_count,
+                                          "last_sequence_number": self.previous_sequence,
+                                          "device_millis_wrap_count": self.tick_wraps})
+         finally:
+
+--- a/scripts/fnirsi_windows/log_fnirsi_windows.py
++++ b/scripts/fnirsi_windows/log_fnirsi_windows.py
+@@ -210,7 +210,12 @@
+                         nano_serial.poll()
+                 if nano_serial:
+                     nano_serial.close("complete" if read_lengths else "failed")
+-                    writer.metadata["nano_serial_status"] = "captured_in_same_locked_session"
++                    writer.metadata["nano_serial_status"] = (
++                        "captured_in_same_locked_session_connected_at_end"
++                        if nano_serial.connected else "captured_with_disconnect_no_reconnect_at_end")
++                    writer.metadata["nano_serial_reconnect_count"] = nano_serial.reconnect_count
++                    writer.metadata["nano_serial_experiment_started"] = nano_serial.experiment_started
++                    writer.metadata["nano_serial_experiment_completed"] = nano_serial.experiment_completed
+                 writer.metadata["hid_read_length_counts"] = read_lengths
+                 writer.metadata["hid_read_convention"] = "raw HIDAPI payload preserved without stripping or adding a report-ID byte"
+                 writer.close("complete" if read_lengths else "failed",
+@@ -219,6 +224,13 @@
+                 print(json.dumps({"output_dir": str(out_dir), "status": status,
+                                   "reports": writer.report_count, "invalid_reports": writer.invalid_count,
+                                   "timeouts": writer.timeout_count, "read_length_counts": read_lengths,
++                                  "nano_serial_log_file": "nano_serial.jsonl" if nano_serial else None,
++                                  "nano_serial_seed_acknowledged": bool(nano_serial and nano_serial.seed_acknowledged),
++                                  "nano_serial_start_sent": bool(nano_serial and nano_serial.start_sent),
++                                  "nano_serial_connected_at_end": bool(nano_serial and nano_serial.connected),
++                                  "nano_serial_reconnect_count": int(nano_serial.reconnect_count) if nano_serial else 0,
++                                  "nano_serial_experiment_started": bool(nano_serial and nano_serial.experiment_started),
++                                  "nano_serial_experiment_completed": bool(nano_serial and nano_serial.experiment_completed),
+                                   "measurement_claim": "diagnostic only; energy not qualified"}, indent=2))
+                 return 0 if writer.report_count > 0 else 7
+             except KeyboardInterrupt:
+
+--- a/scripts/fnirsi_windows/test_windows_integration.py
++++ b/scripts/fnirsi_windows/test_windows_integration.py
+@@ -72,6 +72,7 @@
+             self.is_open = False
+             self.rx = bytearray()
+             self.tx = []
++            self.fail_on_waiting = False
+             FakeSerial.latest = self
+ 
+         def open(self):
+@@ -79,6 +80,8 @@
+ 
+         @property
+         def in_waiting(self):
++            if self.fail_on_waiting:
++                raise OSError("simulated COM device removal")
+             return len(self.rx)
+ 
+         def read(self, count):
+@@ -126,6 +129,91 @@
+     phase = next(row for row in rows if row.get("decoded_line", "").startswith("EV,14,"))
+     if phase.get("device_millis_wrap_count") != 1 or phase.get("device_millis_unwrapped") != (1 << 32) + 2:
+         raise AssertionError("Nano millis rollover was not unwrapped")
++
++    fallback_dir = root / "fake-serial-banner-timeout"
++    fallback_dir.mkdir()
++    fallback = NanoSerialCapture(fallback_dir, "COM7", "fallback-%04d" % seed, seed,
++                                 port_info=port_info, serial_module=FakeSerialModule)
++    fallback_fake = FakeSerial.latest
++    if fallback_fake.dtr or fallback_fake.rts:
++        raise AssertionError("default DTR/RTS low state was not requested before serial open")
++    fallback.opened_monotonic_ns = time.monotonic_ns() - 2_000_000_000
++    fallback.poll()
++    fallback_fake.feed("EV,50,200,seed_set,%d\n" % seed)
++    fallback.poll()
++    fallback.close("complete")
++    fallback_tx = b"".join(fallback_fake.tx).decode("ascii")
++    if "SEED %d\n" % seed not in fallback_tx or "START\n" not in fallback_tx:
++        raise AssertionError("banner-missed serial fallback did not set seed and start")
++
++    asserted_dir = root / "fake-serial-dtr-rts-asserted"
++    asserted_dir.mkdir()
++    asserted = NanoSerialCapture(asserted_dir, "COM7", "asserted-%04d" % seed, seed,
++                                 dtr=True, rts=True, port_info=port_info,
++                                 serial_module=FakeSerialModule)
++    asserted_fake = FakeSerial.latest
++    if not asserted_fake.dtr or not asserted_fake.rts:
++        raise AssertionError("requested CDC DTR/RTS high state was not applied")
++    asserted_fake.feed("EV,70,300,ready,auto-start enabled\n")
++    asserted.poll()
++    asserted_fake.feed("EV,71,301,seed_set,%d\n" % seed)
++    asserted.poll()
++    asserted.close("complete")
++    asserted_rows=[json.loads(line) for line in (asserted_dir/"nano_serial.jsonl").read_text(encoding="utf-8").splitlines()]
++    open_attempt=next(row for row in asserted_rows if row.get("event")=="serial_open_attempt")
++    if not open_attempt["dtr_requested_before_open"] or not open_attempt["rts_requested_before_open"]:
++        raise AssertionError("asserted CDC line state was not recorded")
++
++    reconnect_dir = root / "fake-serial-reset-reconnect"
++    reconnect_dir.mkdir()
++    reenumerated_port = SimpleNamespace(device="COM8", description="ESP32 USB Serial/JTAG (COM8)",
++                                        hwid="USB VID:PID=303A:1001 SER=pr:iv-at e",
++                                        vid=0x303A, pid=0x1001, manufacturer="Microsoft",
++                                        product=None, serial_number="pr:iv-at e")
++
++    class FakeListPortsModule:
++        ports = [port_info]
++
++        @classmethod
++        def comports(cls):
++            return list(cls.ports)
++
++    reconnect = NanoSerialCapture(reconnect_dir, "COM7", "reconnect-%04d" % seed, seed,
++                                  port_info=port_info, serial_module=FakeSerialModule,
++                                  list_ports_module=FakeListPortsModule, reconnect_interval_s=0)
++    first_connection = FakeSerial.latest
++    first_connection.fail_on_waiting = True
++    reconnect.poll()
++    if reconnect.connected or first_connection.is_open:
++        raise AssertionError("Nano removal did not close the lost serial handle")
++    FakeListPortsModule.ports = [reenumerated_port]
++    reconnect.poll()
++    second_connection = FakeSerial.latest
++    if not reconnect.connected or reconnect.port_name != "COM8" or reconnect.reconnect_count != 1:
++        raise AssertionError("Nano COM re-enumeration did not reconnect to the same board")
++    second_connection.feed("EV,1,10,ready,auto-start enabled\n")
++    reconnect.poll()
++    second_connection.feed("EV,2,11,seed_set,%d\n" % seed)
++    reconnect.poll()
++    second_connection.feed("EV,3,12,experiment_start,idle_led_off\n")
++    second_connection.feed("EV,4,13,experiment_end,four phases complete\n")
++    reconnect.poll()
++    reconnect.close("complete")
++    reconnect_rows = [json.loads(line) for line in
++                      (reconnect_dir / "nano_serial.jsonl").read_text(encoding="utf-8").splitlines()]
++    reconnect_events = [row.get("event") for row in reconnect_rows]
++    if "serial_disconnect" not in reconnect_events or "serial_reconnected" not in reconnect_events:
++        raise AssertionError("serial disconnect/reconnect was not retained in the raw ledger")
++    reconnect_text = (reconnect_dir / "nano_serial.jsonl").read_text(encoding="utf-8")
++    if "SER=private" in reconnect_text or "pr:iv-at e" in reconnect_text:
++        raise AssertionError("private USB serial identity leaked into the re-enumeration ledger")
++    reconnect_tx = [row.get("command_ascii") for row in reconnect_rows if row.get("record_type") == "tx"]
++    if "SEED %d" % seed not in reconnect_tx or "START" not in reconnect_tx:
++        raise AssertionError("reconnected Nano did not receive the seed and start handshake")
++    reconnect_close = next(row for row in reconnect_rows if row.get("event") == "serial_close")
++    if not reconnect_close["experiment_started"] or not reconnect_close["experiment_completed"]:
++        raise AssertionError("Nano experiment completeness was not recorded in the serial close event")
++
+     meter_port = SimpleNamespace(device="COM3", description="USB Serial Device (COM3)",
+                                  hwid="USB VID:PID=2E3C:5558", vid=0x2E3C, pid=0x5558,
+                                  manufacturer="FNIRSI", product="FNB-C2", serial_number=None)
+@@ -166,7 +254,8 @@
+         second = root / "output with spaces λ" / "cycle-b"
+         first.parent.mkdir()
+         _, first_meta, _ = run_logger(project_root, logger, first, "fake-%04d-a" % seed,
+-                                      "a", with_serial=True, seed=seed)
++                                      "a", with_serial=True, seed=seed,
++                                      serial_dtr=True, serial_rts=True)
+         _, second_meta, _ = run_logger(project_root, logger, second, "fake-%04d-b" % seed, "b")
+         if first_meta.get("nano_serial_log_file") != "nano_serial.jsonl":
+             raise AssertionError("actual logger did not capture Nano serial in the same run")
+@@ -195,7 +284,9 @@
+         rows.append({"root_seed": seed, "status": "pass",
+                      "checks": ["explicit_interface", "unicode_space_paths", "fresh_reenumeration",
+                                 "disconnect_raw_recovery", "reader_reopen", "interrupt_partial_not_complete",
+-                                "nano_serial_seed_ping_start", "nano_sequence_gap_and_millis_rollover",
++                                "nano_serial_seed_ping_start", "nano_seed_fallback_when_banner_missed",
++                                "nano_serial_disconnect_reconnect_and_reseed", "nano_experiment_completion_state",
++                                "nano_sequence_gap_and_millis_rollover",
+                                 "meter_com3_rejected_as_nano"],
+                      "evidence_root": str(root)})
+     report = {
+

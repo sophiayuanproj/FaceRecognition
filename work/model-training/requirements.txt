@@ -1,0 +1,4 @@
+tensorflow==2.10.1
+numpy==1.23.5
+Pillow==10.4.0
+tensorflow-model-optimization==0.7.5

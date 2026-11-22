@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "clock-sync-v1",
+  "title": "Host/device clock mapping v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "clock_basis",
+    "host_monotonic_origin_ns",
+    "device_tick_unit",
+    "reset_id",
+    "sync_samples"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "clock-sync-1"
+    },
+    "clock_basis": {
+      "enum": [
+        "host_monotonic",
+        "device_tick",
+        "utc"
+      ]
+    },
+    "host_monotonic_origin_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "device_tick_unit": {
+      "enum": [
+        "ms",
+        "us",
+        "ns",
+        "none"
+      ]
+    },
+    "reset_id": {
+      "type": "string"
+    },
+    "device_tick_wrap_bits": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "sync_samples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "host_monotonic_ns",
+          "device_tick",
+          "sequence"
+        ]
+      }
+    },
+    "max_alignment_error_ms": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "qualified": {
+      "type": "boolean"
+    }
+  }
+}

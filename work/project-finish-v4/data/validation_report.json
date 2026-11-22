@@ -1,0 +1,358 @@
+{
+  "balanced_batch_class_counts": {
+    "K01": 4,
+    "K02": 4,
+    "K03": 4,
+    "K04": 4,
+    "K05": 4,
+    "OTHER": 4
+  },
+  "checks": {
+    "balanced_six_class_training_batch": "pass",
+    "class_order_and_intensity_transforms": "pass",
+    "corrupt_and_escape_path_rejection": "pass",
+    "identity_balanced_pretraining_loader": "pass",
+    "metadata_only_roster_reproduction": "pass",
+    "near_duplicate_group_roles": "pass",
+    "olivetti_dataset_separation": "pass",
+    "olivetti_group_safe_splits": "pass",
+    "quality_filter_restricted_to_training": "pass",
+    "source_hash_provenance": "pass",
+    "ten_predeclared_seed_blocks": "pass",
+    "training_only_augmentation": "pass",
+    "unknown_identity_disjointness": "pass",
+    "v3_final_access_control": "pass"
+  },
+  "created_utc": "2026-10-29T05:16:09.327313+00:00",
+  "loader_blocks": [
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261201,
+      "status": "pass",
+      "traversal_rejected": true
+    },
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261202,
+      "status": "pass",
+      "traversal_rejected": true
+    },
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261203,
+      "status": "pass",
+      "traversal_rejected": true
+    },
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261204,
+      "status": "pass",
+      "traversal_rejected": true
+    },
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261205,
+      "status": "pass",
+      "traversal_rejected": true
+    },
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261206,
+      "status": "pass",
+      "traversal_rejected": true
+    },
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261207,
+      "status": "pass",
+      "traversal_rejected": true
+    },
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261208,
+      "status": "pass",
+      "traversal_rejected": true
+    },
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261209,
+      "status": "pass",
+      "traversal_rejected": true
+    },
+    {
+      "augmentation_train_only": true,
+      "corrupt_hash_rejected": true,
+      "final_gate_fail_closed": true,
+      "gray8_float_and_quantized": true,
+      "root_seed": 20261210,
+      "status": "pass",
+      "traversal_rejected": true
+    }
+  ],
+  "olivetti_sanity_rows": 395,
+  "olivetti_unique_groups": 314,
+  "presentation_sha256": "ca50cd8eb9364c170d18af4dd7e509a4b718719377df9b0088a5107467ab881c",
+  "pretraining_identities": 3729,
+  "pretraining_loader_batch_size": 32,
+  "pretraining_rows": 144656,
+  "primary_known_budget": {
+    "10447": {
+      "development": 10,
+      "final": 20,
+      "stopping": 10,
+      "threshold_calibration": 10,
+      "train": 60
+    },
+    "10554": {
+      "development": 10,
+      "final": 20,
+      "stopping": 10,
+      "threshold_calibration": 10,
+      "train": 60
+    },
+    "10631": {
+      "development": 10,
+      "final": 20,
+      "stopping": 10,
+      "threshold_calibration": 10,
+      "train": 60
+    },
+    "9452": {
+      "development": 10,
+      "final": 20,
+      "stopping": 10,
+      "threshold_calibration": 10,
+      "train": 60
+    },
+    "9889": {
+      "development": 10,
+      "final": 20,
+      "stopping": 10,
+      "threshold_calibration": 10,
+      "train": 60
+    }
+  },
+  "primary_known_identity_map": [
+    {
+      "eligible_images": 264,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K01",
+      "metadata_only_rank": 1,
+      "pseudonym": "K01",
+      "pseudonymous_identity_id": "identity_0257",
+      "quality_valid_near_duplicate_groups": 261,
+      "source_camera_groups": {
+        "cam1": 57,
+        "cam2": 59,
+        "cam3": 66,
+        "cam4": 79
+      },
+      "source_identity_id": "10447",
+      "unique_near_duplicate_groups": 261
+    },
+    {
+      "eligible_images": 307,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K02",
+      "metadata_only_rank": 2,
+      "pseudonym": "K02",
+      "pseudonymous_identity_id": "identity_5250",
+      "quality_valid_near_duplicate_groups": 298,
+      "source_camera_groups": {
+        "cam1": 91,
+        "cam2": 96,
+        "cam3": 25,
+        "cam4": 86
+      },
+      "source_identity_id": "9889",
+      "unique_near_duplicate_groups": 298
+    },
+    {
+      "eligible_images": 189,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K03",
+      "metadata_only_rank": 3,
+      "pseudonym": "K03",
+      "pseudonymous_identity_id": "identity_0347",
+      "quality_valid_near_duplicate_groups": 185,
+      "source_camera_groups": {
+        "cam1": 20,
+        "cam2": 62,
+        "cam3": 46,
+        "cam4": 57
+      },
+      "source_identity_id": "10631",
+      "unique_near_duplicate_groups": 185
+    },
+    {
+      "eligible_images": 155,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K04",
+      "metadata_only_rank": 4,
+      "pseudonym": "K04",
+      "pseudonymous_identity_id": "identity_0313",
+      "quality_valid_near_duplicate_groups": 151,
+      "source_camera_groups": {
+        "cam1": 26,
+        "cam2": 63,
+        "cam3": 46,
+        "cam4": 16
+      },
+      "source_identity_id": "10554",
+      "unique_near_duplicate_groups": 151
+    },
+    {
+      "eligible_images": 197,
+      "historical_exposure": "identity and all source images in the v3 development role; v3 train identity overlap is zero; v3 development scores are historical exposure, so all new public-image results are exploratory",
+      "label": "K05",
+      "metadata_only_rank": 5,
+      "pseudonym": "K05",
+      "pseudonymous_identity_id": "identity_5029",
+      "quality_valid_near_duplicate_groups": 185,
+      "source_camera_groups": {
+        "cam1": 19,
+        "cam2": 85,
+        "cam3": 67,
+        "cam4": 14
+      },
+      "source_identity_id": "9452",
+      "unique_near_duplicate_groups": 185
+    }
+  ],
+  "primary_split_sha256": "325466868b2a56f9cccb853ad6a725a97f90889e4e09c49a8360988f98ef63bb",
+  "schema": "public-data-validation-1",
+  "seed_roots": [
+    20261201,
+    20261202,
+    20261203,
+    20261204,
+    20261205,
+    20261206,
+    20261207,
+    20261208,
+    20261209,
+    20261210
+  ],
+  "sensitivity_blocks": [
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261201,
+      "selection_fingerprint": "d7f2f5ce9330445e67c843d0ee7fabcc51377ed14fac3ae764e2ba0026f0c787",
+      "status": "pass"
+    },
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261202,
+      "selection_fingerprint": "b7ccf6355569ebc8b91fed14f58ad43bdc86d5624a18f75bc8c7bee364c5cd79",
+      "status": "pass"
+    },
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261203,
+      "selection_fingerprint": "2955dc117c44e7640bd0965602b654b3d932cb6e1765cfceeb4839a6b3987afa",
+      "status": "pass"
+    },
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261204,
+      "selection_fingerprint": "6a8971d2c106f197dfee387c08df22aaa66ab14c42f21e12b829ef494d197c96",
+      "status": "pass"
+    },
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261205,
+      "selection_fingerprint": "911e605b264e83382c7800a44004da3d0d6eb8ac731b30005c0e0e7c3e087ab2",
+      "status": "pass"
+    },
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261206,
+      "selection_fingerprint": "2cc6f78c09dd4485283ddaa0f522a58019747c6a79b603aa87cc17e796243341",
+      "status": "pass"
+    },
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261207,
+      "selection_fingerprint": "2ac71d663ff4614980117b8912ff2859d159fd877468e7866ef9b4a91c37d077",
+      "status": "pass"
+    },
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261208,
+      "selection_fingerprint": "441b06ddd9593b0a477fb78a31aa0a503b0898455912fe98d34fe897810899b6",
+      "status": "pass"
+    },
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261209,
+      "selection_fingerprint": "69f58a57809d89473e16c2dd9fcac60cb40753df107c1c62ca5ea99fa558d2f7",
+      "status": "pass"
+    },
+    {
+      "near_duplicate_cross_role_candidates": 0,
+      "presentation_rows": 400,
+      "primary_rows": 1750,
+      "reproduced_unknown_assignment": true,
+      "root_seed": 20261210,
+      "selection_fingerprint": "7b11deaec830f07e40fa4c71d4472efaf7f8706e012f8f15f8a0eee0f1bdafd2",
+      "status": "pass"
+    }
+  ],
+  "source_manifest_sha256": "d47d109d2f5711d6f688e47cae5ee0f4f326135a71f70167719e93eed3ba9c71",
+  "source_to_prepared_copies_created": false,
+  "status": "pass"
+}

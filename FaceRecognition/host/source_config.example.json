@@ -1,0 +1,16 @@
+{
+  "configuration_status": "Declared defaults for firmware/camera_imu.py; confirm on board",
+  "physical_setting": "body_worn_single_frontal_face",
+  "declared_capture_pixel_format": "GRAYSCALE",
+  "declared_capture_framesize": "QVGA",
+  "declared_fov_setting": "GC2145 default QVGA readout; no wide-FOV ioctl",
+  "declared_framebuffer_count": 1,
+  "declared_hmirror": false,
+  "declared_vflip": false,
+  "declared_auto_rotation": false,
+  "declared_settle_ms": 2000,
+  "declared_sampling_period_ms": 500,
+  "mount_position": "record the position and orientation",
+  "exposure_mode": "record auto/manual behavior after settling",
+  "notes": "This file records metadata only. It does not set camera controls. Saved host previews are JPEG-derived RGB PNGs, not raw inference inputs."
+}

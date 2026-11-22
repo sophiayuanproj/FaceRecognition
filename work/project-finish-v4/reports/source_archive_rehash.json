@@ -1,0 +1,26 @@
+{
+  "schema": "opaque-source-archive-rehash-1",
+  "status": "pass",
+  "created_utc": "2026-10-29T04:59:53+00:00",
+  "archives": [
+    {
+      "filename": "survface_96.zip",
+      "relative_path": "work/dataset-prep/raw/survface_96.zip",
+      "byte_size": 435525182,
+      "sha256": "f61b38dd7364e2dd912ec573c5e9180a5de3d68b95b910b4b5dddda42b265fe6",
+      "prior_receipt_sha256": "f61b38dd7364e2dd912ec573c5e9180a5de3d68b95b910b4b5dddda42b265fe6",
+      "matches_prior_receipt": true,
+      "method": "SHA-256 over raw archive bytes only; archive members were not extracted or decoded by this rehash"
+    },
+    {
+      "filename": "olivetti_96.zip",
+      "relative_path": "work/dataset-prep/raw/olivetti_96.zip",
+      "byte_size": 2043362,
+      "sha256": "552c65c1b925374ecae40b0808b1c91c280f0d0baa8c74080bc26e4dafdad256",
+      "prior_receipt_sha256": "552c65c1b925374ecae40b0808b1c91c280f0d0baa8c74080bc26e4dafdad256",
+      "matches_prior_receipt": true,
+      "method": "SHA-256 over raw archive bytes only; archive members were not extracted or decoded by this rehash"
+    }
+  ],
+  "sealed_v3_final_access": "No archive members, v3-final records, or individual v3-final image files were opened, extracted, decoded, or individually hashed."
+}

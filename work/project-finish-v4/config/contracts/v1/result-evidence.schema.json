@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "result-evidence-v1",
+  "title": "Result status/evidence tier v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "evidence_tier",
+    "software_verified",
+    "hardware_verified",
+    "artifact_hashes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "result-evidence-1"
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "prepared",
+        "running",
+        "complete_verified",
+        "partial_external_dependency",
+        "failed_needs_repair",
+        "unsupported"
+      ]
+    },
+    "evidence_tier": {
+      "enum": [
+        "schema_only",
+        "software_unit",
+        "host_conversion",
+        "host_public_development",
+        "device_qualification",
+        "instrument_diagnostic",
+        "qualified_relative_power",
+        "absolute_accuracy"
+      ]
+    },
+    "software_verified": {
+      "type": "boolean"
+    },
+    "hardware_verified": {
+      "type": "boolean"
+    },
+    "artifact_hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "failed_runs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

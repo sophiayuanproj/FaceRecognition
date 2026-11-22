@@ -1,0 +1,17 @@
+{
+  "candidate_selection_sha256": "38a6934a3aa2314f3b6de623910a77d53504085dd08fa419ba17fa6160abab86",
+  "historical_control_registry_sha256_before_final": "b5da542ebe19a192883c8989bd084358235bdbcb132a375339ba0b6053aeebb6",
+  "known_role_image_hash_manifest_sha256": "ea90be2fdd6dc78219c35dde506fc9fbf0b0fbea13bf7707784b5617c3124109",
+  "known_rows": 100,
+  "matrix_sha256": "7078347d7deb075ca9679961e10962958b4718cfa61447035133b75ac208e847",
+  "model_registry_sha256_before_final": "e3f088149569d500691eb1e27686742c5ff499ce22229d18a49015dc0daca6a0",
+  "opened_by": "D final evaluation after classifier, gallery and calibration freeze",
+  "opened_utc": "2026-10-29T23:01:45+00:00",
+  "protocol_sha256": "d1b3b4e5fe5e58c11faea633d7dcc7669d72e6e1e5abf171e5c68e07690e9bca",
+  "schema": "job-d-final-role-opened-1",
+  "status": "opened_after_freeze",
+  "teacher_student_registry_sha256_before_final": "0d138ff76dd039753ed78cfcb39125271c561f74edeb07065270fc34700f0282",
+  "unknown_identity_count": 50,
+  "unknown_role_image_hash_manifest_sha256": "c94f81cbbbe9719ae2c95d8e029a906cab17686bc6a61121f69a0abbc76d23df",
+  "unknown_rows": 300
+}

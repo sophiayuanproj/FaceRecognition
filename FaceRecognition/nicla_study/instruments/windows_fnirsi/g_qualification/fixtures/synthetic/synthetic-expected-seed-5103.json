@@ -1,0 +1,10 @@
+{
+  "data_origin": "software_simulation_only",
+  "duration_s": 1.2304068230099674,
+  "expected_trapezoid_energy_j": 0.21441173609971023,
+  "packet_reports": 20,
+  "packet_samples": 80,
+  "root_seed": 5103,
+  "trace_points": 31,
+  "warning": "synthetic software fixtures; never physical meter or Nicla measurements"
+}

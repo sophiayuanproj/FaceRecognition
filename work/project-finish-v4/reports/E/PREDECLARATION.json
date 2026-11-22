@@ -1,0 +1,503 @@
+{
+  "acceptance_gates": {
+    "actual_full_int8_tensor_type_audit": true,
+    "actual_host_inference_all_exports": true,
+    "board_feasibility": "H decides on actual Nicla; E reports static estimates only",
+    "final_role_access": "forbidden",
+    "minimum_roots_per_learned_arm": 10,
+    "physical_channel_surgery_shapes_and_numerical_check": true,
+    "ten_independent_representative_pools": true
+  },
+  "capacity_arms": [
+    {
+      "alpha": 0.1,
+      "id": "mnv1_a010_small_reference",
+      "pretraining": "verified Edge Impulse 96x96 grayscale MobileNetV1 checkpoint",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "source": "frozen D transfer classifier roots",
+      "training_budget": "D frozen per-root T3 configuration; retain exact D curves/configs"
+    },
+    {
+      "alpha": 0.25,
+      "id": "mnv1_a025_reference",
+      "pretraining": "verified Edge Impulse 96x96 grayscale MobileNetV1 checkpoint",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "source": "frozen D uniform-select classifier roots",
+      "training_budget": "D frozen per-root T3 configuration; retain exact D curves/configs"
+    },
+    {
+      "alpha": 0.5,
+      "id": "mnv1_a050_wider",
+      "pretraining": "Keras MobileNetV1 ImageNet RGB reference when downloadable and hash-verified; grayscale adaptation by first-convolution RGB-kernel summation plus [-1,1] input scaling, requiring numerical-equivalence pilot",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "source": "new E training"
+    },
+    {
+      "alpha": 0.75,
+      "id": "mnv1_a075_upper_feasibility",
+      "pretraining": "Keras MobileNetV1 ImageNet RGB reference when downloadable and hash-verified; grayscale adaptation by first-convolution RGB-kernel summation plus [-1,1] input scaling, requiring numerical-equivalence pilot",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "source": "new E training if static operator/tensor pilot permits"
+    }
+  ],
+  "capacity_selection_rule": "Using threshold-fitted model-specific full-INT8 outputs on development only, among alpha 0.25, 0.50, 0.75 choose the arm with the highest mean development macro utility subject to mean development unknown FPIR <= 0.05 and mean known correct-acceptance > alpha 0.10; tie-break by lower parameter count. If none qualifies, use the highest-width capacity whose PTQ conversion pilot succeeds and report that no arm meets the quality gate. No final-role access.",
+  "clustering_cardinality": 16,
+  "export_controls": {
+    "all_formats_require_host_inference": true,
+    "per_capacity_root_formats": [
+      "float32",
+      "fp16_weights_float_io",
+      "dynamic_range_int8_weights_float_io",
+      "full_int8_ptq_train_only_rep"
+    ],
+    "per_export_requirements": [
+      "FlatBuffer tensor shapes/dtypes/operators",
+      "input/output quantization scales and zero points",
+      "normalization/output semantics",
+      "all-integer internal tensor audit",
+      "model-specific threshold from threshold_calibration and unknown_calibration roles",
+      "raw/compressed bytes/parameters/MACs/activation estimate/host latency"
+    ]
+  },
+  "frozen_utc": "2026-10-30T02:53:37+00:00",
+  "historical_protocols": {
+    "preexisting_2026_10_22_board_compression": "preserve separate protocol and do not assert current E candidate board feasibility",
+    "v3_compression_results": "preserve as separate historical model-system-v2 protocol; do not copy into E rows or pool estimates"
+  },
+  "job": "E",
+  "matched_root_rule": "Use the same ten frozen D training root seeds for every randomized E treatment. A root is an independently trained D checkpoint or newly trained E checkpoint; derived compression variants retain parent root identity and have unique child streams.",
+  "new_capacity_training_budget": {
+    "batch_size": 24,
+    "class_sampling": "D balanced K01-K05 and four distinct unknown identities per batch",
+    "config_source": "D development-selected T3 transfer recipe",
+    "early_stopping": "D stop-role macro-known accuracy and loss tie-break, patience=3, preserve best checkpoint per existing D procedure",
+    "fine_tune_epochs_max": 18,
+    "head_epochs_max": 6,
+    "normalization": "gray8 / 255 for Edge Impulse checkpoints; ImageNet RGB-derived adaptation applies 2*x-1 before first convolution",
+    "roles": [
+      "train",
+      "unknown_train",
+      "stopping"
+    ]
+  },
+  "optimization_arms": [
+    {
+      "epochs": 5,
+      "id": "large_dense_equal_finetune",
+      "method": "ordinary_finetune_control",
+      "parent": "development-selected capacity root",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "large_qat",
+      "method": "qat_equal_budget",
+      "parent": "matched ordinary control root",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "large_magnitude_prune_50",
+      "method": "magnitude_prune_50",
+      "parent": "matched capacity root",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "large_magnitude_prune_75",
+      "method": "magnitude_prune_75",
+      "parent": "matched capacity root",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "large_structured_prune_2of4",
+      "method": "structured_2_of_4",
+      "parent": "matched capacity root",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "large_physical_channel_keep_50",
+      "method": "physical_last_pointwise_channel_surgery_keep_50_percent",
+      "parent": "matched capacity root",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "surgery": "slice final pointwise Conv2D output channels, its BatchNorm vectors, and downstream GAP-to-hidden Dense columns; select filters by training-checkpoint L1 norm; verify shape and masked-graph equality before fine-tuning",
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "small_a050_dense_equal_finetune",
+      "method": "dense_smaller_capacity_equal_budget_control",
+      "parent": "matched alpha=0.50 capacity root",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "large_cluster_16",
+      "method": "weight_clustering_16",
+      "parent": "matched capacity root",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "unsupported_case": "depthwise cluster cardinality attempted and retained as unsupported if converter/library rejects",
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "small_a010_dense_equal_finetune",
+      "method": "small_student_ordinary_finetune_control",
+      "parent": "matched alpha=0.10 capacity root",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "hard_label_weight": 0.5,
+      "id": "small_a010_distilled",
+      "method": "teacher_student_distillation",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "soft_target_weight": 0.5,
+      "steps_per_epoch": 15,
+      "teacher": "matched alpha=0.75 capacity root",
+      "teacher_utility_gate": "teacher mean development macro utility must exceed alpha=0.10 ordinary-control mean and teacher unknown-FPIR must be <= 0.05 to claim a demonstrably useful teacher",
+      "temperature": 3.0,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "large_head_32_sliced_initialization",
+      "initialization": "retain 32 hidden units ranked by product of incoming and outgoing L2 norms from each matched 64-unit checkpoint",
+      "method": "classifier_hidden_head_64_to_32_sliced_initialization",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "large_head_32_reset_initialization",
+      "initialization": "reinitialize only reduced hidden and output classifier layers; preserve matched backbone",
+      "method": "classifier_hidden_head_64_to_32_random_initialization_control",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    },
+    {
+      "epochs": 5,
+      "id": "large_head_direct_gap_logits",
+      "initialization": "random six-output logits head; preserve matched backbone",
+      "method": "remove_hidden_embedding_head_direct_global_average_pool_classifier",
+      "roots": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "steps_per_epoch": 15,
+      "updates_per_root": 75
+    }
+  ],
+  "optimization_budget_rule": "Every randomized optimization treatment and its equal-budget control uses exactly 5 epochs x 15 balanced batches/epoch x 24 examples/batch = 75 optimizer updates and 1,800 image presentations per root, unless a conversion/operator failure occurs; failures retain all attempted roots and are not silently dropped.",
+  "protocol_id": "nicla-five-known-study-v4",
+  "pruning_sparsities": [
+    0.5,
+    0.75
+  ],
+  "registry_paths": {
+    "analysis": "work/project-finish-v4/reports/E/",
+    "roots": "work/project-finish-v4/runs/E/roots/",
+    "scripts": "work/project-finish-v4/runs/E/scripts/",
+    "study": "work/project-finish-v4/reports/E/PREDECLARATION.json"
+  },
+  "representative_pool_sensitivity": {
+    "final_role_allowed": false,
+    "images_per_pool": 128,
+    "selection_roots": [
+      73101,
+      73102,
+      73103,
+      73104,
+      73105,
+      73106,
+      73107,
+      73108,
+      73109,
+      73110
+    ],
+    "source_roles": [
+      "train",
+      "unknown_train"
+    ],
+    "stratification": [
+      "gray intensity quantiles",
+      "blur/Laplacian quantiles"
+    ]
+  },
+  "robustness_plan": {
+    "actual_camera_conditions": "not claimed; synthetic corruption remains separate",
+    "base_exports": "all feasible full-int8 capacity roots plus all feasible optimized roots",
+    "conditions": [
+      {
+        "family": "clean"
+      },
+      {
+        "factors": [
+          0.5,
+          0.7
+        ],
+        "family": "low_light"
+      },
+      {
+        "family": "blur",
+        "gaussian_sigma": [
+          0.8,
+          1.6
+        ]
+      },
+      {
+        "family": "scale_center_crop",
+        "retained_side_fraction": [
+          0.7,
+          0.85
+        ]
+      }
+    ],
+    "data_role": "development and unknown_development only",
+    "roots": [
+      20261101,
+      20261102,
+      20261103,
+      20261104,
+      20261105,
+      20261106,
+      20261107,
+      20261108,
+      20261109,
+      20261110
+    ]
+  },
+  "root_seeds": [
+    20261101,
+    20261102,
+    20261103,
+    20261104,
+    20261105,
+    20261106,
+    20261107,
+    20261108,
+    20261109,
+    20261110
+  ],
+  "schema": "job-e-predeclared-compression-capacity-matrix-1",
+  "source_sha256": {
+    "B_manifest": "325466868b2a56f9cccb853ad6a725a97f90889e4e09c49a8360988f98ef63bb",
+    "C_result": "412ffeee3eb909d710f45a7ffa0329ba5b6e19957c405a0282416a70db73db20",
+    "D_registry": "e3d1275600927dd5cb2384e98f5ef03a5415318cc018f0caf10fc1d19ebc4bd7",
+    "D_result": "92235c33f7dd1b32ed87ac589ae211b03b2bb8997f9fb6c05aed41bdedba54f8",
+    "D_routes": "53c3e0e8aca23210dd26b5643bf65aa0d9a3370624234602e5e41f936845d61a",
+    "v3_compression_results": "ffe691bd001301f651c78f401100194b1060a44cb38ee9ed4a2450860b37e480",
+    "v3_paired_contrasts": "4f3d392a813992fa0f929c78495b7bac857b7d2ae88446dbb84e4a9cc5fedd65"
+  },
+  "status": "predeclared_before_E_pilot_or_E_evaluation",
+  "structured_pruning": [
+    {
+      "m": 2,
+      "n": 4
+    }
+  ]
+}

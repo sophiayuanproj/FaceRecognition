@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-10-29T23:37:59+00:00",
+  "data_use_boundary": "No new people, images, or datasets were acquired or used. Analysis is limited to existing B-permitted roles and existing model files.",
+  "edge_impulse_mobilenetv1": {
+    "0.1": {
+      "sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5"
+    },
+    "0.25": {
+      "sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "source": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5"
+    },
+    "artifact_and_architecture": "Downloaded, hashed and strictly loaded in reference-compatible grayscale MobileNetV1 graphs.",
+    "license_and_redistribution": "Not established by the checkpoint metadata/source information; no redistribution permission is asserted.",
+    "pretraining_corpus": "Not declared in the local checkpoint metadata or available checkpoint source information; not inferred from the 1000-class head."
+  },
+  "opencv_zoo_sface": {
+    "checkpoint_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79",
+    "deployment_status": "Host research reference only; no deployment/redistribution claim.",
+    "exact_checkpoint_training_corpus": "Unresolved; the README does not map this exact 2021dec checkpoint to a dataset.",
+    "issue_status": "Open; no maintainer or original-author clarification was visible in the issue at review time.",
+    "issue_status_checked_utc": "2026-10-29T23:37:59+00:00",
+    "model_description": "The README describes the model files as MobileFaceNet instances trained with the SFace loss.",
+    "official_issue": "https://github.com/opencv/opencv_zoo/issues/313",
+    "official_model_directory": "https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface",
+    "official_readme_license_statement": "The SFace model-directory README states that all files in the directory are licensed under Apache 2.0.",
+    "upstream_authorization_and_dataset_rights": "Unresolved from available official documentation."
+  },
+  "review_conclusion": "Source and stated directory license were checked; exact training data and downstream authorization questions remain unresolved. No person was contacted and no new data was obtained.",
+  "schema": "job-d-pretrained-provenance-status-1",
+  "status": "review_complete_provenance_unresolved"
+}

@@ -1,0 +1,285 @@
+{
+  "experiment_id": "consolidated_validation_evaluation_20261022",
+  "question": "Score all final checkpoints from the 45-run standardized multi-seed campaign with one evaluation process at a time so host timing is not affected by concurrent evaluation jobs.",
+  "evaluation_policy": "Validation-only. Do not load final SurvFace pair annotations or Olivetti. INT8 representative calibration images must come from training identities only; validation identities are excluded from quantization calibration. Run only after training and predeclared cap continuations are complete.",
+  "evaluation": {
+    "format": "float TFLite and full signed-integer INT8 TFLite",
+    "bootstrap_replicates": 1000,
+    "identity_cluster_bootstrap_replicates": 1000,
+    "host_threads_per_process": 3,
+    "parallel_evaluation_jobs": 1,
+    "evaluation_mode": "validation-only"
+  },
+  "evaluation_jobs": [
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261022,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261021/seed-20261022"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261023,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261021/seed-20261023"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261024,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261021/seed-20261024"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261025,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261021/seed-20261025"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261026,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261021/seed-20261026"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261032,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261021/seed-20261032"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261033,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261021/seed-20261033"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261034,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261021/seed-20261034"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261035,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261021/seed-20261035"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261021,
+      "training_seed": 20261036,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261021/seed-20261036"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261022,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/matched_split_sensitivity_20261021/base/split-20261022/seed-20261022"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261023,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/matched_split_sensitivity_20261021/base/split-20261022/seed-20261023"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261024,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/matched_split_sensitivity_20261021/base/split-20261022/seed-20261024"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261025,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/matched_split_sensitivity_20261021/base/split-20261022/seed-20261025"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261026,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/matched_split_sensitivity_20261021/base/split-20261022/seed-20261026"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261027,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261022/seed-20261027"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261028,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261022/seed-20261028"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261029,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261022/seed-20261029"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261030,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261022/seed-20261030"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261031,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/base/split-20261022/seed-20261031"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261032,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261022/seed-20261032"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261033,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261022/seed-20261033"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261034,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261022/seed-20261034"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261035,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261022/seed-20261035"
+    },
+    {
+      "model_variant": "base",
+      "split_seed": 20261022,
+      "training_seed": 20261036,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/base/split-20261022/seed-20261036"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261022,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/tiny/split-20261021/seed-20261022"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261023,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/tiny/split-20261021/seed-20261023"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261024,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/tiny/split-20261021/seed-20261024"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261025,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/tiny/split-20261021/seed-20261025"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261026,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/research_seed_architecture_campaign_20261021/tiny/split-20261021/seed-20261026"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261032,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261021/seed-20261032"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261033,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261021/seed-20261033"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261034,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261021/seed-20261034"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261035,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261021/seed-20261035"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261021,
+      "training_seed": 20261036,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261021/seed-20261036"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261022,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/tiny_splitB_replication_20261021/tiny/split-20261022/seed-20261022"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261023,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/tiny_splitB_replication_20261021/tiny/split-20261022/seed-20261023"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261024,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/tiny_splitB_replication_20261021/tiny/split-20261022/seed-20261024"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261025,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/tiny_splitB_replication_20261021/tiny/split-20261022/seed-20261025"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261026,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/tiny_splitB_replication_20261021/tiny/split-20261022/seed-20261026"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261032,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261022/seed-20261032"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261033,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261022/seed-20261033"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261034,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261022/seed-20261034"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261035,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261022/seed-20261035"
+    },
+    {
+      "model_variant": "tiny",
+      "split_seed": 20261022,
+      "training_seed": 20261036,
+      "run_dir": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/runs/validation_seed_extension_20261022/tiny/split-20261022/seed-20261036"
+    }
+  ]
+}

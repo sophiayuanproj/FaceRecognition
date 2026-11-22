@@ -1,0 +1,1380 @@
+{
+  "capacity": {
+    "0.1": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 37296.0,
+          "ci95_t_low": 37296.0,
+          "mean": 37296.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 99064.0,
+          "ci95_t_low": 99064.0,
+          "mean": 99064.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.040128,
+          "ci95_t_low": -0.008127999999999996,
+          "mean": 0.016,
+          "n": 10,
+          "sd_root": 0.03373096170846271
+        },
+        "known_identification": {
+          "ci95_t_high": 0.38566982792633914,
+          "ci95_t_low": 0.3103301720736608,
+          "mean": 0.348,
+          "n": 10,
+          "sd_root": 0.05266244708835069
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 2.5655224537664436,
+          "ci95_t_low": 2.4552355462142303,
+          "mean": 2.510378999990337,
+          "n": 10,
+          "sd_root": 0.07709058885088872
+        },
+        "macs": {
+          "ci95_t_high": 1329327.0,
+          "ci95_t_low": 1329327.0,
+          "mean": 1329327.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 46809.0,
+          "ci95_t_low": 46809.0,
+          "mean": 46809.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": null,
+          "ci95_t_low": null,
+          "mean": null,
+          "n": 0,
+          "sd_root": null
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.03127834518403312,
+          "ci95_t_low": -0.005278345184033119,
+          "mean": 0.013000000000000001,
+          "n": 10,
+          "sd_root": 0.025553139982455446
+        },
+        "utility": {
+          "ci95_t_high": 0.5070193280690074,
+          "ci95_t_low": 0.49598067193099254,
+          "mean": 0.5015,
+          "n": 10,
+          "sd_root": 0.0077160246913185095
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10
+    },
+    "0.25": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 327072.0,
+          "ci95_t_low": 327072.0,
+          "mean": 327072.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.06611932617813868,
+          "ci95_t_low": 0.013880673821861336,
+          "mean": 0.04000000000000001,
+          "n": 10,
+          "sd_root": 0.03651483716701108
+        },
+        "known_identification": {
+          "ci95_t_high": 0.4479729189872106,
+          "ci95_t_low": 0.34002708101278933,
+          "mean": 0.39399999999999996,
+          "n": 10,
+          "sd_root": 0.07545418035691154
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.729208298529866,
+          "ci95_t_low": 9.311849901461446,
+          "mean": 9.520529099995656,
+          "n": 10,
+          "sd_root": 0.29173367270847617
+        },
+        "macs": {
+          "ci95_t_high": 7174144.0,
+          "ci95_t_low": 7174144.0,
+          "mean": 7174144.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 235238.0,
+          "ci95_t_low": 235238.0,
+          "mean": 235238.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": null,
+          "ci95_t_low": null,
+          "mean": null,
+          "n": 0,
+          "sd_root": null
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.051841038622803134,
+          "ci95_t_low": 0.01549229471053019,
+          "mean": 0.033666666666666664,
+          "n": 10,
+          "sd_root": 0.025407785333546005
+        },
+        "utility": {
+          "ci95_t_high": 0.5185929858106924,
+          "ci95_t_low": 0.48774034752264095,
+          "mean": 0.5031666666666667,
+          "n": 10,
+          "sd_root": 0.021566005485313983
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10
+    },
+    "0.5": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 150560.0,
+          "ci95_t_low": 150560.0,
+          "mean": 150560.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 1024360.0,
+          "ci95_t_low": 1024360.0,
+          "mean": 1024360.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.19277055975866225,
+          "ci95_t_low": 0.11522944024133776,
+          "mean": 0.154,
+          "n": 10,
+          "sd_root": 0.05420127099780759
+        },
+        "known_identification": {
+          "ci95_t_high": 0.6152877434847326,
+          "ci95_t_low": 0.5287122565152675,
+          "mean": 0.5720000000000001,
+          "n": 10,
+          "sd_root": 0.06051629716218783
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 31.818824266261803,
+          "ci95_t_low": 31.32525103375735,
+          "mean": 31.572037650009577,
+          "n": 10,
+          "sd_root": 0.3450078706467581
+        },
+        "macs": {
+          "ci95_t_high": 26734208.0,
+          "ci95_t_low": 26734208.0,
+          "mean": 26734208.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 862470.0,
+          "ci95_t_low": 862470.0,
+          "mean": 862470.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": null,
+          "ci95_t_low": null,
+          "mean": null,
+          "n": 0,
+          "sd_root": null
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.06863932069015495,
+          "ci95_t_low": 0.04136067930984506,
+          "mean": 0.05500000000000001,
+          "n": 10,
+          "sd_root": 0.019067780335256128
+        },
+        "utility": {
+          "ci95_t_high": 0.5685918232904967,
+          "ci95_t_low": 0.5304081767095032,
+          "mean": 0.5495,
+          "n": 10,
+          "sd_root": 0.02669038297233437
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10
+    },
+    "0.75": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 225840.0,
+          "ci95_t_low": 225840.0,
+          "mean": 225840.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 2109704.0,
+          "ci95_t_low": 2109704.0,
+          "mean": 2109704.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.25303862466871163,
+          "ci95_t_low": 0.1869613753312884,
+          "mean": 0.22000000000000003,
+          "n": 10,
+          "sd_root": 0.046188021535170064
+        },
+        "known_identification": {
+          "ci95_t_high": 0.6614712012682822,
+          "ci95_t_low": 0.558528798731718,
+          "mean": 0.6100000000000001,
+          "n": 10,
+          "sd_root": 0.07195677714974301
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 67.4156730769356,
+          "ci95_t_low": 67.36885982305819,
+          "mean": 67.3922664499969,
+          "n": 10,
+          "sd_root": 0.03272248163933616
+        },
+        "macs": {
+          "ci95_t_high": 58680576.0,
+          "ci95_t_low": 58680576.0,
+          "mean": 58680576.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 1882150.0,
+          "ci95_t_low": 1882150.0,
+          "mean": 1882150.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": null,
+          "ci95_t_low": null,
+          "mean": null,
+          "n": 0,
+          "sd_root": null
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.08684029374748777,
+          "ci95_t_low": 0.0524930395858456,
+          "mean": 0.06966666666666668,
+          "n": 10,
+          "sd_root": 0.024008743263370113
+        },
+        "utility": {
+          "ci95_t_high": 0.586676663196254,
+          "ci95_t_low": 0.5636566701370794,
+          "mean": 0.5751666666666667,
+          "n": 10,
+          "sd_root": 0.016090983595990024
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10
+    }
+  },
+  "failure_counts": {
+    "large_cluster_16": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "large_dense_equal_finetune": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "large_head_32_reset_initialization": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "large_head_32_sliced_initialization": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "large_head_direct_gap_logits": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "large_magnitude_prune_50": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "large_magnitude_prune_75": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "large_physical_channel_keep_50": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "large_qat": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "large_structured_prune_2of4": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "small_a010_dense_equal_finetune": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "small_a010_distilled": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    },
+    "small_a050_dense_equal_finetune": {
+      "completed": 10,
+      "unsupported_or_failed": 0
+    }
+  },
+  "final_role_accessed": false,
+  "optimization": {
+    "large_cluster_16": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 327712.0,
+          "ci95_t_low": 327712.0,
+          "mean": 327712.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.08585451603553063,
+          "ci95_t_low": 0.01814548396446939,
+          "mean": 0.05200000000000001,
+          "n": 10,
+          "sd_root": 0.047328638264796934
+        },
+        "known_identification": {
+          "ci95_t_high": 0.3856135887252476,
+          "ci95_t_low": 0.27838641127475233,
+          "mean": 0.33199999999999996,
+          "n": 10,
+          "sd_root": 0.07495183638696104
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.339381350631127,
+          "ci95_t_low": 8.91956164937102,
+          "mean": 9.129471500001074,
+          "n": 10,
+          "sd_root": 0.29345412524168796
+        },
+        "macs": {
+          "ci95_t_high": 7174144.0,
+          "ci95_t_low": 7174144.0,
+          "mean": 7174144.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 431534.0,
+          "ci95_t_low": 431534.0,
+          "mean": 431534.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 18.444310154628063,
+          "ci95_t_low": 17.434082381171926,
+          "mean": 17.939196267899995,
+          "n": 10,
+          "sd_root": 0.7061495843682573
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.05179425807960698,
+          "ci95_t_low": 0.01820574192039302,
+          "mean": 0.035,
+          "n": 10,
+          "sd_root": 0.02347838512123938
+        },
+        "utility": {
+          "ci95_t_high": 0.5208441516561937,
+          "ci95_t_low": 0.49615584834380616,
+          "mean": 0.5085,
+          "n": 10,
+          "sd_root": 0.017257133075204267
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "large_dense_equal_finetune": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 327072.0,
+          "ci95_t_low": 327072.0,
+          "mean": 327072.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.05483491396316957,
+          "ci95_t_low": 0.017165086036830427,
+          "mean": 0.036,
+          "n": 10,
+          "sd_root": 0.026331223544175338
+        },
+        "known_identification": {
+          "ci95_t_high": 0.4844552121510601,
+          "ci95_t_low": 0.3915447878489399,
+          "mean": 0.438,
+          "n": 10,
+          "sd_root": 0.0649444206824403
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.359786619271835,
+          "ci95_t_low": 9.008258680736072,
+          "mean": 9.184022650003953,
+          "n": 10,
+          "sd_root": 0.24571815803640268
+        },
+        "macs": {
+          "ci95_t_high": 7174144.0,
+          "ci95_t_low": 7174144.0,
+          "mean": 7174144.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 235238.0,
+          "ci95_t_low": 235238.0,
+          "mean": 235238.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 11.178414903189266,
+          "ci95_t_low": 10.40772546201074,
+          "mean": 10.793070182600003,
+          "n": 10,
+          "sd_root": 0.5387122022030295
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.043837533612871536,
+          "ci95_t_low": 0.019495799720461802,
+          "mean": 0.03166666666666667,
+          "n": 10,
+          "sd_root": 0.017014880923459503
+        },
+        "utility": {
+          "ci95_t_high": 0.5105788275001796,
+          "ci95_t_low": 0.4937545058331537,
+          "mean": 0.5021666666666667,
+          "n": 10,
+          "sd_root": 0.011760207019257903
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "large_head_32_reset_initialization": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 316296.0,
+          "ci95_t_low": 316296.0,
+          "mean": 316296.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.046859952550348416,
+          "ci95_t_low": 0.013140047449651582,
+          "mean": 0.03,
+          "n": 10,
+          "sd_root": 0.023570226039551587
+        },
+        "known_identification": {
+          "ci95_t_high": 0.43699482522312855,
+          "ci95_t_low": 0.31500517477687145,
+          "mean": 0.376,
+          "n": 10,
+          "sd_root": 0.08527081042837056
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.159224487155289,
+          "ci95_t_low": 9.078321812614458,
+          "mean": 9.118773149884873,
+          "n": 10,
+          "sd_root": 0.05655099919282426
+        },
+        "macs": {
+          "ci95_t_high": 7165760.0,
+          "ci95_t_low": 7165760.0,
+          "mean": 7165760.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 226822.0,
+          "ci95_t_low": 226822.0,
+          "mean": 226822.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 10.454548625658441,
+          "ci95_t_low": 9.695291538341865,
+          "mean": 10.074920082000153,
+          "n": 10,
+          "sd_root": 0.5307209826582056
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.05790690795231421,
+          "ci95_t_low": 0.022759758714352457,
+          "mean": 0.04033333333333333,
+          "n": 10,
+          "sd_root": 0.024567870215254316
+        },
+        "utility": {
+          "ci95_t_high": 0.5046393602839161,
+          "ci95_t_low": 0.4850273063827506,
+          "mean": 0.49483333333333335,
+          "n": 10,
+          "sd_root": 0.013708832873933225
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "large_head_32_sliced_initialization": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 316296.0,
+          "ci95_t_low": 316296.0,
+          "mean": 316296.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.07755064425693627,
+          "ci95_t_low": 0.01844935574306374,
+          "mean": 0.048,
+          "n": 10,
+          "sd_root": 0.04131182235954578
+        },
+        "known_identification": {
+          "ci95_t_high": 0.46890067573774125,
+          "ci95_t_low": 0.40309932426225864,
+          "mean": 0.43599999999999994,
+          "n": 10,
+          "sd_root": 0.04599516882842758
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.144111725816957,
+          "ci95_t_low": 9.123159674101215,
+          "mean": 9.133635699959086,
+          "n": 10,
+          "sd_root": 0.014645491838060794
+        },
+        "macs": {
+          "ci95_t_high": 7165760.0,
+          "ci95_t_low": 7165760.0,
+          "mean": 7165760.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 226822.0,
+          "ci95_t_low": 226822.0,
+          "mean": 226822.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 10.551582043975467,
+          "ci95_t_low": 9.87381884802455,
+          "mean": 10.212700446000008,
+          "n": 10,
+          "sd_root": 0.47375672268786634
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.0513657862219901,
+          "ci95_t_low": 0.030634213778009886,
+          "mean": 0.040999999999999995,
+          "n": 10,
+          "sd_root": 0.014491376746189439
+        },
+        "utility": {
+          "ci95_t_high": 0.5178441770648117,
+          "ci95_t_low": 0.4891558229351885,
+          "mean": 0.5035000000000001,
+          "n": 10,
+          "sd_root": 0.020053170064347172
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "large_head_direct_gap_logits": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 309472.0,
+          "ci95_t_low": 309472.0,
+          "mean": 309472.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.08105277757056092,
+          "ci95_t_low": 0.030947222429439092,
+          "mean": 0.05600000000000001,
+          "n": 10,
+          "sd_root": 0.03502380143083653
+        },
+        "known_identification": {
+          "ci95_t_high": 0.4290164418270408,
+          "ci95_t_low": 0.3229835581729592,
+          "mean": 0.376,
+          "n": 10,
+          "sd_root": 0.07411702458499891
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.139581038572448,
+          "ci95_t_low": 9.119035461470542,
+          "mean": 9.129308250021495,
+          "n": 10,
+          "sd_root": 0.014361365933824527
+        },
+        "macs": {
+          "ci95_t_high": 7158912.0,
+          "ci95_t_low": 7158912.0,
+          "mean": 7158912.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 219942.0,
+          "ci95_t_low": 219942.0,
+          "mean": 219942.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 10.609330315026812,
+          "ci95_t_low": 9.797718416373216,
+          "mean": 10.203524365700014,
+          "n": 10,
+          "sd_root": 0.5673170149953819
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.05228656694494533,
+          "ci95_t_low": 0.02038009972172134,
+          "mean": 0.036333333333333336,
+          "n": 10,
+          "sd_root": 0.022302632297722336
+        },
+        "utility": {
+          "ci95_t_high": 0.5229346483691099,
+          "ci95_t_low": 0.4967320182975566,
+          "mean": 0.5098333333333332,
+          "n": 10,
+          "sd_root": 0.018315648035572306
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "large_magnitude_prune_50": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 327072.0,
+          "ci95_t_low": 327072.0,
+          "mean": 327072.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.07245288709428271,
+          "ci95_t_low": 0.01554711290571728,
+          "mean": 0.044,
+          "n": 10,
+          "sd_root": 0.03977715704047013
+        },
+        "known_identification": {
+          "ci95_t_high": 0.45225899073693676,
+          "ci95_t_low": 0.3597410092630633,
+          "mean": 0.406,
+          "n": 10,
+          "sd_root": 0.06467010300148149
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.030846676597493,
+          "ci95_t_low": 8.914903923431494,
+          "mean": 8.972875300014493,
+          "n": 10,
+          "sd_root": 0.08104402701044647
+        },
+        "macs": {
+          "ci95_t_high": 7174144.0,
+          "ci95_t_low": 7174144.0,
+          "mean": 7174144.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 235238.0,
+          "ci95_t_low": 235238.0,
+          "mean": 235238.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 20.198421356159184,
+          "ci95_t_low": 18.775580661241012,
+          "mean": 19.487001008700098,
+          "n": 10,
+          "sd_root": 0.9945661678864235
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.05799980433230781,
+          "ci95_t_low": 0.02066686233435884,
+          "mean": 0.039333333333333324,
+          "n": 10,
+          "sd_root": 0.026095740156603868
+        },
+        "utility": {
+          "ci95_t_high": 0.5123898078426012,
+          "ci95_t_low": 0.4922768588240654,
+          "mean": 0.5023333333333333,
+          "n": 10,
+          "sd_root": 0.014058958744788103
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "large_magnitude_prune_75": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 327072.0,
+          "ci95_t_low": 327072.0,
+          "mean": 327072.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.05131182270009747,
+          "ci95_t_low": 0.012688177299902532,
+          "mean": 0.032,
+          "n": 10,
+          "sd_root": 0.026997942308422115
+        },
+        "known_identification": {
+          "ci95_t_high": 0.44271600000000005,
+          "ci95_t_low": 0.361284,
+          "mean": 0.402,
+          "n": 10,
+          "sd_root": 0.056920997883030844
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.213748229121595,
+          "ci95_t_low": 8.902232470591368,
+          "mean": 9.057990349856482,
+          "n": 10,
+          "sd_root": 0.21774962952929733
+        },
+        "macs": {
+          "ci95_t_high": 7174144.0,
+          "ci95_t_low": 7174144.0,
+          "mean": 7174144.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 235238.0,
+          "ci95_t_low": 235238.0,
+          "mean": 235238.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 17.579283721874855,
+          "ci95_t_low": 14.835526674525173,
+          "mean": 16.207405198200014,
+          "n": 10,
+          "sd_root": 1.9178871829715867
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.053910930599380166,
+          "ci95_t_low": 0.014089069400619835,
+          "mean": 0.034,
+          "n": 10,
+          "sd_root": 0.02783549559132754
+        },
+        "utility": {
+          "ci95_t_high": 0.5126763212890016,
+          "ci95_t_low": 0.4853236787109983,
+          "mean": 0.49899999999999994,
+          "n": 10,
+          "sd_root": 0.019119507199599976
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "large_physical_channel_keep_50": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 280248.0,
+          "ci95_t_low": 280248.0,
+          "mean": 280248.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.07907485884613567,
+          "ci95_t_low": 0.04092514115386435,
+          "mean": 0.06000000000000001,
+          "n": 10,
+          "sd_root": 0.02666666666666667
+        },
+        "known_identification": {
+          "ci95_t_high": 0.49814604399357537,
+          "ci95_t_low": 0.36585395600642473,
+          "mean": 0.43200000000000005,
+          "n": 10,
+          "sd_root": 0.09247221805013174
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 8.850134323005705,
+          "ci95_t_low": 8.521750376984699,
+          "mean": 8.685942349995202,
+          "n": 10,
+          "sd_root": 0.22954049877545554
+        },
+        "macs": {
+          "ci95_t_high": 6871040.0,
+          "ci95_t_low": 6871040.0,
+          "mean": 6871040.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 193766.0,
+          "ci95_t_low": 193766.0,
+          "mean": 193766.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 9.652069884421282,
+          "ci95_t_low": 9.117089379978728,
+          "mean": 9.384579632200005,
+          "n": 10,
+          "sd_root": 0.3739515689266788
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.06187407378910742,
+          "ci95_t_low": 0.04279259287755924,
+          "mean": 0.05233333333333333,
+          "n": 10,
+          "sd_root": 0.013337962159486782
+        },
+        "utility": {
+          "ci95_t_high": 0.513271728259261,
+          "ci95_t_low": 0.49439493840740567,
+          "mean": 0.5038333333333334,
+          "n": 10,
+          "sd_root": 0.013194883033646215
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "large_qat": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 327072.0,
+          "ci95_t_low": 327072.0,
+          "mean": 327072.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.0,
+          "ci95_t_low": 0.0,
+          "mean": 0.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_identification": {
+          "ci95_t_high": 0.2,
+          "ci95_t_low": 0.2,
+          "mean": 0.2,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.123829679576415,
+          "ci95_t_low": 8.909801420470972,
+          "mean": 9.016815550023694,
+          "n": 10,
+          "sd_root": 0.14960583165646962
+        },
+        "macs": {
+          "ci95_t_high": 7174144.0,
+          "ci95_t_low": 7174144.0,
+          "mean": 7174144.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 238398.0,
+          "ci95_t_low": 238398.0,
+          "mean": 238398.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 23.248672229231595,
+          "ci95_t_low": 22.20726078136839,
+          "mean": 22.727966505299992,
+          "n": 10,
+          "sd_root": 0.72794698422224
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.004242066959177846,
+          "ci95_t_low": -0.0009087336258445122,
+          "mean": 0.0016666666666666666,
+          "n": 10,
+          "sd_root": 0.0036004114991154777
+        },
+        "utility": {
+          "ci95_t_high": 0.5004543668129223,
+          "ci95_t_low": 0.49787896652041114,
+          "mean": 0.4991666666666667,
+          "n": 10,
+          "sd_root": 0.0018002057495577434
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "large_structured_prune_2of4": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 75280.0,
+          "ci95_t_low": 75280.0,
+          "mean": 75280.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 327072.0,
+          "ci95_t_low": 327072.0,
+          "mean": 327072.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.07711200000000001,
+          "ci95_t_low": 0.03488800000000001,
+          "mean": 0.05600000000000001,
+          "n": 10,
+          "sd_root": 0.029514591494904874
+        },
+        "known_identification": {
+          "ci95_t_high": 0.46358087518388513,
+          "ci95_t_low": 0.3644191248161148,
+          "mean": 0.414,
+          "n": 10,
+          "sd_root": 0.06931409989637352
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 9.292760241225091,
+          "ci95_t_low": 8.971173658700087,
+          "mean": 9.131966949962589,
+          "n": 10,
+          "sd_root": 0.22478913919732796
+        },
+        "macs": {
+          "ci95_t_high": 7174144.0,
+          "ci95_t_low": 7174144.0,
+          "mean": 7174144.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 235238.0,
+          "ci95_t_low": 235238.0,
+          "mean": 235238.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 14.528660053006274,
+          "ci95_t_low": 13.982405207193484,
+          "mean": 14.255532630099879,
+          "n": 10,
+          "sd_root": 0.38183233768180974
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.04850870815733316,
+          "ci95_t_low": 0.024824625176000176,
+          "mean": 0.03666666666666667,
+          "n": 10,
+          "sd_root": 0.016555182695279266
+        },
+        "utility": {
+          "ci95_t_high": 0.5197168578422945,
+          "ci95_t_low": 0.49961647549103894,
+          "mean": 0.5096666666666667,
+          "n": 10,
+          "sd_root": 0.014050174639747623
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "small_a010_dense_equal_finetune": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 37296.0,
+          "ci95_t_low": 37296.0,
+          "mean": 37296.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 99064.0,
+          "ci95_t_low": 99064.0,
+          "mean": 99064.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.028158724624818783,
+          "ci95_t_low": -0.008158724624818781,
+          "mean": 0.01,
+          "n": 10,
+          "sd_root": 0.025385910352879695
+        },
+        "known_identification": {
+          "ci95_t_high": 0.3249415730692542,
+          "ci95_t_low": 0.26305842693074566,
+          "mean": 0.29399999999999993,
+          "n": 10,
+          "sd_root": 0.04325634186002222
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 2.4803175637932178,
+          "ci95_t_low": 2.4256558363343323,
+          "mean": 2.452986700063775,
+          "n": 10,
+          "sd_root": 0.038208567552927813
+        },
+        "macs": {
+          "ci95_t_high": 1329327.0,
+          "ci95_t_low": 1329327.0,
+          "mean": 1329327.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 46809.0,
+          "ci95_t_low": 46809.0,
+          "mean": 46809.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 8.163609993923977,
+          "ci95_t_low": 7.561678936876003,
+          "mean": 7.86264446539999,
+          "n": 10,
+          "sd_root": 0.42075002976665543
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.03192747540851622,
+          "ci95_t_low": 7.252459148378299e-05,
+          "mean": 0.016,
+          "n": 10,
+          "sd_root": 0.022266622310889512
+        },
+        "utility": {
+          "ci95_t_high": 0.5061279339514604,
+          "ci95_t_low": 0.48787206604853967,
+          "mean": 0.497,
+          "n": 10,
+          "sd_root": 0.012760858363481651
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "small_a010_distilled": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 37296.0,
+          "ci95_t_low": 37296.0,
+          "mean": 37296.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 99064.0,
+          "ci95_t_low": 99064.0,
+          "mean": 99064.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.006523999999999999,
+          "ci95_t_low": -0.0025239999999999993,
+          "mean": 0.002,
+          "n": 10,
+          "sd_root": 0.006324555320336759
+        },
+        "known_identification": {
+          "ci95_t_high": 0.3301717648719422,
+          "ci95_t_low": 0.27382823512805776,
+          "mean": 0.302,
+          "n": 10,
+          "sd_root": 0.0393841479673118
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 2.465801560703346,
+          "ci95_t_low": 2.463264239457624,
+          "mean": 2.464532900080485,
+          "n": 10,
+          "sd_root": 0.0017735884818778735
+        },
+        "macs": {
+          "ci95_t_high": 1329327.0,
+          "ci95_t_low": 1329327.0,
+          "mean": 1329327.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 46809.0,
+          "ci95_t_low": 46809.0,
+          "mean": 46809.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 14.19226594491592,
+          "ci95_t_low": 13.63773203108422,
+          "mean": 13.91499898800007,
+          "n": 10,
+          "sd_root": 0.38761940926519023
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.037380454524820875,
+          "ci95_t_low": -4.7121191487541764e-05,
+          "mean": 0.018666666666666668,
+          "n": 10,
+          "sd_root": 0.026161889160464778
+        },
+        "utility": {
+          "ci95_t_high": 0.4993928675442001,
+          "ci95_t_low": 0.4839404657891331,
+          "mean": 0.4916666666666666,
+          "n": 10,
+          "sd_root": 0.010801234497346428
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    },
+    "small_a050_dense_equal_finetune": {
+      "metrics": {
+        "activation_peak_bytes_estimate": {
+          "ci95_t_high": 150560.0,
+          "ci95_t_low": 150560.0,
+          "mean": 150560.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "bytes": {
+          "ci95_t_high": 1024360.0,
+          "ci95_t_low": 1024360.0,
+          "mean": 1024360.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "known_correct_acceptance": {
+          "ci95_t_high": 0.216684,
+          "ci95_t_low": 0.147316,
+          "mean": 0.182,
+          "n": 10,
+          "sd_root": 0.04848825745591513
+        },
+        "known_identification": {
+          "ci95_t_high": 0.6382604139287089,
+          "ci95_t_low": 0.533739586071291,
+          "mean": 0.586,
+          "n": 10,
+          "sd_root": 0.07306009702825322
+        },
+        "latency_p50_ms": {
+          "ci95_t_high": 30.184385899631646,
+          "ci95_t_low": 29.946478500405252,
+          "mean": 30.06543220001845,
+          "n": 10,
+          "sd_root": 0.16629735936392245
+        },
+        "macs": {
+          "ci95_t_high": 26734208.0,
+          "ci95_t_low": 26734208.0,
+          "mean": 26734208.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "parameters": {
+          "ci95_t_high": 862470.0,
+          "ci95_t_low": 862470.0,
+          "mean": 862470.0,
+          "n": 10,
+          "sd_root": 0.0
+        },
+        "training_seconds": {
+          "ci95_t_high": 13.527569744880765,
+          "ci95_t_low": 12.56166758171915,
+          "mean": 13.044618663299957,
+          "n": 10,
+          "sd_root": 0.6751659665062532
+        },
+        "unknown_fpir": {
+          "ci95_t_high": 0.06572410060990229,
+          "ci95_t_low": 0.042275899390097724,
+          "mean": 0.054000000000000006,
+          "n": 10,
+          "sd_root": 0.016390301257409576
+        },
+        "utility": {
+          "ci95_t_high": 0.5829269186199033,
+          "ci95_t_low": 0.5450730813800966,
+          "mean": 0.564,
+          "n": 10,
+          "sd_root": 0.0264598461218149
+        }
+      },
+      "root_count": 10,
+      "successful_full_int8_host_inference_roots": 10,
+      "unsupported_or_failed_roots": 0,
+      "unsupported_or_failed_statuses": []
+    }
+  },
+  "schema": "job-e-analysis-summary-1"
+}

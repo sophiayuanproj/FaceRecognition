@@ -1,0 +1,2068 @@
+{
+  "activation_interpretation": "Static TFLite tensor-lifetime peak estimate; not measured device arena/SRAM use.",
+  "final_role_accessed": false,
+  "latency_interpretation": "Host-only TFLite timing; not board latency or energy.",
+  "rows": [
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 137087.0,
+        "ci95_t_low": 137087.0,
+        "mean": 137087.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a010",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 94760.0,
+        "ci95_t_low": 94760.0,
+        "mean": 94760.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "dynamic_range_int8_weights_float_io",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 1.5224526331915063,
+        "ci95_t_low": 1.4021571668299653,
+        "mean": 1.4623049000107358,
+        "n": 10,
+        "sd_root": 0.08408657513144083
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 1329327.0,
+        "ci95_t_low": 1329327.0,
+        "mean": 1329327.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 40.701627861788864,
+        "ci95_t_low": 28.415208078011105,
+        "mean": 34.558417969899985,
+        "n": 10,
+        "sd_root": 8.588211937597526
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 602592.0,
+        "ci95_t_low": 602592.0,
+        "mean": 602592.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 189232.0,
+        "ci95_t_low": 189232.0,
+        "mean": 189232.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a010",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 197608.0,
+        "ci95_t_low": 197608.0,
+        "mean": 197608.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.45267408414037,
+        "ci95_t_low": 0.4152254158792055,
+        "mean": 0.43394975000978775,
+        "n": 10,
+        "sd_root": 0.02617663285705949
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 1329327.0,
+        "ci95_t_low": 1329327.0,
+        "mean": 1329327.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 40.701627861788864,
+        "ci95_t_low": 28.415208078011105,
+        "mean": 34.558417969899985,
+        "n": 10,
+        "sd_root": 8.588211937597526
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 602592.0,
+        "ci95_t_low": 602592.0,
+        "mean": 602592.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 286812.0,
+        "ci95_t_low": 286812.0,
+        "mean": 286812.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a010",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 121896.0,
+        "ci95_t_low": 121896.0,
+        "mean": 121896.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "fp16_weights_float_io",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.44403422564897216,
+        "ci95_t_low": 0.41211607434064984,
+        "mean": 0.428075149994811,
+        "n": 10,
+        "sd_root": 0.022310799477493783
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 1329327.0,
+        "ci95_t_low": 1329327.0,
+        "mean": 1329327.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 40.701627861788864,
+        "ci95_t_low": 28.415208078011105,
+        "mean": 34.558417969899985,
+        "n": 10,
+        "sd_root": 8.588211937597526
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 602592.0,
+        "ci95_t_low": 602592.0,
+        "mean": 602592.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 37296.0,
+        "ci95_t_low": 37296.0,
+        "mean": 37296.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a010",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 99064.0,
+        "ci95_t_low": 99064.0,
+        "mean": 99064.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 2.5655224537664436,
+        "ci95_t_low": 2.4552355462142303,
+        "mean": 2.510378999990337,
+        "n": 10,
+        "sd_root": 0.07709058885088872
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 1329327.0,
+        "ci95_t_low": 1329327.0,
+        "mean": 1329327.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 40.701627861788864,
+        "ci95_t_low": 28.415208078011105,
+        "mean": 34.558417969899985,
+        "n": 10,
+        "sd_root": 8.588211937597526
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 602592.0,
+        "ci95_t_low": 602592.0,
+        "mean": 602592.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 499016.0,
+        "ci95_t_low": 499016.0,
+        "mean": 499016.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a025",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 298048.0,
+        "ci95_t_low": 298048.0,
+        "mean": 298048.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "dynamic_range_int8_weights_float_io",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 8.203137543577613,
+        "ci95_t_low": 7.900611956293288,
+        "mean": 8.05187474993545,
+        "n": 10,
+        "sd_root": 0.21146549652929755
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 38.30125160669363,
+        "ci95_t_low": 27.685784596906437,
+        "mean": 32.993518101800035,
+        "n": 10,
+        "sd_root": 7.420215335390027
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2110960.0,
+        "ci95_t_low": 2110960.0,
+        "mean": 2110960.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 896824.0,
+        "ci95_t_low": 896824.0,
+        "mean": 896824.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a025",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 931500.0,
+        "ci95_t_low": 931500.0,
+        "mean": 931500.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.9261375800223836,
+        "ci95_t_low": 0.8493426199675592,
+        "mean": 0.8877400999949714,
+        "n": 10,
+        "sd_root": 0.05367970525970256
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 38.30125160669363,
+        "ci95_t_low": 27.685784596906437,
+        "mean": 32.993518101800035,
+        "n": 10,
+        "sd_root": 7.420215335390027
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2110960.0,
+        "ci95_t_low": 2110960.0,
+        "mean": 2110960.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 1277188.0,
+        "ci95_t_low": 1277188.0,
+        "mean": 1277188.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a025",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 488772.0,
+        "ci95_t_low": 488772.0,
+        "mean": 488772.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "fp16_weights_float_io",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.997945770794675,
+        "ci95_t_low": 0.8372517291685398,
+        "mean": 0.9175987499816074,
+        "n": 10,
+        "sd_root": 0.11232519406642238
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 38.30125160669363,
+        "ci95_t_low": 27.685784596906437,
+        "mean": 32.993518101800035,
+        "n": 10,
+        "sd_root": 7.420215335390027
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2110960.0,
+        "ci95_t_low": 2110960.0,
+        "mean": 2110960.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a025",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 327072.0,
+        "ci95_t_low": 327072.0,
+        "mean": 327072.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.729208298529866,
+        "ci95_t_low": 9.311849901461446,
+        "mean": 9.520529099995656,
+        "n": 10,
+        "sd_root": 0.29173367270847617
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 38.30125160669363,
+        "ci95_t_low": 27.685784596906437,
+        "mean": 32.993518101800035,
+        "n": 10,
+        "sd_root": 7.420215335390027
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2110960.0,
+        "ci95_t_low": 2110960.0,
+        "mean": 2110960.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 1048952.0,
+        "ci95_t_low": 1048952.0,
+        "mean": 1048952.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a050",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 961688.0,
+        "ci95_t_low": 961688.0,
+        "mean": 961688.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "dynamic_range_int8_weights_float_io",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 29.21257181801404,
+        "ci95_t_low": 28.77016788200895,
+        "mean": 28.991369850011495,
+        "n": 10,
+        "sd_root": 0.30924051361614857
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 26734208.0,
+        "ci95_t_low": 26734208.0,
+        "mean": 26734208.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 43.34336700324314,
+        "ci95_t_low": 35.928869757556875,
+        "mean": 39.636118380400006,
+        "n": 10,
+        "sd_root": 5.182736295626359
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 7129000.0,
+        "ci95_t_low": 7129000.0,
+        "mean": 7129000.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 3215960.0,
+        "ci95_t_low": 3215960.0,
+        "mean": 3215960.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a050",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 3411732.0,
+        "ci95_t_low": 3411732.0,
+        "mean": 3411732.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 2.0934652751322327,
+        "ci95_t_low": 1.9722103248362108,
+        "mean": 2.0328377999842218,
+        "n": 10,
+        "sd_root": 0.08475725475374397
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 26734208.0,
+        "ci95_t_low": 26734208.0,
+        "mean": 26734208.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 43.34336700324314,
+        "ci95_t_low": 35.928869757556875,
+        "mean": 39.636118380400006,
+        "n": 10,
+        "sd_root": 5.182736295626359
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 7129000.0,
+        "ci95_t_low": 7129000.0,
+        "mean": 7129000.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 4871272.0,
+        "ci95_t_low": 4871272.0,
+        "mean": 4871272.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a050",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 1732552.0,
+        "ci95_t_low": 1732552.0,
+        "mean": 1732552.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "fp16_weights_float_io",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 2.116407194836546,
+        "ci95_t_low": 1.9846790051840855,
+        "mean": 2.050543100010316,
+        "n": 10,
+        "sd_root": 0.09207805290725016
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 26734208.0,
+        "ci95_t_low": 26734208.0,
+        "mean": 26734208.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 43.34336700324314,
+        "ci95_t_low": 35.928869757556875,
+        "mean": 39.636118380400006,
+        "n": 10,
+        "sd_root": 5.182736295626359
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 7129000.0,
+        "ci95_t_low": 7129000.0,
+        "mean": 7129000.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 150560.0,
+        "ci95_t_low": 150560.0,
+        "mean": 150560.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a050",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 1024360.0,
+        "ci95_t_low": 1024360.0,
+        "mean": 1024360.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 31.818824266261803,
+        "ci95_t_low": 31.32525103375735,
+        "mean": 31.572037650009577,
+        "n": 10,
+        "sd_root": 0.3450078706467581
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 26734208.0,
+        "ci95_t_low": 26734208.0,
+        "mean": 26734208.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 43.34336700324314,
+        "ci95_t_low": 35.928869757556875,
+        "mean": 39.636118380400006,
+        "n": 10,
+        "sd_root": 5.182736295626359
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 7129000.0,
+        "ci95_t_low": 7129000.0,
+        "mean": 7129000.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 2042776.0,
+        "ci95_t_low": 2042776.0,
+        "mean": 2042776.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a075",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 2014512.0,
+        "ci95_t_low": 2014512.0,
+        "mean": 2014512.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "dynamic_range_int8_weights_float_io",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 65.73702801278844,
+        "ci95_t_low": 65.6200380873565,
+        "mean": 65.67853305007247,
+        "n": 10,
+        "sd_root": 0.08177600080860849
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 58680576.0,
+        "ci95_t_low": 58680576.0,
+        "mean": 58680576.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 75.09759710764821,
+        "ci95_t_low": 59.74447226935174,
+        "mean": 67.42103468849997,
+        "n": 10,
+        "sd_root": 10.731839896092216
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 15288560.0,
+        "ci95_t_low": 15288560.0,
+        "mean": 15288560.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 7141752.0,
+        "ci95_t_low": 7141752.0,
+        "mean": 7141752.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a075",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 7457620.0,
+        "ci95_t_low": 7457620.0,
+        "mean": 7457620.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 5.496794167766197,
+        "ci95_t_low": 4.564269532056429,
+        "mean": 5.030531849911313,
+        "n": 10,
+        "sd_root": 0.6518350625688891
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 58680576.0,
+        "ci95_t_low": 58680576.0,
+        "mean": 58680576.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 75.09759710764821,
+        "ci95_t_low": 59.74447226935174,
+        "mean": 67.42103468849997,
+        "n": 10,
+        "sd_root": 10.731839896092216
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 15288560.0,
+        "ci95_t_low": 15288560.0,
+        "mean": 15288560.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 10820040.0,
+        "ci95_t_low": 10820040.0,
+        "mean": 10820040.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a075",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 3755496.0,
+        "ci95_t_low": 3755496.0,
+        "mean": 3755496.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "fp16_weights_float_io",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 5.717409385263444,
+        "ci95_t_low": 4.506649614674835,
+        "mean": 5.11202949996914,
+        "n": 10,
+        "sd_root": 0.8463215239529072
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 58680576.0,
+        "ci95_t_low": 58680576.0,
+        "mean": 58680576.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 75.09759710764821,
+        "ci95_t_low": 59.74447226935174,
+        "mean": 67.42103468849997,
+        "n": 10,
+        "sd_root": 10.731839896092216
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 15288560.0,
+        "ci95_t_low": 15288560.0,
+        "mean": 15288560.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 225840.0,
+        "ci95_t_low": 225840.0,
+        "mean": 225840.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "capacity_a075",
+      "family": "capacity",
+      "file_bytes_mean": {
+        "ci95_t_high": 2109704.0,
+        "ci95_t_low": 2109704.0,
+        "mean": 2109704.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 67.4156730769356,
+        "ci95_t_low": 67.36885982305819,
+        "mean": 67.3922664499969,
+        "n": 10,
+        "sd_root": 0.03272248163933616
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 58680576.0,
+        "ci95_t_low": 58680576.0,
+        "mean": 58680576.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 75.09759710764821,
+        "ci95_t_low": 59.74447226935174,
+        "mean": 67.42103468849997,
+        "n": 10,
+        "sd_root": 10.731839896092216
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 15288560.0,
+        "ci95_t_low": 15288560.0,
+        "mean": 15288560.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 896824.0,
+        "ci95_t_low": 896824.0,
+        "mean": 896824.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_cluster_16",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 932108.0,
+        "ci95_t_low": 932108.0,
+        "mean": 932108.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.8753226522776166,
+        "ci95_t_low": 0.7824144477177989,
+        "mean": 0.8288685499977078,
+        "n": 10,
+        "sd_root": 0.0649428690817563
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 18.444310154628063,
+        "ci95_t_low": 17.434082381171926,
+        "mean": 17.939196267899995,
+        "n": 10,
+        "sd_root": 0.7061495843682573
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 451353.92226693337,
+        "ci95_t_low": 447359.2777330666,
+        "mean": 449356.6,
+        "n": 10,
+        "sd_root": 2792.257995084106
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_cluster_16",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 327712.0,
+        "ci95_t_low": 327712.0,
+        "mean": 327712.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.339381350631127,
+        "ci95_t_low": 8.91956164937102,
+        "mean": 9.129471500001074,
+        "n": 10,
+        "sd_root": 0.29345412524168796
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 18.444310154628063,
+        "ci95_t_low": 17.434082381171926,
+        "mean": 17.939196267899995,
+        "n": 10,
+        "sd_root": 0.7061495843682573
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 451353.92226693337,
+        "ci95_t_low": 447359.2777330666,
+        "mean": 449356.6,
+        "n": 10,
+        "sd_root": 2792.257995084106
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 896824.0,
+        "ci95_t_low": 896824.0,
+        "mean": 896824.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_dense_equal_finetune",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 931500.0,
+        "ci95_t_low": 931500.0,
+        "mean": 931500.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.8512006483481812,
+        "ci95_t_low": 0.8399454516396802,
+        "mean": 0.8455730499939307,
+        "n": 10,
+        "sd_root": 0.007867386629552086
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 11.178414903189266,
+        "ci95_t_low": 10.40772546201074,
+        "mean": 10.793070182600003,
+        "n": 10,
+        "sd_root": 0.5387122022030295
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2111296.0,
+        "ci95_t_low": 2111296.0,
+        "mean": 2111296.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_dense_equal_finetune",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 327072.0,
+        "ci95_t_low": 327072.0,
+        "mean": 327072.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.359786619271835,
+        "ci95_t_low": 9.008258680736072,
+        "mean": 9.184022650003953,
+        "n": 10,
+        "sd_root": 0.24571815803640268
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 11.178414903189266,
+        "ci95_t_low": 10.40772546201074,
+        "mean": 10.793070182600003,
+        "n": 10,
+        "sd_root": 0.5387122022030295
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2111296.0,
+        "ci95_t_low": 2111296.0,
+        "mean": 2111296.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 896824.0,
+        "ci95_t_low": 896824.0,
+        "mean": 896824.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_head_32_reset_initialization",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 895544.0,
+        "ci95_t_low": 895544.0,
+        "mean": 895544.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.858219918780287,
+        "ci95_t_low": 0.7803836809326641,
+        "mean": 0.8193017998564756,
+        "n": 10,
+        "sd_root": 0.054407558818985555
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7165760.0,
+        "ci95_t_low": 7165760.0,
+        "mean": 7165760.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 10.454548625658441,
+        "ci95_t_low": 9.695291538341865,
+        "mean": 10.074920082000153,
+        "n": 10,
+        "sd_root": 0.5307209826582056
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2044552.0,
+        "ci95_t_low": 2044552.0,
+        "mean": 2044552.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_head_32_reset_initialization",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 316296.0,
+        "ci95_t_low": 316296.0,
+        "mean": 316296.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.159224487155289,
+        "ci95_t_low": 9.078321812614458,
+        "mean": 9.118773149884873,
+        "n": 10,
+        "sd_root": 0.05655099919282426
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7165760.0,
+        "ci95_t_low": 7165760.0,
+        "mean": 7165760.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 10.454548625658441,
+        "ci95_t_low": 9.695291538341865,
+        "mean": 10.074920082000153,
+        "n": 10,
+        "sd_root": 0.5307209826582056
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2044552.0,
+        "ci95_t_low": 2044552.0,
+        "mean": 2044552.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 896824.0,
+        "ci95_t_low": 896824.0,
+        "mean": 896824.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_head_32_sliced_initialization",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 895544.0,
+        "ci95_t_low": 895544.0,
+        "mean": 895544.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.8820841746004278,
+        "ci95_t_low": 0.8053790254049402,
+        "mean": 0.843731600002684,
+        "n": 10,
+        "sd_root": 0.05361692743606826
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7165760.0,
+        "ci95_t_low": 7165760.0,
+        "mean": 7165760.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 10.551582043975467,
+        "ci95_t_low": 9.87381884802455,
+        "mean": 10.212700446000008,
+        "n": 10,
+        "sd_root": 0.47375672268786634
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2044552.0,
+        "ci95_t_low": 2044552.0,
+        "mean": 2044552.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_head_32_sliced_initialization",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 316296.0,
+        "ci95_t_low": 316296.0,
+        "mean": 316296.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.144111725816957,
+        "ci95_t_low": 9.123159674101215,
+        "mean": 9.133635699959086,
+        "n": 10,
+        "sd_root": 0.014645491838060794
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7165760.0,
+        "ci95_t_low": 7165760.0,
+        "mean": 7165760.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 10.551582043975467,
+        "ci95_t_low": 9.87381884802455,
+        "mean": 10.212700446000008,
+        "n": 10,
+        "sd_root": 0.47375672268786634
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2044552.0,
+        "ci95_t_low": 2044552.0,
+        "mean": 2044552.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 896824.0,
+        "ci95_t_low": 896824.0,
+        "mean": 896824.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_head_direct_gap_logits",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 868308.0,
+        "ci95_t_low": 868308.0,
+        "mean": 868308.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.8211162105659692,
+        "ci95_t_low": 0.7697058895495051,
+        "mean": 0.7954110500577372,
+        "n": 10,
+        "sd_root": 0.035935833256509606
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7158912.0,
+        "ci95_t_low": 7158912.0,
+        "mean": 7158912.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 10.609330315026812,
+        "ci95_t_low": 9.797718416373216,
+        "mean": 10.203524365700014,
+        "n": 10,
+        "sd_root": 0.5673170149953819
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 996080.0,
+        "ci95_t_low": 996080.0,
+        "mean": 996080.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_head_direct_gap_logits",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 309472.0,
+        "ci95_t_low": 309472.0,
+        "mean": 309472.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.139581038572448,
+        "ci95_t_low": 9.119035461470542,
+        "mean": 9.129308250021495,
+        "n": 10,
+        "sd_root": 0.014361365933824527
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7158912.0,
+        "ci95_t_low": 7158912.0,
+        "mean": 7158912.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 10.609330315026812,
+        "ci95_t_low": 9.797718416373216,
+        "mean": 10.203524365700014,
+        "n": 10,
+        "sd_root": 0.5673170149953819
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 996080.0,
+        "ci95_t_low": 996080.0,
+        "mean": 996080.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 896824.0,
+        "ci95_t_low": 896824.0,
+        "mean": 896824.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_magnitude_prune_50",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 931500.0,
+        "ci95_t_low": 931500.0,
+        "mean": 931500.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.8910872439589387,
+        "ci95_t_low": 0.8271320559781795,
+        "mean": 0.8591096499685591,
+        "n": 10,
+        "sd_root": 0.04470469986813086
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 20.198421356159184,
+        "ci95_t_low": 18.775580661241012,
+        "mean": 19.487001008700098,
+        "n": 10,
+        "sd_root": 0.9945661678864235
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2111296.0,
+        "ci95_t_low": 2111296.0,
+        "mean": 2111296.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_magnitude_prune_50",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 327072.0,
+        "ci95_t_low": 327072.0,
+        "mean": 327072.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.030846676597493,
+        "ci95_t_low": 8.914903923431494,
+        "mean": 8.972875300014493,
+        "n": 10,
+        "sd_root": 0.08104402701044647
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 20.198421356159184,
+        "ci95_t_low": 18.775580661241012,
+        "mean": 19.487001008700098,
+        "n": 10,
+        "sd_root": 0.9945661678864235
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2111296.0,
+        "ci95_t_low": 2111296.0,
+        "mean": 2111296.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 896824.0,
+        "ci95_t_low": 896824.0,
+        "mean": 896824.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_magnitude_prune_75",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 931500.0,
+        "ci95_t_low": 931500.0,
+        "mean": 931500.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.8413806108573525,
+        "ci95_t_low": 0.7893518891951927,
+        "mean": 0.8153662500262726,
+        "n": 10,
+        "sd_root": 0.0363680955347848
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 17.579283721874855,
+        "ci95_t_low": 14.835526674525173,
+        "mean": 16.207405198200014,
+        "n": 10,
+        "sd_root": 1.9178871829715867
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2111296.0,
+        "ci95_t_low": 2111296.0,
+        "mean": 2111296.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_magnitude_prune_75",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 327072.0,
+        "ci95_t_low": 327072.0,
+        "mean": 327072.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.213748229121595,
+        "ci95_t_low": 8.902232470591368,
+        "mean": 9.057990349856482,
+        "n": 10,
+        "sd_root": 0.21774962952929733
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 17.579283721874855,
+        "ci95_t_low": 14.835526674525173,
+        "mean": 16.207405198200014,
+        "n": 10,
+        "sd_root": 1.9178871829715867
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2111296.0,
+        "ci95_t_low": 2111296.0,
+        "mean": 2111296.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 765240.0,
+        "ci95_t_low": 765240.0,
+        "mean": 765240.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_physical_channel_keep_50",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 764812.0,
+        "ci95_t_low": 764812.0,
+        "mean": 764812.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.8377467202233996,
+        "ci95_t_low": 0.7655382797789306,
+        "mean": 0.8016425000011651,
+        "n": 10,
+        "sd_root": 0.05047372636895294
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 6871040.0,
+        "ci95_t_low": 6871040.0,
+        "mean": 6871040.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 9.652069884421282,
+        "ci95_t_low": 9.117089379978728,
+        "mean": 9.384579632200005,
+        "n": 10,
+        "sd_root": 0.3739515689266788
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 1778008.0,
+        "ci95_t_low": 1778008.0,
+        "mean": 1778008.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_physical_channel_keep_50",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 280248.0,
+        "ci95_t_low": 280248.0,
+        "mean": 280248.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 8.850134323005705,
+        "ci95_t_low": 8.521750376984699,
+        "mean": 8.685942349995202,
+        "n": 10,
+        "sd_root": 0.22954049877545554
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 6871040.0,
+        "ci95_t_low": 6871040.0,
+        "mean": 6871040.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 9.652069884421282,
+        "ci95_t_low": 9.117089379978728,
+        "mean": 9.384579632200005,
+        "n": 10,
+        "sd_root": 0.3739515689266788
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 1778008.0,
+        "ci95_t_low": 1778008.0,
+        "mean": 1778008.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 1780576.0,
+        "ci95_t_low": 1780576.0,
+        "mean": 1780576.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_qat",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 1871528.0,
+        "ci95_t_low": 1871528.0,
+        "mean": 1871528.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 5.265450524856586,
+        "ci95_t_low": 5.186182975186004,
+        "mean": 5.225816750021295,
+        "n": 10,
+        "sd_root": 0.055408046308481
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 23.248672229231595,
+        "ci95_t_low": 22.20726078136839,
+        "mean": 22.727966505299992,
+        "n": 10,
+        "sd_root": 0.72794698422224
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2462792.0,
+        "ci95_t_low": 2462792.0,
+        "mean": 2462792.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_qat",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 327072.0,
+        "ci95_t_low": 327072.0,
+        "mean": 327072.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.123829679576415,
+        "ci95_t_low": 8.909801420470972,
+        "mean": 9.016815550023694,
+        "n": 10,
+        "sd_root": 0.14960583165646962
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 23.248672229231595,
+        "ci95_t_low": 22.20726078136839,
+        "mean": 22.727966505299992,
+        "n": 10,
+        "sd_root": 0.72794698422224
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2462792.0,
+        "ci95_t_low": 2462792.0,
+        "mean": 2462792.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 896824.0,
+        "ci95_t_low": 896824.0,
+        "mean": 896824.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_structured_prune_2of4",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 931500.0,
+        "ci95_t_low": 931500.0,
+        "mean": 931500.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.853642666003271,
+        "ci95_t_low": 0.7833785338913906,
+        "mean": 0.8185105999473308,
+        "n": 10,
+        "sd_root": 0.04911465413097244
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 14.528660053006274,
+        "ci95_t_low": 13.982405207193484,
+        "mean": 14.255532630099879,
+        "n": 10,
+        "sd_root": 0.38183233768180974
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2111296.0,
+        "ci95_t_low": 2111296.0,
+        "mean": 2111296.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 75280.0,
+        "ci95_t_low": 75280.0,
+        "mean": 75280.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "large_structured_prune_2of4",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 327072.0,
+        "ci95_t_low": 327072.0,
+        "mean": 327072.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 9.292760241225091,
+        "ci95_t_low": 8.971173658700087,
+        "mean": 9.131966949962589,
+        "n": 10,
+        "sd_root": 0.22478913919732796
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 7174144.0,
+        "ci95_t_low": 7174144.0,
+        "mean": 7174144.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 14.528660053006274,
+        "ci95_t_low": 13.982405207193484,
+        "mean": 14.255532630099879,
+        "n": 10,
+        "sd_root": 0.38183233768180974
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 2111296.0,
+        "ci95_t_low": 2111296.0,
+        "mean": 2111296.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 189232.0,
+        "ci95_t_low": 189232.0,
+        "mean": 189232.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "small_a010_dense_equal_finetune",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 197608.0,
+        "ci95_t_low": 197608.0,
+        "mean": 197608.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.4327897774305131,
+        "ci95_t_low": 0.4126063224544521,
+        "mean": 0.4226980499424826,
+        "n": 10,
+        "sd_root": 0.014108242434971722
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 1329327.0,
+        "ci95_t_low": 1329327.0,
+        "mean": 1329327.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 8.163609993923977,
+        "ci95_t_low": 7.561678936876003,
+        "mean": 7.86264446539999,
+        "n": 10,
+        "sd_root": 0.42075002976665543
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 603512.0,
+        "ci95_t_low": 603512.0,
+        "mean": 603512.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 37296.0,
+        "ci95_t_low": 37296.0,
+        "mean": 37296.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "small_a010_dense_equal_finetune",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 99064.0,
+        "ci95_t_low": 99064.0,
+        "mean": 99064.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 2.4803175637932178,
+        "ci95_t_low": 2.4256558363343323,
+        "mean": 2.452986700063775,
+        "n": 10,
+        "sd_root": 0.038208567552927813
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 1329327.0,
+        "ci95_t_low": 1329327.0,
+        "mean": 1329327.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 8.163609993923977,
+        "ci95_t_low": 7.561678936876003,
+        "mean": 7.86264446539999,
+        "n": 10,
+        "sd_root": 0.42075002976665543
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 603512.0,
+        "ci95_t_low": 603512.0,
+        "mean": 603512.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 189232.0,
+        "ci95_t_low": 189232.0,
+        "mean": 189232.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "small_a010_distilled",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 197608.0,
+        "ci95_t_low": 197608.0,
+        "mean": 197608.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 0.4167456825631981,
+        "ci95_t_low": 0.3778041174849185,
+        "mean": 0.3972749000240583,
+        "n": 10,
+        "sd_root": 0.027220168280069994
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 1329327.0,
+        "ci95_t_low": 1329327.0,
+        "mean": 1329327.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 14.19226594491592,
+        "ci95_t_low": 13.63773203108422,
+        "mean": 13.91499898800007,
+        "n": 10,
+        "sd_root": 0.38761940926519023
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 603512.0,
+        "ci95_t_low": 603512.0,
+        "mean": 603512.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 37296.0,
+        "ci95_t_low": 37296.0,
+        "mean": 37296.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "small_a010_distilled",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 99064.0,
+        "ci95_t_low": 99064.0,
+        "mean": 99064.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 2.465801560703346,
+        "ci95_t_low": 2.463264239457624,
+        "mean": 2.464532900080485,
+        "n": 10,
+        "sd_root": 0.0017735884818778735
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 1329327.0,
+        "ci95_t_low": 1329327.0,
+        "mean": 1329327.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 14.19226594491592,
+        "ci95_t_low": 13.63773203108422,
+        "mean": 13.91499898800007,
+        "n": 10,
+        "sd_root": 0.38761940926519023
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 603512.0,
+        "ci95_t_low": 603512.0,
+        "mean": 603512.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 3215960.0,
+        "ci95_t_low": 3215960.0,
+        "mean": 3215960.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "small_a050_dense_equal_finetune",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 3411732.0,
+        "ci95_t_low": 3411732.0,
+        "mean": 3411732.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "float32",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 1.7534505163166985,
+        "ci95_t_low": 1.5810835837373445,
+        "mean": 1.6672670500270215,
+        "n": 10,
+        "sd_root": 0.1204845491263131
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 26734208.0,
+        "ci95_t_low": 26734208.0,
+        "mean": 26734208.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 13.527569744880765,
+        "ci95_t_low": 12.56166758171915,
+        "mean": 13.044618663299957,
+        "n": 10,
+        "sd_root": 0.6751659665062532
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 7128976.0,
+        "ci95_t_low": 7128976.0,
+        "mean": 7128976.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    },
+    {
+      "activation_peak_bytes_estimate_mean": {
+        "ci95_t_high": 150560.0,
+        "ci95_t_low": 150560.0,
+        "mean": 150560.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "arm_id": "small_a050_dense_equal_finetune",
+      "family": "optimization",
+      "file_bytes_mean": {
+        "ci95_t_high": 1024360.0,
+        "ci95_t_low": 1024360.0,
+        "mean": 1024360.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "format": "full_int8_ptq_train_only_rep",
+      "host_inference_pass": 10,
+      "host_latency_p50_ms_mean": {
+        "ci95_t_high": 30.184385899631646,
+        "ci95_t_low": 29.946478500405252,
+        "mean": 30.06543220001845,
+        "n": 10,
+        "sd_root": 0.16629735936392245
+      },
+      "roots": 10,
+      "tflite_macs_mean": {
+        "ci95_t_high": 26734208.0,
+        "ci95_t_low": 26734208.0,
+        "mean": 26734208.0,
+        "n": 10,
+        "sd_root": 0.0
+      },
+      "training_seconds_mean": {
+        "ci95_t_high": 13.527569744880765,
+        "ci95_t_low": 12.56166758171915,
+        "mean": 13.044618663299957,
+        "n": 10,
+        "sd_root": 0.6751659665062532
+      },
+      "weights_artifact_bytes_mean": {
+        "ci95_t_high": 7128976.0,
+        "ci95_t_low": 7128976.0,
+        "mean": 7128976.0,
+        "n": 10,
+        "sd_root": 0.0
+      }
+    }
+  ],
+  "schema": "job-e-export-format-summary-1",
+  "size_interpretation": "TFLite FlatBuffer file bytes are the exported distribution size; weights_artifact_bytes records the training checkpoint artifact separately.",
+  "status": "complete_verified"
+}

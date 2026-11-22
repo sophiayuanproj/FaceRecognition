@@ -1,0 +1,12 @@
+{
+  "campaign_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/TRAINING_CAMPAIGN.json",
+  "completed_olivetti_roots": 40,
+  "completed_survface_roots": 80,
+  "last_arm": "ol_mnv1_a025_scratch_40",
+  "last_root_seed": 20261110,
+  "pilot_roots": 10,
+  "search_candidate_count": 14,
+  "started_utc": "2026-10-29T20:05:44+00:00",
+  "status": "training_complete",
+  "updated_utc": "2026-10-29T22:03:01+00:00"
+}

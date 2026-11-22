@@ -1,0 +1,720 @@
+{
+  "acceptance_checks": [
+    {
+      "detail": "Four predeclared widths each have ten exported root receipts.",
+      "id": "capacity_matrix",
+      "status": "pass"
+    },
+    {
+      "detail": "All thirteen predeclared arms have ten roots and 75 updates per root.",
+      "id": "optimization_matrix",
+      "status": "pass"
+    },
+    {
+      "detail": "Every required format has a recorded success or explicit unsupported/failure outcome; every successful export passed host inference.",
+      "id": "format_outcomes",
+      "status": "pass"
+    },
+    {
+      "detail": "Successful exports include static TFLite activation peak estimates.",
+      "id": "activation_estimates",
+      "status": "pass"
+    },
+    {
+      "detail": "Ten physically narrowed graph roots retain their surgery verification receipts.",
+      "id": "physical_channel_surgery",
+      "status": "pass"
+    },
+    {
+      "detail": "Ten roots cluster supported Conv2D kernels to at most sixteen values and document all depthwise layers as unclustered.",
+      "id": "supported_weight_clustering",
+      "status": "pass"
+    },
+    {
+      "detail": "Ten independently seeded train-only representative pools were converted, inferenced, and separately calibrated.",
+      "id": "representative_pool_sensitivity",
+      "status": "pass"
+    },
+    {
+      "detail": "All enumerated model roots completed the declared development-only synthetic corruption curves.",
+      "id": "synthetic_robustness",
+      "status": "pass"
+    },
+    {
+      "detail": "Per-method, paired-difference, export-format, Pareto, and quality-versus-size outputs exist.",
+      "id": "analysis_outputs",
+      "status": "pass"
+    },
+    {
+      "detail": "No E root receipt reports final-role access.",
+      "id": "final_role_guard",
+      "status": "pass"
+    },
+    {
+      "detail": "Results are Mac host and static estimates only; actual Nicla arena, ROMFS, camera and energy feasibility remain H/device work.",
+      "id": "hardware_boundary",
+      "status": "pass"
+    }
+  ],
+  "analysis_summary": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/reports/E/E_ANALYSIS_SUMMARY.json",
+  "artifact_roots_manifest": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/E/FHI_ARTIFACT_ROOTS.json",
+  "batched_inference_equivalence_audit": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/E/robustness/BATCH_INFERENCE_EQUIVALENCE.json",
+  "board_or_energy_claimed": false,
+  "capacity_root_count": 40,
+  "capacity_selection": {
+    "candidates": {
+      "0.1": {
+        "all_roots_full_int8_host_inferred": true,
+        "alpha": 0.1,
+        "arm_id": "capacity_a010",
+        "means_and_root_uncertainty": {
+          "bytes": {
+            "ci95_t_high": 99064.0,
+            "ci95_t_low": 99064.0,
+            "mean": 99064.0,
+            "n": 10,
+            "sd_root": 0.0
+          },
+          "known_correct_acceptance": {
+            "ci95_t_high": 0.040128,
+            "ci95_t_low": -0.008127999999999996,
+            "mean": 0.016,
+            "n": 10,
+            "sd_root": 0.03373096170846271
+          },
+          "known_identification": {
+            "ci95_t_high": 0.38566982792633914,
+            "ci95_t_low": 0.3103301720736608,
+            "mean": 0.348,
+            "n": 10,
+            "sd_root": 0.05266244708835069
+          },
+          "parameters": {
+            "ci95_t_high": 46809.0,
+            "ci95_t_low": 46809.0,
+            "mean": 46809.0,
+            "n": 10,
+            "sd_root": 0.0
+          },
+          "unknown_fpir": {
+            "ci95_t_high": 0.03127834518403312,
+            "ci95_t_low": -0.005278345184033119,
+            "mean": 0.013000000000000001,
+            "n": 10,
+            "sd_root": 0.025553139982455446
+          },
+          "utility": {
+            "ci95_t_high": 0.5070193280690074,
+            "ci95_t_low": 0.49598067193099254,
+            "mean": 0.5015,
+            "n": 10,
+            "sd_root": 0.0077160246913185095
+          }
+        },
+        "metrics_by_root": [
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.31999999999999995,
+            "parameters": 46809,
+            "seed": 20261101,
+            "threshold": 0.3814039927637004,
+            "unknown_fpir": 0.0033333333333333335,
+            "utility": 0.49833333333333335
+          },
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.38,
+            "parameters": 46809,
+            "seed": 20261102,
+            "threshold": 0.6914413627842951,
+            "unknown_fpir": 0.0033333333333333335,
+            "utility": 0.49833333333333335
+          },
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.32,
+            "parameters": 46809,
+            "seed": 20261103,
+            "threshold": 0.6815625107797834,
+            "unknown_fpir": 0.0,
+            "utility": 0.5
+          },
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.08,
+            "known_identification": 0.33999999999999997,
+            "parameters": 46809,
+            "seed": 20261104,
+            "threshold": 0.5194732234732325,
+            "unknown_fpir": 0.08,
+            "utility": 0.5
+          },
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.25999999999999995,
+            "parameters": 46809,
+            "seed": 20261105,
+            "threshold": 0.6089252587031471,
+            "unknown_fpir": 0.0033333333333333335,
+            "utility": 0.49833333333333335
+          },
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.33999999999999997,
+            "parameters": 46809,
+            "seed": 20261106,
+            "threshold": 0.6228451297608134,
+            "unknown_fpir": 0.0033333333333333335,
+            "utility": 0.49833333333333335
+          },
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.08,
+            "known_identification": 0.33999999999999997,
+            "parameters": 46809,
+            "seed": 20261107,
+            "threshold": 0.27427417584075714,
+            "unknown_fpir": 0.03333333333333333,
+            "utility": 0.5233333333333333
+          },
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.42000000000000004,
+            "parameters": 46809,
+            "seed": 20261108,
+            "threshold": 0.6711807808921685,
+            "unknown_fpir": 0.0,
+            "utility": 0.5
+          },
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.32,
+            "parameters": 46809,
+            "seed": 20261109,
+            "threshold": 0.8327961415180211,
+            "unknown_fpir": 0.0,
+            "utility": 0.5
+          },
+          {
+            "bytes": 99064,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.44000000000000006,
+            "parameters": 46809,
+            "seed": 20261110,
+            "threshold": 0.6975224807111774,
+            "unknown_fpir": 0.0033333333333333335,
+            "utility": 0.49833333333333335
+          }
+        ],
+        "successful_full_int8_roots": 10
+      },
+      "0.25": {
+        "all_roots_full_int8_host_inferred": true,
+        "alpha": 0.25,
+        "arm_id": "capacity_a025",
+        "means_and_root_uncertainty": {
+          "bytes": {
+            "ci95_t_high": 327072.0,
+            "ci95_t_low": 327072.0,
+            "mean": 327072.0,
+            "n": 10,
+            "sd_root": 0.0
+          },
+          "known_correct_acceptance": {
+            "ci95_t_high": 0.06611932617813868,
+            "ci95_t_low": 0.013880673821861336,
+            "mean": 0.04000000000000001,
+            "n": 10,
+            "sd_root": 0.03651483716701108
+          },
+          "known_identification": {
+            "ci95_t_high": 0.4479729189872106,
+            "ci95_t_low": 0.34002708101278933,
+            "mean": 0.39399999999999996,
+            "n": 10,
+            "sd_root": 0.07545418035691154
+          },
+          "parameters": {
+            "ci95_t_high": 235238.0,
+            "ci95_t_low": 235238.0,
+            "mean": 235238.0,
+            "n": 10,
+            "sd_root": 0.0
+          },
+          "unknown_fpir": {
+            "ci95_t_high": 0.051841038622803134,
+            "ci95_t_low": 0.01549229471053019,
+            "mean": 0.033666666666666664,
+            "n": 10,
+            "sd_root": 0.025407785333546005
+          },
+          "utility": {
+            "ci95_t_high": 0.5185929858106924,
+            "ci95_t_low": 0.48774034752264095,
+            "mean": 0.5031666666666667,
+            "n": 10,
+            "sd_root": 0.021566005485313983
+          }
+        },
+        "metrics_by_root": [
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.08,
+            "known_identification": 0.42000000000000004,
+            "parameters": 235238,
+            "seed": 20261101,
+            "threshold": 0.505630741905405,
+            "unknown_fpir": 0.02,
+            "utility": 0.53
+          },
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.04,
+            "known_identification": 0.5599999999999999,
+            "parameters": 235238,
+            "seed": 20261102,
+            "threshold": 0.5149564403915625,
+            "unknown_fpir": 0.056666666666666664,
+            "utility": 0.4916666666666667
+          },
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.36,
+            "parameters": 235238,
+            "seed": 20261103,
+            "threshold": 0.8672068081777144,
+            "unknown_fpir": 0.0,
+            "utility": 0.5
+          },
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.08,
+            "known_identification": 0.3,
+            "parameters": 235238,
+            "seed": 20261104,
+            "threshold": 0.7197779059754436,
+            "unknown_fpir": 0.043333333333333335,
+            "utility": 0.5183333333333333
+          },
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.02,
+            "known_identification": 0.34,
+            "parameters": 235238,
+            "seed": 20261105,
+            "threshold": 0.455265924269626,
+            "unknown_fpir": 0.016666666666666666,
+            "utility": 0.5016666666666666
+          },
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.4,
+            "parameters": 235238,
+            "seed": 20261106,
+            "threshold": 0.5918534508384113,
+            "unknown_fpir": 0.06,
+            "utility": 0.47
+          },
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.0,
+            "known_identification": 0.38,
+            "parameters": 235238,
+            "seed": 20261107,
+            "threshold": 0.5532542567305786,
+            "unknown_fpir": 0.0033333333333333335,
+            "utility": 0.49833333333333335
+          },
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.08,
+            "known_identification": 0.4600000000000001,
+            "parameters": 235238,
+            "seed": 20261108,
+            "threshold": 0.5661366072900662,
+            "unknown_fpir": 0.023333333333333334,
+            "utility": 0.5283333333333333
+          },
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.02,
+            "known_identification": 0.31999999999999995,
+            "parameters": 235238,
+            "seed": 20261109,
+            "threshold": 0.5341143095617916,
+            "unknown_fpir": 0.07666666666666666,
+            "utility": 0.4716666666666667
+          },
+          {
+            "bytes": 327072,
+            "known_correct_acceptance": 0.08,
+            "known_identification": 0.4,
+            "parameters": 235238,
+            "seed": 20261110,
+            "threshold": 0.40731849156839384,
+            "unknown_fpir": 0.03666666666666667,
+            "utility": 0.5216666666666667
+          }
+        ],
+        "successful_full_int8_roots": 10
+      },
+      "0.5": {
+        "all_roots_full_int8_host_inferred": true,
+        "alpha": 0.5,
+        "arm_id": "capacity_a050",
+        "means_and_root_uncertainty": {
+          "bytes": {
+            "ci95_t_high": 1024360.0,
+            "ci95_t_low": 1024360.0,
+            "mean": 1024360.0,
+            "n": 10,
+            "sd_root": 0.0
+          },
+          "known_correct_acceptance": {
+            "ci95_t_high": 0.19277055975866225,
+            "ci95_t_low": 0.11522944024133776,
+            "mean": 0.154,
+            "n": 10,
+            "sd_root": 0.05420127099780759
+          },
+          "known_identification": {
+            "ci95_t_high": 0.6152877434847326,
+            "ci95_t_low": 0.5287122565152675,
+            "mean": 0.5720000000000001,
+            "n": 10,
+            "sd_root": 0.06051629716218783
+          },
+          "parameters": {
+            "ci95_t_high": 862470.0,
+            "ci95_t_low": 862470.0,
+            "mean": 862470.0,
+            "n": 10,
+            "sd_root": 0.0
+          },
+          "unknown_fpir": {
+            "ci95_t_high": 0.06863932069015495,
+            "ci95_t_low": 0.04136067930984506,
+            "mean": 0.05500000000000001,
+            "n": 10,
+            "sd_root": 0.019067780335256128
+          },
+          "utility": {
+            "ci95_t_high": 0.5685918232904967,
+            "ci95_t_low": 0.5304081767095032,
+            "mean": 0.5495,
+            "n": 10,
+            "sd_root": 0.02669038297233437
+          }
+        },
+        "metrics_by_root": [
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.12,
+            "known_identification": 0.52,
+            "parameters": 862470,
+            "seed": 20261101,
+            "threshold": 0.85061124062542,
+            "unknown_fpir": 0.043333333333333335,
+            "utility": 0.5383333333333333
+          },
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.18,
+            "known_identification": 0.6,
+            "parameters": 862470,
+            "seed": 20261102,
+            "threshold": 0.8992581431808628,
+            "unknown_fpir": 0.03,
+            "utility": 0.575
+          },
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.1,
+            "known_identification": 0.62,
+            "parameters": 862470,
+            "seed": 20261103,
+            "threshold": 0.7222567882941963,
+            "unknown_fpir": 0.08,
+            "utility": 0.51
+          },
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.16,
+            "known_identification": 0.58,
+            "parameters": 862470,
+            "seed": 20261104,
+            "threshold": 0.8362625980498578,
+            "unknown_fpir": 0.06333333333333334,
+            "utility": 0.5483333333333333
+          },
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.13999999999999999,
+            "known_identification": 0.52,
+            "parameters": 862470,
+            "seed": 20261105,
+            "threshold": 0.7593125100810167,
+            "unknown_fpir": 0.07,
+            "utility": 0.535
+          },
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.22000000000000003,
+            "known_identification": 0.54,
+            "parameters": 862470,
+            "seed": 20261106,
+            "threshold": 0.7248166764029969,
+            "unknown_fpir": 0.08,
+            "utility": 0.5700000000000001
+          },
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.14,
+            "known_identification": 0.45999999999999996,
+            "parameters": 862470,
+            "seed": 20261107,
+            "threshold": 0.8362818829160856,
+            "unknown_fpir": 0.06,
+            "utility": 0.54
+          },
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.18,
+            "known_identification": 0.62,
+            "parameters": 862470,
+            "seed": 20261108,
+            "threshold": 0.8110658512799036,
+            "unknown_fpir": 0.043333333333333335,
+            "utility": 0.5683333333333334
+          },
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.06000000000000001,
+            "known_identification": 0.66,
+            "parameters": 862470,
+            "seed": 20261109,
+            "threshold": 0.8170421731156863,
+            "unknown_fpir": 0.02666666666666667,
+            "utility": 0.5166666666666667
+          },
+          {
+            "bytes": 1024360,
+            "known_correct_acceptance": 0.24000000000000005,
+            "known_identification": 0.6,
+            "parameters": 862470,
+            "seed": 20261110,
+            "threshold": 0.7785821329960078,
+            "unknown_fpir": 0.05333333333333334,
+            "utility": 0.5933333333333334
+          }
+        ],
+        "successful_full_int8_roots": 10
+      },
+      "0.75": {
+        "all_roots_full_int8_host_inferred": true,
+        "alpha": 0.75,
+        "arm_id": "capacity_a075",
+        "means_and_root_uncertainty": {
+          "bytes": {
+            "ci95_t_high": 2109704.0,
+            "ci95_t_low": 2109704.0,
+            "mean": 2109704.0,
+            "n": 10,
+            "sd_root": 0.0
+          },
+          "known_correct_acceptance": {
+            "ci95_t_high": 0.25303862466871163,
+            "ci95_t_low": 0.1869613753312884,
+            "mean": 0.22000000000000003,
+            "n": 10,
+            "sd_root": 0.046188021535170064
+          },
+          "known_identification": {
+            "ci95_t_high": 0.6614712012682822,
+            "ci95_t_low": 0.558528798731718,
+            "mean": 0.6100000000000001,
+            "n": 10,
+            "sd_root": 0.07195677714974301
+          },
+          "parameters": {
+            "ci95_t_high": 1882150.0,
+            "ci95_t_low": 1882150.0,
+            "mean": 1882150.0,
+            "n": 10,
+            "sd_root": 0.0
+          },
+          "unknown_fpir": {
+            "ci95_t_high": 0.08684029374748777,
+            "ci95_t_low": 0.0524930395858456,
+            "mean": 0.06966666666666668,
+            "n": 10,
+            "sd_root": 0.024008743263370113
+          },
+          "utility": {
+            "ci95_t_high": 0.586676663196254,
+            "ci95_t_low": 0.5636566701370794,
+            "mean": 0.5751666666666667,
+            "n": 10,
+            "sd_root": 0.016090983595990024
+          }
+        },
+        "metrics_by_root": [
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.22000000000000003,
+            "known_identification": 0.58,
+            "parameters": 1882150,
+            "seed": 20261101,
+            "threshold": 0.8292376228920149,
+            "unknown_fpir": 0.08666666666666667,
+            "utility": 0.5666666666666667
+          },
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.18,
+            "known_identification": 0.6200000000000001,
+            "parameters": 1882150,
+            "seed": 20261102,
+            "threshold": 0.8540289944234583,
+            "unknown_fpir": 0.06333333333333334,
+            "utility": 0.5583333333333333
+          },
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.2,
+            "known_identification": 0.68,
+            "parameters": 1882150,
+            "seed": 20261103,
+            "threshold": 0.678884644338204,
+            "unknown_fpir": 0.07,
+            "utility": 0.5650000000000001
+          },
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.21999999999999997,
+            "known_identification": 0.48,
+            "parameters": 1882150,
+            "seed": 20261104,
+            "threshold": 0.7783024784001669,
+            "unknown_fpir": 0.04666666666666667,
+            "utility": 0.5866666666666667
+          },
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.26,
+            "known_identification": 0.64,
+            "parameters": 1882150,
+            "seed": 20261105,
+            "threshold": 0.7245549635716563,
+            "unknown_fpir": 0.11,
+            "utility": 0.575
+          },
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.16,
+            "known_identification": 0.52,
+            "parameters": 1882150,
+            "seed": 20261106,
+            "threshold": 0.8174658457037751,
+            "unknown_fpir": 0.02666666666666667,
+            "utility": 0.5666666666666667
+          },
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.18,
+            "known_identification": 0.64,
+            "parameters": 1882150,
+            "seed": 20261107,
+            "threshold": 0.875497937265923,
+            "unknown_fpir": 0.06,
+            "utility": 0.5599999999999999
+          },
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.28,
+            "known_identification": 0.72,
+            "parameters": 1882150,
+            "seed": 20261108,
+            "threshold": 0.8277482043167,
+            "unknown_fpir": 0.08,
+            "utility": 0.6000000000000001
+          },
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.3,
+            "known_identification": 0.58,
+            "parameters": 1882150,
+            "seed": 20261109,
+            "threshold": 0.8916633826282789,
+            "unknown_fpir": 0.09333333333333334,
+            "utility": 0.6033333333333333
+          },
+          {
+            "bytes": 2109704,
+            "known_correct_acceptance": 0.2,
+            "known_identification": 0.6399999999999999,
+            "parameters": 1882150,
+            "seed": 20261110,
+            "threshold": 0.6738678165179427,
+            "unknown_fpir": 0.06,
+            "utility": 0.57
+          }
+        ],
+        "successful_full_int8_roots": 10
+      }
+    },
+    "final_role_accessed": false,
+    "finished_utc": "2026-10-30T08:37:48Z",
+    "predeclaration_sha256": "732d98f9ab2ec449b407a6ba38c67aa578bf25f91c4699bbe598523e4b02b0e1",
+    "quality_gate_met": true,
+    "rule": "Using threshold-fitted model-specific full-INT8 outputs on development only, among alpha 0.25, 0.50, 0.75 choose the arm with the highest mean development macro utility subject to mean development unknown FPIR <= 0.05 and mean known correct-acceptance > alpha 0.10; tie-break by lower parameter count. If none qualifies, use the highest-width capacity whose PTQ conversion pilot succeeds and report that no arm meets the quality gate. No final-role access.",
+    "schema": "job-e-development-capacity-selection-1",
+    "selected_large_alpha": 0.25,
+    "selected_large_family": "capacity_a025",
+    "status": "complete_verified",
+    "teacher_usefulness_gate": {
+      "distillation_claim_eligible": false,
+      "teacher_alpha": 0.75,
+      "teacher_full_int8_host_inferred_roots": 10,
+      "teacher_mean_unknown_fpir_at_most_0_05": false,
+      "teacher_mean_utility_exceeds_small_a010": true
+    }
+  },
+  "capacity_selection_sha256": "b5ab5ac053bbdbd428c49e9375ced13bc812f555342d8f1815710b0451897ff8",
+  "documented_failures_or_unsupported": [],
+  "feasible_full_int8_host_root_count": 170,
+  "final_role_accessed": false,
+  "hardware_status": "pending_actual_Nicla_ROMFS_camera_and_energy_validation_by_H",
+  "job": "E",
+  "optimization_method_count": 13,
+  "optimization_root_count": 130,
+  "pilot_receipts": [
+    "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/E/pilot/PILOT_RESULT.json",
+    "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/E/pilot/PILOT_REPAIRED.json"
+  ],
+  "platform": "Mac",
+  "predeclaration_sha256": "732d98f9ab2ec449b407a6ba38c67aa578bf25f91c4699bbe598523e4b02b0e1",
+  "representative_pool_sensitivity": {
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/E/representative_pools/capacity_a025_seed-20261101/RESULT.json",
+    "pool_count": 10,
+    "status": "complete_verified"
+  },
+  "schema": "job-e-result-1",
+  "selected_capacity_alpha": 0.25,
+  "status": "complete_verified",
+  "synthetic_robustness": {
+    "model_count": 170,
+    "models_planned": 170,
+    "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/E/robustness/RESULT.json",
+    "status": "complete_verified"
+  }
+}

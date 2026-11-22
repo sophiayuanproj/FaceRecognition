@@ -1,0 +1,34 @@
+# P04 final readiness · November 12, 2026
+
+The project is ready to move to the final report and demonstration as **power-aware face detection on a wearable Nicla Vision**, the fallback specified in the [proposal](../../../proposal-final.md). Freeze R19 and use the ten-pair result. Reliable on-device recognition of enrolled people remains an open result. The demo can show face detection, cropping, execution of the small identity model, and one locally saved photo per detected encounter.
+
+## Results to report
+
+| Workload | Mean input power | Face episodes matched | Median episode start to first match |
+| --- | ---: | ---: | ---: |
+| Capture only | 608.72 mW | — | — |
+| Detector only | 670.17 mW | — | — |
+| Fixed small-model pipeline | 680.29 mW | 30/40 | 0.65 s |
+| Scene-gated small-model pipeline | 630.75 mW | 30/40 | 1.38 s |
+
+Across ten independently power-cycled starts with seeds 62001–62010, scene gating saved **49.54 mW (7.28%)** on the same 29-second workload. The paired 95% t interval was **46.97–52.12 mW saved**, and all ten differences favored scene gating. Both modes use the same configured capture interval and small model. Scene gating skips detector and downstream work while the scene is quiet and periodically checks again. Detector calls fell from 498 to 160, identity runs from 158 to 56, and quiet detections from four to one. Both modes matched the same three face segments in every block and missed the far-outdoor segment in every block. All 214 identity inferences completed, with acceptance of known people disabled. The latency median covers matched episodes only.
+
+The ten starts used distinct board boot IDs and meter runs. Fixed inference ran first in five accepted blocks. The raw replay reproduced all 40 windows within `4.0e-9 W` of the saved power estimates. The ledger accounts for 28 rejected attempts, including geometry, serial, and out-of-range meter readings. Powered USB resets are separate diagnostics. The interval describes repeatability on this setup with one meter, one board, and one repeated clip. There was no independent meter calibration or battery runtime measurement. Keep the bench power as the primary result. For energy, show the observed joules alongside the measured window durations, or multiply the mean power difference by a fixed 29 s and label the result as normalized energy (about 1.44 J saved).
+
+Use the [paired-power plot](r19-paired-power.svg), [paired points](r19-paired-power.csv), and [independent raw replay](RAW_POWER_REPLAY.json). The [verified Windows return](https://drive.google.com/file/d/1mtApN_bmOrwQbWZ9yQawIGyMUX0N02Ha/view?usp=drivesdk) includes the frozen criteria, accepted and excluded attempts, raw meter packets, frame-linkage and optical receipts, and replay code. Private camera JPEGs remain on the Windows partition.
+
+## Scope and gaps
+
+- **Wearable prototype.** R19 passed ten separated screen-portrait encounters on Mac, with no duplicate during a 40-second hold and no saved photo during eleven blank intervals. The photos were labeled Unknown. The saved results and JPEGs were linked by boot ID, frame ID, and hash. This verifies the capture workflow under those test conditions. [Mac R19 sightings QA](SIGHTINGS_QA_R19.md)
+- **Model work.** The report can include the ten-root compact INT8 model and compression comparison and the move from FOMO-centered crops to native face boxes. Separate the desktop experiments from board measurements. The earlier 14/15 alignment result was a desktop diagnostic on reused data. In the held-out SurvFace crop benchmark the small and large INT8 baselines correctly accepted only 3.5% and 4.6% of known crops, respectively. The exact pinned training archive is available locally. [Model results](../../project-finish-v4/handoffs/D/RESULT.md) · [Compression results](../../project-finish-v4/handoffs/E/RESULT.md)
+- **Adaptive policy.** The final power comparison isolates scene gating. Treat fixed-low scheduling, automatic sleep, and confidence-based model escalation as earlier design goals or exploratory work. The four measured workloads include two stage baselines and two full pipelines, so describe those actual arms in the report. Far distance and delay are measured failure modes. Earlier dim and glare diagnostics can be discussed separately with their sample sizes and setup limits.
+- **Software and packaging.** The Mac workspace now includes the verified Windows host and bench changes. The Mac loopback dashboard loaded with camera and sightings controls and hid the Windows-only meter panel. Control Center, host, study, JavaScript, and frame-evidence checks passed. The board was disconnected during this audit. The [R19 Windows setup archive](https://drive.google.com/file/d/1lL6g-M_Uu2pXYuwOxtsWD9gz8rTIUOmJ/view?usp=drivesdk) contains the embedded prompt and initial files. The Windows power panel source overlay is already applied in this handoff.
+- **Course handoff.** The public repository's [project-page source](https://github.com/sophiayuanproj/FaceRecognition/blob/main/docs/index.html) still shows the default placeholder. Use the [scope draft](FINAL_SCOPE_DRAFT.md) to update the project page before the November 19, 11:59 p.m. Pacific final-scope milestone. Include a response to the actual checkpoint feedback. Verify the published page and instructor access to reproducible code and evidence before submission. [Course instructions](https://docs.google.com/document/d/1D6bysu6PU7KH2viFB-xCWFxR_3ARWq3mPi4-Lv002kw/edit)
+
+## One remaining hardware rehearsal
+
+Use the Mac, the existing R19 board, its USB data cable, and your normal USB power bank. Keep the FNIRSI and Windows power setup out of this rehearsal.
+
+1. Start `sh FaceRecognition/bin/nicla-control-center --open-browser`. Plug the Nicla directly into the Mac, connect, and verify R19 against the install receipt. Present a clear face and then a blank scene. Verify the matched frame, face box, crop, and completed inference. Record a short **Video with inference** clip and review one linked frame and decision. Keep this as the demo fallback.
+2. Stop processing and record the current offline photo count. Select **Arm offline capture**. Move the Nicla's cable to the power bank. Give it a few seconds to boot, then show one clear, consented face or public portrait for at least five seconds, a blank scene for at least four seconds, and a second clear face or portrait for at least five seconds. Keep the two appearances separated even if the subject changes.
+3. Reconnect to the Mac, connect the dashboard, stop processing, and import the offline photos. Verify the two new photos by their boot/frame records and contents, then import again and confirm no duplicate. Disarm if the demo is finished. If battery operation fails, use the verified USB demo and report the battery limitation. The R19 power results still apply to the measured inline USB setup.

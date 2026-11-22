@@ -1,0 +1,240 @@
+{
+  "schema": "nicla-finite-experiment-plan-1",
+  "protocol_id": "nicla-five-known-study-v4",
+  "finite": true,
+  "matrix_policy": "Run listed arms; retain failed, unsupported and incomplete cells; do not drop arms after seeing results.",
+  "experiments": [
+    {
+      "id": "B_public_five_identity_roster",
+      "job": "B",
+      "phase": "B_mac",
+      "owner": "mac_data_owner",
+      "action": "B.select_public_roster",
+      "prerequisites": [
+        "A_mac"
+      ],
+      "status": "pending",
+      "evidence_tier": "host_public_development"
+    },
+    {
+      "id": "B_role_split_and_duplicate_audit",
+      "job": "B",
+      "phase": "B_mac",
+      "owner": "mac_data_owner",
+      "action": "B.freeze_role_manifests",
+      "prerequisites": [
+        "B_public_five_identity_roster"
+      ],
+      "status": "pending",
+      "evidence_tier": "host_public_development"
+    },
+    {
+      "id": "C_grayscale_scene_detector",
+      "job": "C",
+      "phase": "C_train_mac",
+      "owner": "mac_training_owner",
+      "action": "C.train_detector",
+      "prerequisites": [
+        "B_role_split_and_duplicate_audit",
+        "C_prep_mac"
+      ],
+      "status": "pending",
+      "evidence_tier": "host_public_development"
+    },
+    {
+      "id": "D_five_known_classifier_and_embedding_matrix",
+      "job": "D",
+      "phase": "D_train_mac",
+      "owner": "mac_training_owner",
+      "action": "D.train_identity_matrix",
+      "prerequisites": [
+        "B_role_split_and_duplicate_audit",
+        "D_prep_mac"
+      ],
+      "status": "pending",
+      "evidence_tier": "host_public_development"
+    },
+    {
+      "id": "E_complete_compression_and_capacity_matrix",
+      "job": "E",
+      "phase": "E_mac",
+      "owner": "mac_training_owner",
+      "action": "E.run_compression_matrix",
+      "prerequisites": [
+        "D_five_known_classifier_and_embedding_matrix"
+      ],
+      "status": "pending",
+      "evidence_tier": "host_public_development"
+    },
+    {
+      "id": "F_typed_firmware_and_controller",
+      "job": "F",
+      "phase": "F_prep_mac",
+      "owner": "mac_firmware_owner",
+      "action": "F.integrate_detector_identity_controller",
+      "prerequisites": [
+        "A_mac"
+      ],
+      "status": "pending",
+      "evidence_tier": "host_conversion"
+    },
+    {
+      "id": "G_windows_meter_qualification",
+      "job": "G",
+      "phase": "G_windows",
+      "owner": "windows_instrument_owner",
+      "action": "G.qualify_meter_physical_semantics",
+      "prerequisites": [
+        "W_setup_windows"
+      ],
+      "status": "pending",
+      "evidence_tier": "instrument_diagnostic"
+    },
+    {
+      "id": "H_nicla_resource_and_camera_qualification",
+      "job": "H",
+      "phase": "H_mac",
+      "owner": "nicla_board_owner",
+      "action": "H.qualify_actual_nicla",
+      "prerequisites": [
+        "F_finalize_mac"
+      ],
+      "status": "pending",
+      "evidence_tier": "device_qualification"
+    },
+    {
+      "id": "I_model_energy_comparison",
+      "job": "I",
+      "phase": "I_capture_windows",
+      "owner": "windows_instrument_owner",
+      "action": "I.capture_models",
+      "prerequisites": [
+        "G_windows",
+        "H_qualified_gate",
+        "W_outbound_mac"
+      ],
+      "status": "pending",
+      "evidence_tier": "qualified_relative_power"
+    },
+    {
+      "id": "J_adaptive_controller_pilot",
+      "job": "J",
+      "phase": "J_pilot_windows",
+      "owner": "windows_instrument_owner",
+      "action": "J.run_predeclared_pilot",
+      "prerequisites": [
+        "I_selection_windows",
+        "J_ready_mac"
+      ],
+      "status": "pending",
+      "evidence_tier": "qualified_relative_power"
+    },
+    {
+      "id": "K_final_system_comparison",
+      "job": "K",
+      "phase": "K_capture_windows",
+      "owner": "windows_instrument_owner",
+      "action": "K.capture_frozen_final_matrix",
+      "prerequisites": [
+        "J_freeze_windows",
+        "H_qualified_gate"
+      ],
+      "status": "pending",
+      "evidence_tier": "qualified_relative_power"
+    }
+  ],
+  "training_matrix": {
+    "paired_root_group": "training_roots",
+    "minimum_roots_per_randomized_arm": 10,
+    "identity_arms": [
+      {
+        "id": "mnv1_a010_scratch_classifier",
+        "output_contract": "classifier_logits-6"
+      },
+      {
+        "id": "mnv1_a010_transfer_classifier",
+        "output_contract": "classifier_logits-6"
+      },
+      {
+        "id": "mnv1_a025_scratch_classifier",
+        "output_contract": "classifier_logits-6"
+      },
+      {
+        "id": "mnv1_a025_transfer_classifier",
+        "output_contract": "classifier_logits-6"
+      },
+      {
+        "id": "mnv1_a010_embedding_gallery",
+        "output_contract": "embedding-64"
+      },
+      {
+        "id": "mnv1_a025_embedding_gallery",
+        "output_contract": "embedding-64"
+      },
+      {
+        "id": "custom_base_embedding_gallery",
+        "output_contract": "embedding-64"
+      }
+    ],
+    "open_set_controls": [
+      "six_output_OTHER_head",
+      "five_output_calibrated_reject",
+      "known_only_with_unknown_calibration"
+    ],
+    "note": "Verify pretrained source, hash, and license before transfer-learning arms. Scratch controls remain required."
+  },
+  "compression_matrix": {
+    "matched_parent_roots": "training_roots",
+    "arms": [
+      "float32_reference",
+      "fp16_weights",
+      "dynamic_range_int8",
+      "full_int8_ptq_train_only_representative",
+      "full_int8_qat",
+      "magnitude_50_percent",
+      "structured_2_of_4",
+      "physical_channel_slimming_with_equal_budget_dense_control"
+    ],
+    "requirements": [
+      "report bytes, parameters, and corrected MACs separately",
+      "retain unsupported formats with converter evidence",
+      "do not infer speed or energy from MAC count"
+    ]
+  },
+  "controller_matrix": {
+    "paired_physical_blocks": "physical_block_roots",
+    "order_streams": "physical_order_roots",
+    "minimum_independent_blocks_per_reported_contrast": 10,
+    "policies": [
+      "fixed_low_cadence",
+      "fixed_high_cadence",
+      "face_triggered",
+      "motion_plus_periodic",
+      "A_sense",
+      "A_model",
+      "A_full",
+      "G_2_of_3_confirmed"
+    ],
+    "contrasts": [
+      "camera_high_vs_low_cadence",
+      "face_gate_vs_uncapped_whole_frame",
+      "motion_plus_periodic_vs_face_only",
+      "small_vs_large_model_escalation",
+      "sleep_disabled_vs_physically_qualified_sleep_enabled"
+    ],
+    "conditions": [
+      "no_face_motion",
+      "person_enters_stationary_view",
+      "known_frontal_person",
+      "unseen_person",
+      "off_center_or_small_face",
+      "bright_indoor",
+      "low_light",
+      "walking_or_turning",
+      "brief_or_occluded",
+      "multiple_faces"
+    ],
+    "note": "Frames/inferences are nested within a started block; human identities and camera sessions are counted separately."
+  },
+  "status": "executable_finite_plan; adapter actions stay pending until verified"
+}

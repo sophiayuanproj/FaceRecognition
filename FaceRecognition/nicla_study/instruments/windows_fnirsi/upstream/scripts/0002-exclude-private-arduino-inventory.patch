@@ -1,0 +1,11 @@
+--- a/scripts/fnirsi_windows/package_results.py
++++ b/scripts/fnirsi_windows/package_results.py
+@@ -16,6 +16,8 @@
+            for part in parts):
+         return False
+     if path.name.casefold() == "hardware.lock":
++        return False
++    if path.name.casefold() == "inventory.yaml" and any(part.casefold() == "arduino-cli" for part in parts):
+         return False
+     if path.suffix.casefold() in (".pyc", ".pyo"):
+         return False

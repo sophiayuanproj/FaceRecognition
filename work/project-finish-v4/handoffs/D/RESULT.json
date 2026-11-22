@@ -1,0 +1,1268 @@
+{
+  "acceptance_checks": [
+    {
+      "detail": "Ten diagnostic seeded blocks completed conversion, gradient, shape and input checks; they are not counted as full training roots.",
+      "evidence": [
+        "work/project-finish-v4/runs/D/pilot/PILOT_RESULT.json"
+      ],
+      "id": "ten_block_startup_pilot",
+      "status": "pass"
+    },
+    {
+      "detail": "Both 96x96 grayscale MobileNetV1 widths use strictly loaded downloaded checkpoints with source hashes, architecture, layer removal and normalization recorded; per-root initialization is in the registry.",
+      "evidence": [
+        "work/project-finish-v4/reports/D/pretrained_reference_audit.json",
+        "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json"
+      ],
+      "id": "real_pretrained_mobilenet_baselines",
+      "status": "pass"
+    },
+    {
+      "detail": "All eight classifier arms completed ten roots each; width, pretrained/scratch, five-output/OE and six-output comparisons are present.",
+      "evidence": [
+        "work/project-finish-v4/runs/D/TRAINING_CAMPAIGN.json",
+        "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json"
+      ],
+      "id": "declared_ten_root_survface_matrix",
+      "status": "pass"
+    },
+    {
+      "detail": "Both widths, float/INT8 backends and quality/uniform selection were evaluated over ten roots; custom_base/custom_tiny historical controls and their 80 gallery results are registered.",
+      "evidence": [
+        "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json",
+        "work/project-finish-v4/handoffs/D/HISTORICAL_FINAL_SUMMARY.json"
+      ],
+      "id": "embedding_gallery_quality_uniform_and_historical",
+      "status": "pass"
+    },
+    {
+      "detail": "Selection/registries were frozen before final-role access; final evaluation has 100 known rows (20 each) and 300 unknown rows from 50 identity-disjoint people.",
+      "evidence": [
+        "work/project-finish-v4/reports/D/FINAL_ROLE_OPENED.json",
+        "work/project-finish-v4/handoffs/D/FINAL_SUMMARY.json"
+      ],
+      "id": "final_role_freeze_and_independent_unknowns",
+      "status": "pass"
+    },
+    {
+      "detail": "Real float and full-INT8 TFLite outputs were evaluated; model-specific thresholds were fit to permitted calibration roles and INT8 uses its own quantized scores.",
+      "evidence": [
+        "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json",
+        "work/project-finish-v4/handoffs/D/FINAL_SUMMARY.json"
+      ],
+      "id": "float_and_full_int8_inference_calibration",
+      "status": "pass"
+    },
+    {
+      "detail": "Known identification, correct acceptance, wrong-known, rejection, coverage, unknown FPIR/rejection, OTHER rate, open-set curves and bootstrap intervals are recorded at root level and summarized.",
+      "evidence": [
+        "work/project-finish-v4/handoffs/D/FINAL_SUMMARY.json",
+        "work/project-finish-v4/handoffs/D/RESULT.json"
+      ],
+      "id": "per_person_open_set_and_uncertainty_reporting",
+      "status": "pass"
+    },
+    {
+      "detail": "A fixed SFace host teacher and twenty student roots were evaluated with conditional correction/harm rates; provenance and board limits are stated.",
+      "evidence": [
+        "work/project-finish-v4/handoffs/D/TEACHER_FINAL_SUMMARY.json",
+        "work/project-finish-v4/reports/D/TEACHER_MODEL_REGISTRY_FROZEN.json"
+      ],
+      "id": "host_face_teacher_and_student_investigation",
+      "status": "pass"
+    },
+    {
+      "detail": "Forty Olivetti roots are reported as a separate 40-way closed-set sanity exercise with no open-set claim.",
+      "evidence": [
+        "work/project-finish-v4/handoffs/D/FINAL_SUMMARY.json"
+      ],
+      "id": "separate_olivetti_sanity",
+      "status": "pass"
+    },
+    {
+      "detail": "The practical usefulness goal is explicitly marked unmet; class imbalance, reject behavior, scratch underfit, selection sensitivity, SFace student behavior and crop quality findings are documented.",
+      "evidence": [
+        "work/project-finish-v4/handoffs/D/RESULT.md",
+        "work/project-finish-v4/reports/D/DEVELOPMENT_VISUAL_REVIEW/SUMMARY.json"
+      ],
+      "id": "quality_failure_investigated_and_visible",
+      "status": "pass"
+    },
+    {
+      "detail": "Full registry, typed contracts, route selection evidence, calibration/gallery receipts and representative float/full-INT8 exports are preserved for E.",
+      "evidence": [
+        "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json",
+        "work/project-finish-v4/handoffs/D/E_CANDIDATE_ROUTES.json",
+        "work/project-finish-v4/handoffs/D/D_candidate_models.zip"
+      ],
+      "id": "registry_and_candidate_handoff",
+      "status": "pass"
+    },
+    {
+      "detail": "Host crop-level artifacts are available; no Nicla observation, camera-pipeline accuracy, target arena/latency/power or board qualification is claimed.",
+      "evidence": [
+        "work/project-finish-v4/handoffs/D/FINAL_SUMMARY.json",
+        "work/project-finish-v4/RUN_STATE.json"
+      ],
+      "id": "deployment_and_hardware_claim_boundary",
+      "status": "pass"
+    },
+    {
+      "detail": "The handoff artifact manifest was regenerated and verified by size and SHA-256; user-facing deliverables have a separate output manifest.",
+      "evidence": [
+        "work/project-finish-v4/handoffs/D/ARTIFACT_MANIFEST.json"
+      ],
+      "id": "artifact_manifest_verification",
+      "status": "pass"
+    },
+    {
+      "detail": "The selected compact INT8 gallery route is paired against large float and INT8 classifier routes on the same ten final root seeds and images; post-hoc only, no reselection.",
+      "evidence": [
+        "work/project-finish-v4/handoffs/D/CANDIDATE_PAIRWISE_FINAL_ANALYSIS.json"
+      ],
+      "id": "actual_selected_large_compact_pairing",
+      "status": "pass"
+    },
+    {
+      "detail": "Hash-reverified development roles were used for confidence slices, embedding concentration, and a coarse central/periphery image ablation. The report states the limits of the proxy and does not claim shortcut absence.",
+      "evidence": [
+        "work/project-finish-v4/handoffs/D/DEVELOPMENT_FAILURE_DIAGNOSTICS.json"
+      ],
+      "id": "development_failure_mode_diagnostics",
+      "status": "pass"
+    },
+    {
+      "detail": "Fresh Mac USB/serial discovery found zero attached devices; the conditional Nicla arena probe was therefore unavailable.",
+      "evidence": [
+        "work/project-finish-v4/reports/D/FINAL_DEVICE_DISCOVERY.json"
+      ],
+      "id": "fresh_physical_probe_availability_check",
+      "status": "pass"
+    },
+    {
+      "detail": "Official model directory/readme and upstream issue were reviewed. The stated SFace directory license is recorded, while exact checkpoint corpus/authorization and Edge Impulse corpus/license remain explicitly unresolved; no upstream contact was made.",
+      "evidence": [
+        "work/project-finish-v4/reports/D/PRETRAINED_PROVENANCE_STATUS.json"
+      ],
+      "id": "official_pretrained_provenance_review",
+      "status": "pass"
+    }
+  ],
+  "additional_analyses": {
+    "candidate_pairwise_final": "work/project-finish-v4/handoffs/D/CANDIDATE_PAIRWISE_FINAL_ANALYSIS.json",
+    "development_failure_diagnostics": "work/project-finish-v4/handoffs/D/DEVELOPMENT_FAILURE_DIAGNOSTICS.json",
+    "fresh_device_discovery": "work/project-finish-v4/reports/D/FINAL_DEVICE_DISCOVERY.json",
+    "pretrained_provenance_status": "work/project-finish-v4/reports/D/PRETRAINED_PROVENANCE_STATUS.json"
+  },
+  "additional_analysis_summary": {
+    "development_classifier_full_crop": {
+      "known_correct_acceptance_macro": 0.28,
+      "known_identification_macro": 0.7200000000000001,
+      "known_wrong_known_macro": 0.0,
+      "unknown_fpir": 0.06333333333333334,
+      "unknown_predicted_other_rate": 0.4766666666666667
+    },
+    "development_embedding_geometry": {
+      "active_dimensions_variance_gt_1e_8": 40,
+      "cosine_different_known_identities": {
+        "mean": 0.83757166364789,
+        "median": 0.887320339679718,
+        "p05": 0.5095555543899536,
+        "p95": 0.9861453771591187,
+        "pair_count": 1000
+      },
+      "cosine_known_to_unknown": {
+        "mean": 0.7762492779761553,
+        "median": 0.8315110802650452,
+        "p05": 0.38895003497600555,
+        "p95": 0.9739559292793274,
+        "pair_count": 15000
+      },
+      "cosine_same_known_identity": {
+        "mean": 0.8720866958300273,
+        "median": 0.9240835905075073,
+        "p05": 0.586871349811554,
+        "p95": 0.9899682760238647,
+        "pair_count": 225
+      },
+      "cosine_same_unknown_identity": {
+        "mean": 0.8751395690441132,
+        "median": 0.9179362952709198,
+        "p05": 0.6091951072216034,
+        "p95": 0.9877575665712357,
+        "pair_count": 750
+      },
+      "dimension": 64,
+      "effective_covariance_rank": 3.1826133728027344,
+      "interpretation": "Strongly concentrated/weakly separated development representation; not a fully constant embedding, and not a population-generalization estimate.",
+      "norm_mean": 3.891263246536255,
+      "norm_sd": 0.5846806764602661,
+      "roles": "development and unknown_development only",
+      "route": "a010 transfer seed 20261110 float 64-D embedding; float graph used for feature geometry; selected compact route uses INT8 gallery",
+      "rows": 350
+    },
+    "development_unknown_confidence": {
+      "known_predicted_other_n": 0,
+      "known_predicted_other_rate": 0.0,
+      "max_max_known_probability_on_false_known_accepts": 0.9741941305017796,
+      "mean_max_known_probability_on_false_known_accepts": 0.7858172292998772,
+      "mean_p_other_on_known_predicted_other": null,
+      "mean_p_other_when_unknown_predicted_other": 0.6059911375001713,
+      "min_max_known_probability_on_false_known_accepts": 0.6818538932511653,
+      "threshold_for_known_acceptance": 0.6788156492652212,
+      "unknown_development_n": 300,
+      "unknown_false_known_accept_n": 19,
+      "unknown_false_known_accept_rate": 0.06333333333333334,
+      "unknown_predicted_other_n": 143,
+      "unknown_predicted_other_rate": 0.4766666666666667
+    },
+    "large_float_vs_selected_compact_int8": {
+      "known_decision_agreement": 0.709,
+      "large_correct_known_acceptance": 0.17300000000000001,
+      "large_corrects_small_errors_fraction": 0.16852689964898754,
+      "small_correct_known_acceptance": 0.035,
+      "unknown_fpir_large": 0.033,
+      "unknown_fpir_small": 0.042
+    },
+    "large_int8_vs_selected_compact_int8": {
+      "known_decision_agreement": 0.668,
+      "large_correct_known_acceptance": 0.046,
+      "large_corrects_small_errors_fraction": 0.04468807617043899,
+      "small_correct_known_acceptance": 0.035,
+      "unknown_fpir_large": 0.028,
+      "unknown_fpir_small": 0.042
+    }
+  },
+  "artifact_manifest": "work/project-finish-v4/handoffs/D/ARTIFACT_MANIFEST.json",
+  "artifact_manifest_file_count": 34,
+  "bootstrap": {
+    "float_intervals_95_percent": {
+      "known_macro_correct_acceptance": [
+        0.15,
+        0.29
+      ],
+      "known_macro_identification": [
+        0.52,
+        0.71
+      ],
+      "known_macro_rejection": [
+        0.66,
+        0.82
+      ],
+      "known_macro_wrong_known_identity": [
+        0.01,
+        0.08
+      ],
+      "macro_utility": [
+        0.5449583333333332,
+        0.6233333333333333
+      ],
+      "unknown_fpir": [
+        0.02,
+        0.08
+      ],
+      "unknown_rejection": [
+        0.92,
+        0.98
+      ]
+    },
+    "int8_intervals_95_percent": {
+      "known_macro_correct_acceptance": [
+        0.0,
+        0.0
+      ],
+      "known_macro_identification": [
+        0.25,
+        0.38
+      ],
+      "known_macro_rejection": [
+        1.0,
+        1.0
+      ],
+      "known_macro_wrong_known_identity": [
+        0.0,
+        0.0
+      ],
+      "macro_utility": [
+        0.495,
+        0.5
+      ],
+      "unknown_fpir": [
+        0.0,
+        0.01
+      ],
+      "unknown_rejection": [
+        0.99,
+        1.0
+      ]
+    },
+    "interpretation": "Image-group/unknown-identity-cluster uncertainty for one representative root, not a confidence interval over the ten training roots. Root-to-root standard deviations are in the aggregate summary.",
+    "method": "stratified image-group bootstrap within each known identity; unknown identity-cluster bootstrap",
+    "replicates": 1000,
+    "selected_large_root_seed": 20261106
+  },
+  "candidate_archive": {
+    "bytes": 3712418,
+    "sha256": "1fc24e6c2ce2bb2cbf197c5ccc9fa39324741d2f0c4e3eb77432927c3dce1ddc",
+    "workspace_path": "work/project-finish-v4/handoffs/D/D_candidate_models.zip"
+  },
+  "completed_matrix": {
+    "arms": [
+      "sv_mnv1_a010_scratch_6",
+      "sv_mnv1_a010_transfer_5_oe",
+      "sv_mnv1_a010_transfer_6",
+      "sv_mnv1_a025_quality_select_6",
+      "sv_mnv1_a025_scratch_6",
+      "sv_mnv1_a025_transfer_5_oe",
+      "sv_mnv1_a025_transfer_6",
+      "sv_mnv1_a025_uniform_select_6"
+    ],
+    "development_search_candidate_count": 14,
+    "diagnostic_startup_pilot": {
+      "blocks": 10,
+      "counts_toward_full_training_roots": false,
+      "full_int8_exports": 2,
+      "gradient_shape_checks": 10,
+      "status": "complete_verified"
+    },
+    "embedding_gallery_evaluations": 80,
+    "fixed_sface_teacher_roots": 1,
+    "gallery_families": [
+      "a010_float_quality",
+      "a010_float_uniform",
+      "a010_int8_quality",
+      "a010_int8_uniform",
+      "a025_float_quality",
+      "a025_float_uniform",
+      "a025_int8_quality",
+      "a025_int8_uniform"
+    ],
+    "historical_custom_encoder_roots": 20,
+    "historical_gallery_evaluations": 80,
+    "olivetti_roots": 40,
+    "sface_student_roots": 20,
+    "survface_classifier_roots": 80
+  },
+  "created_utc": "2026-10-29T23:39:01+00:00",
+  "data_use_boundary": {
+    "analysis_roles_for_new_diagnostics": [
+      "development",
+      "unknown_development"
+    ],
+    "new_external_datasets_used": false,
+    "new_people_or_images_acquired": false,
+    "personal_roster_used": false,
+    "role_restriction_note": "Only existing B-permitted data and existing model artifacts were used. Paired final analysis reads already-opened registered final prediction receipts only; it did not change selection."
+  },
+  "deployment_boundary": {
+    "board_qualified": false,
+    "camera_pipeline_accuracy_measured": false,
+    "full_int8_tflite_available": true,
+    "host_reference_available": true,
+    "next_hardware_step": "Physical arena, operator support, latency, power and camera-pipeline qualification remains pending.",
+    "nicla_observed": false,
+    "target_arena_latency_power_and_operator_support_pending": true
+  },
+  "device_discovery": {
+    "attached_device_count": 0,
+    "enumerated_utc": "2026-10-29T23:35:14.299227+00:00",
+    "errors": [],
+    "physical_probe_performed": false,
+    "reason": "No USB/serial devices were attached at fresh discovery."
+  },
+  "diagnosis": {
+    "findings": [
+      "The best large float classifier is non-reject-all but only correctly accepts 17.3% of known images and rejects 79.6%; its INT8 version accepts 4.6%.",
+      "Per-person performance is highly imbalanced, with strongest acceptance on K03/K04 and very low acceptance on K01/K02/K05.",
+      "Scratch classifiers remain at chance-level identification with zero correct acceptance (reject-all).",
+      "Embedding/gallery routes show low correct acceptance; quality-aware selection does not give a consistent advantage over uniform selection across float and INT8.",
+      "SFace students show little conditional correction and can harm teacher-correct decisions; teacher remains host-only.",
+      "Crops include blur and partial/off-center faces; this was confirmed by the development-only visual review."
+    ],
+    "prospective_usefulness_goal_met": false,
+    "result": "The declared training/evaluation campaign is complete, but the prospective practical recognition-quality goal remains unmet. Continue data/domain investigation before treating either candidate as a useful user-facing recognizer."
+  },
+  "evidence_tier": "software_verified_crop_level_model_campaign",
+  "final_role": {
+    "known_identity_image_groups_each": 20,
+    "known_rows": 100,
+    "opened_after_freeze": true,
+    "selection_was_frozen_before_final": true,
+    "unknown_images_per_identity": 6,
+    "unknown_independent_identity_count": 50,
+    "unknown_rows": 300
+  },
+  "historical_v3_comparison": {
+    "exploratory_only": true,
+    "measured_improvement_claim": "D adds a ten-root, target-supervised five-person classifier and embedding/gallery comparison with verified transfer initialization, role-gated open-set calibration, paired full-int8 inference, and a separate Olivetti sanity arm. A direct accuracy gain over v3 is only claimed where a same-crop, same-role historical prediction is audited and available.",
+    "reason": "K01-K05 source identities and all their source images were in v3 development; the final comparison is exploratory.",
+    "same_role_a025_float_quality_delta_D_minus_v3": {
+      "D_finetuned_family": "a025_float_quality",
+      "D_root_count": 10,
+      "delta_D_minus_historical": {
+        "known_macro_correct_acceptance": -0.068,
+        "known_macro_identification": -0.046999999999999986,
+        "unknown_false_identification_rate": -0.02866666666666668,
+        "unknown_rejection_rate": 0.02866666666666695
+      },
+      "historical_family": "custom_base_float_quality",
+      "historical_root_count": 10,
+      "independent_seed_resampling_interval_95_percent_for_delta": {
+        "known_macro_correct_acceptance": [
+          -0.112,
+          -0.02599999999999998
+        ],
+        "known_macro_identification": [
+          -0.13600000000000007,
+          0.039999999999999925
+        ],
+        "unknown_false_identification_rate": [
+          -0.05233333333333334,
+          -0.006666666666666661
+        ],
+        "unknown_rejection_rate": [
+          0.007000000000000006,
+          0.052999999999999936
+        ]
+      },
+      "interpretation": "descriptive same-final-role comparison; root sets are independent and all five identities were exposed in v3 development",
+      "interval_interpretation": "seed-to-seed variability only; it is not a population interval because final image groups are shared"
+    }
+  },
+  "job_id": "D",
+  "known_per_person_float_family_mean_across_roots": {
+    "K01": {
+      "accepted_coverage": 0.175,
+      "correct_identification_rate": 0.575,
+      "correct_known_acceptance_rate": 0.08,
+      "known_rejection_rate": 0.825,
+      "wrong_known_identity_rate": 0.095
+    },
+    "K02": {
+      "accepted_coverage": 0.05500000000000001,
+      "correct_identification_rate": 0.4600000000000001,
+      "correct_known_acceptance_rate": 0.04,
+      "known_rejection_rate": 0.945,
+      "wrong_known_identity_rate": 0.015000000000000003
+    },
+    "K03": {
+      "accepted_coverage": 0.33999999999999997,
+      "correct_identification_rate": 0.73,
+      "correct_known_acceptance_rate": 0.335,
+      "known_rejection_rate": 0.6599999999999999,
+      "wrong_known_identity_rate": 0.005
+    },
+    "K04": {
+      "accepted_coverage": 0.41000000000000003,
+      "correct_identification_rate": 0.64,
+      "correct_known_acceptance_rate": 0.385,
+      "known_rejection_rate": 0.5900000000000001,
+      "wrong_known_identity_rate": 0.025
+    },
+    "K05": {
+      "accepted_coverage": 0.04,
+      "correct_identification_rate": 0.48,
+      "correct_known_acceptance_rate": 0.025,
+      "known_rejection_rate": 0.96,
+      "wrong_known_identity_rate": 0.015000000000000003
+    }
+  },
+  "known_per_person_int8_family_mean_across_roots": {
+    "K01": {
+      "accepted_coverage": 0.05500000000000001,
+      "correct_identification_rate": 0.23500000000000001,
+      "correct_known_acceptance_rate": 0.01,
+      "known_rejection_rate": 0.945,
+      "wrong_known_identity_rate": 0.045
+    },
+    "K02": {
+      "accepted_coverage": 0.030000000000000006,
+      "correct_identification_rate": 0.25,
+      "correct_known_acceptance_rate": 0.0,
+      "known_rejection_rate": 0.97,
+      "wrong_known_identity_rate": 0.030000000000000006
+    },
+    "K03": {
+      "accepted_coverage": 0.16999999999999998,
+      "correct_identification_rate": 0.41500000000000004,
+      "correct_known_acceptance_rate": 0.1,
+      "known_rejection_rate": 0.8300000000000001,
+      "wrong_known_identity_rate": 0.06999999999999999
+    },
+    "K04": {
+      "accepted_coverage": 0.08,
+      "correct_identification_rate": 0.29,
+      "correct_known_acceptance_rate": 0.065,
+      "known_rejection_rate": 0.9199999999999999,
+      "wrong_known_identity_rate": 0.015000000000000003
+    },
+    "K05": {
+      "accepted_coverage": 0.06999999999999999,
+      "correct_identification_rate": 0.71,
+      "correct_known_acceptance_rate": 0.05500000000000001,
+      "known_rejection_rate": 0.93,
+      "wrong_known_identity_rate": 0.015000000000000003
+    }
+  },
+  "olivetti_closed_set_only": {
+    "ol_mnv1_a010_scratch_40": {
+      "float_macro_identity_accuracy": 0.02564102564102564,
+      "int8_macro_identity_accuracy": 0.02564102564102564,
+      "open_set_claim": false
+    },
+    "ol_mnv1_a010_transfer_40": {
+      "float_macro_identity_accuracy": 0.07564102564102565,
+      "int8_macro_identity_accuracy": 0.023504273504273504,
+      "open_set_claim": false
+    },
+    "ol_mnv1_a025_scratch_40": {
+      "float_macro_identity_accuracy": 0.023076923076923075,
+      "int8_macro_identity_accuracy": 0.023076923076923075,
+      "open_set_claim": false
+    },
+    "ol_mnv1_a025_transfer_40": {
+      "float_macro_identity_accuracy": 0.17905982905982906,
+      "int8_macro_identity_accuracy": 0.10085470085470086,
+      "open_set_claim": false
+    }
+  },
+  "platform": "Mac host training/evaluation; no Nicla physical capture",
+  "pretrained_and_redistribution_status": {
+    "checkpoint_weights_and_architecture_verified": true,
+    "edge_impulse_pretraining_corpus_and_license": "unresolved",
+    "external_contact_made": false,
+    "sface_directory_license": "Apache-2.0 stated in official model directory README",
+    "sface_exact_checkpoint_corpus_and_upstream_authorization": "unresolved"
+  },
+  "pretrained_initialization": {
+    "edge_impulse_mobilenetv1": {
+      "0.1": {
+        "architecture": {
+          "alpha": 0.1,
+          "feature_layer": "conv_pw_13_relu",
+          "feature_shape": [
+            3,
+            3,
+            102
+          ],
+          "first_conv_kernel_shape": [
+            3,
+            3,
+            1,
+            3
+          ],
+          "include_top": true,
+          "input_shape": [
+            96,
+            96,
+            1
+          ],
+          "parameter_count": 142827,
+          "top_classes": 1000,
+          "version": "MobileNetV1"
+        },
+        "normalization": "gray8 uint8 / 255 to float32 [0,1]",
+        "pretraining_corpus_and_license": "not declared in checkpoint metadata/source page; not inferred from 1000-class head",
+        "sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+        "source_url": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_1.96x96.grayscale.bsize_96.lr_0_05.epoch_363.val_accuracy_0.14.hdf5",
+        "strict_topological_load": true
+      },
+      "0.25": {
+        "architecture": {
+          "alpha": 0.25,
+          "feature_layer": "conv_pw_13_relu",
+          "feature_shape": [
+            3,
+            3,
+            256
+          ],
+          "first_conv_kernel_shape": [
+            3,
+            3,
+            1,
+            8
+          ],
+          "include_top": true,
+          "input_shape": [
+            96,
+            96,
+            1
+          ],
+          "parameter_count": 475400,
+          "top_classes": 1000,
+          "version": "MobileNetV1"
+        },
+        "normalization": "gray8 uint8 / 255 to float32 [0,1]",
+        "pretraining_corpus_and_license": "not declared in checkpoint metadata/source page; not inferred from 1000-class head",
+        "sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+        "source_url": "https://cdn.edgeimpulse.com/transfer-learning-weights/edgeimpulse/MobileNetV1.0_25.96x96.grayscale.bsize_96.lr_0_05.epoch_286.val_loss_3.54.val_accuracy_0.28.hdf5",
+        "strict_topological_load": true
+      }
+    },
+    "sface_teacher": "OpenCV Zoo SFace was downloaded and evaluated as a fixed host-only teacher; source model license is available in the model directory, but pretraining corpus/authorization remains unresolved. No teacher deployment claim."
+  },
+  "pretraining_and_license_limitations": {
+    "edge_impulse": "Artifact and architecture verified and weights loaded strictly; checkpoint metadata/source page do not declare its corpus or license, so no corpus or redistribution permission is inferred.",
+    "opencv_issue": "https://github.com/opencv/opencv_zoo/issues/313",
+    "opencv_model_directory": "https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface",
+    "opencv_sface_wrapper": "https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/sface.py",
+    "sface": "Host reference only; corpus/authorization unresolved."
+  },
+  "primary_dataset": "SurvFace-derived 96x96 gray crops; exploratory because K01-K05 appeared in v3 development",
+  "protocol_id": "nicla-five-known-study-v4",
+  "public_branch": "frozen public K01-K05 roster; no personal roster",
+  "remaining_limits": [
+    "No useful practical five-person recognizer was obtained; additional people’s images were not acquired or used under the user’s constraint.",
+    "No physical Nicla/camera-pipeline arena, operator, latency, memory, or power qualification was possible because fresh discovery found no attached device.",
+    "The exact Edge Impulse checkpoint pretraining corpus/license and the exact SFace checkpoint training corpus/upstream authorization remain unresolved in available source documentation.",
+    "The coarse central/periphery sensitivity diagnostic is not a face segmentation and cannot conclusively attribute background shortcuts."
+  ],
+  "schema": "study-job-result-1",
+  "secondary_dataset": "Olivetti 40-way closed-set sanity; separate and never pooled with SurvFace",
+  "selected_routes": {
+    "large": {
+      "backend": "float",
+      "deployment_eligible": false,
+      "development": {
+        "known_correct_acceptance": 0.28,
+        "known_identification": 0.7200000000000001,
+        "macro_utility": 0.6083333333333334,
+        "unknown_fpir": 0.06333333333333334
+      },
+      "exports": {
+        "FINAL_RESULT.json": {
+          "bytes": 55725,
+          "sha256": "a60e13d5a9feef323b2b4d89c3192df4d49128a7ef3ee480698e1de591e05827",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/FINAL_RESULT.json"
+        },
+        "FROZEN.json": {
+          "bytes": 1062,
+          "sha256": "3e728c6b7f68939d33d168caa29a59a08f7cdb3dd2aae6784f90bc2a3f373951",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/FROZEN.json"
+        },
+        "ROOT_RESULT.json": {
+          "bytes": 51546,
+          "sha256": "91c8a3cf07012b5dad34e10003f303b5d4710f0795ef7b9ad3a7e44adc9e3703",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/ROOT_RESULT.json"
+        },
+        "classifier.weights.h5": {
+          "bytes": 2110960,
+          "sha256": "2aca393504c0330b93ad704c6d6f7b34396e1ffda80c7f0569424eed62ae457c",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier.weights.h5"
+        },
+        "classifier_float.tflite": {
+          "bytes": 934360,
+          "sha256": "dba5e2087fd39e93ba594bcf390c63685199615042045a736b49a2e801644ad0",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_float.tflite"
+        },
+        "classifier_int8.tflite": {
+          "bytes": 329944,
+          "sha256": "e327d091e3f4a33c8f47c35830ad5ca04f671c9ca7a155a310b2c94d454739d9",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_int8.tflite"
+        },
+        "config.json": {
+          "bytes": 860,
+          "sha256": "f92ea2138a466cbf22f412bce63cf16f5380c390a2b00effbfeb0b1dcd61c58a",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/config.json"
+        },
+        "float_calibration.json": {
+          "bytes": 577,
+          "sha256": "68b78f32420790ecc7f58d62cb551b1ecdb1a1bc43c7e46ba8e94bfece91c201",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/float_calibration.json"
+        },
+        "int8_calibration.json": {
+          "bytes": 559,
+          "sha256": "b0f5ad3920e2b0042c22f74647f7f3b8b87f5a1381438dc5a1210e3c6c22b302",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/int8_calibration.json"
+        }
+      },
+      "family_id": "sv_mnv1_a025_quality_select_6",
+      "family_type": "six_output_classifier",
+      "final_family_mean_across_10_roots": {
+        "float": {
+          "known_identity_macro_correct_acceptance": {
+            "mean": 0.17300000000000001,
+            "root_count": 10,
+            "sd_across_roots": 0.06000925854492048
+          },
+          "known_identity_macro_coverage": {
+            "mean": 0.20400000000000001,
+            "root_count": 10,
+            "sd_across_roots": 0.06022181221672649
+          },
+          "known_identity_macro_identification": {
+            "mean": 0.5770000000000001,
+            "root_count": 10,
+            "sd_across_roots": 0.049676732760697714
+          },
+          "known_identity_macro_rejection": {
+            "mean": 0.796,
+            "root_count": 10,
+            "sd_across_roots": 0.0602218122167265
+          },
+          "known_identity_macro_wrong_known_identity": {
+            "mean": 0.031000000000000007,
+            "root_count": 10,
+            "sd_across_roots": 0.009944289260117532
+          },
+          "other_accuracy": {
+            "mean": 0.38666666666666666,
+            "root_count": 10,
+            "sd_across_roots": 0.11732617823301597
+          },
+          "unknown_false_identification_rate": {
+            "mean": 0.032999999999999995,
+            "root_count": 10,
+            "sd_across_roots": 0.016662962551348855
+          },
+          "unknown_rejection_rate": {
+            "mean": 0.967,
+            "root_count": 10,
+            "sd_across_roots": 0.01666296255134884
+          }
+        },
+        "int8": {
+          "known_identity_macro_correct_acceptance": {
+            "mean": 0.046,
+            "root_count": 10,
+            "sd_across_roots": 0.04402019738458447
+          },
+          "known_identity_macro_coverage": {
+            "mean": 0.08099999999999999,
+            "root_count": 10,
+            "sd_across_roots": 0.06384877968032489
+          },
+          "known_identity_macro_identification": {
+            "mean": 0.38,
+            "root_count": 10,
+            "sd_across_roots": 0.06480740698407864
+          },
+          "known_identity_macro_rejection": {
+            "mean": 0.9189999999999999,
+            "root_count": 10,
+            "sd_across_roots": 0.06384877968032485
+          },
+          "known_identity_macro_wrong_known_identity": {
+            "mean": 0.034999999999999996,
+            "root_count": 10,
+            "sd_across_roots": 0.028382310609877334
+          },
+          "other_accuracy": {
+            "mean": 0.4253333333333334,
+            "root_count": 10,
+            "sd_across_roots": 0.18885751373410367
+          },
+          "unknown_false_identification_rate": {
+            "mean": 0.027999999999999997,
+            "root_count": 10,
+            "sd_across_roots": 0.02097617696340303
+          },
+          "unknown_rejection_rate": {
+            "mean": 0.9719999999999999,
+            "root_count": 10,
+            "sd_across_roots": 0.02097617696340303
+          }
+        }
+      },
+      "float_tflite_contract": {
+        "all_int8_boundary": false,
+        "bytes": 934360,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 108,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 34,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            6
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_float.tflite",
+        "sha256": "dba5e2087fd39e93ba594bcf390c63685199615042045a736b49a2e801644ad0",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 108,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "input_contract": {
+        "channel_order": "single grayscale",
+        "dtype": "float32",
+        "normalization": "gray8 / 255.0",
+        "shape": [
+          null,
+          96,
+          96,
+          1
+        ]
+      },
+      "int8_tflite_contract": {
+        "all_int8_boundary": true,
+        "bytes": 329944,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 34,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.04335464909672737,
+          "shape": [
+            1,
+            6
+          ],
+          "zero_point": -25
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/survface/sv_mnv1_a025_quality_select_6/seed-20261106/classifier_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "e327d091e3f4a33c8f47c35830ad5ca04f671c9ca7a155a310b2c94d454739d9",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 34,
+          "<class 'numpy.int8'>": 65
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "label_order": [
+        "K01",
+        "K02",
+        "K03",
+        "K04",
+        "K05",
+        "OTHER"
+      ],
+      "pretrained_checkpoint_sha256": "9b2f73e58d3ea8c86ff04b38cd1ea26235b73e3270c9b87afe6633dd58e94eff",
+      "root_seed": 20261106,
+      "route_id": "large_a025_float_classifier",
+      "selection_role": "development only; representative root chosen by development utility, then correct acceptance, then lowest seed",
+      "width": 0.25
+    },
+    "small": {
+      "backend": "int8",
+      "deployment_eligible": false,
+      "development": {
+        "calibrated_threshold": 0.9918046593666077,
+        "gallery_template_count_per_identity": null,
+        "known_correct_acceptance": 0.1,
+        "known_identification": 0.32000000000000006,
+        "macro_utility": 0.5333333333333333,
+        "template_prototype_sha256": "c155230847d73595a5fdbb667b522e10a34653e79e03eab2cf10882a7d50526d",
+        "unknown_fpir": 0.03333333333333333
+      },
+      "exports": {
+        "FROZEN.json": {
+          "bytes": 1056,
+          "sha256": "3c9d8c05e1a7aad82e90a54b209e2a711fa005eb9f9d6623401159b9dbc1e197",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/FROZEN.json"
+        },
+        "ROOT_RESULT.json": {
+          "bytes": 36111,
+          "sha256": "0e2c1575dd38c36e8f1104619be4c97c0948cf150865f9ac639c5838f106c19d",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/ROOT_RESULT.json"
+        },
+        "classifier.weights.h5": {
+          "bytes": 602592,
+          "sha256": "6d2dc55c192957d6f0fb38c00a0c5042a8bcb910d39bbdb69bf91665b80b874d",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/classifier.weights.h5"
+        },
+        "classifier_float.tflite": {
+          "bytes": 199356,
+          "sha256": "278c304fe9719e1ae1bc9160cbdca5b4665f19c666b03681242b25613f17c7f5",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/classifier_float.tflite"
+        },
+        "classifier_int8.tflite": {
+          "bytes": 100840,
+          "sha256": "dc46bb589f657bffb5a9963415002231d612ba0aefae9ce525ee20d27e612bdc",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/classifier_int8.tflite"
+        },
+        "config.json": {
+          "bytes": 755,
+          "sha256": "e364190c65f56b45582e759fee0dc01e8b1b0b14ece2eecd5e55c764ed6787bf",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/config.json"
+        },
+        "embedding_float.tflite": {
+          "bytes": 199056,
+          "sha256": "5d59d43f449a9f9b3c8ae54c64fbd27a04689d530aefc83f75a27fb11695a6df",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_float.tflite"
+        },
+        "embedding_int8.tflite": {
+          "bytes": 101576,
+          "sha256": "0bf2bc5fb05b0c02d5d09217fe01834182578ebd92f9c001cd088c8ce5a9b0cd",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_int8.tflite"
+        },
+        "float_calibration.json": {
+          "bytes": 580,
+          "sha256": "8713bd96f86c3830e03c0dd9b64270bcf0f1b6374b011aeee55b9a75af0588c9",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/float_calibration.json"
+        },
+        "int8_calibration.json": {
+          "bytes": 559,
+          "sha256": "a0cd4cdfaf35f631cae2d0e6487538e61b26952ae4f35e74b70beed0b96f5603",
+          "workspace_path": "work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/int8_calibration.json"
+        }
+      },
+      "family_id": "a010_int8_uniform",
+      "family_type": "embedding_gallery",
+      "final_family_mean_across_10_roots": {
+        "known_macro_correct_acceptance": 0.035,
+        "known_macro_identification": 0.377,
+        "root_count": 10,
+        "unknown_fpir": 0.042,
+        "unknown_rejection": 0.958
+      },
+      "float_embedding_tflite_contract": {
+        "all_int8_boundary": false,
+        "bytes": 199056,
+        "full_int8_requested": false,
+        "input": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": null
+        },
+        "internal_float_tensor_count": 105,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.float32'>",
+          "scale": null,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": null
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_float.tflite",
+        "sha256": "5d59d43f449a9f9b3c8ae54c64fbd27a04689d530aefc83f75a27fb11695a6df",
+        "tensor_dtype_counts": {
+          "<class 'numpy.float32'>": 105,
+          "<class 'numpy.int32'>": 4
+        },
+        "tensor_types": [
+          "<class 'numpy.float32'>",
+          "<class 'numpy.int32'>"
+        ]
+      },
+      "gallery_selection_receipt": {
+        "bytes": 39767,
+        "sha256": "69d65fa8d3617e92dd09492f41831233b32ced0a5c8fb724a8a30143f5c7c5eb",
+        "workspace_path": "work/project-finish-v4/runs/D/gallery/a01/seed-20261110/int8_uniform.json"
+      },
+      "input_contract": {
+        "channel_order": "single grayscale",
+        "dtype": "float32",
+        "normalization": "gray8 / 255.0",
+        "shape": [
+          null,
+          96,
+          96,
+          1
+        ]
+      },
+      "int8_embedding_tflite_contract": {
+        "all_int8_boundary": true,
+        "bytes": 101576,
+        "full_int8_requested": true,
+        "input": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.003921568859368563,
+          "shape": [
+            1,
+            96,
+            96,
+            1
+          ],
+          "zero_point": -128
+        },
+        "internal_float_tensor_count": 0,
+        "op_names": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "PAD",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "CONV_2D",
+          "MEAN",
+          "FULLY_CONNECTED"
+        ],
+        "operator_count": 33,
+        "output": {
+          "dtype": "<class 'numpy.int8'>",
+          "scale": 0.009992608800530434,
+          "shape": [
+            1,
+            64
+          ],
+          "zero_point": -128
+        },
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/runs/D/survface/sv_mnv1_a010_transfer_6/seed-20261110/embedding_int8.tflite",
+        "representative_sample_count": 128,
+        "representative_source": "SurvFace/Olivetti train role only",
+        "sha256": "0bf2bc5fb05b0c02d5d09217fe01834182578ebd92f9c001cd088c8ce5a9b0cd",
+        "tensor_dtype_counts": {
+          "<class 'numpy.int32'>": 33,
+          "<class 'numpy.int8'>": 63
+        },
+        "tensor_types": [
+          "<class 'numpy.int32'>",
+          "<class 'numpy.int8'>"
+        ]
+      },
+      "label_order": [
+        "K01",
+        "K02",
+        "K03",
+        "K04",
+        "K05"
+      ],
+      "policy": "uniform",
+      "pretrained_checkpoint_sha256": "401cc0929ae5592f53ec25c5f6cd9228e5bf905b0065644f1c33483b5b2589c3",
+      "root_seed": 20261110,
+      "route_id": "small_a010_int8_uniform_gallery",
+      "selection_role": "development only; representative gallery root chosen by development utility, then correct acceptance, then lowest seed",
+      "width": 0.1
+    }
+  },
+  "sface_student_final_by_width_backend": {
+    "010": {
+      "float": {
+        "known_macro_correct_acceptance": 0.020999999999999998,
+        "known_macro_identification": 0.275,
+        "unknown_false_identification_rate": 0.026000000000000002,
+        "unknown_rejection_rate": 0.974
+      },
+      "int8": {
+        "known_macro_correct_acceptance": 0.033999999999999996,
+        "known_macro_identification": 0.35300000000000004,
+        "unknown_false_identification_rate": 0.04533333333333334,
+        "unknown_rejection_rate": 0.9546666666666667
+      }
+    },
+    "025": {
+      "float": {
+        "known_macro_correct_acceptance": 0.018000000000000002,
+        "known_macro_identification": 0.279,
+        "unknown_false_identification_rate": 0.026999999999999996,
+        "unknown_rejection_rate": 0.9729999999999999
+      },
+      "int8": {
+        "known_macro_correct_acceptance": 0.018000000000000002,
+        "known_macro_identification": 0.308,
+        "unknown_false_identification_rate": 0.019333333333333334,
+        "unknown_rejection_rate": 0.9806666666666667
+      }
+    }
+  },
+  "sface_teacher_final": {
+    "known_correct_acceptance": 0.05,
+    "known_coverage": 0.06000000000000001,
+    "known_macro_identification": 0.55,
+    "threshold": 0.6588351726531982,
+    "unknown_fpir": 0.02666666666666667,
+    "unknown_rejection": 0.9733333333333334,
+    "wrong_known_identity": 0.01
+  },
+  "source_evidence": {
+    "artifact_manifest": "work/project-finish-v4/handoffs/D/ARTIFACT_MANIFEST.json",
+    "candidate_pairwise_final": "work/project-finish-v4/handoffs/D/CANDIDATE_PAIRWISE_FINAL_ANALYSIS.json",
+    "candidate_selection": "work/project-finish-v4/reports/D/CANDIDATE_SELECTION.json",
+    "development_failure_diagnostics": "work/project-finish-v4/handoffs/D/DEVELOPMENT_FAILURE_DIAGNOSTICS.json",
+    "development_visual_review": "work/project-finish-v4/reports/D/DEVELOPMENT_VISUAL_REVIEW/SUMMARY.json",
+    "final_role_opened_receipt": "work/project-finish-v4/reports/D/FINAL_ROLE_OPENED.json",
+    "fresh_device_discovery": "work/project-finish-v4/reports/D/FINAL_DEVICE_DISCOVERY.json",
+    "historical_registry": "work/project-finish-v4/reports/D/HISTORICAL_MODEL_REGISTRY_FROZEN.json",
+    "main_model_registry": "work/project-finish-v4/reports/D/MODEL_REGISTRY_FROZEN.json",
+    "pretrained_provenance_status": "work/project-finish-v4/reports/D/PRETRAINED_PROVENANCE_STATUS.json",
+    "pretrained_reference_audit": "work/project-finish-v4/reports/D/pretrained_reference_audit.json",
+    "teacher_student_registry": "work/project-finish-v4/reports/D/TEACHER_MODEL_REGISTRY_FROZEN.json"
+  },
+  "status": "complete_verified",
+  "training_totals": {
+    "olivetti_roots": {
+      "epochs": 480,
+      "roots": 40,
+      "sample_presentations": 172800,
+      "steps": 4320,
+      "sum_training_elapsed_seconds": 1100.6444499379973
+    },
+    "sface_student_roots": {
+      "epochs": 129,
+      "roots": 20,
+      "sample_presentations": 46440,
+      "steps": 1935,
+      "sum_training_elapsed_seconds": 389.30959981800004
+    },
+    "survface_classifier_roots": {
+      "epochs": 1062,
+      "roots": 80,
+      "sample_presentations": 382320,
+      "steps": 15930,
+      "sum_training_elapsed_seconds": 2557.4197062309986
+    },
+    "time_interpretation": "Sums of per-root training elapsed time; these are not end-to-end wall-clock campaign durations."
+  }
+}

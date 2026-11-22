@@ -1,0 +1,19 @@
+{
+  "schema": "nicla-research-assets-download-1",
+  "name": "P04_Training_Artifacts_2026-11-22.zip",
+  "tag": "research-assets-2026-11-22",
+  "url": "https://github.com/sophiayuanproj/FaceRecognition/releases/download/research-assets-2026-11-22/P04_Training_Artifacts_2026-11-22.zip",
+  "sha256": "e286bcd5ccd4aba84cb7c05622b792d46762409dc5f24961a1d1d00b4d024924",
+  "bytes": 1187767872,
+  "manifest_sha256": "ee78f257bf5c810c7eb82247b26bf4a24e9048e8d118f45fd9258384d210f95a",
+  "files": 4083,
+  "uncompressed_bytes": 1616587576,
+  "content": "public-dataset fitted checkpoints and exports with recorded historical results; camera/source images excluded",
+  "suffix_counts": {
+    ".h5": 298,
+    ".onnx": 2,
+    ".json": 2581,
+    ".tflite": 762,
+    ".jsonl": 440
+  }
+}

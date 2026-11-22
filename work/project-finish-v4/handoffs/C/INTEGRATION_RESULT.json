@@ -1,0 +1,4159 @@
+{
+  "schema": "C-software-integration-1",
+  "job_id": "C",
+  "status": "complete_verified",
+  "created_utc": "2026-10-31T19:04:40+00:00",
+  "scope": "Integrate the previously completed C software/training receipt and permitted exact-byte development fixtures into the canonical portable study. This status applies only to the software integration; it does not clear the original physical acceptance gate.",
+  "original_receipt": {
+    "path": "work/project-finish-v4/handoffs/C/ORIGINAL_RESULT.json",
+    "sha256": "412ffeee3eb909d710f45a7ffa0329ba5b6e19957c405a0282416a70db73db20",
+    "status": "complete_verified_with_physical_cells_pending"
+  },
+  "integrated_assets": [
+    {
+      "path": "work/project-finish-v4/models/C/cheap_sepconv_16/seed-20261102/detector_full_int8.tflite",
+      "bytes": 10160,
+      "sha256": "4a484c9b56f806b4d13b603e66c3f7df60012ac74149e7a28655ddd497e5195c"
+    },
+    {
+      "path": "work/project-finish-v4/models/C/cheap_sepconv_16/seed-20261102/labels.txt",
+      "bytes": 16,
+      "sha256": "4906796f240d09d35ca93217806fa4ecbb150f976f58dc1cde1bca45986bc18a"
+    },
+    {
+      "path": "work/project-finish-v4/models/C/fomo_tflite_20_roots_and_audit.zip",
+      "bytes": 641735,
+      "sha256": "14fbb40a7633eaacc4952ca3b20fa7118c3eaccf74a59e7b435eab45e9211be6"
+    },
+    {
+      "path": "FaceRecognition/nicla_study/c_reference/common.py",
+      "bytes": 16920,
+      "sha256": "8a308cd1bb3ce41253c3ceee041ff09ceb1cda0d18c114a716f1b07a96fb70c7"
+    },
+    {
+      "path": "FaceRecognition/tools/nicla_fixture_parity.py",
+      "bytes": 9538,
+      "sha256": "d821ca96d4b83657ba6b21f9c9d5ccc91f4dc6490160c6ebdf76066fbd4421b9"
+    }
+  ],
+  "fixture_assets": [
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/fixture_manifest.json",
+      "bytes": 85813,
+      "sha256": "d2aeda72c22e891c5fa259ceff2745d93a9a0ac2420f54776ef6d0d67b205ca5"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "4f41e389df4ee486a034d0482e3784159aad14bf150e0ef0bb2ee6be9a8bee1d"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "1fcc46ccc42cf0c063c16c376c22a83d6e00235616363fb56a0b8e7cfffd232e"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "7f73ea7c99a57e15294ecc2fc81ef4e31e391a5f653e399b4a2111ae81a4bf60"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "e14cd5e87a6330919f814bcf232c53841d933c8dd370cd3e7ebabfdaf8c18f04"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "c7bdcfd983ad510e9829d315c20f1ecb0efb4de21dec269019c313e7346dd1bb"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "f0841831f9f33f8a8c044c15523de36ff9dff670bc5199dbbaf0e356dcf26ce7"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/fixture.json",
+      "bytes": 3513,
+      "sha256": "4a74396df3d6e32a416ca6b6ac30a52edee1f09616b53d35439e40dcf356742f"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/identity_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "e16e8402cb3ce5299a50766bd18863698df60974da73f201e2090b8b772b4d7d"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/identity_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "222829b461392034cb56e40c48002a256e6bb003a10d92854c875537b4b12400"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261501-baseline/identity_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "edcd8f86b02cb062c1485aa0fc85ba4fbbff71db1cbb06c1ff33bee442b91cbe"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261502-mirror_x/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "6679ad1f546ddca3d5001fcba75e789711db60a739ed62442b10837421dab864"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261502-mirror_x/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "576122a2961f52f473df2defb6d2ea66f87c6f38790fffef9699b50be122e713"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261502-mirror_x/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "db99184c6b9348211b5e6484673636b0d1d25ef52c30223abbb554307f7eff2b"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261502-mirror_x/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "bc7b24b23c66cf3d3e3cc7ec2da9677cb46b45c04ba9d6211936b24c59e54174"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261502-mirror_x/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "ccceb083e314ba1dc352b5f744dae4d5df93fbb08f079751970f4afefee7388d"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261502-mirror_x/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "e78d24279dfab14fe3d938b130e47a379a6b79f3dfd9c4cfc24eb31df44a6928"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261502-mirror_x/fixture.json",
+      "bytes": 13704,
+      "sha256": "78f6680e559f0a57ccaef1d2c59658fb50ef66ee40210305dad8103a84e0515e"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261503-flip_y/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "78b5dace8f63d61edc50ce3cde4b241bdfd54ca8d173935336ecd94dc9619231"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261503-flip_y/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "4fc70ed34be717335376a229f4f411ef6ee5259b2d6168a04a58ea57b7dfd84f"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261503-flip_y/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "24ec1601de621cf00a98b8ed986e6e414a2234b21a9382feac87fb4f094b24aa"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261503-flip_y/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "a184f5cdf6c315cd3e12ec94519d090af6c3a369e4efd7f53b7596a835ad74a8"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261503-flip_y/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "0be9561ddb7037958b53a8ea7bfdbc4c0e319a8a6fa08d75bcd3e9901179891f"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261503-flip_y/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "7ebde01135d9b3046ca08344b978b45edbeb508f0f854d776516f2d3127c8b91"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261503-flip_y/fixture.json",
+      "bytes": 3427,
+      "sha256": "ee375c34cdac16d881bcf7a57d87ae31a4611412130f413ad348df85f0858fec"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261504-rotate_90_ccw/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "52fbb3dad7396d39785dc873c4e2ce5d71ddf39b5f5fee5a08a0f3c55fa8a5da"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261504-rotate_90_ccw/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "e274bdee5a68002668e13b756c541886a6ed202c7f18edd65e7a99553617b2f4"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261504-rotate_90_ccw/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "196a3e83447cc087be1fec49c1847896ba69ddaeb35693e849ae121afdf54e2e"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261504-rotate_90_ccw/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "da25de99d955303073e91c0b52ba58f9ab097ee8f991d5defb5c8d7f1c7d5342"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261504-rotate_90_ccw/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "7d9787441a36b74445be5ef87530266ca5221d4fedffca7d7dcef71f71d1fb5e"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261504-rotate_90_ccw/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "08cb791efa7b6da3a0ca033ccdb5bba8d0e923164dc9781221e42fc65bc32168"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261504-rotate_90_ccw/fixture.json",
+      "bytes": 2514,
+      "sha256": "cc57f4f520f90b410b60551413cb7673a0f0c8ae653f85708b53b0061014173c"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261505-center_jitter/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "7dc3ffb51d951e1a32f7d26b838b2f7db1ee7f2d2286905321e17d571fed8ff9"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261505-center_jitter/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "2aad74233899cf1704ed81e770064eb470efaf07bf5637b79361baeb6f2e7ba5"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261505-center_jitter/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "b1656129147b179af05f14b692ba7cfe5ddd2f75af13a90526f8f5d9fcd20f25"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261505-center_jitter/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "0fb0cf85523ed7d322acdabe89efb075c60db6ec1a8441eb647c6b3db9926992"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261505-center_jitter/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "2e9806068a3d965c63b9ecb17831ebdc3727577d9aa33d54fc37ba7a35837d73"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261505-center_jitter/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "a5583fe51c303eac9121aa0ae0b75577f9528ffb27183a9943bc96bd4cce7bc1"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261505-center_jitter/fixture.json",
+      "bytes": 3089,
+      "sha256": "f140b683db3e58d33bedaf8ebd5b851175d00207371b3bbc3543397c0c68e215"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261506-low_light/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "20c8af9db4cfcd61b0078554b1cefe25d2fddaeac9dcded3ff36a162568f3821"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261506-low_light/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "bf07ab7e3dde6d782f1eb79acbdb3693643299d8335260052edeaf1ce81e2fa7"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261506-low_light/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "b116753358abc001322e0d03bd20e97b5c25b467e41877b3883d554cf184670f"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261506-low_light/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "413f5ddb42590571d1ab560e2c48a39acd617d17b241b0f9921aca28921848e0"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261506-low_light/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "f3d97b88fbd6326b3af4c2b0ecda86269b5e722f6d6453de85cdc9a02b74f375"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261506-low_light/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "5e05639350c3cddd55e32a411450650f1c70ba4b207c5b7062a2a87528eb32af"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261506-low_light/fixture.json",
+      "bytes": 2516,
+      "sha256": "131c6480ef8313d200651ce36e5c49fc4f6c032256feb7f4dce6fac555b23477"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261507-blur/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "05210f49e55bb55e173c6aee7d9b8ea2fdb565c69b9877043b9a31a7518947ef"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261507-blur/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "bff73eb0c6ec9be2575d71a4e878e0ff57208940a30f471cfb59f8ee13120668"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261507-blur/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "b9046db346085e35f30069800b389a69cd9850e0ba8e2a1d431879b8a156c3ce"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261507-blur/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "977c63a29836ba76b2d18617fa34ba68a384ed0542d4d9f9216489b7f303461a"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261507-blur/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "19b865d94062ab551f74e731c420d888fcb6d4fb551c56dba90f13fa8589accf"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261507-blur/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "14c9ec2bc4de8211a9a5a97248d9fa36f54ea7e2f99144f5551d8272e89f6eb8"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261507-blur/fixture.json",
+      "bytes": 2487,
+      "sha256": "cacebbbad9afe95486ec90c15e67139389f2027c277cbaa970bb2fde7df32ec3"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261508-small_face/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "f961ad59f3b8ee036d2c869cda822d0622b4fbd3f693590eea8e99da81e85a54"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261508-small_face/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "55741ccdd25d9f4e68ed7deca097734792b3e14de509c11ac4785b02c5920067"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261508-small_face/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "b35163a3859e15d17a24bd2cd3ec4c9b02654e37aa348b9672bf1a5a4c5f158b"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261508-small_face/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "798e70c448c687ef619acc531d5793dad375c1aa12c7c10cf21d8c4157a1bccd"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261508-small_face/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "ed995aa5e780956305ccc49133bf49019495e97641c8123e590aff1e6bc1e279"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261508-small_face/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "21a7f6334273b2aa503a99d0055b2eb60e7ebdd61cd9ef48ba3d0f02e56df15f"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261508-small_face/fixture.json",
+      "bytes": 6489,
+      "sha256": "421724a60dbb34eb6696ad9ed9c9503c7c762b43982b2891f7f4c37728ed6746"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261509-edge_clip/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "db4f33e1cf91bd0380af3d5bde519705e5427ad10b63b4509a07f467a11f8587"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261509-edge_clip/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "a1933a32450c6d26833655d57d48d8c6cd629c6963c02d7cd0d0a3e4fcdbe9ad"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261509-edge_clip/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "70c6b1f41252bf6163bec8091d3ddb568281c1e96de9f8f5d8ad3e7cd0dbe9ac"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261509-edge_clip/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "44ad1a278f6c4d451dc6832e4543a454663586e8e2abab9ffb6c8889e2372c23"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261509-edge_clip/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "0b8f5979f6a50015781dd9729cd7b816a246ab7b90b9038b3440b6f0ddd779f0"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261509-edge_clip/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "bead64bdd45a75d9cde09581763df4f7616513fde836199823f5ebcaa220bc4f"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261509-edge_clip/fixture.json",
+      "bytes": 3431,
+      "sha256": "3f8aa8db0aa02d5d11c68dbd34ed001884b651f36c5562f37878ddfb8537ac16"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261510-multiple_faces/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "5eca7fada3ee3317c4bf786d9c551d03499c9fc327ff8faab092eb981433d989"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261510-multiple_faces/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "93e8a639de6be817f7862cea505d3639ffb6c097142a19e2ebb593af90e812c5"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261510-multiple_faces/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "e810f58db266bb0789c57ea8c71519805d9f43e5bd81a82cee76fbd50efbfc6d"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261510-multiple_faces/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "ab4ffb4c7323c1172c6dcbbdc6a71eee3f141d13309dd9f2d8749d607ae191ab"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261510-multiple_faces/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "6c751ab9ce674711cb6e605857afaac589a2bd0879c28f554416b3796d64be1a"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261510-multiple_faces/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "fbb152466da7c1afa876add439a020beee72122c8180b3ec5c7d820f6739d246"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261510-multiple_faces/fixture.json",
+      "bytes": 5817,
+      "sha256": "f7e95ef21e5a65d5b18cc729f767cdc5d23cf747c12965cbe478ab11bf2ccae3"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261601-real_pass_no_face/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "d9d22c2b9fb0855259084e3edab062e9de2b817c0af12a1a70067786aac907b3"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261601-real_pass_no_face/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "32c03c15e2e062fe4eb787449629310837bb9ace099bf7dcef32ff5f655a7b4a"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261601-real_pass_no_face/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "86a6d87b23d3a5c5ee50c0452083579cbf36bbaab327da5b4ed3c19ba90a321a"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261601-real_pass_no_face/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "75c0153918ab07bbc458de412546cf5749595adfe2cb789b4832112200a3a185"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261601-real_pass_no_face/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "e023b53ac0afd28cfac3e6a6443437df8da327de99d74ea62c246a1faa32d519"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261601-real_pass_no_face/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "4b33e3f0476b4f575b18206ca50e9ffdf3db414c0d9d0e6015cef8c34177f7b8"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261601-real_pass_no_face/fixture.json",
+      "bytes": 7459,
+      "sha256": "61822dbc10831e82182c84d42a0ee6150c7f34fc653d6a65d604347d645b52ef"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261602-real_pass_no_face/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "a73996718c62011a666fe185fce73afc0e076fc2d16950bc12e9e838e0d182b1"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261602-real_pass_no_face/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "6f658844fcab6a278894eae4ad45012a1bd4e122b0fb8451f226f2aaa1f36400"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261602-real_pass_no_face/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "d89bbb970c2110e37aae515f1f7ffe1ba02055284e015f4660397d0207e312c7"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261602-real_pass_no_face/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "e7ff10b726f1036e50b0bcd9a749a23980078aad93d985c0a240f312db430cab"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261602-real_pass_no_face/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "5e41f047e52de825dfe69d28e18b6b7e5ea60a8a9b46cc2f005a470a3c390526"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261602-real_pass_no_face/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "b31105274406d6d0b50376a5c9ec832e303dce69d961a7dcb05ce7e88716de2d"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261602-real_pass_no_face/fixture.json",
+      "bytes": 14617,
+      "sha256": "273afea37e02e8ad2884de56443b28a338afe5ff265fad831cda489189ec3d93"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261603-real_pass_no_face/camera_window_gray240.pgm",
+      "bytes": 57615,
+      "sha256": "b5c9f426817de823345e1f6643f6d786c15db34c73dfcbdede812e8f78d51f3c"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261603-real_pass_no_face/camera_window_gray240.u8",
+      "bytes": 57600,
+      "sha256": "e12da306ac5354c4ab44df85bd572701b9c971330db284b887565a94f45e762a"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261603-real_pass_no_face/detector_input_gray96.pgm",
+      "bytes": 9229,
+      "sha256": "14041cde96951aef573c23db01c9a430341270313eb81fdfd3f4a372f155fb1d"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261603-real_pass_no_face/detector_input_gray96.u8",
+      "bytes": 9216,
+      "sha256": "66d554617138dbab4f5dd18cb72e090b6c38d56839c55710bf2e2f3d1aacf272"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261603-real_pass_no_face/detector_input_int8.i8",
+      "bytes": 9216,
+      "sha256": "db53378c6db150a8442e0802d51a7d51e40a51fe0b745096ee15b448687f474d"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261603-real_pass_no_face/detector_output_int8.i8",
+      "bytes": 288,
+      "sha256": "6da717d2817cdb86d3142c737c1c04744c104a7adf963d0aee648ddf5c6b9972"
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/seed-20261603-real_pass_no_face/fixture.json",
+      "bytes": 1659,
+      "sha256": "6eaa01289e0095d2fa41966858e19eb44dc2ef3697ccb1b851922fa63afcdd75"
+    }
+  ],
+  "fixture_manifest": {
+    "crop_side_window_px": 96,
+    "development_only_sources": true,
+    "final_scenes_loaded": false,
+    "fixture_count": 13,
+    "fixtures": [
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "1fcc46ccc42cf0c063c16c376c22a83d6e00235616363fb56a0b8e7cfffd232e"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "e14cd5e87a6330919f814bcf232c53841d933c8dd370cd3e7ebabfdaf8c18f04"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "c7bdcfd983ad510e9829d315c20f1ecb0efb4de21dec269019c313e7346dd1bb"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "f0841831f9f33f8a8c044c15523de36ff9dff670bc5199dbbaf0e356dcf26ce7"
+          },
+          "identity_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "222829b461392034cb56e40c48002a256e6bb003a10d92854c875537b4b12400"
+          }
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": [
+            81,
+            1,
+            96,
+            96
+          ],
+          "identity_input_quality": {
+            "identity_input_mean_u8": 105.23936631944444,
+            "identity_input_quality_gate_pass": true,
+            "identity_input_stdev_u8": 50.58257820291493,
+            "laplacian_variance": 97.7417221069336,
+            "native_crop_mean_u8": 105.23936631944444,
+            "native_crop_quality_gate_pass": true,
+            "native_crop_stdev_u8": 50.58257820291493
+          },
+          "identity_input_shape": [
+            96,
+            96
+          ],
+          "predicted_center_window_xy": [
+            128.5,
+            48.5
+          ],
+          "status": "ONE_FACE_CROP_READY"
+        },
+        "expected_detector_output": {
+          "detections": [
+            {
+              "center_frame_xy": [
+                128.5,
+                48.5
+              ],
+              "center_input_xy": [
+                51.4,
+                19.4
+              ],
+              "grid_xy": [
+                6,
+                2
+              ],
+              "nms_rect_input_xywh": [
+                46,
+                14,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                115,
+                35,
+                27,
+                27
+              ],
+              "score": 0.75390625
+            }
+          ],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261501-baseline",
+        "fixture_id": "seed-20261501-baseline",
+        "root_seed": 20261501,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/20--Family_Group/20_Family_Group_Family_Group_20_453.jpg",
+        "source_image_sha256": "0dc045a6494a2d6cc7c5359ce1de731f42be73f09173be620448d1792fff540c",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 1.0,
+          "case": "baseline",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 0,
+          "horizontal_mirror": false,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 0,
+          "seed": 20261501,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            0,
+            0
+          ],
+          "vertical_flip": false
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            40.25,
+            12.875,
+            56.875,
+            31.625
+          ]
+        ]
+      },
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "576122a2961f52f473df2defb6d2ea66f87c6f38790fffef9699b50be122e713"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "bc7b24b23c66cf3d3e3cc7ec2da9677cb46b45c04ba9d6211936b24c59e54174"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "ccceb083e314ba1dc352b5f744dae4d5df93fbb08f079751970f4afefee7388d"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "e78d24279dfab14fe3d938b130e47a379a6b79f3dfd9c4cfc24eb31df44a6928"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": null,
+          "identity_input_quality": null,
+          "identity_input_shape": null,
+          "predicted_center_window_xy": null,
+          "status": "UNCERTAIN_MULTIPLE_FACES"
+        },
+        "expected_detector_output": {
+          "detections": [
+            {
+              "center_frame_xy": [
+                108.5,
+                188.5
+              ],
+              "center_input_xy": [
+                43.4,
+                75.4
+              ],
+              "grid_xy": [
+                5,
+                9
+              ],
+              "nms_rect_input_xywh": [
+                38,
+                70,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                95,
+                175,
+                27,
+                27
+              ],
+              "score": 0.98046875
+            },
+            {
+              "center_frame_xy": [
+                168.5,
+                208.5
+              ],
+              "center_input_xy": [
+                67.4,
+                83.4
+              ],
+              "grid_xy": [
+                8,
+                10
+              ],
+              "nms_rect_input_xywh": [
+                62,
+                78,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                155,
+                195,
+                27,
+                27
+              ],
+              "score": 0.97265625
+            },
+            {
+              "center_frame_xy": [
+                226.0,
+                188.5
+              ],
+              "center_input_xy": [
+                90.4,
+                75.4
+              ],
+              "grid_xy": [
+                11,
+                9
+              ],
+              "nms_rect_input_xywh": [
+                86,
+                70,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                215,
+                175,
+                22,
+                27
+              ],
+              "score": 0.9609375
+            },
+            {
+              "center_frame_xy": [
+                68.5,
+                188.5
+              ],
+              "center_input_xy": [
+                27.4,
+                75.4
+              ],
+              "grid_xy": [
+                3,
+                9
+              ],
+              "nms_rect_input_xywh": [
+                22,
+                70,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                55,
+                175,
+                27,
+                27
+              ],
+              "score": 0.95703125
+            },
+            {
+              "center_frame_xy": [
+                148.5,
+                168.5
+              ],
+              "center_input_xy": [
+                59.4,
+                67.4
+              ],
+              "grid_xy": [
+                7,
+                8
+              ],
+              "nms_rect_input_xywh": [
+                54,
+                62,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                135,
+                155,
+                27,
+                27
+              ],
+              "score": 0.9296875
+            },
+            {
+              "center_frame_xy": [
+                148.5,
+                88.5
+              ],
+              "center_input_xy": [
+                59.4,
+                35.4
+              ],
+              "grid_xy": [
+                7,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                54,
+                30,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                135,
+                75,
+                27,
+                27
+              ],
+              "score": 0.91796875
+            },
+            {
+              "center_frame_xy": [
+                226.0,
+                28.5
+              ],
+              "center_input_xy": [
+                90.4,
+                11.4
+              ],
+              "grid_xy": [
+                11,
+                1
+              ],
+              "nms_rect_input_xywh": [
+                86,
+                6,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                215,
+                15,
+                22,
+                27
+              ],
+              "score": 0.91015625
+            },
+            {
+              "center_frame_xy": [
+                28.5,
+                188.5
+              ],
+              "center_input_xy": [
+                11.4,
+                75.4
+              ],
+              "grid_xy": [
+                1,
+                9
+              ],
+              "nms_rect_input_xywh": [
+                6,
+                70,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                15,
+                175,
+                27,
+                27
+              ],
+              "score": 0.91015625
+            },
+            {
+              "center_frame_xy": [
+                108.5,
+                226.0
+              ],
+              "center_input_xy": [
+                43.4,
+                90.4
+              ],
+              "grid_xy": [
+                5,
+                11
+              ],
+              "nms_rect_input_xywh": [
+                38,
+                86,
+                11,
+                9
+              ],
+              "nms_rect_window_xywh": [
+                95,
+                215,
+                27,
+                22
+              ],
+              "score": 0.91015625
+            },
+            {
+              "center_frame_xy": [
+                108.5,
+                48.5
+              ],
+              "center_input_xy": [
+                43.4,
+                19.4
+              ],
+              "grid_xy": [
+                5,
+                2
+              ],
+              "nms_rect_input_xywh": [
+                38,
+                14,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                95,
+                35,
+                27,
+                27
+              ],
+              "score": 0.875
+            },
+            {
+              "center_frame_xy": [
+                68.5,
+                128.5
+              ],
+              "center_input_xy": [
+                27.4,
+                51.4
+              ],
+              "grid_xy": [
+                3,
+                6
+              ],
+              "nms_rect_input_xywh": [
+                22,
+                46,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                55,
+                115,
+                27,
+                27
+              ],
+              "score": 0.84375
+            },
+            {
+              "center_frame_xy": [
+                28.5,
+                108.5
+              ],
+              "center_input_xy": [
+                11.4,
+                43.4
+              ],
+              "grid_xy": [
+                1,
+                5
+              ],
+              "nms_rect_input_xywh": [
+                6,
+                38,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                15,
+                95,
+                27,
+                27
+              ],
+              "score": 0.83984375
+            },
+            {
+              "center_frame_xy": [
+                208.5,
+                226.0
+              ],
+              "center_input_xy": [
+                83.4,
+                90.4
+              ],
+              "grid_xy": [
+                10,
+                11
+              ],
+              "nms_rect_input_xywh": [
+                78,
+                86,
+                11,
+                9
+              ],
+              "nms_rect_window_xywh": [
+                195,
+                215,
+                27,
+                22
+              ],
+              "score": 0.83984375
+            },
+            {
+              "center_frame_xy": [
+                208.5,
+                68.5
+              ],
+              "center_input_xy": [
+                83.4,
+                27.4
+              ],
+              "grid_xy": [
+                10,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                78,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                195,
+                55,
+                27,
+                27
+              ],
+              "score": 0.83203125
+            },
+            {
+              "center_frame_xy": [
+                28.5,
+                148.5
+              ],
+              "center_input_xy": [
+                11.4,
+                59.4
+              ],
+              "grid_xy": [
+                1,
+                7
+              ],
+              "nms_rect_input_xywh": [
+                6,
+                54,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                15,
+                135,
+                27,
+                27
+              ],
+              "score": 0.80859375
+            },
+            {
+              "center_frame_xy": [
+                48.5,
+                68.5
+              ],
+              "center_input_xy": [
+                19.4,
+                27.4
+              ],
+              "grid_xy": [
+                2,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                55,
+                27,
+                27
+              ],
+              "score": 0.80078125
+            },
+            {
+              "center_frame_xy": [
+                11.0,
+                68.5
+              ],
+              "center_input_xy": [
+                4.4,
+                27.4
+              ],
+              "grid_xy": [
+                0,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                0,
+                22,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                0,
+                55,
+                22,
+                27
+              ],
+              "score": 0.79296875
+            },
+            {
+              "center_frame_xy": [
+                68.5,
+                226.0
+              ],
+              "center_input_xy": [
+                27.4,
+                90.4
+              ],
+              "grid_xy": [
+                3,
+                11
+              ],
+              "nms_rect_input_xywh": [
+                22,
+                86,
+                11,
+                9
+              ],
+              "nms_rect_window_xywh": [
+                55,
+                215,
+                27,
+                22
+              ],
+              "score": 0.79296875
+            },
+            {
+              "center_frame_xy": [
+                108.5,
+                128.5
+              ],
+              "center_input_xy": [
+                43.4,
+                51.4
+              ],
+              "grid_xy": [
+                5,
+                6
+              ],
+              "nms_rect_input_xywh": [
+                38,
+                46,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                95,
+                115,
+                27,
+                27
+              ],
+              "score": 0.71484375
+            },
+            {
+              "center_frame_xy": [
+                188.5,
+                188.5
+              ],
+              "center_input_xy": [
+                75.4,
+                75.4
+              ],
+              "grid_xy": [
+                9,
+                9
+              ],
+              "nms_rect_input_xywh": [
+                70,
+                70,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                175,
+                175,
+                27,
+                27
+              ],
+              "score": 0.20559002027220058
+            },
+            {
+              "center_frame_xy": [
+                188.5,
+                48.5
+              ],
+              "center_input_xy": [
+                75.4,
+                19.4
+              ],
+              "grid_xy": [
+                9,
+                2
+              ],
+              "nms_rect_input_xywh": [
+                70,
+                14,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                175,
+                35,
+                27,
+                27
+              ],
+              "score": 0.17132501689350046
+            },
+            {
+              "center_frame_xy": [
+                188.5,
+                88.5
+              ],
+              "center_input_xy": [
+                75.4,
+                35.4
+              ],
+              "grid_xy": [
+                9,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                70,
+                30,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                175,
+                75,
+                27,
+                27
+              ],
+              "score": 0.16956783723305432
+            },
+            {
+              "center_frame_xy": [
+                68.5,
+                88.5
+              ],
+              "center_input_xy": [
+                27.4,
+                35.4
+              ],
+              "grid_xy": [
+                3,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                22,
+                30,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                55,
+                75,
+                27,
+                27
+              ],
+              "score": 0.15814616944015428
+            },
+            {
+              "center_frame_xy": [
+                148.5,
+                226.0
+              ],
+              "center_input_xy": [
+                59.4,
+                90.4
+              ],
+              "grid_xy": [
+                7,
+                11
+              ],
+              "nms_rect_input_xywh": [
+                54,
+                86,
+                11,
+                9
+              ],
+              "nms_rect_window_xywh": [
+                135,
+                215,
+                27,
+                22
+              ],
+              "score": 0.12349630680965293
+            },
+            {
+              "center_frame_xy": [
+                11.0,
+                208.5
+              ],
+              "center_input_xy": [
+                4.4,
+                83.4
+              ],
+              "grid_xy": [
+                0,
+                10
+              ],
+              "nms_rect_input_xywh": [
+                0,
+                78,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                0,
+                195,
+                22,
+                27
+              ],
+              "score": 0.11716316287069638
+            }
+          ],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261502-mirror_x",
+        "fixture_id": "seed-20261502-mirror_x",
+        "root_seed": 20261502,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/20--Family_Group/20_Family_Group_Family_Group_20_374.jpg",
+        "source_image_sha256": "9680c2ce396756d0c951bae1d754184065bda10f3527612ca891122582df4628",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 1.0,
+          "case": "mirror_x",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 0,
+          "horizontal_mirror": true,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 0,
+          "seed": 20261502,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            0,
+            0
+          ],
+          "vertical_flip": false
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            60.375,
+            -7.8125,
+            100.625,
+            49.1875
+          ]
+        ]
+      },
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "4fc70ed34be717335376a229f4f411ef6ee5259b2d6168a04a58ea57b7dfd84f"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "a184f5cdf6c315cd3e12ec94519d090af6c3a369e4efd7f53b7596a835ad74a8"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "0be9561ddb7037958b53a8ea7bfdbc4c0e319a8a6fa08d75bcd3e9901179891f"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "7ebde01135d9b3046ca08344b978b45edbeb508f0f854d776516f2d3127c8b91"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": null,
+          "identity_input_quality": null,
+          "identity_input_shape": null,
+          "predicted_center_window_xy": null,
+          "status": "UNCERTAIN_MULTIPLE_FACES"
+        },
+        "expected_detector_output": {
+          "detections": [
+            {
+              "center_frame_xy": [
+                128.5,
+                68.5
+              ],
+              "center_input_xy": [
+                51.4,
+                27.4
+              ],
+              "grid_xy": [
+                6,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                46,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                115,
+                55,
+                27,
+                27
+              ],
+              "score": 0.85546875
+            },
+            {
+              "center_frame_xy": [
+                108.5,
+                148.5
+              ],
+              "center_input_xy": [
+                43.4,
+                59.4
+              ],
+              "grid_xy": [
+                5,
+                7
+              ],
+              "nms_rect_input_xywh": [
+                38,
+                54,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                95,
+                135,
+                27,
+                27
+              ],
+              "score": 0.77734375
+            }
+          ],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261503-flip_y",
+        "fixture_id": "seed-20261503-flip_y",
+        "root_seed": 20261503,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/20--Family_Group/20_Family_Group_Family_Group_20_318.jpg",
+        "source_image_sha256": "ddf7256f180e326ab505758bf70567831a4018d4cdff1e8c0242b9d2504b4b54",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 1.0,
+          "case": "flip_y",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 0,
+          "horizontal_mirror": false,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 0,
+          "seed": 20261503,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            0,
+            0
+          ],
+          "vertical_flip": true
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            31.499999999999996,
+            67.5,
+            46.125,
+            87.75
+          ]
+        ]
+      },
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "e274bdee5a68002668e13b756c541886a6ed202c7f18edd65e7a99553617b2f4"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "da25de99d955303073e91c0b52ba58f9ab097ee8f991d5defb5c8d7f1c7d5342"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "7d9787441a36b74445be5ef87530266ca5221d4fedffca7d7dcef71f71d1fb5e"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "08cb791efa7b6da3a0ca033ccdb5bba8d0e923164dc9781221e42fc65bc32168"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": null,
+          "identity_input_quality": null,
+          "identity_input_shape": null,
+          "predicted_center_window_xy": null,
+          "status": "NO_FACE"
+        },
+        "expected_detector_output": {
+          "detections": [],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261504-rotate_90_ccw",
+        "fixture_id": "seed-20261504-rotate_90_ccw",
+        "root_seed": 20261504,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/44--Aerobics/44_Aerobics_Aerobics_44_659.jpg",
+        "source_image_sha256": "3db8a8e7fbeb510053e569d53e90e8e8302e0bd4558bfc509c64a42b4f828ac8",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 1.0,
+          "case": "rotate_90_ccw",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 0,
+          "horizontal_mirror": false,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 270,
+          "seed": 20261504,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            0,
+            0
+          ],
+          "vertical_flip": false
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            24.5,
+            43.5,
+            29.625,
+            47.125
+          ]
+        ]
+      },
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "2aad74233899cf1704ed81e770064eb470efaf07bf5637b79361baeb6f2e7ba5"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "0fb0cf85523ed7d322acdabe89efb075c60db6ec1a8441eb647c6b3db9926992"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "2e9806068a3d965c63b9ecb17831ebdc3727577d9aa33d54fc37ba7a35837d73"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "a5583fe51c303eac9121aa0ae0b75577f9528ffb27183a9943bc96bd4cce7bc1"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": [
+            -37,
+            41,
+            96,
+            96
+          ],
+          "identity_input_quality": null,
+          "identity_input_shape": null,
+          "predicted_center_window_xy": [
+            11.0,
+            88.5
+          ],
+          "status": "UNCERTAIN_CROP_OUTSIDE"
+        },
+        "expected_detector_output": {
+          "detections": [
+            {
+              "center_frame_xy": [
+                11.0,
+                88.5
+              ],
+              "center_input_xy": [
+                4.4,
+                35.4
+              ],
+              "grid_xy": [
+                0,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                0,
+                30,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                0,
+                75,
+                22,
+                27
+              ],
+              "score": 0.84375
+            }
+          ],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261505-center_jitter",
+        "fixture_id": "seed-20261505-center_jitter",
+        "root_seed": 20261505,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/44--Aerobics/44_Aerobics_Aerobics_44_407.jpg",
+        "source_image_sha256": "0ebc6b963856c36d044ea602e8acd1b5e7c234224db88ea68cf697422835d6db",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 1.0,
+          "case": "center_jitter",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 0,
+          "horizontal_mirror": false,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 0,
+          "seed": 20261505,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            -12,
+            12
+          ],
+          "vertical_flip": false
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            -2.554385964912282,
+            33.99298245614035,
+            6.989473684210528,
+            46.343859649122805
+          ]
+        ]
+      },
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "bf07ab7e3dde6d782f1eb79acbdb3693643299d8335260052edeaf1ce81e2fa7"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "413f5ddb42590571d1ab560e2c48a39acd617d17b241b0f9921aca28921848e0"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "f3d97b88fbd6326b3af4c2b0ecda86269b5e722f6d6453de85cdc9a02b74f375"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "5e05639350c3cddd55e32a411450650f1c70ba4b207c5b7062a2a87528eb32af"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": null,
+          "identity_input_quality": null,
+          "identity_input_shape": null,
+          "predicted_center_window_xy": null,
+          "status": "NO_FACE"
+        },
+        "expected_detector_output": {
+          "detections": [],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261506-low_light",
+        "fixture_id": "seed-20261506-low_light",
+        "root_seed": 20261506,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/44--Aerobics/44_Aerobics_Aerobics_44_1032.jpg",
+        "source_image_sha256": "0459cbcf6de775771a404cdfd52d81147bdc6fb8c96d382a78cd2f6642c51490",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 0.23666147907181997,
+          "case": "low_light",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 0,
+          "horizontal_mirror": false,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 0,
+          "seed": 20261506,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            0,
+            0
+          ],
+          "vertical_flip": false
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            30.0,
+            -16.0,
+            65.5,
+            39.375
+          ]
+        ]
+      },
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "bff73eb0c6ec9be2575d71a4e878e0ff57208940a30f471cfb59f8ee13120668"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "977c63a29836ba76b2d18617fa34ba68a384ed0542d4d9f9216489b7f303461a"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "19b865d94062ab551f74e731c420d888fcb6d4fb551c56dba90f13fa8589accf"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "14c9ec2bc4de8211a9a5a97248d9fa36f54ea7e2f99144f5551d8272e89f6eb8"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": null,
+          "identity_input_quality": null,
+          "identity_input_shape": null,
+          "predicted_center_window_xy": null,
+          "status": "NO_FACE"
+        },
+        "expected_detector_output": {
+          "detections": [],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261507-blur",
+        "fixture_id": "seed-20261507-blur",
+        "root_seed": 20261507,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/44--Aerobics/44_Aerobics_Aerobics_44_755.jpg",
+        "source_image_sha256": "88401b36a9f1f3ee4667fd4c70004dc365c94642f1738417d6e0a7973ef40a2e",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 1.0,
+          "case": "blur",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 1.5,
+          "horizontal_mirror": false,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 0,
+          "seed": 20261507,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            0,
+            0
+          ],
+          "vertical_flip": false
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            42.375,
+            -6.0,
+            64.375,
+            19.0
+          ]
+        ]
+      },
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "55741ccdd25d9f4e68ed7deca097734792b3e14de509c11ac4785b02c5920067"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "798e70c448c687ef619acc531d5793dad375c1aa12c7c10cf21d8c4157a1bccd"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "ed995aa5e780956305ccc49133bf49019495e97641c8123e590aff1e6bc1e279"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "21a7f6334273b2aa503a99d0055b2eb60e7ebdd61cd9ef48ba3d0f02e56df15f"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": null,
+          "identity_input_quality": null,
+          "identity_input_shape": null,
+          "predicted_center_window_xy": null,
+          "status": "UNCERTAIN_MULTIPLE_FACES"
+        },
+        "expected_detector_output": {
+          "detections": [
+            {
+              "center_frame_xy": [
+                188.5,
+                128.5
+              ],
+              "center_input_xy": [
+                75.4,
+                51.4
+              ],
+              "grid_xy": [
+                9,
+                6
+              ],
+              "nms_rect_input_xywh": [
+                70,
+                46,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                175,
+                115,
+                27,
+                27
+              ],
+              "score": 0.9375
+            },
+            {
+              "center_frame_xy": [
+                48.5,
+                48.5
+              ],
+              "center_input_xy": [
+                19.4,
+                19.4
+              ],
+              "grid_xy": [
+                2,
+                2
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                14,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                35,
+                27,
+                27
+              ],
+              "score": 0.921875
+            },
+            {
+              "center_frame_xy": [
+                128.5,
+                88.5
+              ],
+              "center_input_xy": [
+                51.4,
+                35.4
+              ],
+              "grid_xy": [
+                6,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                46,
+                30,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                115,
+                75,
+                27,
+                27
+              ],
+              "score": 0.91796875
+            },
+            {
+              "center_frame_xy": [
+                88.5,
+                108.5
+              ],
+              "center_input_xy": [
+                35.4,
+                43.4
+              ],
+              "grid_xy": [
+                4,
+                5
+              ],
+              "nms_rect_input_xywh": [
+                30,
+                38,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                75,
+                95,
+                27,
+                27
+              ],
+              "score": 0.87890625
+            },
+            {
+              "center_frame_xy": [
+                88.5,
+                68.5
+              ],
+              "center_input_xy": [
+                35.4,
+                27.4
+              ],
+              "grid_xy": [
+                4,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                30,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                75,
+                55,
+                27,
+                27
+              ],
+              "score": 0.83203125
+            },
+            {
+              "center_frame_xy": [
+                28.5,
+                88.5
+              ],
+              "center_input_xy": [
+                11.4,
+                35.4
+              ],
+              "grid_xy": [
+                1,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                6,
+                30,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                15,
+                75,
+                27,
+                27
+              ],
+              "score": 0.71484375
+            },
+            {
+              "center_frame_xy": [
+                168.5,
+                148.5
+              ],
+              "center_input_xy": [
+                67.4,
+                59.4
+              ],
+              "grid_xy": [
+                8,
+                7
+              ],
+              "nms_rect_input_xywh": [
+                62,
+                54,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                155,
+                135,
+                27,
+                27
+              ],
+              "score": 0.16253911859126968
+            },
+            {
+              "center_frame_xy": [
+                28.5,
+                28.5
+              ],
+              "center_input_xy": [
+                11.4,
+                11.4
+              ],
+              "grid_xy": [
+                1,
+                1
+              ],
+              "nms_rect_input_xywh": [
+                6,
+                6,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                15,
+                15,
+                27,
+                27
+              ],
+              "score": 0.16078193893082351
+            }
+          ],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261508-small_face",
+        "fixture_id": "seed-20261508-small_face",
+        "root_seed": 20261508,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/20--Family_Group/20_Family_Group_Family_Group_20_360.jpg",
+        "source_image_sha256": "eb9ef9e23174564fcea314395033d00a46c043699c5f968859c69a6a9aa29509",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 1.0,
+          "case": "small_face",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 0,
+          "horizontal_mirror": false,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 0,
+          "seed": 20261508,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            0,
+            0
+          ],
+          "vertical_flip": false
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            32.339522546419104,
+            29.029177718832894,
+            39.72413793103449,
+            36.795755968169765
+          ],
+          [
+            44.689655172413794,
+            39.214854111405835,
+            51.43766578249338,
+            47.745358090185675
+          ],
+          [
+            50.54641909814324,
+            33.61273209549071,
+            58.94960212201592,
+            43.6710875331565
+          ],
+          [
+            76.0106100795756,
+            34.631299734748005,
+            84.79575596816977,
+            45.96286472148541
+          ]
+        ]
+      },
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "a1933a32450c6d26833655d57d48d8c6cd629c6963c02d7cd0d0a3e4fcdbe9ad"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "44ad1a278f6c4d451dc6832e4543a454663586e8e2abab9ffb6c8889e2372c23"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "0b8f5979f6a50015781dd9729cd7b816a246ab7b90b9038b3440b6f0ddd779f0"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "bead64bdd45a75d9cde09581763df4f7616513fde836199823f5ebcaa220bc4f"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": null,
+          "identity_input_quality": null,
+          "identity_input_shape": null,
+          "predicted_center_window_xy": null,
+          "status": "UNCERTAIN_MULTIPLE_FACES"
+        },
+        "expected_detector_output": {
+          "detections": [
+            {
+              "center_frame_xy": [
+                48.5,
+                68.5
+              ],
+              "center_input_xy": [
+                19.4,
+                27.4
+              ],
+              "grid_xy": [
+                2,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                55,
+                27,
+                27
+              ],
+              "score": 0.80078125
+            },
+            {
+              "center_frame_xy": [
+                11.0,
+                68.5
+              ],
+              "center_input_xy": [
+                4.4,
+                27.4
+              ],
+              "grid_xy": [
+                0,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                0,
+                22,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                0,
+                55,
+                22,
+                27
+              ],
+              "score": 0.734375
+            }
+          ],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261509-edge_clip",
+        "fixture_id": "seed-20261509-edge_clip",
+        "root_seed": 20261509,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/44--Aerobics/44_Aerobics_Aerobics_44_231.jpg",
+        "source_image_sha256": "710bc255b88b2c441c6f728a839c737892dcc48d2dc6f25b0370ee8056c80eac",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 1.0,
+          "case": "edge_clip",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 0,
+          "horizontal_mirror": false,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 0,
+          "seed": 20261509,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            -92,
+            0
+          ],
+          "vertical_flip": false
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            1.7000000000000028,
+            12.625,
+            18.450000000000003,
+            33.875
+          ]
+        ]
+      },
+      {
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "93e8a639de6be817f7862cea505d3639ffb6c097142a19e2ebb593af90e812c5"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "ab4ffb4c7323c1172c6dcbbdc6a71eee3f141d13309dd9f2d8749d607ae191ab"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "6c751ab9ce674711cb6e605857afaac589a2bd0879c28f554416b3796d64be1a"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "fbb152466da7c1afa876add439a020beee72122c8180b3ec5c7d820f6739d246"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "crop_xywh_window": null,
+          "identity_input_quality": null,
+          "identity_input_shape": null,
+          "predicted_center_window_xy": null,
+          "status": "UNCERTAIN_MULTIPLE_FACES"
+        },
+        "expected_detector_output": {
+          "detections": [
+            {
+              "center_frame_xy": [
+                48.5,
+                88.5
+              ],
+              "center_input_xy": [
+                19.4,
+                35.4
+              ],
+              "grid_xy": [
+                2,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                30,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                75,
+                27,
+                27
+              ],
+              "score": 0.81640625
+            },
+            {
+              "center_frame_xy": [
+                48.5,
+                28.5
+              ],
+              "center_input_xy": [
+                19.4,
+                11.4
+              ],
+              "grid_xy": [
+                2,
+                1
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                6,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                15,
+                27,
+                27
+              ],
+              "score": 0.80078125
+            },
+            {
+              "center_frame_xy": [
+                226.0,
+                48.5
+              ],
+              "center_input_xy": [
+                90.4,
+                19.4
+              ],
+              "grid_xy": [
+                11,
+                2
+              ],
+              "nms_rect_input_xywh": [
+                86,
+                14,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                215,
+                35,
+                22,
+                27
+              ],
+              "score": 0.77734375
+            },
+            {
+              "center_frame_xy": [
+                188.5,
+                68.5
+              ],
+              "center_input_xy": [
+                75.4,
+                27.4
+              ],
+              "grid_xy": [
+                9,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                70,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                175,
+                55,
+                27,
+                27
+              ],
+              "score": 0.76953125
+            },
+            {
+              "center_frame_xy": [
+                48.5,
+                128.5
+              ],
+              "center_input_xy": [
+                19.4,
+                51.4
+              ],
+              "grid_xy": [
+                2,
+                6
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                46,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                115,
+                27,
+                27
+              ],
+              "score": 0.76953125
+            },
+            {
+              "center_frame_xy": [
+                128.5,
+                128.5
+              ],
+              "center_input_xy": [
+                51.4,
+                51.4
+              ],
+              "grid_xy": [
+                6,
+                6
+              ],
+              "nms_rect_input_xywh": [
+                46,
+                46,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                115,
+                115,
+                27,
+                27
+              ],
+              "score": 0.76171875
+            }
+          ],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261510-multiple_faces",
+        "fixture_id": "seed-20261510-multiple_faces",
+        "root_seed": 20261510,
+        "source_dataset": "WIDER FACE",
+        "source_image_path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/dataset-prep/extracted/widerface/WIDER_val/images/20--Family_Group/20_Family_Group_Family_Group_20_108.jpg",
+        "source_image_sha256": "2b5b48ca33bde72c74d6f2ebd24b43bbdf08d964625bd02c73af7c19bbed01d3",
+        "source_role": "development",
+        "transform_parameters": {
+          "brightness_multiplier": 1.0,
+          "case": "multiple_faces",
+          "detector_resize": "PIL bilinear 240x240 to 96x96",
+          "gaussian_blur_radius": 0,
+          "horizontal_mirror": false,
+          "quantization": {
+            "input_scale": 0.003921568859368563,
+            "input_zero_point": -128
+          },
+          "rotation_degrees_clockwise": 0,
+          "seed": 20261510,
+          "sensor": {
+            "hmirror": false,
+            "input_frame": [
+              320,
+              240
+            ],
+            "rotation": "none",
+            "vflip": false,
+            "window": [
+              240,
+              240
+            ],
+            "window_origin": [
+              40,
+              0
+            ]
+          },
+          "sensor_noise_sigma": 0,
+          "translation_window_px": [
+            0,
+            0
+          ],
+          "vertical_flip": false
+        },
+        "transformed_annotations_detector_xyxy": [
+          [
+            14.709677419354836,
+            8.516129032258064,
+            23.225806451612904,
+            20.38709677419355
+          ],
+          [
+            18.32258064516129,
+            42.064516129032256,
+            32.0,
+            52.903225806451616
+          ],
+          [
+            40.7741935483871,
+            28.38709677419355,
+            48.7741935483871,
+            39.741935483870975
+          ],
+          [
+            70.19354838709677,
+            24.516129032258064,
+            79.22580645161291,
+            37.67741935483871
+          ],
+          [
+            87.74193548387098,
+            14.967741935483872,
+            97.03225806451613,
+            27.612903225806452
+          ],
+          [
+            75.61290322580645,
+            50.32258064516129,
+            85.41935483870968,
+            63.225806451612904
+          ]
+        ]
+      },
+      {
+        "author_attribution": "eioua",
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "32c03c15e2e062fe4eb787449629310837bb9ace099bf7dcef32ff5f655a7b4a"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "75c0153918ab07bbc458de412546cf5749595adfe2cb789b4832112200a3a185"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "e023b53ac0afd28cfac3e6a6443437df8da327de99d74ea62c246a1faa32d519"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "4b33e3f0476b4f575b18206ca50e9ffdf3db414c0d9d0e6015cef8c34177f7b8"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "identity_input_shape": null,
+          "status": "FALSE_TRIGGER_UNCERTAIN"
+        },
+        "expected_detector_output": {
+          "detections": [
+            {
+              "center_frame_xy": [
+                48.5,
+                68.5
+              ],
+              "center_input_xy": [
+                19.4,
+                27.4
+              ],
+              "grid_xy": [
+                2,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                55,
+                27,
+                27
+              ],
+              "score": 0.9453125
+            },
+            {
+              "center_frame_xy": [
+                208.5,
+                208.5
+              ],
+              "center_input_xy": [
+                83.4,
+                83.4
+              ],
+              "grid_xy": [
+                10,
+                10
+              ],
+              "nms_rect_input_xywh": [
+                78,
+                78,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                195,
+                195,
+                27,
+                27
+              ],
+              "score": 0.9375
+            },
+            {
+              "center_frame_xy": [
+                48.5,
+                108.5
+              ],
+              "center_input_xy": [
+                19.4,
+                43.4
+              ],
+              "grid_xy": [
+                2,
+                5
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                38,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                95,
+                27,
+                27
+              ],
+              "score": 0.921875
+            },
+            {
+              "center_frame_xy": [
+                28.5,
+                28.5
+              ],
+              "center_input_xy": [
+                11.4,
+                11.4
+              ],
+              "grid_xy": [
+                1,
+                1
+              ],
+              "nms_rect_input_xywh": [
+                6,
+                6,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                15,
+                15,
+                27,
+                27
+              ],
+              "score": 0.91015625
+            },
+            {
+              "center_frame_xy": [
+                11.0,
+                88.5
+              ],
+              "center_input_xy": [
+                4.4,
+                35.4
+              ],
+              "grid_xy": [
+                0,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                0,
+                30,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                0,
+                75,
+                22,
+                27
+              ],
+              "score": 0.875
+            },
+            {
+              "center_frame_xy": [
+                68.5,
+                28.5
+              ],
+              "center_input_xy": [
+                27.4,
+                11.4
+              ],
+              "grid_xy": [
+                3,
+                1
+              ],
+              "nms_rect_input_xywh": [
+                22,
+                6,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                55,
+                15,
+                27,
+                27
+              ],
+              "score": 0.83984375
+            },
+            {
+              "center_frame_xy": [
+                48.5,
+                148.5
+              ],
+              "center_input_xy": [
+                19.4,
+                59.4
+              ],
+              "grid_xy": [
+                2,
+                7
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                54,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                135,
+                27,
+                27
+              ],
+              "score": 0.83984375
+            },
+            {
+              "center_frame_xy": [
+                188.5,
+                168.5
+              ],
+              "center_input_xy": [
+                75.4,
+                67.4
+              ],
+              "grid_xy": [
+                9,
+                8
+              ],
+              "nms_rect_input_xywh": [
+                70,
+                62,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                175,
+                155,
+                27,
+                27
+              ],
+              "score": 0.83203125
+            },
+            {
+              "center_frame_xy": [
+                226.0,
+                168.5
+              ],
+              "center_input_xy": [
+                90.4,
+                67.4
+              ],
+              "grid_xy": [
+                11,
+                8
+              ],
+              "nms_rect_input_xywh": [
+                86,
+                62,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                215,
+                155,
+                22,
+                27
+              ],
+              "score": 0.77734375
+            },
+            {
+              "center_frame_xy": [
+                88.5,
+                68.5
+              ],
+              "center_input_xy": [
+                35.4,
+                27.4
+              ],
+              "grid_xy": [
+                4,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                30,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                75,
+                55,
+                27,
+                27
+              ],
+              "score": 0.72265625
+            },
+            {
+              "center_frame_xy": [
+                168.5,
+                188.5
+              ],
+              "center_input_xy": [
+                67.4,
+                75.4
+              ],
+              "grid_xy": [
+                8,
+                9
+              ],
+              "nms_rect_input_xywh": [
+                62,
+                70,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                155,
+                175,
+                27,
+                27
+              ],
+              "score": 0.1783537355352851
+            },
+            {
+              "center_frame_xy": [
+                11.0,
+                48.5
+              ],
+              "center_input_xy": [
+                4.4,
+                19.4
+              ],
+              "grid_xy": [
+                0,
+                2
+              ],
+              "nms_rect_input_xywh": [
+                0,
+                14,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                0,
+                35,
+                22,
+                27
+              ],
+              "score": 0.14312905302041826
+            },
+            {
+              "center_frame_xy": [
+                188.5,
+                226.0
+              ],
+              "center_input_xy": [
+                75.4,
+                90.4
+              ],
+              "grid_xy": [
+                9,
+                11
+              ],
+              "nms_rect_input_xywh": [
+                70,
+                86,
+                11,
+                9
+              ],
+              "nms_rect_window_xywh": [
+                175,
+                215,
+                27,
+                22
+              ],
+              "score": 0.13109607953640082
+            }
+          ],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261601-real_pass_no_face",
+        "fixture_id": "seed-20261601-real_pass_no_face",
+        "root_seed": 20261601,
+        "source_dataset": "PASS v3 (Zenodo 6615455)",
+        "source_image_sha256": "2e6555396d6fc0195f38489c28d57a69d39ce685122eb68f49a9101f2f83dbc0",
+        "source_item_license": "CC BY 2.0 (Flickr Attribution License)",
+        "source_role": "development",
+        "transform_parameters": {
+          "camera_window": [
+            240,
+            240
+          ],
+          "case": "real_pass_no_face",
+          "detector_resize": "PIL bilinear 240x240 to 96x96"
+        }
+      },
+      {
+        "author_attribution": "pawel.nowak",
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "6f658844fcab6a278894eae4ad45012a1bd4e122b0fb8451f226f2aaa1f36400"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "e7ff10b726f1036e50b0bcd9a749a23980078aad93d985c0a240f312db430cab"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "5e41f047e52de825dfe69d28e18b6b7e5ea60a8a9b46cc2f005a470a3c390526"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "b31105274406d6d0b50376a5c9ec832e303dce69d961a7dcb05ce7e88716de2d"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "identity_input_shape": null,
+          "status": "FALSE_TRIGGER_UNCERTAIN"
+        },
+        "expected_detector_output": {
+          "detections": [
+            {
+              "center_frame_xy": [
+                108.5,
+                68.5
+              ],
+              "center_input_xy": [
+                43.4,
+                27.4
+              ],
+              "grid_xy": [
+                5,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                38,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                95,
+                55,
+                27,
+                27
+              ],
+              "score": 0.9609375
+            },
+            {
+              "center_frame_xy": [
+                208.5,
+                88.5
+              ],
+              "center_input_xy": [
+                83.4,
+                35.4
+              ],
+              "grid_xy": [
+                10,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                78,
+                30,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                195,
+                75,
+                27,
+                27
+              ],
+              "score": 0.9609375
+            },
+            {
+              "center_frame_xy": [
+                28.5,
+                128.5
+              ],
+              "center_input_xy": [
+                11.4,
+                51.4
+              ],
+              "grid_xy": [
+                1,
+                6
+              ],
+              "nms_rect_input_xywh": [
+                6,
+                46,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                15,
+                115,
+                27,
+                27
+              ],
+              "score": 0.9375
+            },
+            {
+              "center_frame_xy": [
+                88.5,
+                108.5
+              ],
+              "center_input_xy": [
+                35.4,
+                43.4
+              ],
+              "grid_xy": [
+                4,
+                5
+              ],
+              "nms_rect_input_xywh": [
+                30,
+                38,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                75,
+                95,
+                27,
+                27
+              ],
+              "score": 0.9296875
+            },
+            {
+              "center_frame_xy": [
+                168.5,
+                188.5
+              ],
+              "center_input_xy": [
+                67.4,
+                75.4
+              ],
+              "grid_xy": [
+                8,
+                9
+              ],
+              "nms_rect_input_xywh": [
+                62,
+                70,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                155,
+                175,
+                27,
+                27
+              ],
+              "score": 0.9296875
+            },
+            {
+              "center_frame_xy": [
+                168.5,
+                28.5
+              ],
+              "center_input_xy": [
+                67.4,
+                11.4
+              ],
+              "grid_xy": [
+                8,
+                1
+              ],
+              "nms_rect_input_xywh": [
+                62,
+                6,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                155,
+                15,
+                27,
+                27
+              ],
+              "score": 0.92578125
+            },
+            {
+              "center_frame_xy": [
+                148.5,
+                88.5
+              ],
+              "center_input_xy": [
+                59.4,
+                35.4
+              ],
+              "grid_xy": [
+                7,
+                4
+              ],
+              "nms_rect_input_xywh": [
+                54,
+                30,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                135,
+                75,
+                27,
+                27
+              ],
+              "score": 0.92578125
+            },
+            {
+              "center_frame_xy": [
+                128.5,
+                128.5
+              ],
+              "center_input_xy": [
+                51.4,
+                51.4
+              ],
+              "grid_xy": [
+                6,
+                6
+              ],
+              "nms_rect_input_xywh": [
+                46,
+                46,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                115,
+                115,
+                27,
+                27
+              ],
+              "score": 0.9140625
+            },
+            {
+              "center_frame_xy": [
+                48.5,
+                68.5
+              ],
+              "center_input_xy": [
+                19.4,
+                27.4
+              ],
+              "grid_xy": [
+                2,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                22,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                55,
+                27,
+                27
+              ],
+              "score": 0.91015625
+            },
+            {
+              "center_frame_xy": [
+                168.5,
+                148.5
+              ],
+              "center_input_xy": [
+                67.4,
+                59.4
+              ],
+              "grid_xy": [
+                8,
+                7
+              ],
+              "nms_rect_input_xywh": [
+                62,
+                54,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                155,
+                135,
+                27,
+                27
+              ],
+              "score": 0.91015625
+            },
+            {
+              "center_frame_xy": [
+                11.0,
+                68.5
+              ],
+              "center_input_xy": [
+                4.4,
+                27.4
+              ],
+              "grid_xy": [
+                0,
+                3
+              ],
+              "nms_rect_input_xywh": [
+                0,
+                22,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                0,
+                55,
+                22,
+                27
+              ],
+              "score": 0.890625
+            },
+            {
+              "center_frame_xy": [
+                226.0,
+                48.5
+              ],
+              "center_input_xy": [
+                90.4,
+                19.4
+              ],
+              "grid_xy": [
+                11,
+                2
+              ],
+              "nms_rect_input_xywh": [
+                86,
+                14,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                215,
+                35,
+                22,
+                27
+              ],
+              "score": 0.875
+            },
+            {
+              "center_frame_xy": [
+                28.5,
+                28.5
+              ],
+              "center_input_xy": [
+                11.4,
+                11.4
+              ],
+              "grid_xy": [
+                1,
+                1
+              ],
+              "nms_rect_input_xywh": [
+                6,
+                6,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                15,
+                15,
+                27,
+                27
+              ],
+              "score": 0.85546875
+            },
+            {
+              "center_frame_xy": [
+                68.5,
+                148.5
+              ],
+              "center_input_xy": [
+                27.4,
+                59.4
+              ],
+              "grid_xy": [
+                3,
+                7
+              ],
+              "nms_rect_input_xywh": [
+                22,
+                54,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                55,
+                135,
+                27,
+                27
+              ],
+              "score": 0.84375
+            },
+            {
+              "center_frame_xy": [
+                148.5,
+                226.0
+              ],
+              "center_input_xy": [
+                59.4,
+                90.4
+              ],
+              "grid_xy": [
+                7,
+                11
+              ],
+              "nms_rect_input_xywh": [
+                54,
+                86,
+                11,
+                9
+              ],
+              "nms_rect_window_xywh": [
+                135,
+                215,
+                27,
+                22
+              ],
+              "score": 0.81640625
+            },
+            {
+              "center_frame_xy": [
+                226.0,
+                128.5
+              ],
+              "center_input_xy": [
+                90.4,
+                51.4
+              ],
+              "grid_xy": [
+                11,
+                6
+              ],
+              "nms_rect_input_xywh": [
+                86,
+                46,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                215,
+                115,
+                22,
+                27
+              ],
+              "score": 0.80859375
+            },
+            {
+              "center_frame_xy": [
+                208.5,
+                11.0
+              ],
+              "center_input_xy": [
+                83.4,
+                4.4
+              ],
+              "grid_xy": [
+                10,
+                0
+              ],
+              "nms_rect_input_xywh": [
+                78,
+                0,
+                11,
+                9
+              ],
+              "nms_rect_window_xywh": [
+                195,
+                0,
+                27,
+                22
+              ],
+              "score": 0.734375
+            },
+            {
+              "center_frame_xy": [
+                48.5,
+                188.5
+              ],
+              "center_input_xy": [
+                19.4,
+                75.4
+              ],
+              "grid_xy": [
+                2,
+                9
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                70,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                175,
+                27,
+                27
+              ],
+              "score": 0.72265625
+            },
+            {
+              "center_frame_xy": [
+                88.5,
+                188.5
+              ],
+              "center_input_xy": [
+                35.4,
+                75.4
+              ],
+              "grid_xy": [
+                4,
+                9
+              ],
+              "nms_rect_input_xywh": [
+                30,
+                70,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                75,
+                175,
+                27,
+                27
+              ],
+              "score": 0.71484375
+            },
+            {
+              "center_frame_xy": [
+                88.5,
+                28.5
+              ],
+              "center_input_xy": [
+                35.4,
+                11.4
+              ],
+              "grid_xy": [
+                4,
+                1
+              ],
+              "nms_rect_input_xywh": [
+                30,
+                6,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                75,
+                15,
+                27,
+                27
+              ],
+              "score": 0.703125
+            },
+            {
+              "center_frame_xy": [
+                148.5,
+                48.5
+              ],
+              "center_input_xy": [
+                59.4,
+                19.4
+              ],
+              "grid_xy": [
+                7,
+                2
+              ],
+              "nms_rect_input_xywh": [
+                54,
+                14,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                135,
+                35,
+                27,
+                27
+              ],
+              "score": 0.2038328406117544
+            },
+            {
+              "center_frame_xy": [
+                188.5,
+                48.5
+              ],
+              "center_input_xy": [
+                75.4,
+                19.4
+              ],
+              "grid_xy": [
+                9,
+                2
+              ],
+              "nms_rect_input_xywh": [
+                70,
+                14,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                175,
+                35,
+                27,
+                27
+              ],
+              "score": 0.2038328406117544
+            },
+            {
+              "center_frame_xy": [
+                188.5,
+                108.5
+              ],
+              "center_input_xy": [
+                75.4,
+                43.4
+              ],
+              "grid_xy": [
+                9,
+                5
+              ],
+              "nms_rect_input_xywh": [
+                70,
+                38,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                175,
+                95,
+                27,
+                27
+              ],
+              "score": 0.20207566095130824
+            },
+            {
+              "center_frame_xy": [
+                48.5,
+                108.5
+              ],
+              "center_input_xy": [
+                19.4,
+                43.4
+              ],
+              "grid_xy": [
+                2,
+                5
+              ],
+              "nms_rect_input_xywh": [
+                14,
+                38,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                35,
+                95,
+                27,
+                27
+              ],
+              "score": 0.1915325829886313
+            },
+            {
+              "center_frame_xy": [
+                108.5,
+                148.5
+              ],
+              "center_input_xy": [
+                43.4,
+                59.4
+              ],
+              "grid_xy": [
+                5,
+                7
+              ],
+              "nms_rect_input_xywh": [
+                38,
+                54,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                95,
+                135,
+                27,
+                27
+              ],
+              "score": 0.1748393762143928
+            },
+            {
+              "center_frame_xy": [
+                11.0,
+                108.5
+              ],
+              "center_input_xy": [
+                4.4,
+                43.4
+              ],
+              "grid_xy": [
+                0,
+                5
+              ],
+              "nms_rect_input_xywh": [
+                0,
+                38,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                0,
+                95,
+                22,
+                27
+              ],
+              "score": 0.14439568180820958
+            },
+            {
+              "center_frame_xy": [
+                148.5,
+                11.0
+              ],
+              "center_input_xy": [
+                59.4,
+                4.4
+              ],
+              "grid_xy": [
+                7,
+                0
+              ],
+              "nms_rect_input_xywh": [
+                54,
+                0,
+                11,
+                9
+              ],
+              "nms_rect_window_xywh": [
+                135,
+                0,
+                27,
+                22
+              ],
+              "score": 0.12349630680965293
+            },
+            {
+              "center_frame_xy": [
+                11.0,
+                148.5
+              ],
+              "center_input_xy": [
+                4.4,
+                59.4
+              ],
+              "grid_xy": [
+                0,
+                7
+              ],
+              "nms_rect_input_xywh": [
+                0,
+                54,
+                9,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                0,
+                135,
+                22,
+                27
+              ],
+              "score": 0.12222967802186162
+            },
+            {
+              "center_frame_xy": [
+                208.5,
+                148.5
+              ],
+              "center_input_xy": [
+                83.4,
+                59.4
+              ],
+              "grid_xy": [
+                10,
+                7
+              ],
+              "nms_rect_input_xywh": [
+                78,
+                54,
+                11,
+                11
+              ],
+              "nms_rect_window_xywh": [
+                195,
+                135,
+                27,
+                27
+              ],
+              "score": 0.11589653408290505
+            }
+          ],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261602-real_pass_no_face",
+        "fixture_id": "seed-20261602-real_pass_no_face",
+        "root_seed": 20261602,
+        "source_dataset": "PASS v3 (Zenodo 6615455)",
+        "source_image_sha256": "5acef500a6ba46fd026420c39c0ea8b627019b7eea906e3d7f2c7b4d801f22bb",
+        "source_item_license": "CC BY 2.0 (Flickr Attribution License)",
+        "source_role": "development",
+        "transform_parameters": {
+          "camera_window": [
+            240,
+            240
+          ],
+          "case": "real_pass_no_face",
+          "detector_resize": "PIL bilinear 240x240 to 96x96"
+        }
+      },
+      {
+        "author_attribution": "Cosimo+Roams",
+        "exact_raw_files": {
+          "camera_window_gray240.u8": {
+            "bytes": 57600,
+            "sha256": "e12da306ac5354c4ab44df85bd572701b9c971330db284b887565a94f45e762a"
+          },
+          "detector_input_gray96.u8": {
+            "bytes": 9216,
+            "sha256": "66d554617138dbab4f5dd18cb72e090b6c38d56839c55710bf2e2f3d1aacf272"
+          },
+          "detector_input_int8.i8": {
+            "bytes": 9216,
+            "sha256": "db53378c6db150a8442e0802d51a7d51e40a51fe0b745096ee15b448687f474d"
+          },
+          "detector_output_int8.i8": {
+            "bytes": 288,
+            "sha256": "6da717d2817cdb86d3142c737c1c04744c104a7adf963d0aee648ddf5c6b9972"
+          },
+          "identity_input_gray96.u8": null
+        },
+        "expected_crop_geometry": {
+          "crop_side_window_px": 96,
+          "identity_input_shape": null,
+          "status": "NO_FACE"
+        },
+        "expected_detector_output": {
+          "detections": [],
+          "output_scale_zero_point": [
+            0.00390625,
+            -128
+          ],
+          "output_shape": [
+            1,
+            12,
+            12,
+            2
+          ],
+          "raw_output_file": "detector_output_int8.i8",
+          "threshold": 0.7
+        },
+        "fixture_directory": "outputs/C/fixtures/selected_challenger/seed-20261603-real_pass_no_face",
+        "fixture_id": "seed-20261603-real_pass_no_face",
+        "root_seed": 20261603,
+        "source_dataset": "PASS v3 (Zenodo 6615455)",
+        "source_image_sha256": "0888570dbc24123543f92bb7fed6684f2c34bfdeb59811473fae6fb014c1c269",
+        "source_item_license": "CC BY 2.0 (Flickr Attribution License)",
+        "source_role": "development",
+        "transform_parameters": {
+          "camera_window": [
+            240,
+            240
+          ],
+          "case": "real_pass_no_face",
+          "detector_resize": "PIL bilinear 240x240 to 96x96"
+        }
+      }
+    ],
+    "model_path": "outputs/C/models/trained/cheap_sepconv_16/seed-20261102/detector_full_int8.tflite",
+    "model_sha256": "4a484c9b56f806b4d13b603e66c3f7df60012ac74149e7a28655ddd497e5195c",
+    "raw_byte_policy": "raw gray bytes are stored in .u8/.i8 files; PGM/PNG are previews only; no JPEG inference inputs",
+    "real_no_face_fixture_count": 3,
+    "schema": "job-c-raw-parity-fixtures-1",
+    "threshold": 0.7,
+    "transform_fault_block_count": 10,
+    "source_fixture_manifest_sha256": "ce44cea87cc7256750110f0db2fa53da35e28c544d2765bfb2f70c1edc1b1d1e",
+    "excluded_visual_audit_artifacts": {
+      "count": 3,
+      "reason": "local-only contact sheets are not consumed by exact-byte parity or host verification"
+    }
+  },
+  "acceptance_checks": [
+    {
+      "id": "original_C_receipt_preserved_verbatim",
+      "status": "pass",
+      "detail": "Original C RESULT.json and RESULT.md copied into canonical handoffs/C without mutation."
+    },
+    {
+      "id": "twenty_seeded_detector_roots_present",
+      "status": "pass",
+      "detail": "Original C ten-root-per-arm trained export archive included; archive SHA-256 recorded in integrated_assets."
+    },
+    {
+      "id": "selected_model_and_label_map_match_fixture_manifest",
+      "status": "pass"
+    },
+    {
+      "id": "raw_WIDER_and_PASS_source_data_not_copied",
+      "status": "pass",
+      "detail": "No source dataset images or raw dataset archives were copied; only the 13 role-labeled C development parity fixtures."
+    },
+    {
+      "id": "historical_license_and_selection_limits_preserved",
+      "status": "pass",
+      "detail": "Original C receipt records licensing uncertainty and rejects the learned detector for deployment; this integration does not change selection."
+    },
+    {
+      "id": "thirteen_exact_byte_development_fixtures_integrated",
+      "status": "pass"
+    },
+    {
+      "id": "private_visual_contact_sheets_excluded",
+      "status": "pass"
+    }
+  ],
+  "physical_acceptance_pending": true,
+  "supported_claims": [
+    "C software training/export artifacts are available within the canonical workspace.",
+    "13 permitted exact-byte development parity fixtures resolve workspace-relatively."
+  ],
+  "unsupported_or_pending": [
+    "Physical C cells remain pending.",
+    "Original raw WIDER/PASS source datasets remain local and are not part of transfer.",
+    "The learned challenger is development-only and is not a deployment candidate."
+  ],
+  "acceptance_checks_passed": true,
+  "source_fixture_manifest_sha256": "ce44cea87cc7256750110f0db2fa53da35e28c544d2765bfb2f70c1edc1b1d1e",
+  "excluded_local_visual_audit_artifacts": [
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/fixture_contact_sheet_1.png",
+      "bytes": 388175,
+      "sha256": "21438734bdaee081390e6e010d4d2575d7278826d8fa928a224eb351bdd7db4e",
+      "included_in_transfer": false
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/fixture_contact_sheet_2.png",
+      "bytes": 319307,
+      "sha256": "cfa6410f00619c8af271e57995c6650017d5ac8b214dbed31f3b544c93dc7bb2",
+      "included_in_transfer": false
+    },
+    {
+      "path": "work/project-finish-v4/fixtures/C/selected_challenger/fixture_contact_sheet_3.png",
+      "bytes": 284404,
+      "sha256": "7559dc2dfa6419f615f88bde91fb86b7a9fbf33a07890d0cc67410d81c414a6e",
+      "included_in_transfer": false
+    }
+  ]
+}

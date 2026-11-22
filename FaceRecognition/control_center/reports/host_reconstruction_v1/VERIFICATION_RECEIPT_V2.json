@@ -1,0 +1,134 @@
+{
+  "schema": "control-center-host-reconstruction-verification-v2",
+  "observed_utc": "2026-11-02T10:33:05.824302+00:00",
+  "status": "pass",
+  "tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=FaceRecognition TF_CPP_MIN_LOG_LEVEL=3 TF_NUM_INTRAOP_THREADS=2 TF_NUM_INTEROP_THREADS=1 OMP_NUM_THREADS=2 work/model-training/.venv/bin/python -m unittest discover -s FaceRecognition/control_center/tests -v",
+    "passed": 40,
+    "failed": 0,
+    "stdout_path": "work/project-research-v5/reports/mac_verification_v1/CONTROL_CENTER_HOST_RECONSTRUCTION_V2_FINAL.stdout.txt",
+    "prior_attempt_preserved": "work/project-research-v5/reports/mac_verification_v1/CONTROL_CENTER_HOST_RECONSTRUCTION_V2.stdout.txt (39-test run before fake-model fixture fix; 6 errors)"
+  },
+  "javascript_syntax": {
+    "command": "node --check FaceRecognition/control_center/web/app.js",
+    "status": "pass"
+  },
+  "doctor": {
+    "command": "FaceRecognition/bin/nicla-control-center --doctor --port 0",
+    "status": "ready",
+    "stdout_path": "work/project-research-v5/reports/mac_verification_v1/CONTROL_CENTER_HOST_RECONSTRUCTION_V2_DOCTOR.stdout.txt"
+  },
+  "worker_smoke": {
+    "runtime": "TensorFlow 2.10.1",
+    "command": "work/model-training/.venv/bin/python -m control_center.host_diagnostic_worker",
+    "input": "synthetic 240x240 JPEG generated in memory and piped; image not saved",
+    "protocol": [
+      "ready",
+      "result",
+      "stopped"
+    ],
+    "host_evidence_scope": "HOST RECONSTRUCTION FROM LOSSY PREVIEW JPEG; NOT FRAME-IDENTICAL OR DEVICE-EQUIVALENT",
+    "detector_regions": 1,
+    "identity_status": "not_run",
+    "reason": "crop_outside_frame",
+    "qualified_identity": null,
+    "runtime_manifest_match": true,
+    "warnings": [],
+    "serial_or_camera_accessed": false
+  },
+  "manifest": {
+    "historical_manifest_modified": false,
+    "current_host_manifest_sha256": "a5ca149876943a58bafc7465ca726f3d42e995f5a4c2980752119f74506ccc05",
+    "current_runtime_config_sha256": "622b1b392ebe85450ce15e2421059bc71e2016e26d26f9f18da0a58f9813be39",
+    "runtime_digest_matches": true,
+    "scope": "local host reconstruction only; not a device release manifest"
+  },
+  "source_hashes": {
+    "runtime_config": {
+      "path": "FaceRecognition/firmware/runtime_config.json",
+      "sha256": "622b1b392ebe85450ce15e2421059bc71e2016e26d26f9f18da0a58f9813be39",
+      "bytes": 10541
+    },
+    "host_reconstruction_manifest": {
+      "path": "FaceRecognition/models/deployment-v1/integration_manifest_host_reconstruction_v1.json",
+      "sha256": "a5ca149876943a58bafc7465ca726f3d42e995f5a4c2980752119f74506ccc05",
+      "bytes": 4071
+    },
+    "historical_integration_manifest_preserved": {
+      "path": "FaceRecognition/models/deployment-v1/integration_manifest.json",
+      "sha256": "1673999923e11d0d0081fdd70d729289e89f3ee432c75ef9bf6a4afcd8a2482a",
+      "bytes": 3866
+    },
+    "fomo_detector": {
+      "path": "FaceRecognition/models/deployment-v1/detector_gray_fomo_int8.tflite",
+      "sha256": "4a484c9b56f806b4d13b603e66c3f7df60012ac74149e7a28655ddd497e5195c",
+      "bytes": 10160
+    },
+    "alpha025_classifier": {
+      "path": "FaceRecognition/models/deployment-v1/identity_classifier_a025_int8.tflite",
+      "sha256": "8be1d461ae1606fd7d6be4295049e7e47f0c7516323cb9f5889e7346b9b9ca55",
+      "bytes": 327072
+    },
+    "host_diagnostic": {
+      "path": "FaceRecognition/control_center/host_diagnostic.py",
+      "sha256": "d7b1347aaab14f15aa30936b5eff4edf202cb8c53414cb65aa414ce3ce301cc2",
+      "bytes": 21092
+    },
+    "worker": {
+      "path": "FaceRecognition/control_center/host_diagnostic_worker.py",
+      "sha256": "3fa6a7fdd53a456e01546c66df6b8af2385eaaf949aa6d3fdb3cde886e854cc9",
+      "bytes": 2685
+    },
+    "server": {
+      "path": "FaceRecognition/control_center/server.py",
+      "sha256": "a0c5f2916a583e1f8c999f35c69d5bcc3189b67e765c3087ef6787aafe3fa9fa",
+      "bytes": 38938
+    },
+    "app_js": {
+      "path": "FaceRecognition/control_center/web/app.js",
+      "sha256": "d50c4652c6bab83c1819cd7c3706437cdec479d41c1d8cd250233d672eb72ee6",
+      "bytes": 34069
+    },
+    "index_html": {
+      "path": "FaceRecognition/control_center/web/index.html",
+      "sha256": "c91d39449beb51edc13ac5488459b5e7af513ccfdbc472578fb424deecd6ae74",
+      "bytes": 13591
+    },
+    "tests_core": {
+      "path": "FaceRecognition/control_center/tests/test_control_center.py",
+      "sha256": "0429ab19bb4aa8154d49501a4457c681918645fc53c635f3b954518f657e13f7",
+      "bytes": 7263
+    },
+    "tests_host": {
+      "path": "FaceRecognition/control_center/tests/test_host_diagnostic.py",
+      "sha256": "f47b08fef6c57153197b4d52aee4a15dfceeed38fcfb1561cbef89d515d0c0a8",
+      "bytes": 17181
+    },
+    "readme": {
+      "path": "FaceRecognition/control_center/README.md",
+      "sha256": "0a9937032b1f11be4f97e1ca4a0eea7906e5a3ba0c1659df40434f603021acea",
+      "bytes": 5098
+    },
+    "launcher": {
+      "path": "FaceRecognition/bin/nicla-control-center",
+      "sha256": "44c272dcf20807c84217e85db5b094c997a02f4191395e900a86e61d75946991",
+      "bytes": 489
+    },
+    "tests_stdout": {
+      "path": "work/project-research-v5/reports/mac_verification_v1/CONTROL_CENTER_HOST_RECONSTRUCTION_V2_FINAL.stdout.txt",
+      "sha256": "3bdc050db3547d725449d2b26644cafae040fccd6f7e98f259dd2e31543b93fc",
+      "bytes": 4224
+    },
+    "doctor_stdout": {
+      "path": "work/project-research-v5/reports/mac_verification_v1/CONTROL_CENTER_HOST_RECONSTRUCTION_V2_DOCTOR.stdout.txt",
+      "sha256": "f9290170165d2e89b47b610b0c688d74e6ce98df0bc37c07b6672ed9238846fd",
+      "bytes": 279
+    }
+  },
+  "limits": [
+    "No actual camera inference or device decision ran in this verification.",
+    "The camera target mismatch recorded in CAMERA_SCENE_REFRESH_V3.md blocks new optical acquisition.",
+    "The live service on port 8780 still needs restart from the verified source before browser inspection.",
+    "Host JPEG tensors are derived from lossy preview bytes and are not board-equivalent."
+  ]
+}

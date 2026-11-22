@@ -1,0 +1,1074 @@
+{
+  "schema": "study-job-result-1",
+  "job_id": "C",
+  "status": "complete_verified_with_physical_cells_pending",
+  "evidence_tier": "host_tflite_training_and_full_scene_evaluation; Nicla_hardware_pending",
+  "created_utc": "2026-10-29T08:24:00.029202+00:00",
+  "protocol_id": "nicla-five-known-study-v4",
+  "platform": "Mac host; actual Nicla not attached",
+  "objective": "Train and compare a distinct face-existence/localization detector, audit full-scene crops and freeze a trustworthy detector/crop shortlist for F/H.",
+  "inputs": {
+    "A": {
+      "status": "complete_verified",
+      "handoff": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/A/RESULT.json",
+        "sha256": "5cbc0ea6e09f9263e443d5a240821935bf43a25fe718d928bbda4570acb3048a"
+      },
+      "sha256": "5cbc0ea6e09f9263e443d5a240821935bf43a25fe718d928bbda4570acb3048a"
+    },
+    "B": {
+      "status": "complete_verified",
+      "handoff": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/handoffs/B/RESULT.json",
+        "sha256": "be850776e374d689d881a28982c71a8d6bfbab5c4080891e99d1a72e93c8d2c9"
+      },
+      "sha256": "be850776e374d689d881a28982c71a8d6bfbab5c4080891e99d1a72e93c8d2c9"
+    },
+    "shared_contracts": {
+      "image-crop.schema.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/config/contracts/v1/image-crop.schema.json",
+        "sha256": "a6839be0c86d7a117a2790c665ccdfd39fb30e8ee1b947b28bab206a0d2bbb23"
+      },
+      "preprocessing-quantization.schema.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/config/contracts/v1/preprocessing-quantization.schema.json",
+        "sha256": "a51d7f3c0b9799f7109affc5a24f61270ec21777f5339ccd5b609ad38744da18"
+      },
+      "model-output.schema.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/config/contracts/v1/model-output.schema.json",
+        "sha256": "4cead3967c0fd88b76ec0950ae52fe3c47bfafd2526bbdbee63a610839b0bff8"
+      },
+      "labels.schema.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/config/contracts/v1/labels.schema.json",
+        "sha256": "8aded95f0b5ab1c8d1eac02dcb442d62c11419fba5b5d4d90d72ad6e0694e5df"
+      }
+    },
+    "d_identity_compatibility_audit": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/d_identity_compatibility_audit.json",
+      "sha256": "445f383eacae7e006fdb31a8c2329fea3edd645a741448d5a173160569ee34b5"
+    }
+  },
+  "data": {
+    "WIDER_FACE": {
+      "official_source": "https://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/index.html",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2016/html/Yang_WIDER_FACE_A_CVPR_2016_paper.html",
+      "scene_role_counts": {
+        "train": 10792,
+        "development": 303,
+        "final": 217
+      },
+      "full_labeled_face_box_counts": {
+        "train": 138059,
+        "development": 2646,
+        "final": 1687
+      },
+      "visible_face_centers_after_camera_window": {
+        "train": 97236,
+        "development": 1881,
+        "final": 1172
+      },
+      "face_size_max_side_detector_input_px": {
+        "train": {
+          "<4": 64126,
+          "4-7": 19062,
+          "8-11": 5856,
+          "12-19": 4196,
+          "20-31": 1957,
+          "32+": 2039
+        },
+        "development": {
+          "<4": 694,
+          "4-7": 648,
+          "8-11": 233,
+          "12-19": 181,
+          "20-31": 69,
+          "32+": 56
+        },
+        "final": {
+          "<4": 770,
+          "4-7": 188,
+          "8-11": 94,
+          "12-19": 58,
+          "20-31": 32,
+          "32+": 30
+        }
+      },
+      "event_group_split_disjoint": true,
+      "decode_errors": 0,
+      "exact_cross_role_duplicates": 0,
+      "official_terms_clear": false,
+      "handling": "Dataset remains local; no source images redistributed."
+    },
+    "PASS_v3": {
+      "dataset_record": "https://zenodo.org/records/6615455",
+      "Oxford_source_page": "https://www.robots.ox.ac.uk/~vgg/data/pass/",
+      "dataset_record_license": "CC BY 4.0",
+      "selected_item_license": "CC BY 2.0 Flickr Attribution License",
+      "role_scene_counts": {
+        "train": 100,
+        "development": 100,
+        "final": 50
+      },
+      "uploader_groups_disjoint": true,
+      "source_author_attribution_retained": true,
+      "development_contact_sheet_review": "All 200 downloaded train/development negatives reviewed in ten rendered sheets; one stylized cartoon face-like depiction retained as a conservative hard negative.",
+      "download_failures": 0
+    },
+    "training_cache": {
+      "train_scenes": 10892,
+      "development_scenes": 403,
+      "final_scenes_loaded_before_freeze": false,
+      "face_target_semantics": "background/face centroid in a 12x12 stride-8 output grid; same-cell face centers merge; WIDER placeholder zero-box rows excluded",
+      "files": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/manifests/training_cache/cache_report.json",
+        "sha256": "b93ca72962ecba8c121055b7b770442086ae5899a6059de69fbe364bcbbc61b6"
+      }
+    },
+    "identity_overlap": {
+      "exact_source_sha256_overlap_count": 0,
+      "wider_count": 16099,
+      "pass_count": 250,
+      "comparison_data": {
+        "presentation_manifest.jsonl": 400,
+        "pretraining_manifest.jsonl": 144656,
+        "primary_split_manifest.jsonl": 1750,
+        "source_manifest.jsonl": 231339
+      },
+      "audit_limit": "Exact decoded-source byte SHA-256 only; identity crops can be transformed crops of a larger scene, so dataset source families and role manifests were separately reviewed. No pHash scene-to-crop comparison was performed.",
+      "report": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/manifests/cross_dataset_overlap_audit.json",
+        "sha256": "9c3d6d634530846da8dba9b03614a51cedb84eca64bd41368f0d18464be921dd"
+      }
+    }
+  },
+  "training": {
+    "method": {
+      "arms": [
+        "mobilenetv2_alpha_0p1",
+        "cheap_sepconv_16"
+      ],
+      "backbone_provenance": {
+        "alpha": 0.1,
+        "implementation": "tf.keras.applications.MobileNetV2 from installed TensorFlow/Keras 2.10.1",
+        "implementation_source": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/model-training/.venv/lib/python3.9/site-packages/keras/applications/mobilenet_v2.py",
+        "implementation_source_sha256": "7ecb1e022fb57f05f56b5593ae2e620065ab44eff44af5b3fe631dd165177763",
+        "pretrained_checkpoint": "none; Keras ImageNet weights do not provide alpha=0.1, so this arm trains from random initialization",
+        "weights": null
+      },
+      "development_scenes": 403,
+      "epochs_max": 14,
+      "export": {
+        "float_tflite": true,
+        "full_integer_quantization": true,
+        "representative_images": "random subset from WIDER train + PASS train only"
+      },
+      "external_route_assessment": {
+        "edge_impulse_open_fomo": "Inspected the official FOMO block's centroid-grid labels and background/face semantics. Its published example path is PyTorch/ExecuTorch .pte, not a TFLite/OpenMV exporter for MobileNetV2 alpha=0.1; used the local Keras/TFLite route to preserve the requested Nicla runtime contract.",
+        "reference_url": "https://github.com/edgeimpulse/executorch-pytorch-object-detection-fomo-block"
+      },
+      "input": {
+        "normalization": "u8/255",
+        "output_grid": [
+          1,
+          12,
+          12,
+          2
+        ],
+        "pixel_format": "gray8",
+        "shape": [
+          1,
+          96,
+          96,
+          1
+        ]
+      },
+      "keras": "2.10.0",
+      "labels": [
+        "background",
+        "face"
+      ],
+      "method": "local TensorFlow/Keras 2.10.1 FOMO-style centroid grid training",
+      "optimization": {
+        "augmentations": [
+          "horizontal flip",
+          "brightness ±0.07"
+        ],
+        "batch_size": 64,
+        "face_cell_loss_weight": 40,
+        "learning_rate": 0.001,
+        "optimizer": "Adam"
+      },
+      "root_seeds": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "schema": "job-c-fomo-training-1",
+      "tensorflow": "2.10.1",
+      "training_scenes": 10892
+    },
+    "method_report": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/models/trained/training_method.json",
+      "sha256": "82a35e1e983afa71784ec8975dfcc4b2d15368c258c9d02426c4864b5e12cbaa"
+    },
+    "root_counts": {
+      "cheap_sepconv_16": 10,
+      "mobilenetv2_alpha_0p1": 10
+    },
+    "seeds": [
+      20261101,
+      20261102,
+      20261103,
+      20261104,
+      20261105,
+      20261106,
+      20261107,
+      20261108,
+      20261109,
+      20261110
+    ],
+    "training_only_representative_images": true,
+    "arms": {
+      "mobilenetv2_alpha_0p1": {
+        "pretrained_backbone": "none; Keras 2.10 does not provide alpha 0.1 ImageNet weights; random initialization",
+        "parameters": 5170,
+        "epochs_completed": {
+          "all_roots": 5
+        },
+        "best_epoch": {
+          "all_roots": 1
+        },
+        "quality": "Every float and INT8 root had zero F1/recall at all tested thresholds through 0.70."
+      },
+      "cheap_sepconv_16": {
+        "architecture": "three separable-convolution stages widths 8/12/16 plus refine stage; no pretrained weights",
+        "parameters": 1127,
+        "epochs_completed": {
+          "all_roots": 14
+        },
+        "best_epoch_counts": {
+          "12": 1,
+          "13": 4,
+          "14": 5
+        },
+        "development_INT8_median_f1": 0.3308085667340045,
+        "development_INT8_f1_min_max": [
+          0.3236809379996447,
+          0.34496199571233677
+        ],
+        "development_INT8_median_false_trigger_scene_rate": 0.77
+      }
+    },
+    "seed_summary": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/models/trained/ten_root_summary.json",
+      "sha256": "a314a2f2aad963e53f9696196ea3183aaff48f12777ee6c2dd66cf44a97e07d6"
+    },
+    "all_per_root_histories_and_exports": "outputs/C/models/trained/{arm}/seed-{20261101..20261110}/",
+    "resource_lease": {
+      "status": "released",
+      "audit": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/training_lease_audit.json",
+        "sha256": "355deb323452c9b21e3ce280c0d8897b3e31d32920adf5b130cee4dad69a5999"
+      }
+    },
+    "methodology": "Keras/TensorFlow 2.10.1 local FOMO-style full-scene training; Adam 0.001, batch 64, face cell weight 40, horizontal flips and brightness ±0.07, max 14 epochs/early stopping."
+  },
+  "models": {
+    "stock_reference": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/models/stock_reference/fomo_face_detection-stock.tflite",
+      "sha256": "fc3aec94b4b02dc6819db3e2d63bfd8055c9757fb350008538d4c1604aea4cb4",
+      "file_bytes": 57040,
+      "input": {
+        "name": "serving_default_x:0",
+        "shape": [
+          1,
+          96,
+          96,
+          3
+        ],
+        "dtype": "int8",
+        "quantization": {
+          "scale": 0.003921568859368563,
+          "zero_point": -128
+        }
+      },
+      "output": {
+        "name": "StatefulPartitionedCall:0",
+        "shape": [
+          1,
+          12,
+          12,
+          2
+        ],
+        "dtype": "int8",
+        "quantization": {
+          "scale": 0.00390625,
+          "zero_point": -128
+        }
+      },
+      "labels": [
+        "background",
+        "face"
+      ],
+      "operators": [
+        "ADD",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "PAD",
+        "SOFTMAX"
+      ],
+      "development_fixed_threshold": 0.4,
+      "historical_Nicla_measurement": {
+        "tensor_arena_bytes": 237936,
+        "inference_ms": 65.5,
+        "detections": "0/10 current-scene frames; diagnostic only"
+      }
+    },
+    "full_int8_export_audit": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/root_export_audit.json",
+      "sha256": "16700cffbb896e87a67708c70130bf8415ee3b9e653dfac58138293ff4a7a024"
+    },
+    "full_int8_export_profiles": {
+      "mobileNetV2_alpha_0p1": {
+        "input_shape": [
+          1,
+          96,
+          96,
+          1
+        ],
+        "input_dtype": "int8",
+        "input_scale": 0.00392156862745098,
+        "input_zero_point": -128,
+        "output_shape": [
+          1,
+          12,
+          12,
+          2
+        ],
+        "output_dtype": "int8",
+        "output_scale": 0.00390625,
+        "output_zero_point": -128,
+        "file_bytes": 27624,
+        "operators": [
+          "ADD",
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "MUL",
+          "PAD",
+          "SOFTMAX"
+        ]
+      },
+      "cheap_sepconv_16": {
+        "input_shape": [
+          1,
+          96,
+          96,
+          1
+        ],
+        "input_dtype": "int8",
+        "input_scale": 0.00392156862745098,
+        "input_zero_point": -128,
+        "output_shape": [
+          1,
+          12,
+          12,
+          2
+        ],
+        "output_dtype": "int8",
+        "output_scale": 0.00390625,
+        "output_zero_point": -128,
+        "file_bytes": 10160,
+        "operators": [
+          "CONV_2D",
+          "DEPTHWISE_CONV_2D",
+          "SOFTMAX"
+        ]
+      }
+    },
+    "host_tflite_median_ms_per_scene": {
+      "stock_reference": 9.781024146401986,
+      "mobilenetv2_alpha_0p1_full_int8": 4.886742464019909,
+      "cheap_sepconv_16_full_int8": 1.0667484379652485
+    },
+    "host_timing_note": "Host interpreter timings are not Nicla latency or arena measurements. Physical model loading/operator compatibility remains pending."
+  },
+  "selection": {
+    "functional_app_baseline": {
+      "role": "working stock functional baseline",
+      "artifact_path": "outputs/C/models/stock_reference/fomo_face_detection-stock.tflite",
+      "artifact_sha256": "fc3aec94b4b02dc6819db3e2d63bfd8055c9757fb350008538d4c1604aea4cb4",
+      "kind": "stock RGB FOMO",
+      "threshold": 0.4,
+      "crop_policy": "legacy_current",
+      "crop_side_window_px": 96,
+      "status": "retain for app continuity; development false-trigger rate was 15/100 PASS scenes, so not a verified <5% trigger policy"
+    },
+    "research_challenger": {
+      "role": "development-selected learned challenger for comparison only",
+      "arm": "cheap_sepconv_16",
+      "root_seed": 20261102,
+      "root_artifact_dir": "outputs/C/models/trained/cheap_sepconv_16/seed-20261102",
+      "float_path": "outputs/C/models/trained/cheap_sepconv_16/seed-20261102/detector_float.tflite",
+      "float_sha256": "f7987f0a5a09f99f5adf1f74c94c6903df6535590edc283db1db922b8a55e71f",
+      "full_int8_path": "outputs/C/models/trained/cheap_sepconv_16/seed-20261102/detector_full_int8.tflite",
+      "full_int8_sha256": "4a484c9b56f806b4d13b603e66c3f7df60012ac74149e7a28655ddd497e5195c",
+      "threshold": 0.7,
+      "threshold_grid": [
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7
+      ],
+      "development_full_int8_f1": 0.34496199571233677,
+      "development_full_int8_false_trigger_scene_rate": 0.72,
+      "development_full_int8_end_to_end_usable_scene_coverage": 0.03,
+      "deployment_candidate": false,
+      "reason": "Best median-adjacent individual INT8 F1 among learned roots, but false triggers 72/100 PASS negatives and only 3.0% of development scenes reach ONE_FACE_CROP_READY."
+    },
+    "crop_shortlist": {
+      "functional_stock": {
+        "policy": "legacy_current",
+        "side_window_px": 96
+      },
+      "learned_challenger": {
+        "policy": "candidate",
+        "side_window_px": 96
+      },
+      "tested_sides_window_px": [
+        80,
+        96,
+        112,
+        128
+      ]
+    },
+    "threshold_rule": "No learned threshold in 0.30..0.70 met the ≤5% PASS no-face trigger target. The compact challenger’s 0.70 threshold is only the highest-development-F1 fallback used for research reporting and is not cleared for deployment.",
+    "development_supported_image_scale": {
+      "definition": "max side of annotated face box after 240x240 camera-window resize to 96x96 detector input; 1 detector px equals 2.5 camera-window px.",
+      "range_detector_input_px": [
+        12,
+        31
+      ],
+      "equivalent_camera_window_px": [
+        30,
+        77.5
+      ],
+      "bins": {
+        "12-19": {
+          "target_centers": 181,
+          "detection_recall": 0.46408839779005523,
+          "conditional_crop_face_box_coverage": 0.75,
+          "end_to_end_face_box_coverage": 0.34806629834254144
+        },
+        "20-31": {
+          "target_centers": 69,
+          "detection_recall": 0.6956521739130435,
+          "conditional_crop_face_box_coverage": 0.6458333333333334,
+          "end_to_end_face_box_coverage": 0.4492753623188406
+        },
+        "32+": {
+          "target_centers": 56,
+          "detection_recall": 0.6071428571428571,
+          "conditional_crop_face_box_coverage": 0.029411764705882353,
+          "end_to_end_face_box_coverage": 0.017857142857142856
+        },
+        "4-7": {
+          "target_centers": 648,
+          "detection_recall": 0.09567901234567901,
+          "conditional_crop_face_box_coverage": 0.6612903225806451,
+          "end_to_end_face_box_coverage": 0.06327160493827161
+        },
+        "8-11": {
+          "target_centers": 233,
+          "detection_recall": 0.21030042918454936,
+          "conditional_crop_face_box_coverage": 0.5714285714285714,
+          "end_to_end_face_box_coverage": 0.12017167381974249
+        },
+        "<4": {
+          "target_centers": 694,
+          "detection_recall": 0.03170028818443804,
+          "conditional_crop_face_box_coverage": 0.7272727272727273,
+          "end_to_end_face_box_coverage": 0.023054755043227664
+        }
+      },
+      "basis": "For stock legacy fixed 96, 12-19 px and 20-31 px faces had 46.4%/69.6% detection recall and 75.0%/64.6% conditional full-box coverage. Coverage fell to 2.9% for detected 32+ px faces; under-12 px detection recall was at most 21.0%.",
+      "limit": "This is a development-supported image-scale range, not a calibrated physical distance or a safety guarantee. Target-camera ISP, sensor distance, pose, and illumination calibration remain pending on Nicla."
+    },
+    "selection_freeze": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/development_freeze.json",
+      "sha256": "2fbf002547f6431a13d4a69051949f278b1c651b73832527049780550fa14ff6"
+    },
+    "freeze_addendum": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/development_freeze_addendum.json",
+      "sha256": "73ff8d8dfe079b0ad8ed118eb36774c8193bb9bc15a7223206cf748915c69e2a"
+    },
+    "final_scene_scores_changed_selection": false
+  },
+  "evaluation": {
+    "development": {
+      "scene_count": 403,
+      "final_role_images_loaded": false,
+      "stock_fixed_040": {
+        "precision": 0.6321353065539113,
+        "recall": 0.15895800106326421,
+        "f1": 0.25403568394222603,
+        "false_trigger_scene_rate": 0.15,
+        "false_trigger_scenes": 15,
+        "no_face_scenes": 100,
+        "centroid_error_input_px": {
+          "median": 3.838144015141804,
+          "n": 299,
+          "p90": 6.85395964376458
+        },
+        "legacy_96_conditional_face_box_coverage": 0.6020066889632107,
+        "legacy_96_end_to_end_face_coverage": 0.09569377990430622,
+        "one_face_crop_ready_scene_coverage": 0.1662531017369727
+      },
+      "learned_arms": {
+        "cheap_sepconv_16": {
+          "float": {
+            "development_thresholds": [
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7
+            ],
+            "metrics_median": {
+              "f1": 0.33403005108445416,
+              "false_trigger_scene_rate": 0.75,
+              "positive_scene_recall": 0.7599277978339349,
+              "precision": 0.2589589536778009,
+              "recall": 0.46996278575225947
+            },
+            "metrics_min_max": {
+              "f1": [
+                0.32474042248478335,
+                0.34359999999999996
+              ],
+              "false_trigger_scene_rate": [
+                0.7,
+                0.83
+              ],
+              "positive_scene_recall": [
+                0.7292418772563177,
+                0.7978339350180506
+              ],
+              "precision": [
+                0.24229873155578566,
+                0.27540878486694453
+              ],
+              "recall": [
+                0.4455077086656034,
+                0.5077086656034024
+              ]
+            },
+            "root_count": 10
+          },
+          "full_int8": {
+            "development_thresholds": [
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7
+            ],
+            "metrics_median": {
+              "f1": 0.3308085667340045,
+              "false_trigger_scene_rate": 0.77,
+              "positive_scene_recall": 0.7635379061371841,
+              "precision": 0.25729492660995285,
+              "recall": 0.47262094630515683
+            },
+            "metrics_min_max": {
+              "f1": [
+                0.3236809379996447,
+                0.34496199571233677
+              ],
+              "false_trigger_scene_rate": [
+                0.7,
+                0.82
+              ],
+              "positive_scene_recall": [
+                0.7220216606498195,
+                0.8050541516245487
+              ],
+              "precision": [
+                0.24297082228116712,
+                0.27508196721311473
+              ],
+              "recall": [
+                0.44019138755980863,
+                0.506113769271664
+              ]
+            },
+            "root_count": 10
+          }
+        },
+        "mobilenetv2_alpha_0p1": {
+          "float": {
+            "development_thresholds": [
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7
+            ],
+            "metrics_median": {
+              "f1": 0.0,
+              "false_trigger_scene_rate": 0.0,
+              "positive_scene_recall": 0.0,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "metrics_min_max": {
+              "f1": [
+                0.0,
+                0.0
+              ],
+              "false_trigger_scene_rate": [
+                0.0,
+                0.0
+              ],
+              "positive_scene_recall": [
+                0.0,
+                0.0
+              ],
+              "precision": [
+                0.0,
+                0.0
+              ],
+              "recall": [
+                0.0,
+                0.0
+              ]
+            },
+            "root_count": 10
+          },
+          "full_int8": {
+            "development_thresholds": [
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7,
+              0.7
+            ],
+            "metrics_median": {
+              "f1": 0.0,
+              "false_trigger_scene_rate": 0.0,
+              "positive_scene_recall": 0.0,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "metrics_min_max": {
+              "f1": [
+                0.0,
+                0.0
+              ],
+              "false_trigger_scene_rate": [
+                0.0,
+                0.0
+              ],
+              "positive_scene_recall": [
+                0.0,
+                0.0
+              ],
+              "precision": [
+                0.0,
+                0.0
+              ],
+              "recall": [
+                0.0,
+                0.0
+              ]
+            },
+            "root_count": 10
+          }
+        }
+      },
+      "comparison_report": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/development_comparison.json",
+        "sha256": "27065feab3c53de41313e348a0dc603a59b433c4bc9c9fdbd07e97aab48ac7fd"
+      },
+      "conditional_identity_quality": null,
+      "identity_quality_reason": "Not measured: no current D handoff or deployable D candidate is available. The historical 64-D embedding model is not a classifier and its weights trained on four of B's five identities, so it was excluded from crop selection. Reported legacy gray mean/stdev checks are not D-conditioned recognition quality."
+    },
+    "frozen_final": {
+      "scene_count": 267,
+      "role_counts": {
+        "WIDER_annotated_scenes": 217,
+        "PASS_real_no_face_scenes": 50
+      },
+      "freeze_sha256": "2fbf002547f6431a13d4a69051949f278b1c651b73832527049780550fa14ff6",
+      "final_data_used_for_selection": false,
+      "stock_fixed_040": {
+        "precision": 0.4583333333333333,
+        "recall": 0.06569965870307168,
+        "f1": 0.11492537313432838,
+        "false_trigger_scenes": 8,
+        "no_face_scenes": 50,
+        "false_trigger_scene_rate": 0.16,
+        "face_center_precision_recall_counts": {
+          "tp": 77,
+          "fp": 91,
+          "fn": 1095,
+          "targets": 1172
+        },
+        "one_face_crop_ready_scenes": 40,
+        "one_face_crop_ready_scene_coverage": 0.149812734082397,
+        "legacy96_conditional_face_box_coverage": 0.5064935064935064,
+        "legacy96_end_to_end_face_coverage": 0.033276450511945395
+      },
+      "compact_seed_20261102_int8_frozen_threshold_070": {
+        "precision": 0.1742349457058243,
+        "recall": 0.30119453924914674,
+        "f1": 0.2207629768605378,
+        "false_trigger_scenes": 37,
+        "no_face_scenes": 50,
+        "false_trigger_scene_rate": 0.74,
+        "face_center_precision_recall_counts": {
+          "tp": 353,
+          "fp": 1673,
+          "fn": 819,
+          "targets": 1172
+        },
+        "one_face_crop_ready_scenes": 7,
+        "one_face_crop_ready_scene_coverage": 0.026217228464419477,
+        "candidate96_conditional_face_box_coverage": 0.5127478753541076,
+        "candidate96_end_to_end_face_coverage": 0.15443686006825938,
+        "float_metrics": {
+          "precision": 0.172782874617737,
+          "recall": 0.28924914675767915,
+          "f1": 0.21633694958519462,
+          "false_trigger_scene_rate": 0.74,
+          "end_to_end_usable_scene_coverage": 0.02247191011235955
+        }
+      },
+      "float_int8_at_frozen_threshold": {
+        "comparison_threshold": 0.7,
+        "matched_crop_origin_changed_count_by_side": {
+          "112": 210,
+          "128": 210,
+          "80": 210,
+          "96": 210,
+          "legacy_current_fixed_96": 210
+        },
+        "matched_prediction_center_shift_input_px": {
+          "median": 0.0,
+          "n": 1928,
+          "p90": 7.0
+        },
+        "matching_note": "nearest cross-export prediction pairs at fixed threshold; count/presence changes are reported separately",
+        "scene_detection_count_changed": 105,
+        "scene_face_presence_changed": 3,
+        "scenes": 267
+      },
+      "conditional_identity_quality": null,
+      "report": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/frozen_final_evaluation.json",
+        "sha256": "4cebd17ede7d93f30665e728d94b87a79425b9e950a3677639d87916ce457d07"
+      },
+      "cache_report": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/manifests/final_cache/final_cache_report.json",
+        "sha256": "3f80a9e1fac5f8709214d4e1122446d4fe4df2f61694766c0be2155ea540537d"
+      }
+    },
+    "full_scene_evaluation_executable": "outputs/C/scripts/evaluate_development.py and outputs/C/scripts/evaluate_frozen_final.py"
+  },
+  "transforms_and_crop": {
+    "sensor_capture": {
+      "frame": [
+        320,
+        240
+      ],
+      "camera_window": [
+        240,
+        240
+      ],
+      "window_origin_sensor_xy": [
+        40,
+        0
+      ],
+      "pixel_format_functional_stock": "RGB565",
+      "pixel_format_challenger": "GRAYSCALE",
+      "rotation_degrees": 0,
+      "hmirror": false,
+      "vflip": false,
+      "auto_rotation": false
+    },
+    "detector_input": {
+      "shape": [
+        1,
+        96,
+        96,
+        1
+      ],
+      "format": "gray8",
+      "resize": "bilinear square 240x240 to 96x96, no letterbox/padding for square ROI",
+      "normalization": "u8/255",
+      "full_int8_affine": "q=gray8-128",
+      "input_scale": 0.00392156862745098,
+      "input_zero_point": -128,
+      "coordinate_factor_window_per_detector_px": 2.5,
+      "window_to_sensor_offset": [
+        40,
+        0
+      ]
+    },
+    "stock_reference_input": {
+      "shape": [
+        1,
+        96,
+        96,
+        3
+      ],
+      "format": "RGB, OpenMV Normalization from RGB565 camera-window input",
+      "quantization": "int8 scale 1/255 zero -128"
+    },
+    "output": {
+      "shape": [
+        1,
+        12,
+        12,
+        2
+      ],
+      "stride": 8,
+      "class_order": [
+        "background",
+        "face"
+      ],
+      "fomo_threshold_comparison": "strict score > threshold; OpenMV 5.0.1 Fomo NMS and integer ROI mapping",
+      "nms_regions_are_face_size_boxes": false
+    },
+    "crop": {
+      "legacy_current": "Use FOMO rectangle center x+w//2,y+h//2; native crop origin center-48; preserve integer floor behavior.",
+      "candidate": "Use FOMO center, round origin to nearest integer; tested side 80/96/112/128 camera-window pixels.",
+      "frozen_stock": "legacy_current fixed 96 px; out-of-frame crop rejected without padding/clamp.",
+      "frozen_challenger": "candidate side 96 px; same bounds rejection.",
+      "identity_gray_conversion": "On RGB565 stock path, copy native ROI to GRAYSCALE using OpenMV Image.to_grayscale(roi=...,copy=True); challenger source is already grayscale. Resize square native crop to 96x96 with OpenMV Normalization; raw identity input is gray8 row-major.",
+      "quality_gate": "Native crop and 96x96 identity input: mean 12..243 u8 and standard deviation >=5; failed gate emits UNCERTAIN.",
+      "physical_distance_calibration": "not available; only image-scale range is reported."
+    }
+  },
+  "fixtures": {
+    "model_path": "outputs/C/models/trained/cheap_sepconv_16/seed-20261102/detector_full_int8.tflite",
+    "fixture_count": 13,
+    "transform_fault_block_count": 10,
+    "real_no_face_fixture_count": 3,
+    "raw_fixture_audit": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/raw_fixture_audit.json",
+      "sha256": "84e0f9c694d4dd55b032a8cf88d16494a191c2f2cfdb4a170734490ff9fb176d"
+    },
+    "visual_audit": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/fixture_visual_audit.json",
+      "sha256": "9c9a1126244a09e6941d419534e50f6ab03cedeb18065917c01fcf81b9f5bbeb"
+    },
+    "contact_sheets": [
+      "outputs/C/fixtures/selected_challenger/fixture_contact_sheet_1.png",
+      "outputs/C/fixtures/selected_challenger/fixture_contact_sheet_2.png",
+      "outputs/C/fixtures/selected_challenger/fixture_contact_sheet_3.png"
+    ],
+    "manifest": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/fixtures/selected_challenger/fixture_manifest.json",
+      "sha256": "ce44cea87cc7256750110f0db2fa53da35e28c544d2765bfb2f70c1edc1b1d1e"
+    },
+    "exact_raw_policy": "raw gray bytes are stored in .u8/.i8 files; PGM/PNG are previews only; no JPEG inference inputs"
+  },
+  "integration_contract": {
+    "source_contract_files": {
+      "image-crop.schema.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/config/contracts/v1/image-crop.schema.json",
+        "sha256": "a6839be0c86d7a117a2790c665ccdfd39fb30e8ee1b947b28bab206a0d2bbb23"
+      },
+      "preprocessing-quantization.schema.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/config/contracts/v1/preprocessing-quantization.schema.json",
+        "sha256": "a51d7f3c0b9799f7109affc5a24f61270ec21777f5339ccd5b609ad38744da18"
+      },
+      "model-output.schema.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/config/contracts/v1/model-output.schema.json",
+        "sha256": "4cead3967c0fd88b76ec0950ae52fe3c47bfafd2526bbdbee63a610839b0bff8"
+      },
+      "labels.schema.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-04/ok-x20/work/project-finish-v4/config/contracts/v1/labels.schema.json",
+        "sha256": "8aded95f0b5ab1c8d1eac02dcb442d62c11419fba5b5d4d90d72ad6e0694e5df"
+      }
+    },
+    "C_to_F_boundary": {
+      "model_role": "face existence/localization only",
+      "identity_model_invoked_by_C": false,
+      "pass_condition": "exactly one face after model/label/shape checks; crop wholly inside window; native and 96x96 gray quality gates pass; crop transform and SHA are recorded.",
+      "image_crop_schema": "image-crop-1: width=96,height=96,pixel_format=gray8,color_order=GRAY,row_major_interleaved,bytes_sha256,crop_box_xyxy and transform_id.",
+      "status_mapping": {
+        "zero detections": "NO_FACE",
+        "multiple detections / clipped crop / failed quality / unsupported tensor or label / unknown transform": "UNCERTAIN",
+        "one valid crop": "CROP_READY event; only then may F invoke D"
+      },
+      "downstream_identity_states": [
+        "NO_FACE",
+        "UNCERTAIN",
+        "OTHER",
+        "KNOWN_IDENTITY"
+      ],
+      "D_input_if_current_embedding_is_used": "raw gray8 96x96; quantization int8 scale 1/255, zero point -128 (gray-128); D outputs a 64-value embedding and needs local enrollment templates for identity decisions."
+    },
+    "D_status": {
+      "handoff_present": false,
+      "conditional_identity_quality_measured": false,
+      "available_artifact_role": "64-dimensional embedding, not a classifier",
+      "reason": "No current D handoff; current generic embedding is not an identity classifier and has no templates. Historical weights overlap B identities and were excluded."
+    },
+    "C_to_H": {
+      "scene_crop_smoke": "outputs/C/board/nicla_scene_crop_smoke.py: stock ROM RGB FOMO on current RGB565 camera path, plus frozen challenger grayscale; 20 captures per stage; records load/inference/capture/arena/crop quality, never calls D or tracks.",
+      "fixture_parity": "outputs/C/board/nicla_fixture_parity.py: 13 raw fixtures, byte-exact detector inputs, native INT8 callback outputs, OpenMV FOMO rectangles, and identity crop bytes.",
+      "physical_status": "pending; current Mac port inventory only Bluetooth serial ports; no Nicla device. No Nano/host timing is represented as Nicla evidence."
+    }
+  },
+  "artifacts": {
+    "human_handoff": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/RESULT.md",
+      "sha256": "a36ebef77bfa486d5c7a171d4cadccdea749c683fddd034cc9280ba5a7a0bce6"
+    },
+    "required_handoff_markdown": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/handoffs/C/RESULT.md",
+      "sha256": "e7f903e3cf2bb5c3c26de7e05d715033d1a990ef738253e497b60107805950db"
+    },
+    "machine_handoff": "outputs/C/reports/RESULT.json",
+    "required_handoff_json": "handoffs/C/RESULT.json",
+    "trained_exports_package": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/models/trained/fomo_tflite_20_roots_and_audit.zip",
+      "sha256": "14fbb40a7633eaacc4952ca3b20fa7118c3eaccf74a59e7b435eab45e9211be6"
+    },
+    "selected_challenger_int8": {
+      "path": "outputs/C/models/trained/cheap_sepconv_16/seed-20261102/detector_full_int8.tflite",
+      "sha256": "4a484c9b56f806b4d13b603e66c3f7df60012ac74149e7a28655ddd497e5195c"
+    },
+    "selected_challenger_float": {
+      "path": "outputs/C/models/trained/cheap_sepconv_16/seed-20261102/detector_float.tflite",
+      "sha256": "f7987f0a5a09f99f5adf1f74c94c6903df6535590edc283db1db922b8a55e71f"
+    },
+    "stock_reference": {
+      "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/models/stock_reference/fomo_face_detection-stock.tflite",
+      "sha256": "fc3aec94b4b02dc6819db3e2d63bfd8055c9757fb350008538d4c1604aea4cb4"
+    },
+    "reports": {
+      "root_export_audit.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/root_export_audit.json",
+        "sha256": "16700cffbb896e87a67708c70130bf8415ee3b9e653dfac58138293ff4a7a024"
+      },
+      "development_comparison.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/development_comparison.json",
+        "sha256": "27065feab3c53de41313e348a0dc603a59b433c4bc9c9fdbd07e97aab48ac7fd"
+      },
+      "development_freeze.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/development_freeze.json",
+        "sha256": "2fbf002547f6431a13d4a69051949f278b1c651b73832527049780550fa14ff6"
+      },
+      "development_freeze_addendum.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/development_freeze_addendum.json",
+        "sha256": "73ff8d8dfe079b0ad8ed118eb36774c8193bb9bc15a7223206cf748915c69e2a"
+      },
+      "frozen_final_evaluation.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/frozen_final_evaluation.json",
+        "sha256": "4cebd17ede7d93f30665e728d94b87a79425b9e950a3677639d87916ce457d07"
+      },
+      "raw_fixture_audit.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/raw_fixture_audit.json",
+        "sha256": "84e0f9c694d4dd55b032a8cf88d16494a191c2f2cfdb4a170734490ff9fb176d"
+      },
+      "fixture_visual_audit.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/fixture_visual_audit.json",
+        "sha256": "9c9a1126244a09e6941d419534e50f6ab03cedeb18065917c01fcf81b9f5bbeb"
+      },
+      "d_identity_compatibility_audit.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/d_identity_compatibility_audit.json",
+        "sha256": "445f383eacae7e006fdb31a8c2329fea3edd645a741448d5a173160569ee34b5"
+      },
+      "openmv_fomo_postprocessor_audit.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/openmv_fomo_postprocessor_audit.json",
+        "sha256": "103f6d44854bd57efc35cb58af6410b07206025a42acdd8ccb0ef226799501f9"
+      },
+      "training_lease_audit.json": {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/training_lease_audit.json",
+        "sha256": "355deb323452c9b21e3ce280c0d8897b3e31d32920adf5b130cee4dad69a5999"
+      }
+    },
+    "figures": [
+      {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/figures/development_detection_tradeoff.png",
+        "sha256": "3c79df89a567b1bdf84b8d1ce5969315ee6277e6d3bcf0374083163db96a57c8"
+      },
+      {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/figures/development_crop_coverage.png",
+        "sha256": "3801bdb4020bfdb2e615484a644496dd2ec77f3a86b8cb23e7d86d6eff488f55"
+      },
+      {
+        "path": "/Users/omristeinberg-tatman/Documents/Codex/2026-10-28/job-c-train-detection-and-make/outputs/C/reports/figures/development_resource_quality.png",
+        "sha256": "7bc28305e63e0e67d5d9a2219e9a7d772be6c8d3ac9306f46edd50f123a784d1"
+      }
+    ]
+  },
+  "unresolved_failure_modes": [
+    "No learned root meets the no-face false-trigger target; compact model over-detects and frequently produces multiple faces.",
+    "MobileNetV2 alpha 0.1 failed to learn useful face detections in all ten seeds; its Keras weights were random initialized.",
+    "The stock baseline also exceeds the 5% false-trigger target and misses many small faces; it is retained only as the current functional reference.",
+    "Stock fixed crop fails to cover most very large (32+ detector-pixel) boxes and detection recall is poor below 12 detector pixels.",
+    "Seeded transform contact sheets show failures under rotation, low light, blur, jitter/edge clip, small and multiple faces; one-face only is explicit.",
+    "The 96x96 image-scale support range is not calibrated to physical distance, lens, camera ISP, exposure, pose or lighting on Nicla.",
+    "No D-conditioned recognition/coverage quality was measured; D handoff and valid deployed identity classifier/templates are absent.",
+    "Trained model arena, OpenMV operator loading, exact camera/model raw parity and Nicla inference timing/power remain physical H cells pending.",
+    "WIDER official terms are not explicit in the reviewed official page; WIDER and PASS source images remain local and are not included in the export bundle.",
+    "Overlap checking is exact byte SHA-256; no pHash or scene-to-identity-crop perceptual comparison was performed."
+  ],
+  "sources": [
+    {
+      "title": "WIDER FACE project",
+      "url": "https://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/index.html"
+    },
+    {
+      "title": "WIDER FACE CVPR 2016 paper",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/Yang_WIDER_FACE_A_CVPR_2016_paper.html"
+    },
+    {
+      "title": "PASS v3 Zenodo record",
+      "url": "https://zenodo.org/records/6615455"
+    },
+    {
+      "title": "Oxford PASS project page",
+      "url": "https://www.robots.ox.ac.uk/~vgg/data/pass/"
+    },
+    {
+      "title": "OpenMV v5.0.1 Normalization docs",
+      "url": "https://docs.openmv.io/v5.0.1/library/omv.ml.preprocessing.html"
+    },
+    {
+      "title": "OpenMV v5.0.1 ml Model docs",
+      "url": "https://docs.openmv.io/v5.0.1/library/omv.ml.html"
+    }
+  ]
+}

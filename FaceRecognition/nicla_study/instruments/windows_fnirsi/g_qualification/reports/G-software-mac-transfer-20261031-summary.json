@@ -1,0 +1,33 @@
+{
+  "csv": "G-software-mac-transfer-20261031.csv",
+  "fuzz_root_seeds": [
+    5101,
+    5102,
+    5103,
+    5104,
+    5105,
+    5106,
+    5107,
+    5108,
+    5109,
+    5110
+  ],
+  "hardware_pending_rows": 60,
+  "hardware_root_seeds": [
+    4101,
+    4102,
+    4103,
+    4104,
+    4105,
+    4106,
+    4107,
+    4108,
+    4109,
+    4110
+  ],
+  "ready_status": "not_ready_until_physical_path_validation_and_timing_response_pass",
+  "schema_version": "harness-qualification-1.0",
+  "software_fail_rows": 0,
+  "software_pass_rows": 110,
+  "software_test_execution": "host-only synthetic/temp-file simulations; no board/meter session"
+}
