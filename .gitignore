@@ -75,3 +75,4 @@ work/project-research-v5/runs/optical/*
 !work/project-research-v5/runs/optical/DISPLAY_SOURCES.json
 work/project-finish-v4/models/pretrained/sface/
 work/project-finish-v4/models/keras_cache/
+detector/local/

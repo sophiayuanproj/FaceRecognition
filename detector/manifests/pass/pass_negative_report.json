@@ -1,0 +1,25 @@
+{
+  "asset_id_semantics": "PASS metadata hash column preserved exactly as the URL basename; not treated as an image-byte checksum; shorter-than-32 values are not left-padded",
+  "dataset_record": "https://zenodo.org/records/6615455",
+  "dataset_record_license": "CC BY 4.0",
+  "download_failures": 0,
+  "download_integrity": "per-image SHA-256 recorded after download; metadata archive MD5 verified against Zenodo record",
+  "downloaded_count": 250,
+  "downloaded_roles": [
+    "development",
+    "final",
+    "train"
+  ],
+  "image_source_url_template": "https://multimedia-commons.s3-us-west-2.amazonaws.com/data/images/{asset_id[0:3]}/{asset_id[3:6]}/{asset_id}.jpg",
+  "item_license_filter": "Attribution License only (CC BY 2.0); source author retained for attribution",
+  "manifest_path": "outputs/C/manifests/pass/pass_negative_manifest.jsonl",
+  "plan_path": "outputs/C/manifests/pass/pass_negative_plan.jsonl",
+  "role_grouping": "Flickr uploader; one image per uploader; uploaders disjoint across roles",
+  "schema": "job-c-pass-negative-source-1",
+  "selection_seed": 20261100,
+  "targets_per_role": {
+    "development": 100,
+    "final": 50,
+    "train": 100
+  }
+}

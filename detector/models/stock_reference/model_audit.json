@@ -1,0 +1,42 @@
+{
+  "file_bytes": 57040,
+  "input": {
+    "dtype": "<class 'numpy.int8'>",
+    "scale_zero": [
+      0.003921568859368563,
+      -128
+    ],
+    "shape": [
+      1,
+      96,
+      96,
+      3
+    ]
+  },
+  "labels": [
+    "background",
+    "face"
+  ],
+  "operators": [
+    "ADD",
+    "CONV_2D",
+    "DEPTHWISE_CONV_2D",
+    "PAD",
+    "SOFTMAX"
+  ],
+  "output": {
+    "dtype": "<class 'numpy.int8'>",
+    "scale_zero": [
+      0.00390625,
+      -128
+    ],
+    "shape": [
+      1,
+      12,
+      12,
+      2
+    ]
+  },
+  "path": "outputs/C/models/stock_reference/fomo_face_detection-stock.tflite",
+  "sha256": "fc3aec94b4b02dc6819db3e2d63bfd8055c9757fb350008538d4c1604aea4cb4"
+}

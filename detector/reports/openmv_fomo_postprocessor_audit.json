@@ -1,0 +1,86 @@
+{
+  "interpretation": "FOMO NMS rectangles are artificial suppression regions and do not estimate face width or height.",
+  "license_notice": "OpenMV source-derived implementation; BSD-3-Clause notice is in outputs/C/OPENMV_LICENSE.txt",
+  "reference_firmware": "OpenMV 5.0.1",
+  "schema": "job-c-openmv-fomo-audit-1",
+  "semantics": {
+    "grid": [
+      1,
+      12,
+      12,
+      2
+    ],
+    "input": [
+      1,
+      96,
+      96,
+      1
+    ],
+    "labels": [
+      "background",
+      "face"
+    ],
+    "nms_anchor_rect_scale": 1.414214,
+    "nms_sigma": 0.001,
+    "nms_threshold": 0.1,
+    "roi_mapping": "integer x/y/width/height mapped to 240x240 camera window",
+    "threshold_comparison": "strict score > threshold"
+  },
+  "source_files": {
+    "fomo": {
+      "bytes": 5578,
+      "path": "/private/tmp/openmv-edgeimpulse-v5.0.1.py",
+      "sha256": "bad01f2f28a4bd4b107ee13a3d038812a7c0675c31affb3f64b09c02e52308cc"
+    },
+    "nms": {
+      "bytes": 9194,
+      "path": "/private/tmp/openmv-ml-utils-v5.0.1.py",
+      "sha256": "c8540ea6124be898426b13a317e06287a78abf1b660d1df8784a00a0aa827433"
+    }
+  },
+  "synthetic_neighbor_suppression_case": {
+    "activated_cells": [
+      [
+        5,
+        5,
+        0.9
+      ],
+      [
+        6,
+        5,
+        0.8
+      ],
+      [
+        9,
+        5,
+        0.9
+      ]
+    ],
+    "nms_rectangles": [
+      [
+        95,
+        95,
+        27,
+        27
+      ],
+      [
+        175,
+        95,
+        27,
+        27
+      ]
+    ],
+    "output_count": 2,
+    "output_grid_xy": [
+      [
+        5,
+        5
+      ],
+      [
+        9,
+        5
+      ]
+    ],
+    "threshold": 0.4
+  }
+}
