@@ -1,0 +1,11 @@
+planned_block,attempt_id,full_arm_order,inference_policy_first,mean_input_power_saved_mw
+B01,R19-B01-A08,detector-only scene-gated-small capture-only fixed-small,scene-gated-small,53.63578725820239
+B02,R19-B02-A02,detector-only fixed-small scene-gated-small capture-only,fixed-small,50.15794207125657
+B03,R19-B03-A06,capture-only scene-gated-small detector-only fixed-small,scene-gated-small,52.07692120250329
+B04,R19-B04-A01,scene-gated-small detector-only fixed-small capture-only,scene-gated-small,53.33977696738068
+B05,R19-B05-A10,fixed-small capture-only scene-gated-small detector-only,fixed-small,46.466879870131095
+B06,R19-B06-A01,capture-only scene-gated-small fixed-small detector-only,scene-gated-small,51.06639553490655
+B07,R19-B07-A05,capture-only scene-gated-small detector-only fixed-small,scene-gated-small,52.77951430414285
+B08,R19-B08-A01,fixed-small scene-gated-small capture-only detector-only,fixed-small,45.84771546331401
+B09,R19-B09-A04,fixed-small scene-gated-small capture-only detector-only,fixed-small,45.96763091374423
+B10,R19-B10-A02,detector-only fixed-small capture-only scene-gated-small,fixed-small,44.096722712260174

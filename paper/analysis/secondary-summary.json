@@ -1,0 +1,41 @@
+{
+  "analysis": "descriptive secondary summaries from the ten qualified starts",
+  "source_sha256": "66f9d14dd4b75b87d79d974cd28dc17492c5f3625db6edbc3255911e347e2356",
+  "gated_scene_counts": {
+    "scene_gate_checks": 739,
+    "stable_skips": 579,
+    "periodic_detector_calls": 103,
+    "scene_change_detector_calls": 57,
+    "all_detector_calls": 160
+  },
+  "gated_first_matched_face_episodes": {
+    "bounded_periodic_detector_fallback": {
+      "n": 18,
+      "median_latency_ms": 1786.45
+    },
+    "scene_change_after_minimum_interval": {
+      "n": 12,
+      "median_latency_ms": 676.95
+    }
+  },
+  "power_saved_mw": {
+    "mean": 49.543528629784184,
+    "sd": 3.5951191071753055,
+    "min": 44.096722712260174,
+    "max": 53.63578725820239
+  },
+  "power_saved_mw_by_first_policy": {
+    "fixed-small": {
+      "n": 5,
+      "mean": 46.50737820614122,
+      "min": 44.096722712260174,
+      "max": 50.15794207125657
+    },
+    "scene-gated-small": {
+      "n": 5,
+      "mean": 52.57967905342715,
+      "min": 51.06639553490655,
+      "max": 53.63578725820239
+    }
+  }
+}

@@ -1,0 +1,161 @@
+planned_block,arm,id,expected_face,distance_band,visibility,observations,detections,matched_faces,matched_identity_runs,first_matched_face_ms,first_detection_delay_ms,first_detection_to_match_ms,detector_calls,identity_runs
+B01,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B01,scene-gated-small,far-outdoor,True,far,source face visible,10,0,0,0,,,,2,0
+B01,scene-gated-small,quiet-after-far,False,,no face,9,0,0,0,,,,1,0
+B01,scene-gated-small,hallway-approach-medium,True,medium,source face visible,6,1,1,1,2417.6,2417.6000000000004,0,1,1
+B01,scene-gated-small,hallway-approach-near,True,near,source face visible,6,1,1,1,1677.7,1677.7000000000007,0,1,1
+B01,scene-gated-small,quiet-night-glare,False,,no face,6,1,0,0,,2644.7999999999993,,1,1
+B01,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,7,2,2,2,933.6,933.5999999999985,0.0,2,2
+B01,scene-gated-small,quiet-close,False,,no face,9,0,0,0,,,,1,0
+B01,fixed-small,quiet-open,False,,no face,7,0,0,0,,,,7,0
+B01,fixed-small,far-outdoor,True,far,source face visible,5,0,0,0,,,,5,0
+B01,fixed-small,quiet-after-far,False,,no face,7,0,0,0,,,,7,0
+B01,fixed-small,hallway-approach-medium,True,medium,source face visible,4,4,4,4,461.8,461.7999999999993,0.0,4,4
+B01,fixed-small,hallway-approach-near,True,near,source face visible,4,4,4,4,505.2,505.2000000000007,0,4,4
+B01,fixed-small,quiet-night-glare,False,,no face,4,3,0,0,,589.2000000000007,,4,3
+B01,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,5,5,5,5,604.9,604.9000000000015,0,5,5
+B01,fixed-small,quiet-close,False,,no face,7,0,0,0,,,,7,0
+B02,fixed-small,quiet-open,False,,no face,7,0,0,0,,,,7,0
+B02,fixed-small,far-outdoor,True,far,source face visible,5,0,0,0,,,,5,0
+B02,fixed-small,quiet-after-far,False,,no face,7,0,0,0,,,,7,0
+B02,fixed-small,hallway-approach-medium,True,medium,source face visible,4,4,4,4,520.8,520.7999999999993,0.0,4,4
+B02,fixed-small,hallway-approach-near,True,near,source face visible,4,4,4,4,596.8,596.7999999999993,0.0,4,4
+B02,fixed-small,quiet-night-glare,False,,no face,4,0,0,0,,,,4,0
+B02,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,5,5,5,5,1010.2,1010.2000000000007,0,5,5
+B02,fixed-small,quiet-close,False,,no face,6,0,0,0,,,,6,0
+B02,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B02,scene-gated-small,far-outdoor,True,far,source face visible,8,0,0,0,,,,1,0
+B02,scene-gated-small,quiet-after-far,False,,no face,8,0,0,0,,,,2,0
+B02,scene-gated-small,hallway-approach-medium,True,medium,source face visible,7,2,2,2,375.8,375.7999999999993,0.0,2,2
+B02,scene-gated-small,hallway-approach-near,True,near,source face visible,6,1,1,1,1866.2,1866.2000000000007,0,1,1
+B02,scene-gated-small,quiet-night-glare,False,,no face,6,0,0,0,,,,1,0
+B02,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,8,2,2,2,443.0,443.0,0,2,2
+B02,scene-gated-small,quiet-close,False,,no face,9,0,0,0,,,,2,0
+B03,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B03,scene-gated-small,far-outdoor,True,far,source face visible,9,0,0,0,,,,1,0
+B03,scene-gated-small,quiet-after-far,False,,no face,9,0,0,0,,,,1,0
+B03,scene-gated-small,hallway-approach-medium,True,medium,source face visible,6,1,1,1,2345.8,2345.7999999999993,0.0,1,1
+B03,scene-gated-small,hallway-approach-near,True,near,source face visible,5,1,1,1,1356.3,1356.2999999999993,0.0,1,1
+B03,scene-gated-small,quiet-night-glare,False,,no face,7,0,0,0,,,,2,0
+B03,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,7,2,2,2,874.8,874.7999999999993,0.0,2,2
+B03,scene-gated-small,quiet-close,False,,no face,8,0,0,0,,,,1,0
+B03,fixed-small,quiet-open,False,,no face,6,0,0,0,,,,6,0
+B03,fixed-small,far-outdoor,True,far,source face visible,6,0,0,0,,,,6,0
+B03,fixed-small,quiet-after-far,False,,no face,6,0,0,0,,,,6,0
+B03,fixed-small,hallway-approach-medium,True,medium,source face visible,4,4,4,4,549.9,549.8999999999996,0.0,4,4
+B03,fixed-small,hallway-approach-near,True,near,source face visible,3,3,3,3,720.2,720.2000000000007,0,3,3
+B03,fixed-small,quiet-night-glare,False,,no face,4,0,0,0,,,,4,0
+B03,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,5,5,5,5,534.2,534.2000000000007,0,5,5
+B03,fixed-small,quiet-close,False,,no face,6,1,0,0,,3367.2000000000007,,6,1
+B04,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B04,scene-gated-small,far-outdoor,True,far,source face visible,9,0,0,0,,,,2,0
+B04,scene-gated-small,quiet-after-far,False,,no face,8,0,0,0,,,,1,0
+B04,scene-gated-small,hallway-approach-medium,True,medium,source face visible,6,1,1,1,2520.3,2520.2999999999993,0.0,1,1
+B04,scene-gated-small,hallway-approach-near,True,near,source face visible,6,1,1,1,1540.7,1540.7000000000007,0,1,1
+B04,scene-gated-small,quiet-night-glare,False,,no face,6,0,0,0,,,,1,0
+B04,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,8,2,2,2,536.3,536.2999999999993,0.0,2,2
+B04,scene-gated-small,quiet-close,False,,no face,9,0,0,0,,,,2,0
+B04,fixed-small,quiet-open,False,,no face,6,0,0,0,,,,6,0
+B04,fixed-small,far-outdoor,True,far,source face visible,6,0,0,0,,,,6,0
+B04,fixed-small,quiet-after-far,False,,no face,6,0,0,0,,,,6,0
+B04,fixed-small,hallway-approach-medium,True,medium,source face visible,4,4,4,4,435.4,435.39999999999964,0.0,4,4
+B04,fixed-small,hallway-approach-near,True,near,source face visible,4,4,4,4,598.3,598.2999999999993,0.0,4,4
+B04,fixed-small,quiet-night-glare,False,,no face,4,0,0,0,,,,4,0
+B04,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,5,5,5,5,411.8,411.7999999999993,0.0,5,5
+B04,fixed-small,quiet-close,False,,no face,7,0,0,0,,,,7,0
+B05,fixed-small,quiet-open,False,,no face,6,0,0,0,,,,6,0
+B05,fixed-small,far-outdoor,True,far,source face visible,5,0,0,0,,,,5,0
+B05,fixed-small,quiet-after-far,False,,no face,7,0,0,0,,,,7,0
+B05,fixed-small,hallway-approach-medium,True,medium,source face visible,3,3,3,3,787.9,787.8999999999996,0.0,3,3
+B05,fixed-small,hallway-approach-near,True,near,source face visible,3,3,3,3,995.7,995.7000000000007,0,3,3
+B05,fixed-small,quiet-night-glare,False,,no face,4,0,0,0,,,,4,0
+B05,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,4,4,4,4,975.6,975.5999999999985,0.0,4,4
+B05,fixed-small,quiet-close,False,,no face,6,0,0,0,,,,6,0
+B05,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B05,scene-gated-small,far-outdoor,True,far,source face visible,7,0,0,0,,,,1,0
+B05,scene-gated-small,quiet-after-far,False,,no face,9,0,0,0,,,,2,0
+B05,scene-gated-small,hallway-approach-medium,True,medium,source face visible,5,1,1,1,2272.0,2272.0,0,1,1
+B05,scene-gated-small,hallway-approach-near,True,near,source face visible,6,1,1,1,1299.8,1299.7999999999993,0.0,1,1
+B05,scene-gated-small,quiet-night-glare,False,,no face,5,0,0,0,,,,1,0
+B05,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,7,2,2,2,807.5,807.5,0,2,2
+B05,scene-gated-small,quiet-close,False,,no face,9,0,0,0,,,,2,0
+B06,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B06,scene-gated-small,far-outdoor,True,far,source face visible,8,0,0,0,,,,2,0
+B06,scene-gated-small,quiet-after-far,False,,no face,9,0,0,0,,,,1,0
+B06,scene-gated-small,hallway-approach-medium,True,medium,source face visible,5,1,1,1,2286.2,2286.2000000000007,0,1,1
+B06,scene-gated-small,hallway-approach-near,True,near,source face visible,6,1,1,1,1302.2,1302.2000000000007,0,1,1
+B06,scene-gated-small,quiet-night-glare,False,,no face,5,0,0,0,,,,1,0
+B06,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,7,2,2,2,821.3,821.2999999999993,0.0,2,2
+B06,scene-gated-small,quiet-close,False,,no face,9,0,0,0,,,,1,0
+B06,fixed-small,quiet-open,False,,no face,6,0,0,0,,,,6,0
+B06,fixed-small,far-outdoor,True,far,source face visible,5,0,0,0,,,,5,0
+B06,fixed-small,quiet-after-far,False,,no face,7,0,0,0,,,,7,0
+B06,fixed-small,hallway-approach-medium,True,medium,source face visible,3,3,3,3,807.4,807.3999999999996,0.0,3,3
+B06,fixed-small,hallway-approach-near,True,near,source face visible,4,4,4,4,434.6,434.60000000000036,0,4,4
+B06,fixed-small,quiet-night-glare,False,,no face,4,0,0,0,,,,4,0
+B06,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,5,5,5,5,352.3,352.2999999999993,0.0,5,5
+B06,fixed-small,quiet-close,False,,no face,6,0,0,0,,,,6,0
+B07,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B07,scene-gated-small,far-outdoor,True,far,source face visible,7,0,0,0,,,,2,0
+B07,scene-gated-small,quiet-after-far,False,,no face,9,0,0,0,,,,2,0
+B07,scene-gated-small,hallway-approach-medium,True,medium,source face visible,5,1,1,1,2379.4,2379.3999999999996,0.0,1,1
+B07,scene-gated-small,hallway-approach-near,True,near,source face visible,5,1,1,1,1410.3,1410.2999999999993,0.0,1,1
+B07,scene-gated-small,quiet-night-glare,False,,no face,6,0,0,0,,,,1,0
+B07,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,8,3,3,3,459.7,459.7000000000007,0,3,3
+B07,scene-gated-small,quiet-close,False,,no face,9,0,0,0,,,,1,0
+B07,fixed-small,quiet-open,False,,no face,6,0,0,0,,,,6,0
+B07,fixed-small,far-outdoor,True,far,source face visible,5,0,0,0,,,,5,0
+B07,fixed-small,quiet-after-far,False,,no face,6,0,0,0,,,,6,0
+B07,fixed-small,hallway-approach-medium,True,medium,source face visible,3,3,3,3,859.0,859.0,0,3,3
+B07,fixed-small,hallway-approach-near,True,near,source face visible,4,4,4,4,426.9,426.89999999999964,0.0,4,4
+B07,fixed-small,quiet-night-glare,False,,no face,4,0,0,0,,,,4,0
+B07,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,5,5,5,5,351.8,351.7999999999993,0.0,5,5
+B07,fixed-small,quiet-close,False,,no face,6,0,0,0,,,,6,0
+B08,fixed-small,quiet-open,False,,no face,6,0,0,0,,,,6,0
+B08,fixed-small,far-outdoor,True,far,source face visible,6,0,0,0,,,,6,0
+B08,fixed-small,quiet-after-far,False,,no face,6,0,0,0,,,,6,0
+B08,fixed-small,hallway-approach-medium,True,medium,source face visible,3,3,3,3,695.2,695.2000000000007,0,3,3
+B08,fixed-small,hallway-approach-near,True,near,source face visible,4,4,4,4,384.4,384.39999999999964,0.0,4,4
+B08,fixed-small,quiet-night-glare,False,,no face,4,0,0,0,,,,4,0
+B08,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,4,4,4,4,983.1,983.0999999999985,0.0,4,4
+B08,fixed-small,quiet-close,False,,no face,6,0,0,0,,,,6,0
+B08,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B08,scene-gated-small,far-outdoor,True,far,source face visible,8,0,0,0,,,,1,0
+B08,scene-gated-small,quiet-after-far,False,,no face,9,0,0,0,,,,1,0
+B08,scene-gated-small,hallway-approach-medium,True,medium,source face visible,5,1,1,1,563.7,563.7000000000007,0,1,1
+B08,scene-gated-small,hallway-approach-near,True,near,source face visible,5,1,1,1,1706.7,1706.7000000000007,0,1,1
+B08,scene-gated-small,quiet-night-glare,False,,no face,7,0,0,0,,,,2,0
+B08,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,7,2,2,2,790.2,790.2000000000007,0,2,2
+B08,scene-gated-small,quiet-close,False,,no face,9,0,0,0,,,,1,0
+B09,fixed-small,quiet-open,False,,no face,6,0,0,0,,,,6,0
+B09,fixed-small,far-outdoor,True,far,source face visible,5,0,0,0,,,,5,0
+B09,fixed-small,quiet-after-far,False,,no face,7,0,0,0,,,,7,0
+B09,fixed-small,hallway-approach-medium,True,medium,source face visible,3,3,3,3,814.4,814.3999999999996,0.0,3,3
+B09,fixed-small,hallway-approach-near,True,near,source face visible,3,3,3,3,924.0,924.0,0,3,3
+B09,fixed-small,quiet-night-glare,False,,no face,5,0,0,0,,,,5,0
+B09,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,5,5,5,5,892.2,892.2000000000007,0,5,5
+B09,fixed-small,quiet-close,False,,no face,6,0,0,0,,,,6,0
+B09,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B09,scene-gated-small,far-outdoor,True,far,source face visible,9,0,0,0,,,,1,0
+B09,scene-gated-small,quiet-after-far,False,,no face,9,0,0,0,,,,1,0
+B09,scene-gated-small,hallway-approach-medium,True,medium,source face visible,6,1,1,1,2342.7,2342.7000000000007,0,1,1
+B09,scene-gated-small,hallway-approach-near,True,near,source face visible,5,1,1,1,1412.0,1412.0,0,1,1
+B09,scene-gated-small,quiet-night-glare,False,,no face,5,0,0,0,,,,2,0
+B09,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,7,2,2,2,825.4,825.4000000000015,0,2,2
+B09,scene-gated-small,quiet-close,False,,no face,9,0,0,0,,,,1,0
+B10,fixed-small,quiet-open,False,,no face,6,0,0,0,,,,6,0
+B10,fixed-small,far-outdoor,True,far,source face visible,6,0,0,0,,,,6,0
+B10,fixed-small,quiet-after-far,False,,no face,6,0,0,0,,,,6,0
+B10,fixed-small,hallway-approach-medium,True,medium,source face visible,3,3,3,3,685.6,685.6000000000004,0,3,3
+B10,fixed-small,hallway-approach-near,True,near,source face visible,3,3,3,3,976.1,976.1000000000004,0,3,3
+B10,fixed-small,quiet-night-glare,False,,no face,4,0,0,0,,,,4,0
+B10,fixed-small,far-wet-lens,True,far,digitally degraded but source face present,4,4,4,4,918.8,918.7999999999993,0.0,4,4
+B10,fixed-small,quiet-close,False,,no face,6,0,0,0,,,,6,0
+B10,scene-gated-small,quiet-open,False,,no face,9,0,0,0,,,,2,0
+B10,scene-gated-small,far-outdoor,True,far,source face visible,9,0,0,0,,,,1,0
+B10,scene-gated-small,quiet-after-far,False,,no face,8,0,0,0,,,,1,0
+B10,scene-gated-small,hallway-approach-medium,True,medium,source face visible,6,2,2,2,357.8,357.7999999999993,0.0,2,2
+B10,scene-gated-small,hallway-approach-near,True,near,source face visible,6,1,1,1,1629.6,1629.5999999999985,0.0,1,1
+B10,scene-gated-small,quiet-night-glare,False,,no face,6,0,0,0,,,,1,0
+B10,scene-gated-small,far-wet-lens,True,far,digitally degraded but source face present,8,1,1,1,2396.7,2396.7000000000007,0,1,1
+B10,scene-gated-small,quiet-close,False,,no face,9,0,0,0,,,,2,0

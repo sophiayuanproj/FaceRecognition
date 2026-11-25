@@ -1,4 +1,146 @@
-<!DOCTYPE html>
-<html>
-  <head><title>My Project</title></head>
-  <body><h1>Hello from my project page</h1></body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A paired power and latency study of scene-gated face detection on Arduino Nicla Vision. Ten physical starts, full on-device inference, and reproducible measurements.">
+  <meta name="theme-color" content="#142638">
+  <title>Scene-gated face detection · P04</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="index.html" aria-current="page"><span class="brand-mark">P04</span> Wearable face sensing</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#results">Results</a>
+      <a href="report.html">Full report</a>
+      <a href="#artifacts">Artifacts</a>
+      <a href="https://github.com/sophiayuanproj/FaceRecognition">Code</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="project-title">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">UCLA ECE M202A / CS M213A · Fall 2026</p>
+        <h1 id="project-title">Scene-gated face detection on a wearable microcontroller</h1>
+        <p class="lead">Can a camera skip redundant inference and still catch the same encounters? We built a local Nicla Vision pipeline and measured the power–response tradeoff.</p>
+        <p class="byline">Omri Steinberg-Tatman and Sophia Yuan</p>
+        <div class="actions">
+          <a class="button button-primary" href="report.html">Read the full report</a>
+          <a class="button button-secondary" href="downloads/P04_Final_Presentation.pdf">Presentation PDF</a>
+        </div>
+      </div>
+      <div class="hero-result" aria-label="Primary measured result">
+        <span class="value">7.28%</span>
+        <span class="label">lower mean USB input power</span>
+        <p class="context">Ten paired physical starts on the same board and 29-second replay.</p>
+        <div class="power-comparison" aria-label="Fixed pipeline 680.29 milliwatts; scene-gated pipeline 630.75 milliwatts">
+          <div class="power-row">
+            <div class="power-row-label"><span>Fixed pipeline</span><strong>680.29 mW</strong></div>
+            <div class="power-bar-track"><div class="power-bar" style="width:97.184%"></div></div>
+          </div>
+          <div class="power-row">
+            <div class="power-row-label"><span>Scene-gated pipeline</span><strong>630.75 mW</strong></div>
+            <div class="power-bar-track"><div class="power-bar gated" style="width:90.107%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Less inference, with a measurable delay</h2>
+        <p>The fixed and gated pipelines used the same awake camera, native Haar detector, compact INT8 model, and configured capture interval. The controller changed when the detector ran.</p>
+      </div>
+      <div class="result-summary">
+        <div class="result-item"><span class="metric">49.54 mW</span><span class="metric-label">mean paired power saving</span><span class="metric-detail">95% t interval · 46.97–52.12 mW</span></div>
+        <div class="result-item"><span class="metric">30 / 40</span><span class="metric-label">face episodes matched by each policy</span><span class="metric-detail">Four scripted segments replayed ten times</span></div>
+        <div class="result-item"><span class="metric">0.65 → 1.38 s</span><span class="metric-label">median time to first matched face</span><span class="metric-detail">Computed among matched episodes</span></div>
+      </div>
+      <figure>
+        <a class="figure-image" href="assets/figures/01_paired_power.png" aria-label="Open the full-size chart"><img src="assets/figures/01_paired_power.png" alt="Ten paired power differences all favor scene gating. The average reduction is 49.54 milliwatts with a 95 percent paired t interval from 46.97 to 52.12 milliwatts." width="2400" height="1410" loading="lazy"></a>
+        <figcaption>Each point represents a separate board power cycle. The interval describes variation across accepted starts on this bench. Both policies missed the far-outdoor segment in every replay. <a href="report.html#results">Methods and complete results</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="system" class="section section-wash">
+    <div class="container">
+      <div class="section-header">
+        <h2>From camera frame to saved encounter</h2>
+        <p>The Nicla runs the full processing path. The localhost dashboard shows the frame, detector box, crop, model output, and timing linked by boot ID, frame ID, and JPEG hash.</p>
+      </div>
+      <ol class="pipeline" aria-label="On-device processing pipeline">
+        <li><strong>Capture</strong><span>Centered 240 × 240 grayscale frame</span></li>
+        <li><strong>Schedule</strong><span>Fixed processing or a scene-change / periodic check</span></li>
+        <li><strong>Detect</strong><span>Native OpenMV Haar face box</span></li>
+        <li><strong>Crop</strong><span>Valid 96 × 96 model input</span></li>
+        <li><strong>Infer &amp; record</strong><span>Compact INT8 embedding and encounter telemetry</span></li>
+      </ol>
+      <div class="two-column">
+        <div>
+          <h3>Working prototype</h3>
+          <p>Live inference, video with inference, one photo per confirmed encounter, bounded on-board photo storage, and duplicate-safe USB import are implemented. The gallery supports explicit manual filing under Person 1–5 and Other.</p>
+        </div>
+        <div>
+          <h3>Current scope</h3>
+          <p>R19 runs identity inference with known-person acceptance disabled. The compact recognition models had limited acceptance on held-out crops, so the final study follows the original proposal's adaptive face-detection fallback.</p>
+        </div>
+      </div>
+      <p class="small">On-board storage and import passed with USB power and a detached host serial connection. A physical power-bank boot rehearsal remains pending. Photo saving was disabled during the power comparison.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <h2>What the study covers</h2>
+        <p>Four workloads separate camera capture, detector work, and the two full pipelines. Ten accepted starts give 40 qualified measurement windows, with the order of fixed and gated inference balanced across starts.</p>
+        <p>We also report ten-seed host recognition benchmarks and 13 compression arms. Those experiments explain the model choice and its limitations.</p>
+        <a href="report.html#experiment">Read the experimental design</a>
+      </div>
+      <div>
+        <h2>What remains open</h2>
+        <p>The main result describes one board, one meter, and one repeated optical workload. The FNIRSI meter had no independent calibration. Broader camera conditions, reliable known-person recognition, and battery runtime need dedicated validation.</p>
+        <a href="report.html#limits">Read the limitations</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="artifacts" class="section section-wash">
+    <div class="container">
+      <div class="section-header">
+        <h2>Read, run, reproduce</h2>
+        <p>The public repository contains the device source, complete deployed model files, compiled modules, local dashboard, training workflows, and pinned result tables.</p>
+      </div>
+      <div class="two-column">
+        <ul class="link-list">
+          <li><a href="report.html">Full HTML report</a><span>System, methods, results, related work, limitations, and references.</span></li>
+          <li><a href="downloads/P04_Final_Report.pdf">Paper PDF</a><span>Downloadable companion to the web report.</span></li>
+          <li><a href="downloads/P04_Final_Presentation.pdf">Final presentation PDF</a><span>Public slide download. <a href="https://docs.google.com/presentation/d/1iLH8Lgq8-CJcDHaLRV2LsrwlGtsxzQhTMOAYsEk2yN4/edit">Editable Google deck (UCLA access)</a></span></li>
+          <li><a href="downloads/paper-source.zip">Paper source</a><span>LaTeX, bibliography, figures, and supporting tables for Overleaf.</span></li>
+        </ul>
+        <ul class="link-list">
+          <li><a href="https://github.com/sophiayuanproj/FaceRecognition#quick-start">Code and dashboard setup</a><span>Python 3.12 on macOS or Windows. The application runs on localhost.</span></li>
+          <li><a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md">Reproduce the power result</a><span>Restore the raw reports and replay all ten qualified pairs.</span></li>
+          <li><a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/TRAINING.md">Training and dataset provenance</a><span>Frozen roles, ten-seed campaigns, exports, calibration, and data restoration.</span></li>
+          <li><a href="https://github.com/sophiayuanproj/FaceRecognition/releases/tag/research-assets-2026-11-22">Research assets</a><span>Hash-pinned fitted artifacts and raw power evidence.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div><p><strong>Scene-gated face detection</strong></p><p>Omri Steinberg-Tatman · Sophia Yuan</p></div>
+    <div><p>UCLA ECE M202A / CS M213A · Fall 2026</p><a href="https://github.com/sophiayuanproj/FaceRecognition">Project repository</a></div>
+  </div>
+</footer>
+</body>
+</html>

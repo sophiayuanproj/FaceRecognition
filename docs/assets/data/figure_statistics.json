@@ -1,0 +1,25 @@
+{
+  "source_zip_sha256": "66f9d14dd4b75b87d79d974cd28dc17492c5f3625db6edbc3255911e347e2356",
+  "paired_mean_gated_minus_fixed_mw": -49.543528629784184,
+  "paired_95_ci_mw": [
+    -52.115321910824086,
+    -46.97173534874428
+  ],
+  "percent_change_relative_to_fixed_mean": -7.282654544782961,
+  "workload_mean_mw": {
+    "capture-only": 608.7218421276468,
+    "detector-only": 670.1723863042422,
+    "fixed-small": 680.2949161617921,
+    "scene-gated-small": 630.7513875320079
+  },
+  "standardized_length_seconds": 29,
+  "standardized_gated_minus_fixed_j": -1.4367623302637413,
+  "standardized_paired_95_ci_j": [
+    -1.5113443354138985,
+    -1.362180325113584
+  ],
+  "observed_run_duration_range_s": [
+    29.0,
+    29.017
+  ]
+}

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Full report for P04: scene-gated face detection on Arduino Nicla Vision, including the paired power experiment, latency and coverage results, model studies, limitations, and reproducibility.">
+  <meta name="theme-color" content="#142638">
+  <title>Full report · Scene-gated face detection</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#report">Skip to report</a>
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="index.html"><span class="brand-mark">P04</span> Wearable face sensing</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Project</a>
+      <a href="report.html" aria-current="page">Full report</a>
+      <a href="#reproducibility">Reproduce</a>
+      <a href="https://github.com/sophiayuanproj/FaceRecognition">Code</a>
+    </nav>
+  </div>
+</header>
+<main id="report">
+  <header class="report-header">
+    <div class="container">
+      <p class="eyebrow">P04 · UCLA ECE M202A / CS M213A · Fall 2026</p>
+      <h1>Scene-gated face detection on a wearable microcontroller</h1>
+      <p class="subtitle">A paired power and latency study on the Arduino Nicla Vision</p>
+      <p class="byline">Omri Steinberg-Tatman and Sophia Yuan</p>
+      <div class="report-actions">
+        <a href="downloads/P04_Final_Report.pdf">Paper PDF</a>
+        <a href="downloads/paper-source.zip">LaTeX source</a>
+        <a href="downloads/P04_Final_Presentation.pdf">Presentation PDF</a>
+        <a href="https://docs.google.com/presentation/d/1iLH8Lgq8-CJcDHaLRV2LsrwlGtsxzQhTMOAYsEk2yN4/edit">Editable Google deck (UCLA access)</a>
+        <a href="https://github.com/sophiayuanproj/FaceRecognition/releases/tag/research-assets-2026-11-22">Research assets</a>
+      </div>
+    </div>
+  </header>
+  <div class="container report-layout">
+    <nav class="report-toc" aria-label="Report contents">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#question">Question and scope</a></li>
+        <li><a href="#related">Related work</a></li>
+        <li><a href="#system">System and controller</a></li>
+        <li><a href="#experiment">Experimental design</a></li>
+        <li><a href="#results">Power and response</a></li>
+        <li><a href="#models">Training and compression</a></li>
+        <li><a href="#prototype">Prototype and feedback</a></li>
+        <li><a href="#limits">Discussion and limits</a></li>
+        <li><a href="#reproducibility">Reproducibility</a></li>
+        <li><a href="#references">References</a></li>
+      </ol>
+    </nav>
+    <article class="report-body">
+      <section id="abstract">
+        <h2>Abstract</h2>
+        <p>A wearable camera can keep processing nearly identical frames between encounters. We implemented a scheduler that leaves the camera running and calls a face detector when grayscale scene statistics change or a periodic check is due. We compared scene-gated and fixed processing on one Arduino Nicla Vision using ten independent power cycles and the same 29-second optical replay in each condition. Mean USB input power fell from <strong>680.29 to 630.75 mW</strong>, a paired saving of <strong>49.54 mW (7.28%)</strong>, with a 95% t interval of 46.97–52.12 mW. Both policies localized the same <strong>30 of 40 scripted face episodes</strong> and missed the far-outdoor episode on every replay. Median time to first matched detection rose from 0.65 to 1.38 seconds among matched episodes. The gated policy made 68% fewer detector calls. A separate USB test verified one saved photo per portrait encounter. The power result characterizes the tested board, meter, and replay. Identity inference ran with known-person acceptance disabled.</p>
+      </section>
+
+      <section id="question">
+        <h2>Research question and scope</h2>
+        <p>Can a wearable microcontroller reduce camera-processing energy by adapting inference to the scene while preserving face encounters? We measure the resulting response-delay tradeoff. The embedded constraint is the combined cost of an awake camera, repeated detection, downstream inference, and the memory available to an on-device pipeline.</p>
+        <p>The original proposal included recognition of a small enrolled group, model quantization, and adaptive sensing. It also specified adaptive face detection as the fallback if reliable recognition proved impractical. The compact models executed, but their open-set recognition results were weak. We therefore evaluated scene gating using the same detector and small model under both full policies. The recognition and compression studies remain part of the evidence for that scope decision.</p>
+        <p>The final capability is a face-processing and encounter-review prototype with measured power, coverage, and response time. General enrollment, multi-person tracking, and IR night operation were outside the required demonstration.</p>
+      </section>
+
+      <section id="related">
+        <h2>Related work</h2>
+        <p>NoScope combines difference detection and specialized networks to avoid unnecessary video-query inference. Our controller applies a lightweight scene-change trigger before one shared face detector on a microcontroller. ADMN adapts processing across modalities and layers as input quality and compute resources vary. Our measured experiment uses a single active camera and controls detector invocation. <a href="#ref-noscope">NoScope</a>, <a href="#ref-admn">ADMN</a></p>
+        <p>The native detector uses the Haar-feature cascade approach introduced by Viola and Jones. The compact identity model follows MobileNetV1's depthwise-separable design. QMUL-SurvFace supplies the low-resolution surveillance crops used in the separate host identity study. <a href="#ref-viola">Viola and Jones</a>, <a href="#ref-mobilenet">MobileNet</a>, <a href="#ref-survface">SurvFace</a></p>
+        <p>Two earlier course projects informed the evaluation structure. TinyODOM-EX reports its physical measurement topology and deployment limits. Context-Aware Hybrid Object Detection separates component evaluation from the integrated controller. We use that separation to compare capture-only and detector-only controls with the two complete policies, and to distinguish host model experiments from board measurements. <a href="#ref-tinyodom">TinyODOM-EX</a>, <a href="#ref-hybrid">Context-Aware Hybrid Object Detection</a></p>
+      </section>
+
+      <section id="system">
+        <h2>System and controller</h2>
+        <h3>On-device pipeline</h3>
+        <p>The Arduino Nicla Vision runs OpenMV 5.0.1 on an STM32H747. Its GC2145 camera supplies a centered 240 × 240 grayscale region from a QVGA frame. The native Haar detector produces a candidate face box. A valid crop is resized to 96 × 96 for a MobileNetV1-derived α = 0.10 INT8 embedding model with 64 output dimensions. The model file occupies 101,576 bytes. A separate load of the same model used a 43,008-byte tensor arena. Camera buffers, the Python runtime, and other allocations use additional memory. <a href="#ref-nicla">Arduino hardware documentation</a>, <a href="#ref-openmv">OpenMV documentation</a></p>
+        <ol class="pipeline" aria-label="R19 on-device pipeline">
+          <li><strong>Capture</strong><span>240 × 240 grayscale</span></li>
+          <li><strong>Schedule</strong><span>Fixed or scene-gated</span></li>
+          <li><strong>Detect</strong><span>Native Haar face box</span></li>
+          <li><strong>Crop</strong><span>96 × 96 input</span></li>
+          <li><strong>Embed</strong><span>INT8, 64 dimensions</span></li>
+        </ol>
+        <p>The host pairs each camera JPEG with its device result using boot ID, frame ID, and a JPEG digest. The localhost dashboard displays the associated image, detector region, crop, model output, timing, and errors. With photo saving enabled, it stores one image per confirmed encounter and avoids repeated saves during a continuous face hold. Photo saving was disabled during the power experiment.</p>
+        <div class="note"><p>R19 executes the identity stage with automatic known-person acceptance disabled. The gallery's Person 1–5 and Other categories support explicitly marked manual assignments.</p></div>
+        <h3>Fixed and scene-gated policies</h3>
+        <p>Both full policies use the same configured 250 ms processing interval, camera settings, image-quality check, native Haar detector, and embedding model. The camera stays awake and the IMU motion gate stays disabled. The fixed policy runs detection on every eligible frame.</p>
+        <p>The scene-gated policy compares the current grayscale mean and standard deviation with the frame at the most recent detector call. A mean change of at least 8 intensity levels or a spread change of at least 6 triggers a check after a 500 ms holdoff. The change latch clears once the differences return to 4 and 3 or less. The first eligible frame and roughly 2 seconds without a detector call also trigger a check. Each detector call refreshes the reference. Actual execution depends on frame availability and image quality.</p>
+        <p>The dashboard's fast live policy uses a separate configuration. The study's power and latency results belong to the fixed and scene-gated settings above.</p>
+      </section>
+
+      <section id="experiment">
+        <h2>Experimental design</h2>
+        <h3>Bench and repeated workload</h3>
+        <p>A fixed display replayed the 29-second <code>power-bodycam-v1</code> clip through the Nicla's physical camera. Four scripted face segments alternated with four quiet intervals. The face segments were far outdoor, medium hallway, near hallway, and a far segment with digital degradation approximating a wet lens. The optical replay held the displayed scenes constant while exercising the actual sensor and firmware.</p>
+        <div class="note"><p><strong>Supply and logging path</strong><br>Windows laptop and Belkin USB-C data hub → FNIRSI C2 inline meter → Nicla Vision facing the replay display. A separate connection to the meter's PC/HID port logged voltage and current. Power was cut downstream of the meter between qualified blocks.</p></div>
+        <p>Each accepted block contained four workloads on the same R19 boot. Capture-only and detector-only isolated the earlier stages. Fixed and scene-gated full processing used the same downstream model. Ten physical power cuts produced ten distinct board boot IDs and meter runs. Fixed inference ran before scene-gated inference in five accepted blocks.</p>
+        <h3>Qualification and exclusions</h3>
+        <p>Pre- and post-block checkerboard checks required optical alignment within a 3-pixel corner tolerance. Meter qualification required valid packet decoding, in-window readings of 4.75–5.25 V and 0.05–0.20 A, and report gaps no longer than 200 ms. Playback checks verified the intended clip and agreement of UTC and monotonic boundaries within 100 ms. Frame checks required at least two linked observations per episode and 90% linkage for the full pipelines.</p>
+        <p>All four windows had to qualify for a block to enter the primary analysis. The 20 accepted full-pipeline windows achieved 100% preview linkage. Maximum accepted corner drift was 2.59 pixels. The ledger retains <strong>28 excluded attempts</strong>, including preflight attempts, geometry failures, anomalous meter reports, and an interrupted video run. <a href="assets/data/final-block-ledger.csv">Attempt ledger CSV</a></p>
+        <h3>Power and quality metrics</h3>
+        <p>For each HID report, the replay averages its four voltage–current products, interpolates power at playback boundaries, and integrates using the trapezoidal rule against exact host UTC receipt timestamps. Average input power is integrated energy divided by the observed window duration. The primary effect is the mean of the ten within-block fixed-minus-gated differences.</p>
+        <div class="equation" aria-label="The paired difference for block b is fixed mean power minus gated mean power. The campaign effect is the average of ten differences.">d<sub>b</sub> = P̄<sub>b,fixed</sub> − P̄<sub>b,gated</sub> &nbsp; &nbsp; d̄ = (Σ d<sub>b</sub>) / 10</div>
+        <p>A two-sided Student t interval summarizes the ten block differences. Percentage saving divides the paired mean reduction by the fixed mean. The independent raw replay reproduced all 40 accepted window means within 4.0 × 10<sup>−9</sup> W.</p>
+        <p>A face episode was matched if a linked observation contained one predicted region with intersection-over-union of at least 0.30 against the projected camera-space annotation. Delay runs from scripted episode onset to the first matched box. Its median includes matched episodes. A model-stage match additionally required crop coverage of at least 0.80 and completed inference. Quiet-interval detections were recorded separately.</p>
+      </section>
+
+      <section id="results">
+        <h2>Power, coverage, and response</h2>
+        <div class="table-wrap">
+          <table>
+            <caption>Ten accepted windows per workload, each lasting 29.000–29.017 seconds</caption>
+            <thead><tr><th scope="col">Workload</th><th scope="col" class="numeric">Mean power</th><th scope="col" class="numeric">Mean observed energy</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Capture only</th><td class="numeric">608.72 mW</td><td class="numeric">17.66 J</td></tr>
+              <tr><th scope="row">Detector only</th><td class="numeric">670.17 mW</td><td class="numeric">19.44 J</td></tr>
+              <tr><th scope="row">Fixed full pipeline</th><td class="numeric">680.29 mW</td><td class="numeric">19.73 J</td></tr>
+              <tr><th scope="row">Scene-gated full pipeline</th><td class="numeric">630.75 mW</td><td class="numeric">18.30 J</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>All ten pairs favored gating</h3>
+        <p>The paired mean saving was <strong>49.54 mW (7.28%)</strong>, with a 95% interval of <strong>46.97–52.12 mW</strong>. Individual savings ranged from 44.10 to 53.64 mW. Over a standardized 29-second interval, the power difference corresponds to 1.44 J saved, with an interval of 1.36–1.51 J. The table reports actual integrated energy means.</p>
+        <figure>
+          <a class="figure-image" href="assets/figures/01_paired_power.png" aria-label="Open the full-size chart"><img src="assets/figures/01_paired_power.png" alt="Each of ten paired scene-gated minus fixed power differences is negative. Their mean is minus 49.54 milliwatts. Marker shapes distinguish which full policy ran first." width="2400" height="1410" loading="lazy"></a>
+          <figcaption>Paired differences across separate physical starts. The aggregate interval uses the ten block differences. <a href="assets/data/primary-points.csv">Download paired measurements</a> · <a href="assets/data/figure_statistics.json">Analysis summary</a></figcaption>
+        </figure>
+        <figure>
+          <a class="figure-image" href="assets/figures/02_workload_power.png" aria-label="Open the full-size chart"><img src="assets/figures/02_workload_power.png" alt="Mean power is 608.72 milliwatts for capture only, 670.17 for detector only, 680.29 for fixed full processing, and 630.75 for scene-gated processing." width="2400" height="1140" loading="lazy"></a>
+          <figcaption>Capture already contributes a large share of total input power. Intervals in this plot describe each workload's marginal mean. The paired plot accounts for the shared boot. <a href="assets/data/qualified-arms.csv">Download all 40 qualified windows</a></figcaption>
+        </figure>
+        <p>Savings averaged 46.51 mW in the five starts with fixed inference first and 52.58 mW in the five with gated inference first. This post hoc split suggests that position within a block or the preceding workload can matter. Both orders favored gating, and the primary result weights every accepted block equally.</p>
+        <h3>The same episodes, with slower response</h3>
+        <p>Each full policy localized <strong>30/40 face episodes</strong>. The same three segments matched in all ten starts. Both policies missed the far-outdoor segment in all ten replays. Median time to first match increased from 0.645 to 1.383 seconds among matched episodes, a difference of approximately 0.74 seconds between the two medians.</p>
+        <figure>
+          <a class="figure-image" href="assets/figures/03_episode_coverage_latency.png" aria-label="Open the full-size chart"><img src="assets/figures/03_episode_coverage_latency.png" alt="Medium hallway, near hallway, and far degraded-lens segments each match ten of ten times under both policies. The far outdoor segment matches zero of ten times. Scene gating increases median delay for the matched segments." width="2880" height="1440" loading="lazy"></a>
+          <figcaption>Each row aggregates ten replays of one clip segment. Missed episodes have no first-match delay. The four segments are repeated observations from one workload. <a href="assets/data/qualified-episodes.csv">Download episode-level results</a></figcaption>
+        </figure>
+        <h3>Avoided work and periodic checks</h3>
+        <p>Detector calls fell from <strong>498 to 160</strong>, and identity runs from <strong>158 to 56</strong>. All 214 identity inferences completed with known-person acceptance disabled. The scene gate skipped detection on 579 eligible observations. Of its 160 detector calls in the playback windows, 103 were periodic checks and 57 were scene-change checks.</p>
+        <figure>
+          <a class="figure-image" href="assets/figures/04_inference_work.png" aria-label="Open the full-size chart"><img src="assets/figures/04_inference_work.png" alt="Scene gating reduces detector calls from 498 to 160 and identity-stage calls from 158 to 56 over the ten accepted replays per full policy." width="2280" height="1050" loading="lazy"></a>
+          <figcaption>Total completed work across the ten qualified windows for each full policy.</figcaption>
+        </figure>
+        <p>Periodic checks supplied 18 of the 30 first gated matches, and scene-change checks supplied 12. Their conditional median delays were 1.786 and 0.677 seconds. These descriptive groups mix check type with episode conditions. An ablation would be needed to estimate the independent benefit of the periodic path. During quiet intervals, fixed processing produced four detections across two of 40 episodes, and scene gating produced one detection in one of 40 episodes.</p>
+      </section>
+
+      <section id="models">
+        <h2>Training and model compression</h2>
+        <h3>Data and evaluation roles</h3>
+        <p>The main identity benchmark used team-supplied SurvFace-derived 96 × 96 grayscale crops, with five known identities and an Other group. Its frozen manifest contains 1,350 rows spanning training, stopping, calibration, and development roles. Known identities use disjoint image groups across roles. Other identities are disjoint across training, calibration, and development. The five known identities had earlier exploratory exposure, which limits claims about a pristine final evaluation.</p>
+        <p>Olivetti was used as a separate sanity study. WIDER FACE supplied annotated full scenes for learned face-detection experiments, and PASS supplied scene negatives. LFW supplied historical screen-photo and host-alignment diagnostics. Original images and private camera captures stay outside the public repository. The transformed team crop archives are identified by hash, with restoration tooling and provenance notes. <a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/DATA.md">Dataset sources, exact hashes, and restoration</a></p>
+        <h3>Recognition results motivated the fallback</h3>
+        <p>The held-out host benchmark contained 100 known crops from the five roster identities and 300 unknown crops from 50 other people. Each route used ten training initializations and its own calibrated open-set rule on the same evaluation crops. Correct known acceptance requires accepting the crop and selecting its correct identity. Unknown false positive identification rate counts unknown crops assigned to any known identity.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>Mean host results across ten initializations per route</caption>
+            <thead><tr><th scope="col">Route</th><th scope="col" class="numeric">Correct known acceptance</th><th scope="col" class="numeric">Unknown FPIR</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Compact INT8 gallery</th><td class="numeric">3.5%</td><td class="numeric">4.2%</td></tr>
+              <tr><th scope="row">Larger INT8 classifier</th><td class="numeric">4.6%</td><td class="numeric">2.8%</td></tr>
+              <tr><th scope="row">Larger float classifier</th><td class="numeric">17.3%</td><td class="numeric">3.3%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure>
+          <a class="figure-image" href="assets/figures/05_host_recognition.png" aria-label="Open the full-size chart"><img src="assets/figures/05_host_recognition.png" alt="Separate host recognition routes have limited correct known acceptance. The compact INT8 gallery reaches 3.5 percent, the larger INT8 classifier 4.6 percent, and the float classifier 17.3 percent. Unknown false acceptance remains nonzero." width="2760" height="1170" loading="lazy"></a>
+          <figcaption>All routes reuse the same evaluation crops across ten initializations. Variation across roots describes optimization variability. <a href="assets/data/host-recognition-roots.csv">Download per-root metrics</a></figcaption>
+        </figure>
+        <p>An earlier crop diagnostic kept a MobileFaceNet scoring model fixed and changed the crop route on reused source frames. FOMO-centered crops correctly accepted 4/15 known evaluation groups, and a YuNet-aligned route accepted 14/15. Each route had its own gallery and crop-specific calibration, and the groups had appeared in development. This host comparison motivated explicit box and crop checks in the final device evaluation.</p>
+        <h3>Thirteen optimization arms</h3>
+        <p>We compared 13 optimization arms over ten matched training initializations on a development workload. For the α = 0.25 classifier, ordinary pruning and quantization-aware training retained a serialized INT8 size of 327,072 bytes in the tested export path. Physical channel removal reduced it to 280,248 bytes, a <strong>14.3% reduction</strong>.</p>
+        <figure>
+          <a class="figure-image" href="assets/figures/06_compression_size.png" aria-label="Open the full-size chart"><img src="assets/figures/06_compression_size.png" alt="INT8 model size remains 327,072 bytes for the dense, magnitude-pruned, structured-pruned, and QAT paths. Physical channel removal reduces size to 280,248 bytes. Other head changes give smaller reductions." width="2580" height="1230" loading="lazy"></a>
+          <figcaption>Host export sizes under matched training budgets. Physical changes to tensor shapes gave the observed storage benefit. <a href="assets/data/compression-size-roots.csv">Download size results</a></figcaption>
+        </figure>
+        <p>Physical channel removal decreased estimated multiply–accumulates by 303,104. Estimated peak activation memory remained 75,280 bytes, while mean unknown FPIR rose from 3.2% to 5.2% on development crops. These are host exports and static estimates. The power experiment used the separately benchmarked compact gallery model.</p>
+        <p>The repository preserves training, full-integer export, calibration, pruning, clustering, distillation, evaluation, and artifact-verification workflows. <a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/TRAINING.md">Training and compression reproduction guide</a></p>
+      </section>
+
+      <section id="prototype">
+        <h2>Prototype, demonstration, and feedback</h2>
+        <p>The USB functional test displayed three public portraits across ten separated presentations. It saved one image per presentation, zero images during eleven blank intervals, and no duplicate during a 40-second continuous hold. Every saved image matched the corresponding device observation by boot ID, frame ID, and JPEG hash. In those observed phases, 411 of 413 preview JPEGs linked to results.</p>
+        <p>A later screen rehearsal saved four photos across four separated encounters, with no extra photo from a held portrait or a blank interval. On-board storage and USB import were also exercised with host serial detached while USB continued supplying power. Repeating an import added zero photos. A functional battery-powered boot, two separated offline encounters, and import after reconnection remain to be rehearsed.</p>
+        <h3>Response to checkpoint feedback</h3>
+        <p>The discussant group asked whether the earlier 4/15 result used the Nicla's detector settings and suggested a same-frame detector comparison of board FOMO, host FOMO, and YuNet across distance, lighting, and blur. That result came from the host crop route and left the device bottleneck unresolved.</p>
+        <p>The final experiment added capture-only and detector-only controls and held the detector, camera settings, and small model constant between the full policies. We score matched face regions and response delay alongside power, and report the shared far-outdoor failure. The full three-detector stress comparison remains open. This narrowing follows the recognition-failure fallback in the submitted proposal.</p>
+      </section>
+
+      <section id="limits">
+        <h2>Discussion and limitations</h2>
+        <p>The reduction in detector work was much larger than the proportional reduction in board power. The capture-only control shows that the awake camera and runtime already draw most of the measured input power. Periodic checks also produced more detector calls than scene-change checks. A future interval sweep could quantify the tradeoff between response delay and avoided work.</p>
+        <ul>
+          <li><strong>Experimental unit.</strong> Ten distinct physical starts characterize repeatability for one board, one meter, and one replay. Forty face episodes per policy are repetitions of four source segments.</li>
+          <li><strong>Shared failure.</strong> Both policies missed the far-outdoor segment on every replay. This test does not isolate distance from the segment's other properties.</li>
+          <li><strong>Instrument limits.</strong> The FNIRSI meter had no independent reference calibration. Its anomalies contributed to exclusions. The paired interval captures variation across accepted blocks, with absolute calibration and selection effects outside that interval.</li>
+          <li><strong>Order sensitivity.</strong> The post hoc order split differed by approximately 6 mW. Both accepted orders favored gating, but carryover deserves a dedicated test.</li>
+          <li><strong>Recognition and wearability.</strong> Reliable camera-domain identification and battery life require their own validation. Manual gallery labels are operator assignments. The untethered boot rehearsal is pending.</li>
+        </ul>
+        <p>For this controlled workload, keeping the camera awake while gating detector calls saved 7.28% input power and preserved the same matched face episodes, with approximately 0.74 seconds more median delay among matched detections. The USB prototype also captured and retained one verified photo per portrait encounter.</p>
+      </section>
+
+      <section id="reproducibility">
+        <h2>Reproducibility and artifacts</h2>
+        <p>The public source includes the R19 device code, full deployed model files, compiled modules, configuration and hash manifests, dashboard, data-preparation code, and experiment recipes. Fitted training artifacts and raw meter records are attached to the research-assets release. The raw archive preserves accepted and excluded attempts, playback boundaries, instrument settings, frame-linkage and optical receipts, and replay scripts.</p>
+        <ul class="link-list">
+          <li><a href="https://github.com/sophiayuanproj/FaceRecognition">Source and setup instructions</a><span>Camera application on Python 3.12. Model training uses its own pinned environment.</span></li>
+          <li><a href="https://github.com/sophiayuanproj/FaceRecognition/releases/tag/research-assets-2026-11-22">Hash-pinned research assets</a><span>Fitted models and raw R19 power return.</span></li>
+          <li><a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/bench/RELEASE_HASHES.json">Measured release fingerprints</a><span>Models, configuration, compiled runtime, and rollback identity.</span></li>
+          <li><a href="downloads/paper-source.zip">Paper source</a><span>LaTeX, bibliography, figures, and tables for local builds or Overleaf upload.</span></li>
+        </ul>
+        <h3>Replay the power result</h3>
+        <p>From the repository root, restore and verify the 41,332,455-byte evidence archive, extract it, and replay its ledger.</p>
+        <pre><code>python3 tools/fetch_power_evidence.py
+python3 -m zipfile -e \
+  assets/Nicla_R19_Mac_Return_Belkin_10_Pairs_Final.zip \
+  assets/power-evidence
+cd assets/power-evidence
+python3 resume/replay_belkin_primary.py \
+  --runs resume \
+  --schedule prior-results/final-block-ledger.csv \
+  --expect-count 10</code></pre>
+        <p>Expected output contains ten qualified pairs, 40 measurement windows, and mean gated-minus-fixed power of approximately −0.04954353 W. The fetcher checks archive SHA-256 <code>66f9d14dd4b75b87d79d974cd28dc17492c5f3625db6edbc3255911e347e2356</code>.</p>
+        <p>After camera setup, <code>tools/check_repository.py</code> checks complete model sizes and hashes, source-to-compiled-module consistency, host behavior, and dashboard controls. The final paper source includes a separate replay of the trigger and order summaries. <a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md">Full power reproduction guide</a></p>
+      </section>
+
+      <section id="references">
+        <h2>References</h2>
+        <ol class="references">
+          <li id="ref-noscope"><cite>NoScope</cite>. Kang, Emmons, Abuzaid, Bailis, and Zaharia. “Optimizing Neural Network Queries over Video at Scale.” PVLDB, 2017. <a href="https://arxiv.org/abs/1703.02529">Paper</a></li>
+          <li id="ref-admn"><cite>ADMN</cite>. Wu, Yuan, Yang, Kaplan, and Srivastava. “A Layer-Wise Adaptive Multimodal Network for Dynamic Input Noise and Compute Resources.” NeurIPS, 2025. <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/638e6384e60032eecc454c2088ba4901-Abstract-Conference.html">Proceedings</a></li>
+          <li id="ref-viola">Viola and Jones. <cite>Rapid Object Detection Using a Boosted Cascade of Simple Features</cite>. CVPR, 2001. <a href="https://doi.org/10.1109/CVPR.2001.990517">Paper</a></li>
+          <li id="ref-mobilenet">Howard et al. <cite>MobileNets</cite>. “Efficient Convolutional Neural Networks for Mobile Vision Applications,” 2017. <a href="https://arxiv.org/abs/1704.04861">Paper</a></li>
+          <li id="ref-survface">Cheng, Zhu, and Gong. <cite>Surveillance Face Recognition Challenge</cite>, 2018. <a href="https://arxiv.org/abs/1804.09691">Paper</a></li>
+          <li id="ref-nicla"><cite>Arduino Nicla Vision</cite>. Hardware documentation. <a href="https://docs.arduino.cc/hardware/nicla-vision/">Reference</a></li>
+          <li id="ref-openmv"><cite>OpenMV 5.0.1</cite>. Nicla Vision runtime documentation. <a href="https://docs.openmv.io/v5.0.1/openmvcam/quickref/arduino-nicla-vision.html">Reference</a></li>
+          <li id="ref-tinyodom">Zales. <cite>TinyODOM-EX</cite>. UCLA ECE M202A final project, Fall 2025. <a href="https://joseph-q-zales.github.io/ECM202A_2025Fall_Project_1/">Project report</a></li>
+          <li id="ref-hybrid"><cite>Context-Aware Hybrid Object Detection for Autonomous Vehicle Perception</cite>. UCLA ECE M202A final project, Fall 2025. <a href="https://jeankwon.github.io/ECM202A_2025Fall_Project_8/">Project report</a></li>
+        </ol>
+      </section>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div><p><strong>Scene-gated face detection</strong></p><p>Omri Steinberg-Tatman · Sophia Yuan</p></div>
+    <div><p>UCLA ECE M202A / CS M213A · Fall 2026</p><a href="index.html">Project overview</a></div>
+  </div>
+</footer>
+</body>
+</html>

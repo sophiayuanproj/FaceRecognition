@@ -1,0 +1,11 @@
+planned_block,attempt_id,scene_gate_checks,stable_skips,periodic_detector_calls,scene_change_detector_calls,all_detector_calls
+B01,R19-B01-A08,76,60,10,6,16
+B02,R19-B02-A02,76,60,10,6,16
+B03,R19-B03-A06,73,58,12,3,15
+B04,R19-B04-A01,74,57,9,8,17
+B05,R19-B05-A10,73,57,11,5,16
+B06,R19-B06-A01,73,57,10,6,16
+B07,R19-B07-A05,72,55,10,7,17
+B08,R19-B08-A01,73,57,11,5,16
+B09,R19-B09-A04,73,57,10,6,16
+B10,R19-B10-A02,76,61,10,5,15

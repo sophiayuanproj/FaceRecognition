@@ -76,3 +76,11 @@ work/project-research-v5/runs/optical/*
 work/project-finish-v4/models/pretrained/sface/
 work/project-finish-v4/models/keras_cache/
 detector/local/
+
+# Reviewed public report assets and downloadable final deliverables
+!docs/assets/
+!docs/assets/**
+!docs/downloads/
+!docs/downloads/P04_Final_Report.pdf
+!docs/downloads/P04_Final_Presentation.pdf
+!docs/downloads/paper-source.zip

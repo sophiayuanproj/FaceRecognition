@@ -4,7 +4,7 @@
 
 Omri Steinberg-Tatman and Sophia Yuan · UCLA Embedded Systems · Fall 2026
 
-[Paper](https://drive.google.com/file/d/1eikXZGxlXDb9nLYPIZaUHmPwaW2ffYkS/view) · [Presentation](https://docs.google.com/presentation/d/1TM9RoEXqlNgcfl5lDlVyWf49Zhnpr5LPnCpedgkzBws/edit) · [Quick start](#quick-start) · [Training](TRAINING.md) · [Reproduce the measurements](evidence/README.md)
+[Project and full report](https://sophiayuanproj.github.io/FaceRecognition/) · [Paper PDF](https://sophiayuanproj.github.io/FaceRecognition/downloads/P04_Final_Report.pdf) · [Presentation](https://sophiayuanproj.github.io/FaceRecognition/downloads/P04_Final_Presentation.pdf) · [Quick start](#quick-start) · [Training](TRAINING.md) · [Reproduce the measurements](evidence/README.md)
 
 Wearable cameras spend energy processing many nearly identical frames. We built a camera pipeline that uses scene changes to decide when to run face detection and downstream inference. The Nicla performs inference on the board, while a local dashboard displays the camera stream, frame-linked results, and saved encounters.
 
