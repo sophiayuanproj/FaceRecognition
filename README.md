@@ -8,27 +8,27 @@ Omri Steinberg-Tatman and Sophia Yuan · UCLA Embedded Systems · Fall 2026
 
 Wearable cameras spend energy processing many nearly identical frames. We built a camera pipeline that uses scene changes to decide when to run face detection and downstream inference. The Nicla performs inference on the board, while a local dashboard displays the camera stream, frame-linked results, and saved encounters.
 
-Across ten paired runs on the same board and video workload, scene gating reduced mean input power by **7.28%**, with the same **30/40 matched face episodes**. The tradeoff was a longer delay before the first matched face.
+In paired comparisons on the same board and video workload, scene gating reduced mean input power by **7.28%**, with **75% scripted face-episode coverage** in both policies. Both matched the same three of four clip segments. The tradeoff was a longer delay before the first matched face.
 
 ## Results
 
 The experiment compared four workloads on a repeated 29-second clip. Each accepted block began with a separate Nicla power cycle.
 
-| Workload | Mean input power | Matched face episodes | Median time to first match¹ |
+| Workload | Mean input power | Face-episode coverage | Median time to first match¹ |
 | --- | ---: | ---: | ---: |
 | Camera capture only | 608.72 mW | — | — |
 | Detector only | 670.17 mW | — | — |
-| Fixed full pipeline | 680.29 mW | 30/40 | 0.65 s |
-| Scene-gated full pipeline | 630.75 mW | 30/40 | 1.38 s |
+| Fixed full pipeline | 680.29 mW | 75% | 0.65 s |
+| Scene-gated full pipeline | 630.75 mW | 75% | 1.38 s |
 
 ¹ Among matched episodes. Both full pipelines missed the far-outdoor segment in every block.
 
 The paired mean saving was **49.54 mW**, with a 95% t interval of **46.97–52.12 mW**. Both modes used the same awake camera, configured 250 ms capture interval, Haar face detector, and small INT8 identity model. Scene gating skipped detector and downstream work during quiet periods, with periodic checks. The dashboard's fast live policy is a separate configuration.
 
 <details>
-<summary>View the ten paired measurements</summary>
+<summary>View the paired power result</summary>
 
-![Scene-gated minus fixed input power across ten paired starts. All differences favor scene gating.](work/project-research-v5/final-readiness-2026-11-12/r19-paired-power.svg)
+![Paired input-power comparison. Scene gating lowers mean power by 49.54 mW.](docs/assets/figures/01_paired_power.png)
 
 [Paired CSV](work/project-research-v5/final-readiness-2026-11-12/r19-paired-power.csv) · [Methods and limitations](work/project-research-v5/final-readiness-2026-11-12/FINAL_READINESS.md) · [Raw-data replay](evidence/README.md)
 

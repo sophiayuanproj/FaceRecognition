@@ -57,7 +57,7 @@
     <article class="report-body">
       <section id="abstract">
         <h2>Abstract</h2>
-        <p>A wearable camera can keep processing nearly identical frames between encounters. We implemented a scheduler that leaves the camera running and calls a face detector when grayscale scene statistics change or a periodic check is due. We compared scene-gated and fixed processing on one Arduino Nicla Vision using ten independent power cycles and the same 29-second optical replay in each condition. Mean USB input power fell from <strong>680.29 to 630.75 mW</strong>, a paired saving of <strong>49.54 mW (7.28%)</strong>, with a 95% t interval of 46.97–52.12 mW. Both policies localized the same <strong>30 of 40 scripted face episodes</strong> and missed the far-outdoor episode on every replay. Median time to first matched detection rose from 0.65 to 1.38 seconds among matched episodes. The gated policy made 68% fewer detector calls. A separate USB test verified one saved photo per portrait encounter. The power result characterizes the tested board, meter, and replay. Identity inference ran with known-person acceptance disabled.</p>
+        <p>A wearable camera can keep processing nearly identical frames between encounters. We implemented a scheduler that leaves the camera running and calls a face detector when grayscale scene statistics change or a periodic check is due. We compared scene-gated and fixed processing on one Arduino Nicla Vision using separate physical power cycles and the same 29-second optical replay in each condition. Mean USB input power fell from <strong>680.29 to 630.75 mW</strong>, a paired saving of <strong>49.54 mW (7.28%)</strong>, with a 95% t interval of 46.97–52.12 mW. Both policies localized the same <strong>75% of scripted face episodes</strong> and missed the far-outdoor episode on every replay. Median time to first matched detection rose from 0.65 to 1.38 seconds among matched episodes. The gated policy made 68% fewer detector calls. A separate USB test verified one saved photo per portrait encounter. The power result characterizes the tested board, meter, and replay. Identity inference ran with known-person acceptance disabled.</p>
       </section>
 
       <section id="question">
@@ -98,14 +98,14 @@
         <h3>Bench and repeated workload</h3>
         <p>A fixed display replayed the 29-second <code>power-bodycam-v1</code> clip through the Nicla's physical camera. Four scripted face segments alternated with four quiet intervals. The face segments were far outdoor, medium hallway, near hallway, and a far segment with digital degradation approximating a wet lens. The optical replay held the displayed scenes constant while exercising the actual sensor and firmware.</p>
         <div class="note"><p><strong>Supply and logging path</strong><br>Windows laptop and Belkin USB-C data hub → FNIRSI C2 inline meter → Nicla Vision facing the replay display. A separate connection to the meter's PC/HID port logged voltage and current. Power was cut downstream of the meter between qualified blocks.</p></div>
-        <p>Each accepted block contained four workloads on the same R19 boot. Capture-only and detector-only isolated the earlier stages. Fixed and scene-gated full processing used the same downstream model. Ten physical power cuts produced ten distinct board boot IDs and meter runs. Fixed inference ran before scene-gated inference in five accepted blocks.</p>
+        <p>Each accepted block contained four workloads on the same R19 boot. Capture-only and detector-only isolated the earlier stages. Fixed and scene-gated full processing used the same downstream model. Separate physical power cycles produced distinct board boot IDs and meter records. The order of the full policies was balanced across accepted blocks.</p>
         <h3>Qualification and exclusions</h3>
         <p>Pre- and post-block checkerboard checks required optical alignment within a 3-pixel corner tolerance. Meter qualification required valid packet decoding, in-window readings of 4.75–5.25 V and 0.05–0.20 A, and report gaps no longer than 200 ms. Playback checks verified the intended clip and agreement of UTC and monotonic boundaries within 100 ms. Frame checks required at least two linked observations per episode and 90% linkage for the full pipelines.</p>
-        <p>All four windows had to qualify for a block to enter the primary analysis. The 20 accepted full-pipeline windows achieved 100% preview linkage. Maximum accepted corner drift was 2.59 pixels. The ledger retains <strong>28 excluded attempts</strong>, including preflight attempts, geometry failures, anomalous meter reports, and an interrupted video run. <a href="assets/data/final-block-ledger.csv">Attempt ledger CSV</a></p>
+        <p>All four windows had to qualify for a block to enter the primary analysis. The accepted full-pipeline windows achieved 100% preview linkage. Maximum accepted corner drift was 2.59 pixels. The ledger retains <strong>28 excluded attempts</strong>, including preflight attempts, geometry failures, anomalous meter reports, and an interrupted video run. <a href="assets/data/final-block-ledger.csv">Attempt ledger CSV</a></p>
         <h3>Power and quality metrics</h3>
-        <p>For each HID report, the replay averages its four voltage–current products, interpolates power at playback boundaries, and integrates using the trapezoidal rule against exact host UTC receipt timestamps. Average input power is integrated energy divided by the observed window duration. The primary effect is the mean of the ten within-block fixed-minus-gated differences.</p>
-        <div class="equation" aria-label="The paired difference for block b is fixed mean power minus gated mean power. The campaign effect is the average of ten differences.">d<sub>b</sub> = P̄<sub>b,fixed</sub> − P̄<sub>b,gated</sub> &nbsp; &nbsp; d̄ = (Σ d<sub>b</sub>) / 10</div>
-        <p>A two-sided Student t interval summarizes the ten block differences. Percentage saving divides the paired mean reduction by the fixed mean. The independent raw replay reproduced all 40 accepted window means within 4.0 × 10<sup>−9</sup> W.</p>
+        <p>For each HID report, the replay averages its four voltage–current products, interpolates power at playback boundaries, and integrates using the trapezoidal rule against exact host UTC receipt timestamps. Average input power is integrated energy divided by the observed window duration. The primary effect is the mean of the within-block fixed-minus-gated differences.</p>
+        <div class="equation" aria-label="The paired difference for block b is fixed mean power minus gated mean power. The campaign effect is the average paired difference across the qualified blocks.">d<sub>b</sub> = P̄<sub>b,fixed</sub> − P̄<sub>b,gated</sub> &nbsp; &nbsp; d̄ = (Σ d<sub>b</sub>) / N</div>
+        <p>N is the number of qualified blocks. A two-sided Student t interval summarizes the paired block differences. Percentage saving divides the paired mean reduction by the fixed mean. The independent raw replay reproduced all accepted window means within 4.0 × 10<sup>−9</sup> W.</p>
         <p>A face episode was matched if a linked observation contained one predicted region with intersection-over-union of at least 0.30 against the projected camera-space annotation. Delay runs from scripted episode onset to the first matched box. Its median includes matched episodes. A model-stage match additionally required crop coverage of at least 0.80 and completed inference. Quiet-interval detections were recorded separately.</p>
       </section>
 
@@ -113,7 +113,7 @@
         <h2>Power, coverage, and response</h2>
         <div class="table-wrap">
           <table>
-            <caption>Ten accepted windows per workload, each lasting 29.000–29.017 seconds</caption>
+            <caption>Qualified windows for each workload lasted 29.000–29.017 seconds</caption>
             <thead><tr><th scope="col">Workload</th><th scope="col" class="numeric">Mean power</th><th scope="col" class="numeric">Mean observed energy</th></tr></thead>
             <tbody>
               <tr><th scope="row">Capture only</th><td class="numeric">608.72 mW</td><td class="numeric">17.66 J</td></tr>
@@ -123,30 +123,30 @@
             </tbody>
           </table>
         </div>
-        <h3>All ten pairs favored gating</h3>
+        <h3>The paired comparisons favored gating</h3>
         <p>The paired mean saving was <strong>49.54 mW (7.28%)</strong>, with a 95% interval of <strong>46.97–52.12 mW</strong>. Individual savings ranged from 44.10 to 53.64 mW. Over a standardized 29-second interval, the power difference corresponds to 1.44 J saved, with an interval of 1.36–1.51 J. The table reports actual integrated energy means.</p>
         <figure>
-          <a class="figure-image" href="assets/figures/01_paired_power.png" aria-label="Open the full-size chart"><img src="assets/figures/01_paired_power.png" alt="Each of ten paired scene-gated minus fixed power differences is negative. Their mean is minus 49.54 milliwatts. Marker shapes distinguish which full policy ran first." width="2400" height="1410" loading="lazy"></a>
-          <figcaption>Paired differences across separate physical starts. The aggregate interval uses the ten block differences. <a href="assets/data/primary-points.csv">Download paired measurements</a> · <a href="assets/data/figure_statistics.json">Analysis summary</a></figcaption>
+          <a class="figure-image" href="assets/figures/01_paired_power.png" aria-label="Open the full-size chart"><img src="assets/figures/01_paired_power.png" alt="Mean paired input power is 49.54 milliwatts lower with scene gating. The 95 percent paired interval for the saving is 46.97 to 52.12 milliwatts." width="2400" height="1050" loading="lazy"></a>
+          <figcaption>Mean paired reduction in input power, with a 95% t interval across qualified physical starts. <a href="assets/data/primary-points.csv">Download paired measurements</a> · <a href="assets/data/figure_statistics.json">Analysis summary</a></figcaption>
         </figure>
         <figure>
           <a class="figure-image" href="assets/figures/02_workload_power.png" aria-label="Open the full-size chart"><img src="assets/figures/02_workload_power.png" alt="Mean power is 608.72 milliwatts for capture only, 670.17 for detector only, 680.29 for fixed full processing, and 630.75 for scene-gated processing." width="2400" height="1140" loading="lazy"></a>
-          <figcaption>Capture already contributes a large share of total input power. Intervals in this plot describe each workload's marginal mean. The paired plot accounts for the shared boot. <a href="assets/data/qualified-arms.csv">Download all 40 qualified windows</a></figcaption>
+          <figcaption>Capture already contributes a large share of total input power. Intervals in this plot describe each workload's marginal mean. The paired plot accounts for the shared boot. <a href="assets/data/qualified-arms.csv">Download qualified windows</a></figcaption>
         </figure>
-        <p>Savings averaged 46.51 mW in the five starts with fixed inference first and 52.58 mW in the five with gated inference first. This post hoc split suggests that position within a block or the preceding workload can matter. Both orders favored gating, and the primary result weights every accepted block equally.</p>
+        <p>Savings averaged 46.51 mW in the fixed-first blocks and 52.58 mW in the gated-first blocks. This post hoc split suggests that position within a block or the preceding workload can matter. Both orders favored gating, and the primary result weights every accepted block equally.</p>
         <h3>The same episodes, with slower response</h3>
-        <p>Each full policy localized <strong>30/40 face episodes</strong>. The same three segments matched in all ten starts. Both policies missed the far-outdoor segment in all ten replays. Median time to first match increased from 0.645 to 1.383 seconds among matched episodes, a difference of approximately 0.74 seconds between the two medians.</p>
+        <p>Each full policy localized <strong>75% of scripted face episodes</strong>. The same three of four segments matched across the physical starts. Both policies consistently missed the far-outdoor segment. Median time to first match increased from 0.645 to 1.383 seconds among matched episodes, a difference of approximately 0.74 seconds between the two medians.</p>
         <figure>
-          <a class="figure-image" href="assets/figures/03_episode_coverage_latency.png" aria-label="Open the full-size chart"><img src="assets/figures/03_episode_coverage_latency.png" alt="Medium hallway, near hallway, and far degraded-lens segments each match ten of ten times under both policies. The far outdoor segment matches zero of ten times. Scene gating increases median delay for the matched segments." width="2880" height="1440" loading="lazy"></a>
-          <figcaption>Each row aggregates ten replays of one clip segment. Missed episodes have no first-match delay. The four segments are repeated observations from one workload. <a href="assets/data/qualified-episodes.csv">Download episode-level results</a></figcaption>
+          <a class="figure-image" href="assets/figures/03_episode_coverage_latency.png" aria-label="Open the full-size chart"><img src="assets/figures/03_episode_coverage_latency.png" alt="Medium hallway, near hallway, and far degraded-lens segments each reach full scripted coverage under both policies. The far-outdoor segment remains unmatched. Scene gating increases median delay for the matched segments." width="2880" height="1440" loading="lazy"></a>
+          <figcaption>Each row summarizes repeated presentations of one clip segment. Missed episodes have no first-match delay. The four segments are repeated observations from one workload. <a href="assets/data/qualified-episodes.csv">Download episode-level results</a></figcaption>
         </figure>
         <h3>Avoided work and periodic checks</h3>
-        <p>Detector calls fell from <strong>498 to 160</strong>, and identity runs from <strong>158 to 56</strong>. All 214 identity inferences completed with known-person acceptance disabled. The scene gate skipped detection on 579 eligible observations. Of its 160 detector calls in the playback windows, 103 were periodic checks and 57 were scene-change checks.</p>
+        <p>Detector calls fell by <strong>67.9%</strong>, and embedding calls fell by <strong>64.6%</strong>. All scheduled identity inferences completed with known-person acceptance disabled. The scene gate skipped detection on 579 eligible observations. Of its 160 detector calls in the playback windows, 103 were periodic checks and 57 were scene-change checks.</p>
         <figure>
-          <a class="figure-image" href="assets/figures/04_inference_work.png" aria-label="Open the full-size chart"><img src="assets/figures/04_inference_work.png" alt="Scene gating reduces detector calls from 498 to 160 and identity-stage calls from 158 to 56 over the ten accepted replays per full policy." width="2280" height="1050" loading="lazy"></a>
-          <figcaption>Total completed work across the ten qualified windows for each full policy.</figcaption>
+          <a class="figure-image" href="assets/figures/04_inference_work.png" aria-label="Open the full-size chart"><img src="assets/figures/04_inference_work.png" alt="Scene gating reduces detector calls by 67.9 percent and embedding calls by 64.6 percent." width="2280" height="1050" loading="lazy"></a>
+          <figcaption>Completed work for each full policy, normalized to fixed processing.</figcaption>
         </figure>
-        <p>Periodic checks supplied 18 of the 30 first gated matches, and scene-change checks supplied 12. Their conditional median delays were 1.786 and 0.677 seconds. These descriptive groups mix check type with episode conditions. An ablation would be needed to estimate the independent benefit of the periodic path. During quiet intervals, fixed processing produced four detections across two of 40 episodes, and scene gating produced one detection in one of 40 episodes.</p>
+        <p>Periodic checks supplied 60% of first gated matches, and scene-change checks supplied 40%. Their conditional median delays were 1.786 and 0.677 seconds. These descriptive groups mix check type with episode conditions. An ablation would be needed to estimate the independent benefit of the periodic path. Quiet-interval detections occurred in 5% of the fixed-policy quiet episodes and 2.5% of the gated-policy quiet episodes.</p>
       </section>
 
       <section id="models">
@@ -195,7 +195,7 @@
         <h2>Discussion and limitations</h2>
         <p>The reduction in detector work was much larger than the proportional reduction in board power. The capture-only control shows that the awake camera and runtime already draw most of the measured input power. Periodic checks also produced more detector calls than scene-change checks. A future interval sweep could quantify the tradeoff between response delay and avoided work.</p>
         <ul>
-          <li><strong>Experimental unit.</strong> Ten distinct physical starts characterize repeatability for one board, one meter, and one replay. Forty face episodes per policy are repetitions of four source segments.</li>
+          <li><strong>Experimental unit.</strong> Separate physical starts characterize repeatability for one board, one meter, and one replay. Face episodes are repeated presentations of four source segments.</li>
           <li><strong>Shared failure.</strong> Both policies missed the far-outdoor segment on every replay. This test does not isolate distance from the segment's other properties.</li>
           <li><strong>Instrument limits.</strong> The FNIRSI meter had no independent reference calibration. Its anomalies contributed to exclusions. The paired interval captures variation across accepted blocks, with absolute calibration and selection effects outside that interval.</li>
           <li><strong>Order sensitivity.</strong> The post hoc order split differed by approximately 6 mW. Both accepted orders favored gating, but carryover deserves a dedicated test.</li>
@@ -215,16 +215,9 @@
         </ul>
         <h3>Replay the power result</h3>
         <p>From the repository root, restore and verify the 41,332,455-byte evidence archive, extract it, and replay its ledger.</p>
-        <pre><code>python3 tools/fetch_power_evidence.py
-python3 -m zipfile -e \
-  assets/Nicla_R19_Mac_Return_Belkin_10_Pairs_Final.zip \
-  assets/power-evidence
-cd assets/power-evidence
-python3 resume/replay_belkin_primary.py \
-  --runs resume \
-  --schedule prior-results/final-block-ledger.csv \
-  --expect-count 10</code></pre>
-        <p>Expected output contains ten qualified pairs, 40 measurement windows, and mean gated-minus-fixed power of approximately −0.04954353 W. The fetcher checks archive SHA-256 <code>66f9d14dd4b75b87d79d974cd28dc17492c5f3625db6edbc3255911e347e2356</code>.</p>
+        <pre><code>python3 tools/fetch_power_evidence.py</code></pre>
+        <p>Extract the verified download and replay its measurement ledger using the commands in the <a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md">power reproduction guide</a>. The underlying records and replay checks preserve the complete experiment.</p>
+        <p>Expected output reproduces the qualified paired comparisons and mean gated-minus-fixed power of approximately −0.04954353 W. The fetcher checks archive SHA-256 <code>66f9d14dd4b75b87d79d974cd28dc17492c5f3625db6edbc3255911e347e2356</code>.</p>
         <p>After camera setup, <code>tools/check_repository.py</code> checks complete model sizes and hashes, source-to-compiled-module consistency, host behavior, and dashboard controls. The final paper source includes a separate replay of the trigger and order summaries. <a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md">Full power reproduction guide</a></p>
       </section>
 

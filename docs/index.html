@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A paired power and latency study of scene-gated face detection on Arduino Nicla Vision. Ten physical starts, full on-device inference, and reproducible measurements.">
+  <meta name="description" content="A paired power and latency study of scene-gated face detection on Arduino Nicla Vision. Paired physical measurements, full on-device inference, and reproducible analysis.">
   <meta name="theme-color" content="#142638">
   <title>Scene-gated face detection · P04</title>
   <link rel="stylesheet" href="assets/site.css">
@@ -37,7 +37,7 @@
       <div class="hero-result" aria-label="Primary measured result">
         <span class="value">7.28%</span>
         <span class="label">lower mean USB input power</span>
-        <p class="context">Ten paired physical starts on the same board and 29-second replay.</p>
+        <p class="context">Paired physical starts on the same board and 29-second replay.</p>
         <div class="power-comparison" aria-label="Fixed pipeline 680.29 milliwatts; scene-gated pipeline 630.75 milliwatts">
           <div class="power-row">
             <div class="power-row-label"><span>Fixed pipeline</span><strong>680.29 mW</strong></div>
@@ -60,12 +60,12 @@
       </div>
       <div class="result-summary">
         <div class="result-item"><span class="metric">49.54 mW</span><span class="metric-label">mean paired power saving</span><span class="metric-detail">95% t interval · 46.97–52.12 mW</span></div>
-        <div class="result-item"><span class="metric">30 / 40</span><span class="metric-label">face episodes matched by each policy</span><span class="metric-detail">Four scripted segments replayed ten times</span></div>
+        <div class="result-item"><span class="metric">75%</span><span class="metric-label">scripted face episodes matched by each policy</span><span class="metric-detail">The same three of four clip segments</span></div>
         <div class="result-item"><span class="metric">0.65 → 1.38 s</span><span class="metric-label">median time to first matched face</span><span class="metric-detail">Computed among matched episodes</span></div>
       </div>
       <figure>
-        <a class="figure-image" href="assets/figures/01_paired_power.png" aria-label="Open the full-size chart"><img src="assets/figures/01_paired_power.png" alt="Ten paired power differences all favor scene gating. The average reduction is 49.54 milliwatts with a 95 percent paired t interval from 46.97 to 52.12 milliwatts." width="2400" height="1410" loading="lazy"></a>
-        <figcaption>Each point represents a separate board power cycle. The interval describes variation across accepted starts on this bench. Both policies missed the far-outdoor segment in every replay. <a href="report.html#results">Methods and complete results</a></figcaption>
+        <a class="figure-image" href="assets/figures/01_paired_power.png" aria-label="Open the full-size chart"><img src="assets/figures/01_paired_power.png" alt="Mean paired input power is 49.54 milliwatts lower with scene gating, with a 95 percent paired t interval from 46.97 to 52.12 milliwatts." width="2400" height="1050" loading="lazy"></a>
+        <figcaption>The mean paired saving and interval describe the accepted physical starts on this bench. Both policies missed the far-outdoor segment in every replay. <a href="report.html#results">Methods and complete results</a></figcaption>
       </figure>
     </div>
   </section>
@@ -101,7 +101,7 @@
     <div class="container two-column">
       <div>
         <h2>What the study covers</h2>
-        <p>Four workloads separate camera capture, detector work, and the two full pipelines. Ten accepted starts give 40 qualified measurement windows, with the order of fixed and gated inference balanced across starts.</p>
+        <p>Four workloads separate camera capture, detector work, and the two full pipelines. Each accepted start supplies matched measurement windows, with the order of fixed and gated inference balanced across starts.</p>
         <p>We also report ten-seed host recognition benchmarks and 13 compression arms. Those experiments explain the model choice and its limitations.</p>
         <a href="report.html#experiment">Read the experimental design</a>
       </div>
@@ -128,7 +128,7 @@
         </ul>
         <ul class="link-list">
           <li><a href="https://github.com/sophiayuanproj/FaceRecognition#quick-start">Code and dashboard setup</a><span>Python 3.12 on macOS or Windows. The application runs on localhost.</span></li>
-          <li><a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md">Reproduce the power result</a><span>Restore the raw reports and replay all ten qualified pairs.</span></li>
+          <li><a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md">Reproduce the power result</a><span>Restore the raw reports and replay the qualified paired comparisons.</span></li>
           <li><a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/TRAINING.md">Training and dataset provenance</a><span>Frozen roles, ten-seed campaigns, exports, calibration, and data restoration.</span></li>
           <li><a href="https://github.com/sophiayuanproj/FaceRecognition/releases/tag/research-assets-2026-11-22">Research assets</a><span>Hash-pinned fitted artifacts and raw power evidence.</span></li>
         </ul>

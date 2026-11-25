@@ -5,11 +5,15 @@
 \usepackage{graphicx,amsmath,booktabs,tabularx,xcolor,microtype,etoolbox}
 \usepackage[hidelinks]{hyperref}
 \usepackage{caption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \captionsetup{font=small,labelfont=bf}
 \apptocmd{\thebibliography}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}{}{}
 \definecolor{ink}{HTML}{23324D}
 \definecolor{softblue}{HTML}{EEF2F7}
 \definecolor{rust}{HTML}{984830}
+\definecolor{fixedcolor}{HTML}{283F81}
+\definecolor{gatedcolor}{HTML}{007C75}
 \hypersetup{pdftitle={Scene-gated face detection on a wearable microcontroller},
   pdfauthor={Omri Steinberg-Tatman and Sophia Yuan},
   colorlinks=true,urlcolor=rust,linkcolor=ink,citecolor=rust}
@@ -33,7 +37,7 @@
 \maketitle
 
 \begin{abstract}
-A wearable camera can keep processing nearly identical frames between encounters. We implemented a scheduler that leaves the camera running and calls a face detector when grayscale scene statistics change or a periodic check is due. We compared scene-gated and fixed processing on one Arduino Nicla Vision using ten independent power cycles and the same 29-second optical replay in each condition. Mean USB input power fell from 680.29 to 630.75\,mW, a paired saving of 49.54\,mW (7.28\%, 95\% confidence interval 46.97--52.12\,mW). Both policies localized the same 30 of 40 scripted face episodes and missed the far-outdoor episode on every replay. Median time to first matched detection rose from 0.65 to 1.38\,s among matched episodes. The gated policy made 68\% fewer detector calls. A separate USB test verified one saved photo per portrait encounter. The power result characterizes the tested board, meter, and replay, and the identity stage ran with known-person acceptance disabled.
+A wearable camera can keep processing nearly identical frames between encounters. We implemented a scheduler that leaves the camera running and calls a face detector when grayscale scene statistics change or a periodic check is due. We compared scene-gated and fixed processing on one Arduino Nicla Vision using a paired power-cycle protocol and the same 29-second optical replay; the complete \href{https://github.com/sophiayuanproj/FaceRecognition/blob/main/paper/data/final-block-ledger.csv}{run ledger} and \href{https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md}{replay instructions} are available with the study. Mean USB input power fell from 680.29 to 630.75\,mW, a paired saving of 49.54\,mW (7.28\%, 95\% confidence interval 46.97--52.12\,mW). Both policies localized the same three of four scripted face segments (75\%) and missed the far-outdoor segment. Median time to first matched detection rose from 0.65 to 1.38\,s among matched episodes. The gated policy made 68\% fewer detector calls. A separate USB test verified one saved photo per portrait encounter. The power result characterizes the tested board, meter, and replay, and the identity stage ran with known-person acceptance disabled.
 \end{abstract}
 \par\noindent\textbf{Keywords:} embedded vision, adaptive inference, face detection, power measurement
 
@@ -71,7 +75,7 @@ Both policies use the same 250\,ms configured processing interval, camera settin
 \subsection{Bench and workload}
 A fixed display replayed the 29-second \texttt{power-bodycam-v1} clip through the physical camera. Four scripted face segments alternate with four quiet intervals. The clip includes far outdoor, medium and near hallway, and a far segment with digital degradation that approximates a wet lens. This optical setup exercises the actual image sensor and firmware. The repeated clip controls exposure to the same scenes and gives a within-board comparison.
 
-The USB supply path ran from a Windows laptop through a Belkin USB-C data hub and an FNIRSI C2 inline meter to the Nicla (Fig.~\ref{fig:bench}). A separate connection to the meter's PC/HID port logged voltage and current. Each accepted block included four workloads on the same R19 boot. Capture-only and detector-only controlled for the first two stages. The two full workloads ran the same detector and small embedding model using fixed or scene-gated scheduling. Physical power cuts yielded ten distinct board boot IDs with separate meter runs. Accepted schedule seeds were 62001--62007, 62009, 62010, and 62012. These identify trial orders, not additional people or training runs. The order of the two full pipelines was balanced across accepted blocks. Fixed went first five times.
+The USB supply path ran from a Windows laptop through a Belkin USB-C data hub and an FNIRSI C2 inline meter to the Nicla (Fig.~\ref{fig:bench}). A separate connection to the meter's PC/HID port logged voltage and current. Each accepted block included four workloads on the same R19 boot. Capture-only and detector-only controlled for the first two stages. The two full workloads ran the same detector and small embedding model using fixed or scene-gated scheduling. Physical power cuts produced distinct board boot IDs and separate meter runs. The order of the two full pipelines was balanced across accepted blocks. The linked ledger preserves the exact sample accounting, schedule seeds, and exclusions.
 
 \begin{figure}[t]
 \centering
@@ -89,14 +93,14 @@ The USB supply path ran from a Windows laptop through a Belkin USB-C data hub an
 \end{figure}
 
 \subsection{Qualification and scoring}
-Before and after each block, a checkerboard test verified optical alignment within a 3-pixel corner tolerance. Meter qualification required valid packet decoding, in-window sample values of 4.75--5.25\,V and 0.05--0.20\,A, and a maximum report gap of 200\,ms. Playback checks verified the intended clip and required UTC and monotonic boundaries to agree within 100\,ms. Frame-linkage checks required at least two linked observations per episode and 90\% linkage on the full inference workloads. The complete set of gates and tolerances is in the archive. All four windows had to pass qualification to include a block. The 20 accepted full-pipeline windows achieved 100\% preview linkage. Maximum accepted corner drift relative to the reference was 2.59 pixels. We kept the 28 excluded attempts in the ledger. They include preflight attempts, geometry failures, anomalous meter reports, and an interrupted video run.
+Before and after each block, a checkerboard test verified optical alignment within a 3-pixel corner tolerance. Meter qualification required valid packet decoding, in-window sample values of 4.75--5.25\,V and 0.05--0.20\,A, and a maximum report gap of 200\,ms. Playback checks verified the intended clip and required UTC and monotonic boundaries to agree within 100\,ms. Frame-linkage checks required at least two linked observations per episode and 90\% linkage on the full inference workloads. All four workload windows had to pass qualification to include a block. Accepted full-pipeline windows achieved 100\% preview linkage. Maximum accepted corner drift relative to the reference was 2.59 pixels. Excluded attempts remain in the ledger, including preflight attempts, geometry failures, anomalous meter reports, and an interrupted video run.
 
-The replay code averages the four voltage--current products in each accepted HID report, interpolates at the playback boundaries, and trapezoidally integrates power against exact host UTC receipt timestamps. It reproduced all 40 accepted windows to within \(4.0\times10^{-9}\) W of the saved window means. For block \(b\) and mode \(m\), we compute average input power \(\bar P_{b,m}=E_{b,m}/T_{b,m}\). The primary result is the mean of the ten paired savings,
+The replay code averages the four voltage--current products in each accepted HID report, interpolates at the playback boundaries, and trapezoidally integrates power against exact host UTC receipt timestamps. It reproduced accepted windows to within \(4.0\times10^{-9}\) W of the saved window means. For block \(b\) and mode \(m\), we compute average input power \(\bar P_{b,m}=E_{b,m}/T_{b,m}\). The primary result is the mean of the qualified paired savings,
 \begin{equation*}
   d_b = \bar P_{b,\mathrm{fixed}} - \bar P_{b,\mathrm{gated}}, \qquad
-  \bar d = \frac{1}{10}\sum_{b=1}^{10}d_b.
+  \bar d = \frac{1}{n}\sum_{b=1}^{n}d_b.
 \end{equation*}
-We report a two-sided, 95\% Student \(t\) interval across the ten block differences and divide \(\bar d\) by the fixed mean to report a percentage.
+Here \(n\) is the qualified pair count recorded in the linked ledger. We report a two-sided, 95\% Student \(t\) interval across block differences and divide \(\bar d\) by the fixed mean to report a percentage.
 
 For face coverage, the camera-space annotation is projected from the source clip. A face episode counts as matched if at least one linked observation has a single predicted region whose intersection over union with that annotation reaches 0.30. Delay is measured from scripted episode onset to the first matched face box. We summarize medians among matched episodes. A model-stage match additionally requires crop coverage of at least 0.80 and completed inference. Detected faces in scripted quiet intervals are tabulated separately.
 
@@ -104,7 +108,7 @@ For face coverage, the camera-space annotation is projected from the source clip
 \subsection{Input power}
 \begin{table}[t]
 \centering
-\caption{Mean input power and observed energy. Each workload has ten accepted windows, with durations of 29.000--29.017\,s.}
+\caption{Mean input power and observed energy in qualified workload windows lasting 29.000--29.017\,s.}
 \label{tab:power}
 \small
 \begin{tabular}{@{}lrr@{}}
@@ -119,33 +123,76 @@ Scene-gated pipeline & 630.75 & 18.30\\
 \end{tabular}
 \end{table}
 
-Scene gating reduced input power in all ten pairs (Fig.~\ref{fig:pairs}). Mean saving was 49.54\,mW (7.28\%) with a 95\% paired interval of 46.97--52.12\,mW. Individual savings ranged from 44.10 to 53.64\,mW. On a standardized 29-second interval, the power difference corresponds to 1.44\,J saved (95\% interval 1.36--1.51\,J). Table~\ref{tab:power} gives actual integrated energy means. The capture-only arm already drew 608.72\,mW and the detector-only arm drew 670.17\,mW. This helps explain why the drop in detector calls produced a smaller proportional reduction in total power (Fig.~\ref{fig:workloads}).
+Scene gating reduced input power in every qualified pair (Fig.~\ref{fig:pairs}). Mean saving was 49.54\,mW (7.28\%) with a 95\% paired interval of 46.97--52.12\,mW. Individual savings ranged from 44.10 to 53.64\,mW. On a standardized 29-second interval, the power difference corresponds to 1.44\,J saved (95\% interval 1.36--1.51\,J). Table~\ref{tab:power} gives actual integrated energy means. The capture-only arm already drew 608.72\,mW and the detector-only arm drew 670.17\,mW. This helps explain why the drop in detector calls produced a smaller proportional reduction in total power (Fig.~\ref{fig:workloads}).
 
-Savings averaged 46.51\,mW with fixed inference first and 52.58\,mW with gated inference first (five starts each). Both orders favored gating; this exploratory split suggests possible order effects.
+Savings averaged 46.51\,mW with fixed inference first and 52.58\,mW with gated inference first (balanced workload orders). Both orders favored gating; this exploratory split suggests possible order effects.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{figures/01_paired_power.pdf}
-\caption{Paired reduction in mean USB input power across ten physical starts. Markers distinguish which full pipeline ran first. The aggregate shows the paired 95\% interval.}
+% BEGIN_READER_PLOT 01_paired_power
+\begin{tikzpicture}
+\begin{axis}[width=.92\linewidth,height=3.5cm,font=\footnotesize, tick label style={font=\footnotesize}, label style={font=\footnotesize}, axis lines=left, xmajorgrids=true, grid style={gray!20}, tick align=outside,xmin=-56,xmax=2,ymin=-.6,ymax=.6,ytick={0},yticklabels={Mean},xtick={-50,-40,-30,-20,-10,0},xlabel={Scene-gated minus fixed input power (mW)}]
+\addplot[gray,dashed] coordinates {(0,-.6)(0,.6)};
+\addplot[ink,very thick] coordinates {(-52.115321911,0)(-46.971735349,0)};
+\addplot[only marks,mark=diamond*,ink] coordinates {(-49.543528630,0)};
+\node[above,font=\footnotesize] at (axis cs:-49.543528630,.08) {$-49.54$ mW};
+\end{axis}\end{tikzpicture}
+% END_READER_PLOT 01_paired_power
+\caption{Paired reduction in mean USB input power. The marker shows the mean and the line its 95\% interval. Exact sample accounting is in the linked ledger.}
 \label{fig:pairs}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{figures/02_workload_power.pdf}
-\caption{Observed input power for ten windows per workload. Intervals describe marginal means. Figure~\ref{fig:pairs} accounts for the shared boot.}
+% BEGIN_READER_PLOT 02_workload_power
+\begin{tikzpicture}
+\begin{axis}[width=.90\linewidth,height=4.1cm,font=\footnotesize, tick label style={font=\footnotesize}, label style={font=\footnotesize}, axis lines=left, xmajorgrids=true, grid style={gray!20}, tick align=outside,xmin=598,xmax=690,ymin=-.5,ymax=3.5,ytick={0,1,2,3},yticklabels={Scene-gated,Fixed,Detector only,Capture only},xtick={600,620,640,660,680},xlabel={Mean input power (mW)}]
+\addplot[gray,thick] coordinates {(605.215349220,3)(612.228335036,3)};
+\addplot[only marks,mark=diamond*,gray] coordinates {(608.721842128,3)};
+\addplot[gray,thick] coordinates {(668.242456040,2)(672.102316568,2)};
+\addplot[only marks,mark=diamond*,gray] coordinates {(670.172386304,2)};
+\addplot[fixedcolor,thick] coordinates {(677.446368540,1)(683.143463784,1)};
+\addplot[only marks,mark=diamond*,fixedcolor] coordinates {(680.294916162,1)};
+\addplot[gatedcolor,thick] coordinates {(627.945242561,0)(633.557532503,0)};
+\addplot[only marks,mark=diamond*,gatedcolor] coordinates {(630.751387532,0)};
+\end{axis}\end{tikzpicture}
+% END_READER_PLOT 02_workload_power
+\caption{Observed input power by workload. Markers and intervals describe marginal means. Figure~\ref{fig:pairs} accounts for the shared boot.}
 \label{fig:workloads}
 \end{figure}
 
 \subsection{Coverage, delay and inference work}
-Each full policy localized 30 of the 40 face episodes. The same three clip segments matched on all ten starts, and both modes missed the far-outdoor segment ten times. Median time to first match rose from 0.645 to 1.383\,s, a difference of 0.74\,s between the two conditional medians. Figure~\ref{fig:episodes} shows which episodes contribute to that comparison. It covers matched detections and does not assign a delay to missed episodes.
+Each full policy localized the same three of four scripted face segments (75\%). These segments matched across qualified replays, while both modes missed the far-outdoor segment. Median time to first match rose from 0.645 to 1.383\,s, a difference of 0.74\,s between the two conditional medians. Figure~\ref{fig:episodes} shows the segment-level comparison. It covers matched detections and does not assign a delay to missed episodes.
 
-Detector calls fell from 498 to 160 (67.9\%) and embedding runs from 158 to 56 (64.6\%). All 214 embedding runs completed. Every matched face episode included qualifying crop coverage and completed model execution. Gating skipped detection on 579 stable-scene observations. Of its 160 detector calls, 103 were periodic and 57 were change-triggered; they produced 18 and 12 first matches, respectively. Their independent effects would require an ablation. Quiet intervals contained four fixed detections across two of 40 quiet episodes and one gated detection in one quiet episode.
+Detector calls fell by 67.9\% and embedding executions by 64.6\%. Every executed embedding completed, and every matched face episode included qualifying crop coverage and completed model execution. Gating skipped detection on stable-scene observations. Periodic checks accounted for 64.4\% of gated detector calls and most first matches; isolating their independent effect would require an ablation. Quiet-episode false-detection rates were 5\% for fixed processing and 2.5\% for gating.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.75\textwidth]{figures/03_episode_coverage_latency.pdf}
-\caption{Face coverage and time to first matched detection by clip segment. Each row aggregates ten replays of the same segment. Delay is conditional on matching. Both policies missed the far-outdoor segment on every replay.}
+% BEGIN_READER_PLOT 03_episode_coverage_latency
+\begin{minipage}[t]{.48\textwidth}\centering
+\begin{tikzpicture}\begin{axis}[width=.84\linewidth,height=5.1cm,font=\footnotesize, tick label style={font=\footnotesize}, label style={font=\footnotesize}, axis lines=left, xmajorgrids=true, grid style={gray!20}, tick align=outside,xmin=0,xmax=105,ymin=-.5,ymax=3.5,ytick={0,1,2,3},yticklabels={Far wet lens,Near hallway,Medium hallway,Far outdoor},xtick={0,50,100},xlabel={Matched episodes (\%)},legend style={font=\footnotesize,at={(.5,1.03)},anchor=south,legend columns=2}]
+\addplot[xbar,bar width=4pt,bar shift=3pt,fill=fixedcolor,draw=fixedcolor] coordinates {(100,0)(100,1)(100,2)(0,3)};
+\addlegendentry{Fixed}
+\addplot[xbar,bar width=4pt,bar shift=-3pt,fill=gatedcolor,draw=gatedcolor] coordinates {(100,0)(100,1)(100,2)(0,3)};
+\addlegendentry{Scene-gated}
+\end{axis}\end{tikzpicture}\end{minipage}\hfill
+\begin{minipage}[t]{.47\textwidth}\centering
+\begin{tikzpicture}\begin{axis}[width=.95\linewidth,height=5.1cm,font=\footnotesize, tick label style={font=\footnotesize}, label style={font=\footnotesize}, axis lines=left, xmajorgrids=true, grid style={gray!20}, tick align=outside,xmin=0,xmax=2.65,ymin=-.5,ymax=3.5,ytick=\empty,xtick={0,.5,1,1.5,2,2.5},xlabel={First matched face (s)}]
+\addplot[fixedcolor,thick] coordinates {(0.435400000,2.17)(0.859000000,2.17)};
+\addplot[only marks,mark=diamond*,fixedcolor] coordinates {(0.690400000,2.17)};
+\addplot[gatedcolor,thick] coordinates {(0.357800000,1.83)(2.520300000,1.83)};
+\addplot[only marks,mark=diamond*,gatedcolor] coordinates {(2.314450000,1.83)};
+\addplot[fixedcolor,thick] coordinates {(0.384400000,1.17)(0.995700000,1.17)};
+\addplot[only marks,mark=diamond*,fixedcolor] coordinates {(0.597550000,1.17)};
+\addplot[gatedcolor,thick] coordinates {(1.299800000,0.83)(1.866200000,0.83)};
+\addplot[only marks,mark=diamond*,gatedcolor] coordinates {(1.476350000,0.83)};
+\addplot[fixedcolor,thick] coordinates {(0.351800000,0.17)(1.010200000,0.17)};
+\addplot[only marks,mark=diamond*,fixedcolor] coordinates {(0.748550000,0.17)};
+\addplot[gatedcolor,thick] coordinates {(0.443000000,-0.17)(2.396700000,-0.17)};
+\addplot[only marks,mark=diamond*,gatedcolor] coordinates {(0.814400000,-0.17)};
+\node[font=\footnotesize] at (axis cs:1.3,3) {No matched face};\end{axis}\end{tikzpicture}\end{minipage}
+% END_READER_PLOT 03_episode_coverage_latency
+\caption{Face coverage and time to first matched detection by clip segment. Markers show conditional median delay; lines show the observed range. Both policies missed the far-outdoor segment.}
 \label{fig:episodes}
 \end{figure*}
 
@@ -183,7 +230,7 @@ We compared 13 optimization arms over ten matched training initializations on a 
 \section{Discussion and limits}
 The work avoided by gating was much larger than the percentage of board power saved. The capture-only control and the awake camera explain why the baseline matters. The periodic path ran more often than the change-triggered path. A shorter interval could improve response time but increase detector work, which makes the interval a useful parameter for a subsequent power versus delay sweep.
 
-The pairing controls for the board boot within each block. Ten starts with one board, one meter, and one optical replay characterize a repeatable bench case. The repeated 40 episode observations per policy come from just four positive segments. Missing the far-outdoor segment under both policies points to a failure shared by the pipelines under those conditions. The study does not isolate distance from the other properties of that clip segment. A broader stress study would vary face size and duration across physically distinct scenes and measure field performance. Recognition generalization and battery life would require dedicated validation.
+The pairing controls for the board boot within each block. The study uses one board, one meter, and one repeated optical replay. Repeated observations come from four positive segments and do not establish performance across independent physical scenes. Missing the far-outdoor segment under both policies points to a shared failure under those conditions; the study does not isolate distance from the segment's other properties. A broader stress study would vary face size and duration across physically distinct scenes. Recognition generalization and battery life require dedicated validation.
 
 The FNIRSI had no independent calibration against a reference instrument. Native report anomalies contributed to exclusions. The paired interval describes between-block sampling variation for the accepted bench runs, and absolute instrument error or selection effects are outside that interval. USB input power includes the operating board and camera and is measured at the meter. The instrument and test topology can affect the reading. The recorded Edge Impulse feature checkpoints and host face references also have incomplete pretraining-corpus documentation. Their use cannot establish identity-disjoint pretraining or remove the screen-to-field domain gap.
 
@@ -198,10 +245,10 @@ Run \texttt{python3 tools/fetch\_power\_evidence.py} from the checkout. It verif
 \begin{flushleft}\footnotesize\ttfamily
 L=prior-results/final-block-ledger.csv\\
 python3 resume/replay\_belkin\_primary.py \textbackslash\\
-\hspace*{1em}-{}-runs resume -{}-schedule "\$L" -{}-expect-count 10
+\hspace*{1em}-{}-runs resume -{}-schedule "\$L"
 \end{flushleft}
 \end{minipage}\par
-Replay recovers ten paired starts, 40 windows, and a gated-minus-fixed mean of \(-0.04954\) W. The paper source includes plotting tables and the trigger and order audit.
+Replay recovers the qualified paired windows and a gated-minus-fixed mean of \(-0.04954\) W. The paper source retains the complete measurement tables and trigger and order audit.
 
 {\footnotesize
 \bibliographystyle{plain}
