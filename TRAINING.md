@@ -73,4 +73,4 @@ Original result receipts contain historical machine paths. Preserve their hashes
 
 Use [DEPLOYMENT.md](DEPLOYMENT.md) and the current `FaceRecognition/tools/deploy_nicla_runtime.py`. A classifier and an embedding model have different output and calibration contracts. A newly trained six-class classifier cannot replace the 64-value embedding slot. Keep the candidate in a separate release and retain its model/configuration/calibration hashes, actual input tensor, memory receipt, and matched device frames. Measure quality and latency again before interpreting a power comparison of that candidate.
 
-Ten training seeds measure optimization variability. The recorded power experiment used ten separate physical starts. Keep those experimental units explicit in the report.
+Training seeds measure optimization variability. The power comparison pairs workloads within each independent physical start. The [power replay guide](evidence/README.md) links to the measurement ledger.

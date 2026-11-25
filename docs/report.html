@@ -216,7 +216,7 @@
         <h3>Replay the power result</h3>
         <p>From the repository root, restore and verify the 41,332,455-byte evidence archive, extract it, and replay its ledger.</p>
         <pre><code>python3 tools/fetch_power_evidence.py</code></pre>
-        <p>Extract the verified download and replay its measurement ledger using the commands in the <a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md">power reproduction guide</a>. The underlying records and replay checks preserve the complete experiment.</p>
+        <p>Extract the verified download and replay its measurement ledger using the <a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md">power reproduction guide</a>. The guide also links the exact optical workload, episode annotations, and Windows bench procedure for a fresh physical run.</p>
         <p>Expected output reproduces the qualified paired comparisons and mean gated-minus-fixed power of approximately −0.04954353 W. The fetcher checks archive SHA-256 <code>66f9d14dd4b75b87d79d974cd28dc17492c5f3625db6edbc3255911e347e2356</code>.</p>
         <p>After camera setup, <code>tools/check_repository.py</code> checks complete model sizes and hashes, source-to-compiled-module consistency, host behavior, and dashboard controls. The final paper source includes a separate replay of the trigger and order summaries. <a href="https://github.com/sophiayuanproj/FaceRecognition/blob/main/evidence/README.md">Full power reproduction guide</a></p>
       </section>

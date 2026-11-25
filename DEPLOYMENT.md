@@ -1,6 +1,6 @@
 # R19 device setup and recovery
 
-For a working board, start the dashboard and verify the current release. Use [bench/RELEASE_HASHES.json](bench/RELEASE_HASHES.json) and the [install receipt](bench/INSTALL_RECEIPT.json). The R19 firmware fingerprint begins `438ec766` and the config fingerprint begins `ad664dec`. They identify the exact board software used in the ten-pair experiment. A different board may have an earlier release installed.
+For a working board, start the dashboard and verify the current release. Use [bench/RELEASE_HASHES.json](bench/RELEASE_HASHES.json) and the [install receipt](bench/INSTALL_RECEIPT.json). The R19 firmware fingerprint begins `438ec766` and the config fingerprint begins `ad664dec`. They identify the board software used for the paired power comparison. A different board may have an earlier release installed.
 
 The repository includes the verified staged release, boot files, model assets, MicroPython sources and compiled modules. The measured board installation reused model assets under `/flash/releases/haar-box-r3-20261110`. A separate board may lack that directory. A self-contained deployment uses the included model files and creates its own model paths, so its resulting config and firmware fingerprints can differ from the measured board. Record the new receipt and do a USB smoke test before using it for the demo.
 

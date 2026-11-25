@@ -12,6 +12,8 @@ This repository contains preparation scripts, frozen split manifests, seed plans
 
 The transformed SurvFace and Olivetti archives are existing study inputs. An upstream original download can differ in filenames, pixels, and hashes, so obtaining it does not automatically reproduce the transformed archive. Keep the original provider's usage conditions and attribution with the locally obtained data. WIDER FACE is released for non-commercial research. The provenance and redistribution permission for the team-transformed crop archives remain incompletely documented, so the repository supplies their hashes and restoration code rather than republishing the images. These source links identify inputs; the software, checkpoints, and tools have their own GitHub distribution.
 
+For a course review that requires retraining on the exact crops, contact the project authors for access to the original transformed archives under the applicable dataset terms. Use the hashes below to check the copy before restoring it. The saved-model restoration and raw power replay can run without those archives.
+
 ## Exact crop inputs
 
 ```text
